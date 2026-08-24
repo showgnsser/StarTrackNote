@@ -1,0 +1,12 @@
+{
+  "accentColor": "#2f80ed",
+  "baseFontSize": 17,
+  "enabledCssSnippets": [
+    "startrack"
+  ],
+  "interfaceFontFamily": "Noto Sans CJK SC, Noto Sans, sans-serif",
+  "monospaceFontFamily": "Noto Sans Mono CJK SC, Noto Sans Mono, monospace",
+  "nativeMenus": true,
+  "textFontFamily": "Noto Sans CJK SC, Noto Sans, sans-serif",
+  "theme": "system"
+}

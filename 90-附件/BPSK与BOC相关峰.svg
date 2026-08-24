@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560">
+  <rect width="1040" height="560" rx="20" fill="#f8fbff"/>
+  <text x="520" y="42" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#1f2937">BPSK单主峰与BOC多峰的直觉对比</text>
+  <line x1="80" y1="460" x2="960" y2="460" stroke="#4b5563" stroke-width="2"/>
+  <line x1="520" y1="75" x2="520" y2="480" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="7 7"/>
+  <polyline points="150,460 520,120 890,460" fill="none" stroke="#2f80ed" stroke-width="6" stroke-linejoin="round"/>
+  <text x="290" y="190" font-family="sans-serif" font-size="20" fill="#2f80ed">BPSK：一个主要三角峰</text>
+  <path d="M150 460 C205 455,225 365,280 350 C335 335,350 455,400 440 C450 425,455 210,520 145 C585 210,590 425,640 440 C690 455,705 335,760 350 C815 365,835 455,890 460" fill="none" stroke="#eb5757" stroke-width="5"/>
+  <text x="720" y="235" font-family="sans-serif" font-size="20" fill="#c0392b">BOC：主峰两侧还有副峰</text>
+  <g font-family="sans-serif" font-size="16" fill="#6b7280">
+    <text x="520" y="505" text-anchor="middle">码相位误差</text>
+    <text x="92" y="88">相关包络（示意）</text>
+    <text x="520" y="535" text-anchor="middle">示意曲线只说明峰的数量与局部零点，不代表某一PRN的精确采样值</text>
+  </g>
+</svg>

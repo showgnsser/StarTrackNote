@@ -1,0 +1,97 @@
+/* StarTrack初学者算法笔记主题。 */
+
+.startrack-spec,
+.startrack-home {
+  --h1-color: #2f80ed;
+  --h2-color: #2d9cdb;
+  --h3-color: #27ae60;
+  --h4-color: #6c5ce7;
+  --link-color: #2f80ed;
+  --link-color-hover: #56ccf2;
+}
+
+.startrack-spec.markdown-preview-view .markdown-preview-sizer,
+.startrack-home.markdown-preview-view .markdown-preview-sizer,
+.startrack-spec.markdown-source-view.mod-cm6 .cm-sizer,
+.startrack-home.markdown-source-view.mod-cm6 .cm-sizer {
+  max-width: 1180px;
+}
+
+.startrack-spec h1,
+.startrack-home h1 {
+  border-bottom: 3px solid #2f80ed;
+  padding-bottom: 0.35em;
+}
+
+.startrack-spec h2 {
+  border-left: 5px solid #2d9cdb;
+  margin-top: 2.1em;
+  padding-left: 0.65em;
+}
+
+.startrack-spec table,
+.startrack-home table {
+  border: 1px solid var(--background-modifier-border);
+  border-collapse: separate;
+  border-radius: 8px;
+  border-spacing: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.startrack-spec th,
+.startrack-home th {
+  background: rgba(47, 128, 237, 0.14);
+  font-weight: 650;
+}
+
+.startrack-spec td,
+.startrack-spec th,
+.startrack-home td,
+.startrack-home th {
+  padding: 0.65em 0.8em;
+  vertical-align: top;
+}
+
+.startrack-spec .mermaid {
+  background: linear-gradient(145deg, rgba(47, 128, 237, 0.06), rgba(39, 174, 96, 0.04));
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  overflow: auto;
+  padding: 1.2em;
+  text-align: center;
+}
+
+.startrack-spec .mermaid svg {
+  display: block;
+  height: auto !important;
+  margin: 0 auto;
+  max-height: 720px !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: auto;
+}
+
+.startrack-spec mjx-container[jax="CHTML"][display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.8em 0.2em;
+}
+
+.startrack-spec .callout,
+.startrack-home .callout {
+  border-radius: 10px;
+}
+
+.startrack-spec pre {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 9px;
+  overflow-x: auto;
+}
+
+.startrack-spec img {
+  display: block;
+  margin: 1em auto;
+  max-height: 680px;
+  max-width: 100%;
+}

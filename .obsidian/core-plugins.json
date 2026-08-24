@@ -1,0 +1,19 @@
+{
+  "backlink": true,
+  "bookmarks": true,
+  "canvas": true,
+  "command-palette": true,
+  "file-explorer": true,
+  "global-search": true,
+  "graph": true,
+  "note-composer": true,
+  "outline": true,
+  "page-preview": true,
+  "properties": true,
+  "switcher": true,
+  "tag-pane": true,
+  "outgoing-link": true,
+  "footnotes": true,
+  "word-count": true,
+  "file-recovery": true
+}

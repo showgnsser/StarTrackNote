@@ -1,0 +1,12 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "90-附件",
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "newFileLocation": "current",
+  "readableLineLength": true,
+  "showLineNumber": true,
+  "strictLineBreaks": false,
+  "trashOption": "local",
+  "useMarkdownLinks": false
+}
