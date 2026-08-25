@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="500" viewBox="0 0 1300 500">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:17px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:13;ry:13}
+      .arrow{stroke:#334155;stroke-width:2.3;fill:none;marker-end:url(#a)}
+      .cancel{stroke:#dc2626;stroke-width:2;fill:none;stroke-dasharray:6 4;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1300" height="500" fill="#fff"/>
+  <text x="650" y="38" text-anchor="middle" class="title">FSM状态切换不是一次判断，而是“证据 → 候选 → 待确认 → 提交”</text>
+  <rect x="45" y="125" width="215" height="120" class="box" fill="#e0f2fe"/>
+  <text x="153" y="162" text-anchor="middle" class="h">Active</text>
+  <text x="153" y="192" text-anchor="middle" class="t">当前硬件已确认状态</text>
+  <text x="153" y="220" text-anchor="middle" class="t">fsm.state()返回它</text>
+  <rect x="345" y="105" width="240" height="160" class="box" fill="#fef3c7"/>
+  <text x="465" y="142" text-anchor="middle" class="h">Candidate</text>
+  <text x="465" y="172" text-anchor="middle" class="t">连续证据指向同一目标</text>
+  <text x="465" y="198" text-anchor="middle" class="t">累计物理时间与监督次数</text>
+  <text x="465" y="224" text-anchor="middle" class="t">仍未改变硬件策略</text>
+  <text x="465" y="250" text-anchor="middle" class="t">证据变化则清零</text>
+  <rect x="680" y="105" width="240" height="160" class="box" fill="#fee2e2"/>
+  <text x="800" y="142" text-anchor="middle" class="h">Pending</text>
+  <text x="800" y="172" text-anchor="middle" class="t">迟滞与驻留已经满足</text>
+  <text x="800" y="198" text-anchor="middle" class="t">软件生成下一历元HwCmd</text>
+  <text x="800" y="224" text-anchor="middle" class="t">等待后续PDI回报cmd_id</text>
+  <text x="800" y="250" text-anchor="middle" class="t">pending_state还未生效</text>
+  <rect x="1015" y="125" width="240" height="120" class="box" fill="#dcfce7"/>
+  <text x="1135" y="162" text-anchor="middle" class="h">Committed</text>
+  <text x="1135" y="192" text-anchor="middle" class="t">PDI确认过渡命令</text>
+  <text x="1135" y="220" text-anchor="middle" class="t">提交状态并重建不兼容窗</text>
+  <path d="M260 185 H345" class="arrow"/><path d="M585 185 H680" class="arrow"/><path d="M920 185 H1015" class="arrow"/>
+  <text x="302" y="158" text-anchor="middle" class="t">新目标证据</text>
+  <text x="632" y="158" text-anchor="middle" class="t">满足迟滞/驻留</text>
+  <text x="968" y="158" text-anchor="middle" class="t">cmd_id匹配</text>
+  <path d="M465 265 V345 H153 V245" class="cancel"/>
+  <text x="310" y="370" text-anchor="middle" class="t" fill="#dc2626">候选证据中断：取消Candidate，保留Active</text>
+  <path d="M800 265 V410 H153 V245" class="cancel"/>
+  <text x="600" y="438" text-anchor="middle" class="t" fill="#dc2626">命令迟到、PDI异常：取消Pending，不谎称新状态已生效</text>
+  <text x="650" y="482" text-anchor="middle" class="h">状态改变只换观察与环路策略；连续载波/码NCO和物理相位必须保持</text>
+</svg>

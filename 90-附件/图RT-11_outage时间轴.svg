@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430">
+  <defs>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#334155}
+      .axis{stroke:#334155;stroke-width:2}
+      .grid{stroke:#cbd5e1;stroke-width:1;stroke-dasharray:4 4}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="#fff"/>
+  <text x="600" y="38" text-anchor="middle" class="title">outage功率调度：边沿和零功率平台必须分别计时</text>
+  <line x1="80" y1="325" x2="1120" y2="325" class="axis"/>
+  <line x1="80" y1="90" x2="80" y2="325" class="axis"/>
+  <text x="45" y="105" class="t">功率</text><text x="1080" y="360" class="t">时间</text>
+  <path d="M100 110 H310 L350 300 H810 L850 110 H1100" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <line x1="310" y1="80" x2="310" y2="335" class="grid"/><line x1="350" y1="80" x2="350" y2="335" class="grid"/>
+  <line x1="810" y1="80" x2="810" y2="335" class="grid"/><line x1="850" y1="80" x2="850" y2="335" class="grid"/>
+  <text x="330" y="70" text-anchor="middle" class="h">20 ms下降沿</text>
+  <text x="830" y="70" text-anchor="middle" class="h">20 ms恢复沿</text>
+  <rect x="350" y="345" width="460" height="38" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="580" y="371" text-anchor="middle" class="h">请求的outage时长 = N × 20 ms完整零功率平台</text>
+  <text x="600" y="412" text-anchor="middle" class="t">错误做法：把下降沿或恢复沿算进N帧，使真正的零功率平台少20 ms</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:15px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:12;ry:12}
+      .arrow{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}
+      .axis{stroke:#64748b;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#fff"/>
+  <text x="600" y="36" text-anchor="middle" class="title">E1/B1C同一输入同时相关两套本地副本</text>
+  <rect x="55" y="190" width="170" height="100" class="box" fill="#e0f2fe"/>
+  <text x="140" y="225" text-anchor="middle" class="h">已下变频输入</text>
+  <text x="140" y="252" text-anchor="middle" class="t">同一1 ms I/Q</text>
+  <text x="140" y="276" text-anchor="middle" class="t">同一loop component</text>
+  <path d="M225 240 H300" class="arrow"/>
+  <path d="M300 240 V125 H365" class="arrow"/>
+  <path d="M300 240 V365 H365" class="arrow"/>
+  <rect x="365" y="70" width="290" height="130" class="box" fill="#fee2e2"/>
+  <text x="510" y="102" text-anchor="middle" class="h">BOC副本（replica 0）</text>
+  <text x="510" y="132" text-anchor="middle" class="t">PRN码 × BOC(1,1)副载波</text>
+  <text x="510" y="158" text-anchor="middle" class="t">输出VE / E / P / L / VL</text>
+  <text x="510" y="184" text-anchor="middle" class="t">包含真实BOC主峰与旁峰结构</text>
+  <rect x="365" y="305" width="290" height="130" class="box" fill="#dcfce7"/>
+  <text x="510" y="337" text-anchor="middle" class="h">PRN-only副本（replica 1）</text>
+  <text x="510" y="367" text-anchor="middle" class="t">只使用PRN码，不乘BOC副载波</text>
+  <text x="510" y="393" text-anchor="middle" class="t">输出VE / E / P / L / VL</text>
+  <text x="510" y="419" text-anchor="middle" class="t">提供不同的旁峰投影</text>
+  <rect x="765" y="160" width="350" height="200" class="box" fill="#fef3c7"/>
+  <text x="940" y="195" text-anchor="middle" class="h">ASPeCT组合</text>
+  <text x="940" y="230" text-anchor="middle" class="t">式(13)：M = |R_BOC|² − β|R_PRN|²</text>
+  <text x="940" y="260" text-anchor="middle" class="t">式(14)：BOC与PRN的Early-Late点积联合</text>
+  <text x="940" y="302" text-anchor="middle" class="t">粗阶段：左 / 中 / 右方向</text>
+  <text x="940" y="330" text-anchor="middle" class="t">细阶段：连续chip误差</text>
+  <path d="M655 135 L765 215" class="arrow"/>
+  <path d="M655 370 L765 305" class="arrow"/>
+  <text x="600" y="505" text-anchor="middle" class="h">二次码已锁定后，PilotWiper必须对两副本和五抽头同时乘同一符号</text>
+  <text x="600" y="532" text-anchor="middle" class="t">只擦Prompt、只擦BOC副本或误擦数据分量都会破坏后续相干关系</text>
+</svg>

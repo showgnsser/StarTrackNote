@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:14;ry:14}
+      .arrow{stroke:#334155;stroke-width:2.3;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="#fff"/>
+  <text x="600" y="38" text-anchor="middle" class="title">辅助状态只接受显式、可信、时间对齐的外部bit</text>
+  <rect x="75" y="125" width="250" height="130" class="box" fill="#fef3c7"/>
+  <text x="200" y="162" text-anchor="middle" class="h">Sensitivity</text>
+  <text x="200" y="192" text-anchor="middle" class="t">自主极弱跟踪</text>
+  <text x="200" y="220" text-anchor="middle" class="t">不依赖外部bit</text>
+  <rect x="475" y="125" width="250" height="130" class="box" fill="#dcfce7"/>
+  <text x="600" y="162" text-anchor="middle" class="h">BitAiding</text>
+  <text x="600" y="192" text-anchor="middle" class="t">600 ms室内极弱辅助</text>
+  <text x="600" y="220" text-anchor="middle" class="t">每个PDI都要可信符号</text>
+  <rect x="875" y="125" width="250" height="130" class="box" fill="#e0f2fe"/>
+  <text x="1000" y="162" text-anchor="middle" class="h">OutdoorBitAiding</text>
+  <text x="1000" y="192" text-anchor="middle" class="t">300 ms室外辅助入口</text>
+  <text x="1000" y="220" text-anchor="middle" class="t">辅助失效时安全降级</text>
+  <path d="M325 190 H475" class="arrow"/>
+  <text x="400" y="163" text-anchor="middle" class="t">低C/N0且aid_valid</text>
+  <path d="M875 190 H725" class="arrow"/>
+  <text x="800" y="163" text-anchor="middle" class="t">更弱且辅助仍有效</text>
+  <path d="M1000 255 C1000 335 200 335 200 255" class="arrow"/>
+  <text x="600" y="360" text-anchor="middle" class="t">辅助失效后按当前C/N0退到ShortSlow、LongSlow或Sensitivity</text>
+  <text x="600" y="405" text-anchor="middle" class="h">公开导频二次码自主同步 ≠ 外部bit辅助</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:17px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:12;ry:12}
+      .arrow{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1200" height="480" fill="#fff"/>
+  <text x="600" y="36" text-anchor="middle" class="title">普通强弱状态链：短窗负责快，长窗负责弱</text>
+  <text x="70" y="115" class="h">强入口</text>
+  <rect x="170" y="75" width="180" height="90" class="box" fill="#e0f2fe"/>
+  <text x="260" y="108" text-anchor="middle" class="h">ShortFast</text><text x="260" y="137" text-anchor="middle" class="t">20 ms快速牵引</text>
+  <rect x="430" y="75" width="180" height="90" class="box" fill="#dcfce7"/>
+  <text x="520" y="108" text-anchor="middle" class="h">ShortNormal</text><text x="520" y="137" text-anchor="middle" class="t">20 ms收敛/等同步</text>
+  <rect x="690" y="75" width="180" height="90" class="box" fill="#fef3c7"/>
+  <text x="780" y="108" text-anchor="middle" class="h">ShortSlow</text><text x="780" y="137" text-anchor="middle" class="t">20 ms FLL辅助PLL</text>
+  <path d="M350 120 H430" class="arrow"/><path d="M610 120 H690" class="arrow"/>
+  <text x="70" y="285" class="h">普通入口</text>
+  <rect x="170" y="245" width="180" height="90" class="box" fill="#e0f2fe"/>
+  <text x="260" y="278" text-anchor="middle" class="h">LongFast</text><text x="260" y="307" text-anchor="middle" class="t">160 ms牵引/等同步</text>
+  <rect x="430" y="245" width="180" height="90" class="box" fill="#dcfce7"/>
+  <text x="520" y="278" text-anchor="middle" class="h">LongNormal</text><text x="520" y="307" text-anchor="middle" class="t">160 ms过渡收敛</text>
+  <rect x="690" y="245" width="180" height="90" class="box" fill="#fef3c7"/>
+  <text x="780" y="278" text-anchor="middle" class="h">LongSlow</text><text x="780" y="307" text-anchor="middle" class="t">320 ms低动态稳态</text>
+  <rect x="950" y="245" width="180" height="90" class="box" fill="#fee2e2"/>
+  <text x="1040" y="278" text-anchor="middle" class="h">Sensitivity</text><text x="1040" y="307" text-anchor="middle" class="t">320 ms自主极弱FLL-only</text>
+  <path d="M350 290 H430" class="arrow"/><path d="M610 290 H690" class="arrow"/><path d="M870 290 H950" class="arrow"/>
+  <path d="M780 165 V245" class="arrow"/>
+  <text x="825" y="208" class="t">信号变弱</text>
+  <path d="M950 325 C905 380 875 385 835 335" class="arrow"/>
+  <text x="895" y="405" text-anchor="middle" class="t">信号恢复后逐级返回，不瞬间跳强状态</text>
+  <text x="600" y="450" text-anchor="middle" class="t">状态切换改变观察长度和环路带宽，但保留已确认NCO相位与码相位连续性</text>
+</svg>

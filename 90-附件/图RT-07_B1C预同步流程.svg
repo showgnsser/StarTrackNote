@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:25px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:16px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:12;ry:12}
+      .arrow{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}
+      .reset{stroke:#dc2626;stroke-width:2;fill:none;stroke-dasharray:6 4;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1500" height="620" fill="#fff"/>
+  <text x="750" y="36" text-anchor="middle" class="title">B1C预同步：每一步只解决一个问题，不能跳级</text>
+  <g>
+    <rect x="30" y="110" width="135" height="120" class="box" fill="#e0f2fe"/>
+    <text x="98" y="142" text-anchor="middle" class="h">A 捕获移交</text>
+    <text x="98" y="172" text-anchor="middle" class="t">粗Doppler</text>
+    <text x="98" y="194" text-anchor="middle" class="t">粗码相位</text>
+    <text x="98" y="216" text-anchor="middle" class="t">PilotSync关闭</text>
+  </g>
+  <g>
+    <rect x="195" y="110" width="145" height="120" class="box" fill="#dcfce7"/>
+    <text x="268" y="142" text-anchor="middle" class="h">B wide FLL</text>
+    <text x="268" y="172" text-anchor="middle" class="t">五抽头看载波</text>
+    <text x="268" y="194" text-anchor="middle" class="t">资格成立后</text>
+    <text x="268" y="216" text-anchor="middle" class="t">清旧码窗</text>
+  </g>
+  <g>
+    <rect x="370" y="110" width="145" height="120" class="box" fill="#fef3c7"/>
+    <text x="443" y="142" text-anchor="middle" class="h">C 粗方向</text>
+    <text x="443" y="172" text-anchor="middle" class="t">160 ms × 2</text>
+    <text x="443" y="194" text-anchor="middle" class="t">左 / 中 / 右</text>
+    <text x="443" y="216" text-anchor="middle" class="t">只输出kCoarse</text>
+  </g>
+  <g>
+    <rect x="545" y="110" width="145" height="120" class="box" fill="#fee2e2"/>
+    <text x="618" y="142" text-anchor="middle" class="h">D 有限slew</text>
+    <text x="618" y="172" text-anchor="middle" class="t">±0.1 chip</text>
+    <text x="618" y="194" text-anchor="middle" class="t">持续160 ms</text>
+    <text x="618" y="216" text-anchor="middle" class="t">DLL PI关闭</text>
+  </g>
+  <g>
+    <rect x="720" y="110" width="145" height="120" class="box" fill="#f1f5f9"/>
+    <text x="793" y="142" text-anchor="middle" class="h">E 停止确认</text>
+    <text x="793" y="172" text-anchor="middle" class="t">发零偏置命令</text>
+    <text x="793" y="194" text-anchor="middle" class="t">等PDI回报ID</text>
+    <text x="793" y="216" text-anchor="middle" class="t">才算事务结束</text>
+  </g>
+  <g>
+    <rect x="895" y="110" width="145" height="120" class="box" fill="#fef3c7"/>
+    <text x="968" y="142" text-anchor="middle" class="h">F 方向计数</text>
+    <text x="968" y="172" text-anchor="middle" class="t">每次重看粗窗</text>
+    <text x="968" y="194" text-anchor="middle" class="t">三次同方向后</text>
+    <text x="968" y="216" text-anchor="middle" class="t">请求FineCheck</text>
+  </g>
+  <g>
+    <rect x="1070" y="110" width="145" height="120" class="box" fill="#ede9fe"/>
+    <text x="1143" y="142" text-anchor="middle" class="h">G FineCheck</text>
+    <text x="1143" y="172" text-anchor="middle" class="t">三次160 ms</text>
+    <text x="1143" y="194" text-anchor="middle" class="t">均值和RMS</text>
+    <text x="1143" y="216" text-anchor="middle" class="t">都≤0.10 chip</text>
+  </g>
+  <g>
+    <rect x="1245" y="110" width="220" height="120" class="box" fill="#dcfce7"/>
+    <text x="1355" y="142" text-anchor="middle" class="h">H/I 开门并同步</text>
+    <text x="1355" y="172" text-anchor="middle" class="t">下一PDI才开始PilotSync</text>
+    <text x="1355" y="194" text-anchor="middle" class="t">18 s搜索 + 18 s独立确认</text>
+    <text x="1355" y="216" text-anchor="middle" class="t">锁定后擦二次码</text>
+  </g>
+  <path d="M165 170 H195" class="arrow"/><path d="M340 170 H370" class="arrow"/><path d="M515 170 H545" class="arrow"/>
+  <path d="M690 170 H720" class="arrow"/><path d="M865 170 H895" class="arrow"/><path d="M1040 170 H1070" class="arrow"/>
+  <path d="M1215 170 H1245" class="arrow"/>
+  <path d="M968 230 V315 H443 V230" class="reset"/>
+  <text x="700" y="337" text-anchor="middle" class="t" fill="#dc2626">未满三次：停止确认后清旧窗，从全新160 ms粗观察重新判断</text>
+  <path d="M1143 230 V385 H443 V230" class="reset"/>
+  <text x="790" y="410" text-anchor="middle" class="t" fill="#dc2626">FineCheck越界或外峰重现：回到粗牵引，不把局部小误差当中心</text>
+  <rect x="225" y="465" width="1050" height="95" rx="14" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="750" y="498" text-anchor="middle" class="h">全流程持续保留的约束</text>
+  <text x="750" y="525" text-anchor="middle" class="t">PDI/命令时间轴必须连续；slew和窗口切换从下一1 ms边界生效；载波NCO相位连续；任何不完整主码不得拼窗</text>
+  <text x="750" y="548" text-anchor="middle" class="t">码未居中前PilotSync关闭；FineCheck前粗观察不得进入DLL PI；锁定后不再回退预同步包络</text>
+</svg>

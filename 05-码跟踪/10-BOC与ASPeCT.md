@@ -13,6 +13,14 @@ cssclasses: [startrack-spec]
 > 解释BOC旁峰为什么会让普通DLL跟错，ASPeCT双副本怎样构造局部唯一峰，以及E1/B1C在同步前怎样用
 > 有限码斜坡安全进入局部跟踪域。
 
+> [!note] 先把本章两个专用词讲清楚
+> **slew（有限码相位斜坡）**不是直接跳码相位，而是在固定时间内给码率增加临时偏置，
+> 积分得到一次有界位移，随后发送零偏置命令并等待硬件PDI确认停止。
+> **FineCheck（细码复核）**不是一个新环路，而是粗移动后暂不让DLL PI接管，先用连续
+> ASPeCT细码均值和RMS证明Prompt确实进入中央主峰的安全门。完整逐步解释见
+> [[../StarTrack跟踪算法完整设计方案|StarTrack跟踪算法完整设计方案]]的第2章术语定义和
+> 第10章完整预同步流程。
+
 ## 10.1 BOC不是普通BPSK
 
 BOC把PRN码再乘一个方波子载波。优点是频谱分裂、测距斜率更陡；代价是自相关函数有多个峰。
@@ -28,13 +36,7 @@ StarTrack对E1/B1C同时相关：
 1. 完整BOC副本$R_B(\tau)$；
 2. 相同PRN码、去掉BOC子载波的PRN-only副本$R_P(\tau)$。
 
-```mermaid
-flowchart LR
-    A["同一码NCO"] --> B["BOC副本"]
-    A --> C["PRN-only副本"]
-    B --> D["ASPeCT"]
-    C --> D
-```
+![[../90-附件/图RT-06_BOC双副本.svg]]
 
 两副本必须共享码相位、抽头几何和符号擦除。若一个副本偏半chip，后面的相减没有物理意义。
 
@@ -104,18 +106,7 @@ R_{slew}=\frac{\Delta c}{T_s},\qquad
 |\Delta c|\le d_{inner}.
 $$
 
-```mermaid
-sequenceDiagram
-    participant O as 宽峰观察器
-    participant E as TrackEngine
-    participant H as 硬件
-    O->>E: confirmed coarse direction
-    E->>H: 下一历元开始有限slew
-    H-->>E: PDI确认start命令
-    E->>H: 到绝对end_epoch发送零slew
-    H-->>E: PDI确认stop命令
-    E->>O: 清窗并允许新独立判断
-```
+![[../90-附件/图RT-03_slew与FineCheck.svg]]
 
 斜坡按绝对历元到期，gap不延长。停止命令未确认前不能开放PilotSync，也不能重复启动新斜坡。
 
@@ -123,14 +114,7 @@ sequenceDiagram
 
 E1C闭环，E1B只读。E1流程拆成四段：
 
-```mermaid
-flowchart LR
-    A["五抽头联合频率牵引"] --> B["BOC宽峰方向"]
-    B --> C["±0.25 chip有限slew"]
-    C --> D["0.1/0.2 chip FineCheck"]
-    D --> E["500 ms搜索"]
-    E --> F["500 ms独立确认"]
-```
+![[../90-附件/图RT-13_E1预同步流程.svg]]
 
 当前关键参数：
 
@@ -150,15 +134,7 @@ flowchart LR
 
 B1C-P闭环，B1C-D只读。它的二次码长达18 s，所以载波与码牵引必须在同步前工作：
 
-```mermaid
-flowchart LR
-    A["110 ms五抽头wide FLL"] --> B["wide资格锁存"]
-    B --> C["式13粗方向<br/>160 ms×2"]
-    C --> D["±0.1 chip有限slew"]
-    D --> E{"累计三次同向slew<br/>或可靠Center"}
-    E --> F["式14 FineCheck"]
-    F --> G["18 s搜索+18 s确认"]
-```
+![[../90-附件/图RT-07_B1C预同步流程.svg]]
 
 关键约束：
 

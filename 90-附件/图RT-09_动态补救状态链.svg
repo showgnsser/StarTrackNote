@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="455" viewBox="0 0 1200 455">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:14px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:14;ry:14}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="#fff"/>
+  <text x="600" y="38" text-anchor="middle" class="title">动态状态是“残余动态补救链”，不是输入真值标签</text>
+  <rect x="90" y="145" width="250" height="120" class="box" fill="#fef3c7"/>
+  <text x="215" y="182" text-anchor="middle" class="h">LongSlow（状态5）</text>
+  <text x="215" y="212" text-anchor="middle" class="t">320 ms低动态弱信号稳态</text>
+  <text x="215" y="238" text-anchor="middle" class="t">动态物理判据在此职责上评估</text>
+  <rect x="475" y="145" width="250" height="120" class="box" fill="#fee2e2"/>
+  <text x="600" y="182" text-anchor="middle" class="h">HighDynamic（状态10）</text>
+  <text x="600" y="212" text-anchor="middle" class="t">残余动态超限的较宽FLL补救</text>
+  <text x="600" y="238" text-anchor="middle" class="t">不是所有high输入都必须进入</text>
+  <rect x="860" y="145" width="250" height="120" class="box" fill="#ede9fe"/>
+  <text x="985" y="182" text-anchor="middle" class="h">MidDynamic（状态9）</text>
+  <text x="985" y="212" text-anchor="middle" class="t">High退出后的恢复台阶</text>
+  <text x="985" y="238" text-anchor="middle" class="t">不是普通中动态目标态</text>
+  <path d="M340 205 H475" class="arrow"/>
+  <text x="408" y="160" text-anchor="middle" class="t">残余RMS/比值超门</text>
+  <text x="408" y="180" text-anchor="middle" class="t">或可信rate&gt;14.648 Hz/s</text>
+  <path d="M725 205 H860" class="arrow"/>
+  <text x="793" y="175" text-anchor="middle" class="t">残余下降</text>
+  <path d="M985 265 C985 345 215 345 215 265" class="arrow"/>
+  <text x="600" y="375" text-anchor="middle" class="t">继续稳定并满足退出证据后回到LongSlow</text>
+  <text x="600" y="405" text-anchor="middle" class="h">若LongSlow已经把高动态输入跟到精度门内，不进入HighDynamic就是正确行为</text>
+  <text x="600" y="428" text-anchor="middle" class="t">软件可把ShortSlow→LongSlow→HighDynamic折叠为一次命令提交，但物理分类仍属于LongSlow职责</text>
+</svg>

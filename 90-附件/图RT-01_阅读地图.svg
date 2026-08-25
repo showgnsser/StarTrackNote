@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:15px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:14;ry:14}
+      .line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="360" fill="#ffffff"/>
+  <text x="600" y="38" text-anchor="middle" class="title">从“看见信号”到“判断整改”的阅读顺序</text>
+  <rect x="35" y="95" width="165" height="150" class="box" fill="#e0f2fe"/>
+  <text x="118" y="130" text-anchor="middle" class="h">① 相关器</text>
+  <text x="118" y="165" text-anchor="middle" class="t">每1 ms看一次</text>
+  <text x="118" y="190" text-anchor="middle" class="t">P / E / L</text>
+  <text x="118" y="215" text-anchor="middle" class="t">得到复相关值</text>
+  <path d="M200 170 H230" class="line"/>
+  <rect x="235" y="95" width="165" height="150" class="box" fill="#dcfce7"/>
+  <text x="318" y="130" text-anchor="middle" class="h">② 观察器</text>
+  <text x="318" y="165" text-anchor="middle" class="t">把多个PDI合起来</text>
+  <text x="318" y="190" text-anchor="middle" class="t">估频差 / 码差</text>
+  <text x="318" y="215" text-anchor="middle" class="t">只测量，不控制</text>
+  <path d="M400 170 H430" class="line"/>
+  <rect x="435" y="95" width="165" height="150" class="box" fill="#fef3c7"/>
+  <text x="518" y="130" text-anchor="middle" class="h">③ 环路</text>
+  <text x="518" y="165" text-anchor="middle" class="t">FLL / PLL / DLL</text>
+  <text x="518" y="190" text-anchor="middle" class="t">把误差变成控制</text>
+  <text x="518" y="215" text-anchor="middle" class="t">更新本地NCO</text>
+  <path d="M600 170 H630" class="line"/>
+  <rect x="635" y="95" width="165" height="150" class="box" fill="#ede9fe"/>
+  <text x="718" y="130" text-anchor="middle" class="h">④ 同步与状态</text>
+  <text x="718" y="165" text-anchor="middle" class="t">确认bit/二次码</text>
+  <text x="718" y="190" text-anchor="middle" class="t">选择观察时长</text>
+  <text x="718" y="215" text-anchor="middle" class="t">不直接算鉴别公式</text>
+  <path d="M800 170 H830" class="line"/>
+  <rect x="835" y="95" width="165" height="150" class="box" fill="#fee2e2"/>
+  <text x="918" y="130" text-anchor="middle" class="h">⑤ BOC牵引</text>
+  <text x="918" y="165" text-anchor="middle" class="t">宽峰 → slew</text>
+  <text x="918" y="190" text-anchor="middle" class="t">→ FineCheck</text>
+  <text x="918" y="215" text-anchor="middle" class="t">→ PilotSync</text>
+  <path d="M1000 170 H1030" class="line"/>
+  <rect x="1035" y="95" width="130" height="150" class="box" fill="#f1f5f9"/>
+  <text x="1100" y="130" text-anchor="middle" class="h">⑥ 整改</text>
+  <text x="1100" y="165" text-anchor="middle" class="t">先分脚本错</text>
+  <text x="1100" y="190" text-anchor="middle" class="t">还是算法错</text>
+  <text x="1100" y="215" text-anchor="middle" class="t">再选择修复</text>
+  <text x="600" y="305" text-anchor="middle" class="t">原则：没有解释输入、输出和职责之前，不直接抛出模块名或状态名</text>
+</svg>

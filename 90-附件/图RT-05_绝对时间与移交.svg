@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:15px;fill:#334155}
+      .axis{stroke:#334155;stroke-width:3;marker-end:url(#a)}
+      .dash{stroke:#64748b;stroke-width:2;stroke-dasharray:6 5}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="#fff"/>
+  <text x="600" y="38" text-anchor="middle" class="title">非零start_sample：跟踪入口在T₀，不在场景时间0</text>
+  <line x1="90" y1="250" x2="1120" y2="250" class="axis"/>
+  <circle cx="150" cy="250" r="9" fill="#2563eb"/>
+  <text x="150" y="290" text-anchor="middle" class="h">t = 0</text>
+  <text x="150" y="320" text-anchor="middle" class="t">StarGen开始输出</text>
+  <line x1="540" y1="90" x2="540" y2="280" class="dash"/>
+  <circle cx="540" cy="250" r="11" fill="#16a34a"/>
+  <text x="540" y="70" text-anchor="middle" class="h">T₀ = start_sample / Fs</text>
+  <text x="540" y="310" text-anchor="middle" class="h">第一个真正跟踪的样点</text>
+  <rect x="190" y="130" width="300" height="65" rx="10" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="340" y="158" text-anchor="middle" class="h">TrackRunner只丢弃样点</text>
+  <text x="340" y="182" text-anchor="middle" class="t">闭环没有在这段时间运行</text>
+  <rect x="610" y="110" width="450" height="105" rx="12" fill="#dcfce7" stroke="#334155" stroke-width="2"/>
+  <text x="835" y="142" text-anchor="middle" class="h">移交必须描述T₀处的物理状态</text>
+  <text x="835" y="172" text-anchor="middle" class="t">Doppler = f₀ + d(T₀) + 请求残差</text>
+  <text x="835" y="198" text-anchor="middle" class="t">码相位 = 初相位 + 0→T₀全部码率积分，再按主码周期回绕</text>
+  <text x="600" y="385" text-anchor="middle" class="t">只修Doppler、不修码相位，会得到一个物理上不等价的捕获移交</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .title{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:700;fill:#0f172a}
+      .h{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:16px;font-weight:700;fill:#0f172a}
+      .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;font-size:13px;fill:#334155}
+      .box{stroke:#334155;stroke-width:2;rx:12;ry:12}
+      .arrow{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1400" height="420" fill="#fff"/>
+  <text x="700" y="38" text-anchor="middle" class="title">E1预同步：粗几何先牵引，稳定几何再复核</text>
+  <rect x="40" y="115" width="175" height="115" class="box" fill="#e0f2fe"/>
+  <text x="128" y="150" text-anchor="middle" class="h">捕获移交</text>
+  <text x="128" y="180" text-anchor="middle" class="t">BPSK-like粗频/粗码</text>
+  <text x="128" y="205" text-anchor="middle" class="t">PilotSync关闭</text>
+  <rect x="260" y="115" width="190" height="115" class="box" fill="#dcfce7"/>
+  <text x="355" y="150" text-anchor="middle" class="h">五抽头预同步FLL</text>
+  <text x="355" y="180" text-anchor="middle" class="t">码未居中时仍看见载波</text>
+  <text x="355" y="205" text-anchor="middle" class="t">不开放PLL/擦码</text>
+  <rect x="495" y="115" width="190" height="115" class="box" fill="#fef3c7"/>
+  <text x="590" y="150" text-anchor="middle" class="h">粗宽峰方向</text>
+  <text x="590" y="180" text-anchor="middle" class="t">0.25/0.50 chip抽头</text>
+  <text x="590" y="205" text-anchor="middle" class="t">独立窗口同向确认</text>
+  <rect x="730" y="115" width="170" height="115" class="box" fill="#fee2e2"/>
+  <text x="815" y="150" text-anchor="middle" class="h">有限slew</text>
+  <text x="815" y="180" text-anchor="middle" class="t">每次最多±0.25 chip</text>
+  <text x="815" y="205" text-anchor="middle" class="t">等停止命令确认</text>
+  <rect x="945" y="95" width="200" height="155" class="box" fill="#ede9fe"/>
+  <text x="1045" y="130" text-anchor="middle" class="h">稳定抽头 + FineCheck</text>
+  <text x="1045" y="160" text-anchor="middle" class="t">切0.10/0.20 chip抽头</text>
+  <text x="1045" y="185" text-anchor="middle" class="t">等待硬件确认新几何</text>
+  <text x="1045" y="210" text-anchor="middle" class="t">400 ms均值/RMS≤0.20</text>
+  <text x="1045" y="235" text-anchor="middle" class="t">冻结当前载波趋势</text>
+  <rect x="1190" y="115" width="175" height="115" class="box" fill="#dcfce7"/>
+  <text x="1278" y="150" text-anchor="middle" class="h">PilotSync</text>
+  <text x="1278" y="180" text-anchor="middle" class="t">500 ms搜索</text>
+  <text x="1278" y="205" text-anchor="middle" class="t">+500 ms独立确认</text>
+  <path d="M215 173 H260" class="arrow"/><path d="M450 173 H495" class="arrow"/><path d="M685 173 H730" class="arrow"/>
+  <path d="M900 173 H945" class="arrow"/><path d="M1145 173 H1190" class="arrow"/>
+  <text x="700" y="305" text-anchor="middle" class="h">任何外峰、gap、命令失配或FineCheck越界都会清除不兼容窗口，不能沿用旧候选</text>
+  <rect x="225" y="335" width="950" height="55" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="700" y="369" text-anchor="middle" class="t">粗观察只决定有限移动；稳定抽头上的细码证据通过后，下一PDI才允许同步器开始搜索</text>
+</svg>
