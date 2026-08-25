@@ -1,195 +1,246 @@
 ---
 title: 第8章 载波环：FLL预测、校正与PLL精修
-tags: [GNSS, StarTrack, 载波环, FLL, PLL]
+tags: [GNSS, StarTrack, FLL, PLL, 载波环]
 status: 当前实现
-version: V1.0
-date: 2026-08-24
+version: V2.0
+date: 2026-08-25
 cssclasses: [startrack-spec]
 ---
 
 # 第8章 载波环：FLL预测、校正与PLL精修
 
-> [!abstract] 本章目标
-> 解释频率观察进入控制器后怎样变成连续NCO，为什么弱状态只允许FLL，以及状态换档怎样避免频率跳变。
+> [!abstract] 本章在全流程中的位置
+> 第7章得到带Hz单位的观察，本章解释它怎样进入连续控制器。重点是FLL的“每毫秒预测、观察到来时校正”、PLL为何只在强信号状态开放，以及状态换档怎样保留总NCO而不保留不兼容窗口。
 
 ## 8.1 观察不是控制
 
-频率观察告诉环路“当前NCO大约还差多少Hz”。它可能每20、160、320或600 ms才出现一次，但硬件
-每1 ms都需要新命令。载波环因此分成：
+一个频率观察可能每20、160、320或600 ms才成熟，硬件却每1 ms需要载波step。载波环因此分成两种动作：
 
-1. `advanceTo()`：没有新观察也按已确认趋势推进；
-2. `correct()`：有合格观察时校正频率和趋势；
-3. 可选PLL：用相位误差做小修正。
+1. `advanceTo(now)`：没有新观察也按已确认趋势推进；
+2. `correct(obs)`：有合格观察时校正频率和趋势。
 
-```mermaid
-flowchart LR
-    A["FLL频率/趋势状态"] --> B["每1 ms预测"]
-    C["新频率观察"] --> D["FLL校正"]
-    B --> D
-    D --> E["FLL基值"]
-    F["相位观察"] --> G["PLL修正"]
-    E --> H["总控制Hz"]
-    G --> H
-```
+PLL是叠加在FLL基值上的小修正，不替代FLL连续频率状态。
 
-## 8.2 FLL保存哪些状态
+## 8.2 FLL内部保存什么
 
-内部至少保存：
+用简化符号表示：
 
-- 当前连续频率$f$；
-- 与更新周期对应的趋势步进$d_2$；
-- 物理变化率$r_f=d_2/T_u$；
-- 最近时间锚。
+- $f_k$：当前连续频率控制，Hz；
+- $d_k$：与更新周期对应的频率步进；
+- $r_k=d_k/T_u$：物理频率变化率，Hz/s；
+- $t_k$：当前环路时间锚。
 
-到当前时刻的预测：
+推进到新时刻$t$：
 
 $$
-f_k^{-}=f_{k-1}+r_f\Delta t.
+f^{-}(t)=f_k+r_k(t-t_k).
 $$
 
-如果PDI时间轴断了，`rebaseTime()`重新锚定，不能把趋势跨未知缺口外推。
+只要时间轴连续，即使暂时没有新观察，NCO仍跟随最近可信趋势。若gap使中间时间未知，环路必须重新锚定，不能跨缺口盲推。
 
-## 8.3 FLL怎样校正
+## 8.3 FLL校正公式
 
-对合格频率误差$e_f$：
+对已经重定时到当前时刻的频率误差$e_f$：
 
 $$
-d_{2,k}=d_{2,ref}+\lambda(d_{2,k-1}-d_{2,ref})+K_2e_f,
+d_k=d_{ref}+\lambda(d_{k-1}-d_{ref})+K_2e_f,
 $$
 
 $$
-f_k=f_k^{-}+(d_{2,k}-d_{2,k-1})+K_1e_f.
+f_k=f_k^{-}+(d_k-d_{k-1})+K_1e_f.
 $$
 
-直觉上：
+| 项 | 直觉 |
+|---|---|
+| $K_1e_f$ | 立即纠正当前频率 |
+| $K_2e_f$ | 学习持续趋势 |
+| $\lambda$ | 遗忘不再可信的旧趋势 |
+| $d_{ref}$ | 外部可信rate或状态参考，没有时为0 |
 
-- $K_1$马上纠正当前频率；
-- $K_2$学习持续变化趋势；
-- $\lambda$在极弱状态抑制旧趋势随机游走；
-- 不是所有`valid`观察都能推进高阶趋势，必须具有物理Hz解释或明确授权。
-
-状态策略表中给出芯片系数还原后的$K_1/K_2$。若无显式系数，可由等效带宽和更新时间推导：
-
-$$
-\omega_n=\frac{B_n}{0.53},\qquad
-K_1=1.414\omega_nT_u,\qquad K_2=(\omega_nT_u)^2.
-$$
-
-## 8.4 PLL为什么只在强信号状态开放
-
-相位比频率更敏感。弱信号下Prompt相位容易被噪声随机拉动，PLL可能把随机相位当真实频率修正。
-
-StarTrack只有`ShortSlow`允许`CarrierLoopMode::kFllPll`，并有两层保护：
-
-1. 状态策略`phase_control=true`；
-2. `CarrierLoop`模式也必须允许PLL注入。
-
-Sensitivity、BitAiding、OutdoorBitAiding和动态状态都保持FLL-only；即使日志形成相位诊断，也不进入NCO。
-
-## 8.5 相位观察
-
-已知符号时使用四象限：
+默认由噪声带宽$B_n$和更新周期$T_u$导出：
 
 $$
-\widehat\phi=\frac{1}{2\pi}\operatorname{atan2}(Q_P,I_P),
-\qquad \text{period}=1\ \text{cycle}.
+\omega_n=\frac{B_n}{0.53},
 $$
 
-未知数据bit时使用Costas形式：
+$$
+K_1=1.414\omega_nT_u,
+\qquad
+K_2=(\omega_nT_u)^2.
+$$
+
+带宽越大，响应更快但噪声更大；更新周期变长时，同一连续时间设计必须重新离散化，不能只复制系数。
+
+## 8.4 为什么不是所有频率观察都推进趋势
+
+某些观察只说明“方向可能如此”，或缺少可靠参考时刻。它们可以用于诊断，却不应更新高阶趋势。
+
+只有同时满足以下条件的观察才适合控制：
+
+- `ready&&valid&&physical_valid`；
+- 有明确Hz单位和NCO参考；
+- 时间窗口连续；
+- 当前状态策略允许该观察模式；
+- 没有在同历元被码slew、同步边界或状态边界撤销。
+
+`freq_valid=true`与`freq_used=true`分开记录，就是为了看清观察质量和策略使用这两件事。
+
+## 8.5 PLL观察是什么
+
+已知符号时，Prompt相位可用四象限：
 
 $$
-\widehat\phi=\frac{1}{2\pi}\arctan\left(\frac{Q_P}{I_P}\right),
-\qquad \text{period}=0.5\ \text{cycle}.
+\widehat\phi
+=\frac{1}{2\pi}\operatorname{atan2}(Q_P,I_P),
 $$
 
-`PhaseMonitor`还要求一段窗口内有效比例和RMS同时通过，不能靠一次漂亮相位就宣布锁定。
+周期为1 cycle。
 
-## 8.6 PLL控制公式
+数据bit未知时，Costas形式使用：
 
-设相位误差$\phi_k$以cycle输入，$\omega_p=B_{PLL}/0.7845$：
+$$
+\widehat\phi
+=\frac{1}{2\pi}
+\arctan\!\left(\frac{Q_P}{I_P}\right),
+$$
+
+周期为0.5 cycle。相位观察比频率观察更怕低SNR，必须经过 `PhaseMonitor` 的有效率和RMS成熟门。
+
+## 8.6 三阶PLL辅助项
+
+设相位误差$\phi_k$以cycle输入，PLL自然频率：
+
+$$
+\omega_p=\frac{B_{PLL}}{0.7845}.
+$$
+
+StarTrack当前离散更新可写为：
 
 $$
 r_{p,k}=r_{p,k-1}+0.25T_u\omega_p^3\phi_k,
 $$
 
 $$
-i_{p,k}=i_{p,k-1}+T_u\left(r_{p,k}+0.55\omega_p^2\phi_k\right),
+i_{p,k}=i_{p,k-1}
++T_u\left(r_{p,k}+0.55\omega_p^2\phi_k\right),
 $$
 
 $$
 f_{PLL,k}=i_{p,k}+2.4\omega_p\phi_k.
 $$
 
-总控制：
+总载波控制：
 
 $$
 f_{ctrl}=f_{FLL}+f_{PLL}.
 $$
 
-PLL带宽按新鲜C/N0分四档：
+PLL不是直接改载波相位，而是根据相位误差产生频率修正，使相位逐渐回到0。
 
-| C/N0 | 带宽 |
+## 8.7 为什么只有强信号状态允许PLL
+
+弱信号Prompt相位近似随机。若仍允许PLL控制，随机相位会被积分成持续频率偏置。
+
+StarTrack采用双重阻断：
+
+1. 状态策略必须声明 `phase_control=true`；
+2. `CarrierLoop`当前模式也必须为FLL+PLL。
+
+当前只有 `ShortSlow` 承担强信号相位精修。`Sensitivity`、`BitAiding`、`OutdoorBitAiding`、`MidDynamic`和`HighDynamic`均为FLL-only；它们可以记录相位诊断，但不得注入NCO。
+
+## 8.8 PLL带宽怎样选择
+
+PLL带宽依据新鲜C/N0分档：
+
+| C/N0 | PLL带宽 |
 |---:|---:|
-| 小于36 dB-Hz | 2.4 Hz |
-| 36到38 dB-Hz | 4.8 Hz |
-| 38到42 dB-Hz | 7.2 Hz |
-| 不小于42 dB-Hz | 9.6 Hz |
+| $<36$ dB-Hz | 2.4 Hz |
+| $[36,38)$ dB-Hz | 4.8 Hz |
+| $[38,42)$ dB-Hz | 7.2 Hz |
+| $\ge42$ dB-Hz | 9.6 Hz |
 
-## 8.7 相位失效时怎样避免旧PLL拖累
+这里的带宽选择只在允许PLL的状态生效。不能因为C/N0高就绕过状态策略，也不能拿显示C/N0的平滑值驱动环路。
 
-若相位观察完整但无效，同时本次有有效FLL观察，当前总NCO先吸收到FLL基值，再清PLL状态。这样不会因
-清PLL而让总频率突然跳变，也不会让旧PLL修正长期抵消新FLL校正。
+## 8.9 相位观察失效时怎样清PLL而不跳频
 
-单纯`phase.ready=false`表示没有新相位，最近PLL状态保持，不等于立即清零。
+若本历元有有效FLL观察，但相位观察已完整且无效：
 
-## 8.8 状态换档的连续性
+1. 先把当前总控制$f_{FLL}+f_{PLL}$吸收到FLL基值；
+2. 再清PLL积分状态；
+3. 新总控制仍等于清理前的频率；
+4. 后续由FLL继续控制。
 
-```mermaid
-sequenceDiagram
-    participant O as 旧策略
-    participant F as FSM
-    participant H as 硬件
-    participant N as 新策略
-    O->>F: 连续证据满足目标
-    F->>H: pending过渡命令
-    H->>F: 下一PDI确认cmd_id
-    F->>N: 提交状态并重建不兼容窗口
-```
+这样既去掉旧PLL拖尾，又不造成NCO瞬间跳变。
 
-换档时：
+若 `phase.ready=false`，只表示没有新相位，不自动清PLL。缺证据和反证必须区分。
 
-- 保留当前总NCO频率；
-- 只交接可信的Hz/s趋势；
+## 8.10 状态换档怎样保持连续
+
+状态变化会改变观察长度、带宽和是否允许PLL，但物理载波不能随状态名跳动。正确换档是：
+
+- 保留当前总NCO；
+- 只交接可信Hz/s趋势；
 - 清PLL即时积分和不兼容观察窗；
 - 不装载载波相位；
-- 命令确认后新策略才接管。
+- 生成新策略命令；
+- 下一PDI确认后再提交状态。
 
-## 8.9 为什么高动态状态仍是320 ms
+状态切换本身是策略变化，不是重新捕获。
 
-高动态不是靠“每次都加宽搜索”实现，而是依靠：
+## 8.11 高动态为什么仍可用长观察
 
-- 频率监测器从独立批次确认Hz/s趋势；
-- FLL每1 ms按趋势预测；
-- 320 ms观察提供新的误差校正；
-- HighDynamic使用更高FLL带宽和趋势增益。
+高动态状态使用320 ms观察，不代表320 ms内什么都不做。其机制是：
 
-若趋势不可信，长窗口之间盲目外推会比不预测更危险。
+1. FLL已有频率和趋势状态；
+2. 每1 ms按趋势预测NCO；
+3. 320 ms窗口提供一次低噪声误差校正；
+4. `MidDynamic`/`HighDynamic`使用比弱静态状态更高的FLL带宽和趋势权重。
 
-## 8.10 对应源码
+只有趋势已被独立监测确认时，长窗预测才可靠。若趋势不成熟，盲目外推会把噪声当动态。
 
-| 功能 | 文件/函数 |
+## 8.12 一个数值例子
+
+假设当前残余频率观察为$e_f=4$ Hz，更新周期$T_u=0.160$ s，带宽$B_n=1$ Hz：
+
+$$
+\omega_n\approx1.8868,
+$$
+
+$$
+K_1\approx0.4267,
+\qquad
+K_2\approx0.0911.
+$$
+
+当前频率立即修正约：
+
+$$
+K_1e_f\approx1.71\ \text{Hz},
+$$
+
+趋势步进增加约：
+
+$$
+K_2e_f\approx0.36\ \text{Hz/更新周期}.
+$$
+
+环路不会一次把4 Hz全吃掉，而是结合历史分阶段收敛，避免单个噪声观察把NCO拉飞。
+
+## 8.13 对应源码
+
+| 功能 | 主要位置 |
 |---|---|
-| FLL状态 | `src/carrier_loop/third_order_fll.cpp` |
-| 载波环编排 | `src/carrier_loop/carrier_loop.cpp::advanceTo()`、`correct()` |
+| FLL状态与离散公式 | `src/carrier_loop/third_order_fll.cpp` |
+| 载波总环路 | `src/carrier_loop/carrier_loop.cpp` |
 | 相位观察 | `src/carrier_observer/phase_observer.cpp` |
 | 相位监测 | `src/monitor/phase_monitor.cpp` |
-| 带宽与状态策略 | `src/tracking/track_fsm.cpp` |
+| 策略带宽和模式 | `src/tracking/track_fsm.cpp` |
+| 环路调用与used门 | `src/tracking/track_engine.cpp::updateLoops()` |
 
-## 8.11 本章小结
+## 8.14 本章小结
 
-FLL负责连续频率和趋势，PLL只在强信号ShortSlow中精修相位。新观察间隔可以很长，但预测和命令仍按
-1 ms运行。换档保留总NCO并等待硬件确认，避免软件状态名变化造成物理频率跳变。
+FLL保存连续频率和趋势，每毫秒预测、有观察时校正；PLL只在强信号ShortSlow里做相位精修。状态变化必须保留总NCO，只清不兼容统计。一个观察能否控制取决于物理有效性、状态许可和同历元边界，不只取决于 `valid`。
 
 ---
 
-上一篇：[[07-频率观察器从相位差到DFT|频率观察器从相位差到DFT]]　下一篇：[[../05-码跟踪/09-BPSK码环与载波辅助DLL|BPSK码环与载波辅助DLL]]
+上一篇：[[07-频率观察器从相位差到DFT|第7章 频率观察器从相位差到DFT]]　下一篇：[[../05-码跟踪/09-BPSK码环与载波辅助DLL|第9章 BPSK码环与载波辅助DLL]]

@@ -1,21 +1,22 @@
 ---
 title: 第7章 频率观察器：从相位差到DFT
-tags: [GNSS, StarTrack, FLL, DFT, FMS]
+tags: [GNSS, StarTrack, FLL观察器, DFT, FMS]
 status: 当前实现
-version: V1.0
-date: 2026-08-24
+version: V2.0
+date: 2026-08-25
 cssclasses: [startrack-spec]
 ---
 
 # 第7章 频率观察器：从相位差到DFT
 
-> [!abstract] 本章目标
-> 看懂StarTrack为什么有多种频率观察器。它们不是重复代码，而是分别解决“近处精测”“未知符号”
-> “大残频搜索”“极弱局部测量”和“BOC码偏下Prompt失效”。
+> [!abstract] 本章在全流程中的位置
+> 相关器给出复向量，本章把“向量在转”变成带Hz单位的频率观察。会依次讲Cross/Dot、平方FLL、DFT频点、FMS和B1C五抽头主码FLL，并说明无模糊范围、NCO参考和source tap。
+
+![[../90-附件/复相关相位差.svg]]
 
 ## 7.1 频差怎样变成相位差
 
-若残余频率为$\Delta f$，相隔$T$的两个复相关相位差近似：
+若相关块中心相隔$T$秒，剩余频差为$\Delta f$，相位差为：
 
 $$
 \Delta\phi=2\pi\Delta fT.
@@ -27,160 +28,235 @@ $$
 \widehat{\Delta f}=\frac{\Delta\phi}{2\pi T}.
 $$
 
-工程上不用分别求两个角再相减，而是先做共轭积。
+真正困难的不是这一步代数，而是：
 
-## 7.2 Cross/Dot鉴频
+- 相位是否被数据bit翻转；
+- 相位差是否越过$\pm\pi$发生模糊；
+- 两个块是否连续；
+- 本地NCO是否在块间换字；
+- 观察参考时刻在哪里。
 
-设相邻相关为$Z_{k-1}$和$Z_k$：
+## 7.2 Cross/Dot鉴频器
 
-$$
-C_k=Z_{k-1}^{*}Z_k=D_k+jX_k.
-$$
-
-其中$D_k$是点积，$X_k$是叉积。频差为：
-
-$$
-\widehat{\Delta f}=\frac{\operatorname{atan2}(X_k,D_k)}{2\pi\alpha T}.
-$$
-
-$\alpha=1$表示普通相关；平方或二倍角相关的相位转速翻倍，所以$\alpha=2$。
-
-![[90-附件/复相关相位差.svg]]
-
-低SNR时应先把多个$C_k$复数相加，再统一`atan2`。若先对每个噪声点取角再平均，会产生严重圆周统计问题。
-
-## 7.3 平方FLL为什么能消除正负号
-
-若$P_k=d_kA\exp(j\phi_k)$，其中$d_k=\pm1$，平方后：
+设前后两个复相关为：
 
 $$
-P_k^2=A^2\exp(j2\phi_k),
+z_0=I_0+jQ_0,\qquad z_1=I_1+jQ_1.
 $$
 
-因为$d_k^2=1$。数据bit或导频二次码的正负被消除，但相位加倍，模糊范围减半。
-
-StarTrack的`PilotFllObs`在非BOC导频同步前使用Prompt平方。B1C则先按完整10 ms主码相干，再平方。
-
-## 7.4 DFT功率搜索
-
-残频较大时，相邻鉴频可能超模糊范围。DFT对一组候选频率$f_b$重新旋转Prompt：
+复积：
 
 $$
-Z(f_b)=\sum_nP_n\exp(-j2\pi f_bt_n),
+z_0^*z_1
+=(I_0I_1+Q_0Q_1)
++j(I_0Q_1-Q_0I_1).
+$$
+
+定义：
+
+$$
+\operatorname{dot}=I_0I_1+Q_0Q_1,
 $$
 
 $$
-J(f_b)=|Z(f_b)|^2.
+\operatorname{cross}=I_0Q_1-Q_0I_1.
 $$
 
-```mermaid
-flowchart LR
-    A["多个频率假设"] --> B["各自去旋转"]
-    B --> C["同频点复数相干"]
-    C --> D["跨未知bit加功率"]
-    D --> E["选最大频点"]
-    E --> F["邻点插值细化"]
-```
-
-`PullInFreqObs`用于普通入口的粗居中；`FreqBinObserver`用于同步后按状态配置的多频点观察。
-
-## 7.5 FMS是什么
-
-FMS可理解为只看当前NCO左右两个很近的频率支路，用能量差估计零点附近小残差。它的优势是极弱时
-积累效率高；缺点是单调范围小，输出控制增益也不一定等于无偏物理Hz。
-
-因此`FreqObs`同时保存：
-
-- `freq_hz`：允许送FLL的控制鉴别量；
-- `physical_hz`：确认无偏时才用于物理动态统计；
-- `physical_valid`：两者是否可等同解释。
-
-不能用FMS输出RMS小就宣称物理频率估计很准。
-
-## 7.6 E1码未居中时的五抽头联合频率牵引
-
-E1 BOC Prompt在约半chip偏差处可能接近零。`PilotPullFreqObs`不能只看Prompt，而是对E1C完整BOC
-副本的五个抽头，同时枚举25个二次码相位和频率网格。它要求：
-
-- 最佳二次码相位相对次佳足够突出；
-- 最佳频点相对非邻近次峰足够突出；
-- 频率峰可做三点抛物线插值；
-- 有效结果只执行一次NCO平移，不直接建立长期Hz/s趋势。
-
-码FineCheck通过后冻结预同步频率趋势，使后续500+500 ms PilotSync看到固定NCO模型。
-
-## 7.7 B1C五抽头主码平方FLL
-
-B1C每个抽头先把10条1 ms PDI相干成主码块：
+则：
 
 $$
-B_{k,t}=\sum_{m=0}^{9}P_{k,m,t},\qquad X_{k,t}=B_{k,t}^2.
+\Delta\phi=\operatorname{atan2}(\operatorname{cross},\operatorname{dot}).
 $$
 
-相邻主码平方复积：
+使用`atan2`而不是`atan(cross/dot)`，因为后者无法区分象限，也会在dot接近0时失真。
+
+## 7.3 无模糊范围
+
+普通相位差位于$(-\pi,\pi]$，所以：
 
 $$
-C_{k,t}=X_{k-1,t}^{*}X_{k,t}.
+|\Delta f|<\frac{1}{2T}.
 $$
 
-当前生产配置使用10个相邻主码对，即11块、110 ms输入跨度；每20 ms滑动发布。各PDI的真实NCO
-可能不同，因此先旋转到共同参考，再把五抽头复数相加：
+例如块间隔20 ms：
 
 $$
-C=\sum_{k,t}C_{k,t}\exp\!\left(j4\pi T_b(f_{NCO,k}-f_{ref})\right),
+|\Delta f|<25\ \text{Hz}.
+$$
+
+若残差超出范围，观察会折返到错误频率。此时不能靠放大环路带宽修复，因为输入观察本身已经歧义。
+
+## 7.4 平方FLL为什么能消除$\pm1$
+
+未知bit使相关值乘$s_k\in\{+1,-1\}$。平方后：
+
+$$
+q_k=z_k^2,
 $$
 
 $$
-D=\sum_{k,t}|C_{k,t}|,\qquad q=\frac{|C|}{D},
+(s_k z_k)^2=z_k^2.
+$$
+
+相邻平方复积累加：
+
+$$
+C=\sum_k q_{k-1}^*q_k,
+$$
+
+频率为：
+
+$$
+\widehat{\Delta f}
+=\frac{\operatorname{atan2}(\Im C,\Re C)}{4\pi T}.
+$$
+
+分母中的$4\pi$来自二倍角。其无模糊范围也缩为：
+
+$$
+|\Delta f|<\frac{1}{4T}.
+$$
+
+## 7.5 质量值是什么
+
+常见相干质量定义为：
+
+$$
+q=\frac{|C|}{D},
+\qquad
+D=\sum_k|q_{k-1}|\,|q_k|.
+$$
+
+$q$接近1表示相邻复积方向一致，接近0表示方向随机。它是无量纲一致性，不是C/N0，也不是频率精度的直接概率保证。
+
+存在性可以用相干功率与原子功率比较，例如：
+
+$$
+\eta=
+\frac{\sum_b|Z_b|^2}
+{M\sum_b W_b},
+$$
+
+$Z_b$是一个主码块的复和，$W_b$是其中1 ms功率和，$M$是块内原子数。质量门$q$与存在性门$\eta$职责不同。
+
+## 7.6 DFT频点搜索
+
+当初始残差可能超出单个Cross/Dot无模糊范围时，可以在一组候选频率$f_m$上去旋：
+
+$$
+S(f_m)=\left|
+\sum_{k=0}^{N-1}z_ke^{-j2\pi f_m t_k}
+\right|^2.
+$$
+
+选择最大频点，再用邻点插值或局部鉴频细化。DFT观察器必须报告：
+
+- 频点间隔；
+- 搜索范围；
+- 最大峰和次峰对比；
+- 输出对应的NCO中心；
+- 窗口中心时刻。
+
+状态机不应重新计算DFT模糊范围，这些属于观察器物理合同。
+
+## 7.7 FMS是什么
+
+FMS是项目中的频率多点统计观察。它把连续1 ms Prompt映射到固定频率候选，积累bin power，再从主峰与邻域得到频率结果。
+
+可以把FMS理解为“为指定状态准备的窄频率功率尺”，而不是卡尔曼滤波器。其频点和范围由Profile配置，不能按signal id在实现里偷偷写死。
+
+## 7.8 E1码未居中时的五抽头FLL
+
+E1 BOC Prompt在某些码偏差下接近相关零点，Prompt-only平方FLL可能无信号。预同步E1因此对VE/E/P/L/VL五条固定tap分别形成平方复积，再在复数域统一相加：
+
+$$
+C=\sum_m\sum_{t\in\{VE,E,P,L,VL\}}
+\left(P_{m-1,t}^2\right)^*P_{m,t}^2.
 $$
 
 $$
-\widehat{\Delta f}=\frac{\arg C}{4\pi T_b},\qquad T_b=10\ \mathrm{ms}.
+D=\sum_m\sum_t
+|P_{m-1,t}^2|\,|P_{m,t}^2|.
 $$
 
-存在性量：
+强tap自然贡献更大，无需每毫秒选择“最大tap”。后者会引入噪声次序偏置和tap切换相位。
+
+## 7.9 B1C五抽头完整主码平方FLL
+
+B1C主码10 ms。对每个tap $t$、第$b$个完整主码：
 
 $$
-\eta=\frac{\sum_{k,t}|B_{k,t}|^2}
-{10\sum_{k,t,m}|P_{k,m,t}|^2}.
+B_{b,t}=\sum_{m=0}^{9}P_{b,m,t},
 $$
 
-当前门限$q\ge0.65$、$\eta\ge0.14$；物理无模糊范围：
-
 $$
-|\Delta f|<\frac{1}{4T_b}=25\ \mathrm{Hz}.
+W_{b,t}=\sum_{m=0}^{9}|P_{b,m,t}|^2.
 $$
 
-B1C正式移交残频域是$\pm15.625$ Hz，留在这个范围内。锁定前始终保持wide FLL，码居中不会切短Prompt。
+对相邻主码平方复积并跨五tap统一累加：
 
-## 7.8 观察器选择表
+$$
+C=\sum_{b=1}^{N}\sum_t
+\left(B_{b-1,t}^2\right)^*B_{b,t}^2.
+$$
 
-| 场景 | 当前观察器 |
+$$
+D=\sum_{b=1}^{N}\sum_t
+|B_{b-1,t}^2|\,|B_{b,t}^2|.
+$$
+
+当前生产配置冻结为：
+
+| 参数 | 值 | 物理含义 |
+|---|---:|---|
+| adjacent pairs | 10 | 10个相邻10 ms平方复积 |
+| blocks | 11 | 首次观察需11个完整主码 |
+| span | 110 ms | 输入覆盖时间 |
+| update | 20 ms | 成熟后发布节拍 |
+| phase baseline | 10 ms | 频率公式相位基线 |
+| ambiguity | $\pm25$ Hz | 平方且基线10 ms |
+| min quality | 0.65 | 复积方向一致性 |
+| min presence | 0.14 | 主码相干存在性 |
+| source tap | 3 | 日志表示五抽头组合，不冒充Prompt |
+
+频率公式仍除以$4\pi\cdot0.010$，不能错误除以110 ms。110 ms是处理窗口，10 ms才是相邻相位基线。
+
+## 7.10 NCO参考与物理频率
+
+观察输出至少区分：
+
+$$
+f_{\text{absolute}}
+=f_{\text{nco,ref}}+f_{\text{physical residual}}.
+$$
+
+环路控制使NCO在窗口内变化时，各pair必须按自己的实际NCO旋转到统一参考。日志中的`physical_hz`是相对记录参考NCO的残差，不等于场景真值，也不能再重复扣除BPSK-like边带。
+
+## 7.11 观察器选择表
+
+| 阶段 | 典型观察 | 原因 |
+|---|---|---|
+| 数据bit未知 | 平方FLL/DFT | 消除$\pm1$ |
+| 导频未同步 | 平方Prompt或主码FLL | 二次码未知 |
+| E1/B1C码未居中 | 五抽头联合FLL | Prompt可能接近零点 |
+| 同步且擦除后强信号 | Cross/Dot + PLL相位 | 低延迟、精度高 |
+| 弱/极弱状态 | DFT/FMS/FLL-only | 长积分且阻断噪声PLL |
+
+## 7.12 对应源码
+
+| 功能 | 主要位置 |
 |---|---|
-| 数据强入口未同步 | `PromptFllObs` |
-| 数据普通入口 | `PullInFreqObs` |
-| 非BOC导频未同步 | `PilotFllObs` |
-| E1未居中 | `PilotPullFreqObs` |
-| B1C未锁定 | `CodePeriodFllObs::addWide()` |
-| 同步后常规状态 | `FreqBinObserver`或`FreqObserver` |
-| 极弱局部残差 | FMS支路 |
+| Cross/Dot与通用频率观察 | `src/carrier_observer/` |
+| DFT/BinPower/FMS | `src/carrier_observer/` |
+| Pilot平方FLL | `src/carrier_observer/pilot_fll_obs.cpp` |
+| 主码平方FLL | `src/carrier_observer/code_period_fll_obs.cpp` |
+| B1C主码聚合 | `src/sync/code_period_sum.cpp` |
+| 观察路由 | `src/tracking/track_engine.cpp::formFreqObs()` |
 
-## 7.9 频率粗差门
+## 7.13 本章小结
 
-观察器`valid=true`后，`FreqGuard`还会检查：
-
-- 数值有限；
-- 当前状态允许的残差范围；
-- 观察NCO与当前控制NCO的绝对频率换算；
-- 局部鉴频无模糊范围。
-
-通过才有`freq_used=true`。所以频率观察有效率与使用率是两个不同指标。
-
-## 7.10 本章小结
-
-Cross/Dot适合局部频差，平方FLL抵抗未知正负，DFT负责粗搜，FMS负责极弱局部测量，E1/B1C还需
-在码偏导致Prompt失效时使用五抽头专属观察。多种观察器共享同一控制环，但职责和物理解释不同。
+频率观察的核心是把复相关相位差换成Hz，但符号、模糊范围、NCO参考和窗口时刻决定这个Hz是否真实。平方消除$\pm1$的同时缩小无模糊范围；DFT扩展搜索；E1/B1C在码未居中时用五抽头避免Prompt零点。处理窗口长度绝不能冒充相位基线。
 
 ---
 
-上一篇：[[../03-同步与积分/06-相干积分与非相干积累|相干积分与非相干积累]]　下一篇：[[08-载波环FLL与PLL|载波环FLL与PLL]]
+上一篇：[[../03-同步与积分/06-相干积分与非相干积累|第6章 相干积分与非相干积累]]　下一篇：[[08-载波环FLL与PLL|第8章 载波环FLL与PLL]]

@@ -1,185 +1,247 @@
 ---
-title: 第10章 BOC与ASPeCT：E1/B1C怎样避开旁峰
-tags: [GNSS, StarTrack, BOC, ASPeCT, E1, B1C]
+title: 第10章 BOC与ASPeCT：从旁峰牵引到细码跟踪
+tags: [GNSS, StarTrack, BOC, ASPeCT, slew, FineCheck]
 status: 当前实现
-version: V1.0
-date: 2026-08-24
+version: V2.0
+date: 2026-08-25
 cssclasses: [startrack-spec]
 ---
 
-# 第10章 BOC与ASPeCT：E1/B1C怎样避开旁峰
+# 第10章 BOC与ASPeCT：从旁峰牵引到细码跟踪
 
-> [!abstract] 本章目标
-> 解释BOC旁峰为什么会让普通DLL跟错，ASPeCT双副本怎样构造局部唯一峰，以及E1/B1C在同步前怎样用
-> 有限码斜坡安全进入局部跟踪域。
+> [!abstract] 本章在全流程中的位置
+> 这是E1/B1C最关键的一章。先解释BOC为什么有旁峰，再推导ASPeCT修改功率和局部鉴别器，最后把 `slew` 与 `FineCheck` 放进完整预同步时序。读完后应知道它们分别在解决什么问题，而不是只记住两个名字。
 
-> [!note] 先把本章两个专用词讲清楚
-> **slew（有限码相位斜坡）**不是直接跳码相位，而是在固定时间内给码率增加临时偏置，
-> 积分得到一次有界位移，随后发送零偏置命令并等待硬件PDI确认停止。
-> **FineCheck（细码复核）**不是一个新环路，而是粗移动后暂不让DLL PI接管，先用连续
-> ASPeCT细码均值和RMS证明Prompt确实进入中央主峰的安全门。完整逐步解释见
-> [[../StarTrack跟踪算法完整设计方案|StarTrack跟踪算法完整设计方案]]的第2章术语定义和
-> 第10章完整预同步流程。
+## 10.1 BOC为什么比BPSK难
 
-## 10.1 BOC不是普通BPSK
-
-BOC把PRN码再乘一个方波子载波。优点是频谱分裂、测距斜率更陡；代价是自相关函数有多个峰。
-
-![[90-附件/BPSK与BOC相关峰.svg]]
-
-普通Early-Late只寻找局部零点。在副峰附近也可能有$E\approx L$，所以“DLL误差接近0”不能证明到了主峰。
-
-## 10.2 两个本地副本
-
-StarTrack对E1/B1C同时相关：
-
-1. 完整BOC副本$R_B(\tau)$；
-2. 相同PRN码、去掉BOC子载波的PRN-only副本$R_P(\tau)$。
+BOC在PRN chip内部再乘一个方波子载波。它提高频谱分离和测距性能，但自相关函数不再只有一个平滑主峰，而是带有多个局部峰和零点。
 
 ![[../90-附件/图RT-06_BOC双副本.svg]]
 
-两副本必须共享码相位、抽头几何和符号擦除。若一个副本偏半chip，后面的相减没有物理意义。
+如果捕获移交码误差接近$0.35$ chip，原始BOC Prompt可能很小，某个侧抽头反而很强。普通Early-Late可能：
 
-## 10.3 ASPeCT式(13)：修改功率
+- 给错方向；
+- 在旁峰处给出假零点；
+- 因Prompt接近0而失去载波观测。
 
-每个抽头的修改功率：
+所以E1/B1C不能简单复制BPSK码环。
 
-$$
-R_{mod}(\tau)=|R_B(\tau)|^2-\beta|R_P(\tau)|^2,
-$$
+## 10.2 为什么硬件保留两套副本
 
-当前$\beta=2$。PRN-only项帮助压掉BOC旁峰。
+每个抽头同时有：
 
-> [!danger] 不能取绝对值
-> $R_{mod}$允许为负。若写成$|R_{mod}|$，负旁峰会被翻成正峰，等于重新制造假主峰。
+1. BOC副本$R_{BOC}$：真实BOC本地码相关；
+2. PRN-only副本$R_{PRN}$：去掉子载波，只保留PRN相关。
 
-## 10.4 ASPeCT式(14)：局部连续误差
+两者必须：
 
-对两副本分别构造Prompt方向点积：
+- 来自同一PDI；
+- 使用同一个载波NCO；
+- 使用同一个本地码相位MSB形成BOC符号；
+- 同步后擦除同一个导频二次码符号。
 
-$$
-DP_B=\Re\{(E_B-L_B)P_B^*\},
-$$
+否则ASPeCT相减会混入人为相位差。
 
-$$
-DP_P=\Re\{(E_P-L_P)P_P^*\}.
-$$
+## 10.3 ASPeCT式(13)：修改相关功率
 
-局部码误差：
-
-$$
-\widehat\epsilon_c=
-\frac{DP_B-\beta DP_P}
-{(6+\beta d)|P_B|^2}.
-$$
-
-$d$是完整E-L间距。稳定几何单边0.1 chip时$d=0.2$ chip。输出还按硬件抽头方向转换为
-“本地码相对输入信号”的统一符号。
-
-式(14)是主峰附近的连续误差，不是任意$\pm0.5$ chip全域搜索器。
-
-## 10.5 同步前怎样形成宽峰方向
-
-每个完整主码先形成五个抽头的包络或修改功率，再分成三组：
+对任一抽头$t$：
 
 $$
-G_L=\frac{G_{VE}+G_E}{2},\qquad G_C=G_P,
-\qquad G_R=\frac{G_Late+G_{VL}}{2}.
+M_t=|R_{BOC,t}|^2-\beta|R_{PRN,t}|^2.
 $$
 
-最佳与次佳对比度：
+当前固定：
 
 $$
-\rho=\frac{G_{best}-G_{second}}
-{|G_{best}|+|G_{second}|}.
+\beta=2.
 $$
 
-同侧两个抽头取平均，避免“两个噪声样本取max”相对单Prompt产生先验偏置。精确并列、近并列、非有限、
-最佳组非正或$\rho$不足都拒绝。
+这不是“两个正功率相加”，而是有符号修改功率。$M_t$可以为负；不能取绝对值，也不能把负值钳为0，因为符号正是旁峰消除的一部分。
 
-## 10.6 有限码斜坡不是跳相位
+同步前，E1/B1C都先在完整主码内部对两副本复数相干，再应用式(13)。跨未知二次码chip只在$M_t$等功率层积累。
 
-外峰确认后只发布方向$\pm d_{inner}$，上层在固定$T_s$内叠加码率：
+## 10.4 ASPeCT式(14)：局部连续码误差
+
+定义BOC分支的复数早晚鉴别量：
 
 $$
-R_{slew}=\frac{\Delta c}{T_s},\qquad
-|\Delta c|\le d_{inner}.
+D_{BOC}=\Re\left((E_{BOC}-L_{BOC})P_{BOC}^*\right).
 $$
+
+PRN-only分支：
+
+$$
+D_{PRN}=\Re\left((E_{PRN}-L_{PRN})P_{PRN}^*\right).
+$$
+
+ASPeCT内部局部误差：
+
+$$
+e_{int}=\frac{D_{BOC}-\beta D_{PRN}}
+{(6+\beta d)|P_{BOC}|^2}.
+$$
+
+$d$是完整E/L间距。生产 `AspectCodeObserver` 还会把内部输出取负，以统一成StarTrack公共语义“本地码应该如何修正”。
+
+式(14)只在已验证的中央单调域里适合作为连续细误差。它不是任意$\pm0.5$ chip的全局捕获器。
+
+## 10.5 同步前三方向怎样构造
+
+粗牵引不直接使用式(14)连续值，而是先形成五个抽头的式(13)修改功率，再分三组：
+
+$$
+G_L=\frac{M_{VE}+M_E}{2},
+$$
+
+$$
+G_C=M_P,
+$$
+
+$$
+G_R=\frac{M_L+M_{VL}}{2}.
+$$
+
+同侧使用均值而不是max，避免左右各有两个tap、中心只有一个tap造成纯噪声次序偏置。
+
+若最大组为$b$、次大组为$s$，对比度：
+
+$$
+\rho=\frac{G_b-G_s}{G_b+G_s+\epsilon}.
+$$
+
+只有组值有限、最佳组为正、跨组不近并列、$\rho$过门，才形成一个decision。第一个合格decision只保存方向；第二个独立同向decision才输出`kCoarse`。
+
+## 10.6 什么是 `slew`
 
 ![[../90-附件/图RT-03_slew与FineCheck.svg]]
 
-斜坡按绝对历元到期，gap不延长。停止命令未确认前不能开放PilotSync，也不能重复启动新斜坡。
+`slew`译为有限码相位斜坡。它不是“把码相位瞬间跳$0.1$ chip”，而是在固定时间内给码率增加一个临时偏置：
 
-## 10.7 E1预同步流程
+$$
+R_{slew}=\frac{\Delta c}{T_{slew}}.
+$$
 
-E1C闭环，E1B只读。E1流程拆成四段：
+例如B1C：
+
+$$
+\Delta c=0.1\ \text{chip},
+\qquad
+T_{slew}=0.160\ \text{s},
+$$
+
+$$
+R_{slew}=0.625\ \text{chip/s}.
+$$
+
+时序规则：
+
+1. 粗方向在epoch $E$确认；
+2. slew命令从$E+1$生效；
+3. 按绝对epoch持续精确$T_{slew}$；
+4. 到期后每条新命令都发送零slew偏置；
+5. 只有硬件回报零偏置command id后，才算真正停止；
+6. 新粗窗口只能从停止确认后的完整主码重新开始。
+
+gap不能延长slew，也不能让旧stop command id永久粘住。
+
+## 10.7 什么是 `FineCheck`
+
+`FineCheck`译为细码复核。它不是第三条码环，不直接修改NCO。它解决的问题是：
+
+> 粗方向声称已经靠近中心后，当前位置是否真的进入式(14)的中央单调域，并且连续一段时间都稳定？
+
+FineCheck使用稳定抽头几何和ASPeCT式(14)细误差，交给`DllMonitor`统计均值和RMS。只有成熟且两者都小，才打开 `pilot_code_centered`。
+
+| 信号 | FineCheck观察 | 通过门 |
+|---|---:|---:|
+| E1 | 稳定抽头连续约400 ms | $|mean|\le0.20$ chip且$RMS\le0.20$ chip |
+| B1C | 3个160 ms细观察，约480 ms | $|mean|\le0.10$ chip且$RMS\le0.10$ chip |
+
+单个fine invalid只表示证据不足。已经center后，它清监测成熟度但不立即撤销同步；只有硬中断或重新成熟的连续证据明确越界才撤销center。
+
+## 10.8 E1预同步流程
 
 ![[../90-附件/图RT-13_E1预同步流程.svg]]
 
-当前关键参数：
+### ShortFast阶段
 
-| 项目 | ShortFast | LongFast |
-|---|---:|---:|
-| 基础子窗 | 20 ms | 160 ms |
-| 每decision子窗 | 3 | 8 |
-| 独立decision | 2 | 2 |
-| 最早粗方向 | 120 ms | 2560 ms |
-| 对比度$\rho$ | 0.35 | 0.10 |
-| 粗几何单边 | 0.25/0.50 chip | 0.25/0.50 chip |
+1. 使用粗抽头$\pm0.25/\pm0.50$ chip；
+2. 每个子窗20 ms；
+3. 3个子窗形成60 ms decision；
+4. 两个独立同向decision，最早120 ms输出；
+5. 对比度$\rho\ge0.35$；
+6. 非中心输出最多$\pm0.25$ chip有限slew；
+7. 粗center只请求切稳定抽头，不能直接开PilotSync。
 
-稳定几何单边0.1/0.2 chip；细码均值和RMS均不超过0.20 chip才开放同步。码居中后清预同步频率趋势并
-冻结NCO，避免PilotSync积累期间参考NCO暗中变化。
+### LongFast阶段
 
-## 10.8 B1C预同步流程
+1. 每个子窗160 ms；
+2. 8个子窗形成1.28 s decision；
+3. 两个独立decision，最早2.56 s输出；
+4. 对比度$\rho\ge0.10$；
+5. 仍只发布有限slew。
 
-B1C-P闭环，B1C-D只读。它的二次码长达18 s，所以载波与码牵引必须在同步前工作：
+### FineCheck与同步
+
+切到$\pm0.10/\pm0.20$稳定几何后，等待命令确认，再从完整主码开始FineCheck。通过后冻结预同步载波趋势，下一PDI开放E1 PilotSync；搜索500 ms、独立确认500 ms。
+
+## 10.9 B1C预同步流程
 
 ![[../90-附件/图RT-07_B1C预同步流程.svg]]
 
-关键约束：
+B1C路径更长：
 
-1. wide频率资格前，粗码观察只后台积累，不能控制；
-2. 粗几何单边0.1/0.2 chip，$\rho=0.10$；
-3. 每个decision 160 ms，两个独立同向decision才发布；
-4. 每次只slew 0.1 chip；
-5. 三次同向slew后从下一个完整主码启动FineCheck；
-6. FineCheck均值和RMS均不超过0.10 chip才开放PilotSync；
-7. 码center只开放同步，锁定前载波仍用五抽头wide FLL；
-8. 锁定边界清wide历史，本PDI不把旧wide频率送入新状态。
+1. 五抽头10 ms完整主码平方FLL先形成一次有效wide资格；
+2. 资格成立同历元清旧Aspect窗口，不消费旧coarse；
+3. 160 ms式(13)三方向decision；
+4. 两个独立同向decision才输出coarse；
+5. 非中心执行$\pm0.1$ chip、160 ms有限slew；
+6. stop命令确认后重开wide/Aspect窗口；
+7. 若粗decision直接给出center，在清旧窗后立即进入FineCheck；
+8. 若持续给出同侧外峰，则第三次同方向slew停止确认后强制请求FineCheck；
+9. 3个160 ms式(14)细观察形成约480 ms监测；
+10. $|mean|$和RMS都不超过0.10 chip才打开码居中门；
+11. PilotSync从下一完整主码开始18 s搜索，再用独立18 s确认。
 
-## 10.9 同步后的模式
+预同步期间只要尚未锁定，B1C载波继续使用source tap 3五抽头wide FLL；码center只开放PilotSync，不提前降级成Prompt FLL。锁定边界才清wide历史并切同步后路径。
 
-PilotSync锁定并完成二次码擦除后：
+## 10.10 同步后怎样工作
 
-- 不再用包络宽峰做持续控制；
-- 两副本先按符号统一擦除；
-- 可跨完整主码复相干；
-- 使用式(14)细码误差进入普通二阶DLL；
-- 状态机按统一11状态策略管理载波和码更新周期。
+导频已锁定并擦除二次码后：
 
-一旦锁定，未擦码PDI不能偷偷退回包络粗判。
+- 彻底关闭同步前粗包络fallback；
+- 使用复相干BOC/PRN-only相关；
+- 按式(13)/(14)形成细码误差；
+- 输出`CodeObsKind::kFine`进入正常DLL；
+- 状态切换只改变观察长度和带宽，不改变beta或公式。
 
-## 10.10 什么能力没有实现
+若同步后仍允许粗fallback，噪声侧峰可能再次触发有限slew，破坏已经稳定的主峰。
 
-当前五抽头和有限slew提供局部吸引与BOC预同步牵引，不是任意码误差的大范围二维重捕获。
-尚未实现通用软件时分宽码搜索和运行时回捕获协议。
+## 10.11 当前明确没有实现什么
 
-## 10.11 对应源码
+- 不宣称完整CBOC/QMBOC或BOC(6,1)联合接收；
+- B1C-D/E1-B不进入pilot-only闭环，只可只读诊断；
+- 不使用场景真值选择峰；
+- 不按seed、码偏差方向或C/N0切换专用门限；
+- 不把E1参数直接复制给B1C；
+- 不用绝对值修补式(13)负值。
 
-| 功能 | 文件/函数 |
+## 10.12 对应源码
+
+| 功能 | 主要位置 |
 |---|---|
 | 式(13)/(14) | `src/code_observer/aspect_disc.cpp` |
-| 局部细码 | `src/code_observer/aspect_code_observer.cpp` |
-| 宽峰聚合 | `src/code_observer/aspect_pull_obs.cpp` |
-| E1/B1C分支 | `TrackEngine::formCodeObs()`、`formB1cCodeObs()` |
-| 码居中门 | `updatePilotCenter()`、`updateB1cPilotCenter()` |
-| 有限slew | `startCodeSlew()`、`confirmCodeSlew()` |
+| 同步后细观察 | `src/code_observer/aspect_code_observer.cpp` |
+| 同步前粗观察 | `src/code_observer/aspect_pull_obs.cpp` |
+| slew时序 | `src/tracking/track_engine.cpp::startCodeSlew()`等 |
+| E1 FineCheck | `updatePilotCenter()`相关函数 |
+| B1C FineCheck | `updateB1cPilotCenter()`、`confirmB1cSlew()` |
+| BOC双副本硬件 | `src/hardware/hardware_channel.cpp` |
 
-## 10.12 本章小结
+## 10.13 本章小结
 
-BOC的难点是副峰，不只是噪声。ASPeCT用共享码相位的BOC/PRN-only双副本构造修改功率和局部误差。
-同步前只把独立确认的方向变成有限slew；进入主峰并通过连续FineCheck后，才允许导频同步和普通DLL。
+ASPeCT用BOC与PRN-only两套相关消除旁峰。式(13)是有符号修改功率，式(14)是中央局部连续误差。粗方向只能产生有绝对结束时间的slew；FineCheck只读地证明已经进入正确主峰；通过后才允许PilotSync。E1和B1C共享物理思想，但几何、时标和同步周期不同。
 
 ---
 
-上一篇：[[09-BPSK码环与载波辅助DLL|BPSK码环与载波辅助DLL]]　下一篇：[[../06-状态机/11-十一状态先分职责再看切换|十一状态先分职责再看切换]]
+上一篇：[[09-BPSK码环与载波辅助DLL|第9章 BPSK码环与载波辅助DLL]]　下一篇：[[../06-状态机/11-十一状态先分职责再看切换|第11章 十一状态先分职责再看切换]]

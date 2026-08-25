@@ -1,148 +1,184 @@
 ---
 title: 第3章 一毫秒PDI与硬件相关器
-tags: [GNSS, StarTrack, PDI, NCO, 硬件相关器]
+tags: [GNSS, StarTrack, PDI, NCO, 硬件边界]
 status: 当前实现
-version: V1.0
-date: 2026-08-24
+version: V2.0
+date: 2026-08-25
 cssclasses: [startrack-spec]
 ---
 
 # 第3章 一毫秒PDI与硬件相关器
 
-> [!abstract] 本章目标
-> 看懂StarTrack最重要的接口边界：硬件逐样点处理原始IQ，但软件跟踪核心只能看到1 ms PDI。
+> [!abstract] 本章在全流程中的位置
+> 前两章解释了“要跟什么”和“相关值是什么”。本章把硬件与软件的分界讲清楚：硬件如何逐样点执行NCO和相关，为什么只向软件交付1 ms PDI，以及软件命令为什么必须到下一PDI才确认生效。
 
-## 3.1 为什么要划边界
+## 3.1 为什么一定要划分软硬件边界
 
-如果每个软件观察器都直接读取原始IQ，就会重复实现混频、本地码和时间轴，还会让算法无法映射到
-真实芯片。StarTrack把职责固定为：
+若软件跟踪算法直接访问每个I/Q样点，它会同时承担混频、本地码生成、相关、环路和状态机，既难以对应芯片，也难以冻结整数位宽与时序。
 
-```mermaid
-flowchart LR
-    A["s4原始IQ"] --> B["硬件：NCO与DDC"]
-    B --> C["硬件：本地码与五抽头相关"]
-    C --> D["1 ms HwPdi"]
-    D --> E["软件：积分、观察、环路、同步、FSM"]
-```
+StarTrack固定采用：
 
-软件不能绕过`HwPdi`重新访问原始IQ或硬件内部累加器。
+- `HardwareChannel`逐样点执行整数NCO、混频、本地码和五抽头相关；
+- `HwRegisterBank`发布1 ms `HwPdiRecord`；
+- 软件观察器只消费PDI，不访问原始I/Q；
+- `TrackEngine`处理PDI后生成下一条硬件命令。
 
-## 3.2 载波NCO做什么
+这条边界使软件算法可以与真实芯片寄存器和1 ms中断节拍对应。
 
-载波NCO是一个u32相位累加器。每来一个采样，内部相位加一个步进字$w_c$。对应物理频率：
+## 3.2 NCO是什么
 
-$$
-f_{NCO}=\frac{w_c}{2^{32}}f_s.
-$$
+NCO是Numerically Controlled Oscillator，数控振荡器。它不是一个“估计值变量”，而是硬件每个样点都推进的相位累加器。
 
-当前DDC取相位高4位查16相位正余弦表，用共轭本振混频：
+### 3.2.1 载波NCO
+
+设采样率为$f_s$，32位载波相位步进字为$w_c$，则近似频率为：
 
 $$
-I'=I\cos\theta+Q\sin\theta,
+f_{\text{nco}}=\frac{w_c}{2^{32}}f_s.
 $$
 
+硬件逐样点执行：
+
 $$
-Q'=Q\cos\theta-I\sin\theta.
+\Phi_c[n+1]=\Phi_c[n]+w_c \pmod {2^{32}}.
 $$
 
-输入是s4复样点，DDC按规定移位和饱和后输出s5。软件只得到相关后的s24累加值，不再重复量化。
+相位的高位用于查询本地正弦和余弦，完成下变频。
 
-## 3.3 码NCO做什么
+### 3.2.2 码NCO
 
-码NCO保存“当前本地码走到哪个chip、小数chip走到哪里”。步进决定每个采样推进多少码相位。
+码相位使用高精度无符号定点数，例如uQ14.36：整数部分表示chip地址，小数部分表示chip内相位。逐样点推进：
 
-普通控制命令只改步进，不重新装载相位。只有第一次捕获移交或明确重捕获才允许
-`load_code=true`。这样状态换档不会让码突然跳到另一个位置。
+$$
+\Phi_{code}[n+1]=\Phi_{code}[n]+w_{code}.
+$$
 
-E1和B1C有两个本地副本：
+当相位跨过一个主码长度时回绕，并更新主码周期计数。
 
-- replica 0：PRN乘BOC(1,1)子载波；
-- replica 1：只有PRN，不乘BOC。
+## 3.3 硬件每个样点做什么
 
-两者使用同一个码相位和同一个chip相位MSB，这是ASPeCT能够相减的前提。
+对每个输入I/Q样点，硬件概念上执行：
 
-## 3.4 一条PDI里到底有什么
+1. 用载波NCO产生本地正交载波；
+2. 复混频，消除大部分载波旋转；
+3. 用码NCO确定当前PRN chip和抽头地址；
+4. 生成P/E/L/VE/VL本地码；
+5. 对启用的分量和副本累加$I$、$Q$；
+6. 到1 ms边界，把累加器饱和/量化为PDI记录；
+7. 清本毫秒累加器，继续下一PDI。
 
-`HwPdi`不是只有一个Prompt值。它记录：
+相关器输出采用固定整数位宽。软件解码后才转成浮点，避免不同平台在热路径里产生不同的浮点逐样点行为。
 
-| 类别 | 字段含义 |
-|---|---|
-| 时间 | `epoch`、`first_sample`、`sample_count` |
-| 命令 | 实际`cmd_id`、本PDI实际使用的载波/码步进和首相位 |
-| 主码 | `code_period`、`segment`、`segments_per_code` |
-| 相关矩阵 | 最多2分量×2副本×5抽头×复数I/Q |
-| 完整性 | `partial`、`gap`、`overflow`、`cmd_late` |
+## 3.4 一条PDI包含什么
 
-PDI默认约1 ms，但首个捕获码相位可能落在1 ms边界中间，因此第一条可能是`partial=true`。
-这条PDI不进入观察器，但它是合法启动，不等于故障。
+PDI可以理解成“一毫秒硬件事实快照”。核心字段包括：
 
-## 3.5 主码周期和PDI周期为什么不同
+| 类别 | 典型内容 | 下游用途 |
+|---|---|---|
+| 时间 | epoch、first_sample、sample_count | 检查连续性与重定时 |
+| 命令确认 | 已应用command id | 确认上一条命令确实生效 |
+| 载波 | 已生效载波step、相位参考 | 还原观察的NCO中心 |
+| 码 | 已生效码step、码相位 | 载波辅助与码真值对齐 |
+| 分段 | segment、segments、code_period | 完整主码聚合 |
+| 相关值 | 分量×副本×五抽头$I/Q$ | 所有观察器输入 |
+| 错误 | gap、overflow、cmd_late等 | 清除受污染窗口 |
 
-| 信号 | 主码长度 | 一主码含多少条1 ms PDI |
+PDI的相关值是“用这一毫秒实际生效的命令”产生的，不能拿刚计算但尚未确认的新命令作为它的参考。
+
+## 3.5 `partial`表示什么
+
+跟踪可能从任意样点开始。首个PDI未必恰好从1 ms或主码segment边界开始，因此硬件可标记 `partial=true`。
+
+partial PDI仍可用于某些短时诊断，但不能与完整PDI拼成要求精确时标的主码、二次码或长相干窗口。观察器必须显式决定是否接受，而不能假设epoch 0天然完整。
+
+## 3.6 一毫秒PDI和主码周期不要混淆
+
+| 信号 | 主码周期 | 组成主码的1 ms PDI数 |
 |---|---:|---:|
-| L1CA、B1I、G1、L5、B2a、E5a | 1 ms | 1 |
-| E1 | 4 ms | 4 |
-| B1C | 10 ms | 10 |
+| L1 C/A、L5、B1I、B2a、E5a、G1 | 1 ms | 1 |
+| Galileo E1 | 4 ms | 4 |
+| BDS B1C | 10 ms | 10 |
 
-E1/B1C观察器必须检查`segment`连续并从0开始。不能随便拿4条或10条相邻PDI就冒充完整主码。
+硬件接口始终1 ms。E1观察器必须等4个连续segment，B1C观察器必须等10个连续segment，才能声称得到完整主码块。
 
-## 3.6 命令什么时候生效
+这就是为什么“把硬件PDI改成10 ms以适配B1C”是错误方向：它会破坏统一芯片边界，也丢失每毫秒命令和错误时序。
 
-处理历元$k$的PDI后，软件生成目标历元为$k+1$的`HwCmd`：
+## 3.7 命令为什么从下一PDI生效
 
-```mermaid
-sequenceDiagram
-    participant HW as 硬件通道
-    participant SW as TrackEngine
-    HW->>SW: PDI k，回报实际cmd_id
-    SW->>SW: 观察、环路、FSM
-    SW->>HW: HwCmd，apply_epoch=k+1
-    HW->>HW: 下一1 ms边界锁存
-    HW->>SW: PDI k+1确认新cmd_id
-```
+![[../90-附件/图RT-14_FSM候选与命令确认.svg]]
 
-所以“软件决定换状态”和“新状态硬件配置已经生效”之间隔着一次命令确认。状态机、抽头几何切换、
-有限码斜坡停止都必须遵守这个事务协议。
+在epoch $E$：
 
-## 3.7 `PdiDecoder`怎样进入浮点域
+1. 硬件先用旧命令生成PDI $E$；
+2. 软件处理PDI $E$；
+3. 软件生成command $K$，指定 `apply_epoch=E+1`；
+4. 硬件从下一个1 ms边界使用command $K$；
+5. PDI $E+1$回报已应用的command id；
+6. 软件只有核对成功后，才能提交依赖该命令的状态变化。
 
-`PdiDecoder::decode()`完成唯一一次硬件到软件转换：
+因此命令确认是一条闭环事实，不是多余握手。若命令号不匹配，观察窗口必须认为时间轴已不可信。
 
-- s24相关值无损转`double`；
-- s32载波字按补码转Hz；
-- 首相位推进到PDI中心，形成统一`nco_phase`；
-- 复制完整相关矩阵；
-- partial、gap、overflow、cmd_late都会令`complete=false`。
+## 3.8 为什么普通NCO换字不一定清窗口
 
-随后`LoopPdiSelector::select()`把默认闭环分量的固定相位旋转到统一同相参考，但保留原始矩阵给
-ASPeCT和只读诊断。
+每毫秒收到新command id是正常现象。只要：
 
-## 3.8 出错时为什么要清窗口
+- apply epoch正确；
+- PDI确认的id正确；
+- 时间和样点连续；
+- 观察器保存了每段实际NCO参考；
 
-如果PDI缺了一条，跨缺口做相位差会把未知时间当作1 ms；跨命令失配做积分会混合两套NCO参考。
-因此：
+就可以把不同NCO中心下的观察重定时到共同物理频率。不能把“命令号变化”误当成gap，否则长观察永远成熟不了。
 
-- gap/overflow/cmd_late/cmd_id不符：当前PDI不能进观察器；
-- 未完成的主码、bit、频率和C/N0窗口清除；
-- FLL时间锚重新建立；
-- 最近已经确认的物理NCO保持，不注入0误差。
+真正必须清窗的是：
 
-## 3.9 对应源码
+- PDI gap、overflow、late或不完整；
+- command id或apply epoch不匹配；
+- segment或code_period跳变；
+- 状态/配置改变导致观察几何不兼容；
+- 码slew开始或停止，使码率时标发生离散边界。
 
-| 模块 | 文件/关键函数 |
+## 3.9 PDI解码为什么还要验证
+
+`PdiDecoder`不是简单强制转换。它需要：
+
+1. 检查固定点范围和饱和标志；
+2. 把s24相关值转为浮点；
+3. 保留分量、副本和抽头索引；
+4. 保留命令、时间和NCO元数据；
+5. 形成供软件观察器使用的 `PdiData`。
+
+若只复制相关$I/Q$而丢掉NCO参考，频率观察就无法区分“信号真的变了”还是“本地NCO刚换字”。
+
+## 3.10 一个时间轴例子
+
+假设软件在epoch 100处理完PDI后，把码率提高$0.5$ chip/s：
+
+| 时刻 | 事实 |
 |---|---|
-| DDC | `src/hardware/ddc.cpp`中的`mixDdc()` |
-| 硬件通道 | `src/hardware/hw_channel.cpp`中的`HwChannel::process()`、`finishPdi()` |
-| 寄存器 | `src/hw/hw_regs.cpp`中的`writeCmd()`、`latchCmd()`、`pushPdi()` |
-| 数据合同 | `include/hw/hw_contract.h` |
-| PDI解码 | `src/integrator/pdi_decoder.cpp` |
-| 分量选择 | `src/integrator/loop_pdi_selector.cpp` |
+| PDI 100 | 仍由旧码率产生 |
+| 处理100后 | 软件生成apply=101的新命令 |
+| PDI 101 | 第一条使用新码率的硬件记录 |
+| 处理101时 | 软件确认command id后，才承认新码率已生效 |
 
-## 3.10 本章小结
+若测试从PDI 100就积分新码率，会产生精确1 ms的相位错误；长时间后它会表现为难以解释的码偏差。
 
-硬件只做确定的逐样点运算并每1 ms交付完整时间轴；软件只消费PDI。每条命令下一边界生效，
-必须由后续PDI确认。理解这个边界后，长相干、状态切换和恢复逻辑才不会被误认为硬件周期。
+## 3.11 对应源码
+
+| 内容 | 主要位置 |
+|---|---|
+| 硬件通道 | `src/hardware/hardware_channel.cpp` |
+| 寄存器和命令/PDI结构 | `include/hardware/` |
+| PDI校验 | `src/hardware/hw_contract.cpp`或同模块校验函数 |
+| PDI解码 | `src/pdi/pdi_decoder.cpp` |
+| 软件入口 | `src/tracking/track_engine.cpp::processPdi()` |
+
+## 3.12 本章检查清单
+
+- 原始I/Q是否进入软件观察器？不进入。
+- 硬件PDI周期是否随状态变成160 ms？不会，始终1 ms。
+- 软件命令是否能修改产生它的同一条PDI？不能，从下一PDI生效。
+- 普通command id变化是否必然清窗？不，只有不连续或不匹配才清。
 
 ---
 
-上一篇：[[../01-入门/02-从相关峰认识五个抽头|从相关峰认识五个抽头]]　下一篇：[[04-TrackEngine六阶段流水线|TrackEngine六阶段流水线]]
+上一篇：[[../01-入门/02-从相关峰认识五个抽头|第2章 从相关峰认识五个抽头]]　下一篇：[[04-TrackEngine六阶段流水线|第4章 TrackEngine六阶段流水线]]

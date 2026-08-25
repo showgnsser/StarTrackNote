@@ -69,8 +69,12 @@
     <text x="1355" y="216" text-anchor="middle" class="t">锁定后擦二次码</text>
   </g>
   <path d="M165 170 H195" class="arrow"/><path d="M340 170 H370" class="arrow"/><path d="M515 170 H545" class="arrow"/>
+  <text x="530" y="158" text-anchor="middle" class="t">左/右</text>
   <path d="M690 170 H720" class="arrow"/><path d="M865 170 H895" class="arrow"/><path d="M1040 170 H1070" class="arrow"/>
   <path d="M1215 170 H1245" class="arrow"/>
+  <path d="M443 230 V270 H1143 V230" class="arrow"/>
+  <rect x="665" y="252" width="260" height="25" rx="8" fill="#ffffff"/>
+  <text x="795" y="270" text-anchor="middle" class="t">中心decision：清旧窗后直接进入FineCheck</text>
   <path d="M968 230 V315 H443 V230" class="reset"/>
   <text x="700" y="337" text-anchor="middle" class="t" fill="#dc2626">未满三次：停止确认后清旧窗，从全新160 ms粗观察重新判断</text>
   <path d="M1143 230 V385 H443 V230" class="reset"/>
