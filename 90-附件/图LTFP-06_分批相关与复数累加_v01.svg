@@ -27,7 +27,7 @@
   <text class="title" x="120" y="301"
         font-family="SimSun, Songti SC, serif">资源池有效支路</text>
   <text class="text" x="120" y="332"
-        font-family="'Times New Roman', serif">3 / 4 / 3 / 11 results</text>
+        font-family="'Times New Roman', serif">5 / 6 / 5 / 11 results</text>
 
   <path class="line" d="M215,117 H300"/>
   <path class="line" d="M215,312 H260 V195 H300"/>
