@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="390" viewBox="0 0 1560 390">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#222222"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #222222; stroke-width: 1.5; }
+      .line { fill: none; stroke: #222222; stroke-width: 1.8; marker-end: url(#arrow); }
+      .title { font-size: 21px; fill: #111111; text-anchor: middle; }
+      .fmt { font-size: 17px; fill: #333333; text-anchor: middle; }
+      .caption { font-size: 18px; fill: #222222; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1560" height="390" fill="#ffffff"/>
+  <text x="22" y="32" class="caption" font-family="SimSun, Songti SC, serif">跟踪逻辑总体数据流</text>
+
+  <rect class="box" x="25" y="75" width="160" height="78"/>
+  <text class="title" x="105" y="107" font-family="SimSun, Songti SC, serif">量化复样点</text>
+  <text class="fmt" x="105" y="136" font-family="'Times New Roman', serif">s4 I/Q</text>
+
+  <path class="line" d="M185,114 H238"/>
+  <rect class="box" x="240" y="75" width="180" height="78"/>
+  <text class="title" x="330" y="107" font-family="SimSun, Songti SC, serif">载波下变频</text>
+  <text class="fmt" x="330" y="136" font-family="'Times New Roman', serif">DDC</text>
+
+  <path class="line" d="M420,114 H478"/>
+  <rect class="box" x="480" y="75" width="200" height="78"/>
+  <text class="title" x="580" y="107" font-family="SimSun, Songti SC, serif">多抽头相关调度</text>
+  <text class="fmt" x="580" y="136" font-family="'Times New Roman', serif">VE / E / P / L / VL</text>
+
+  <path class="line" d="M680,114 H738"/>
+  <rect class="box" x="740" y="75" width="170" height="78"/>
+  <text class="title" x="825" y="107" font-family="SimSun, Songti SC, serif">复数累加器</text>
+  <text class="fmt" x="825" y="136" font-family="'Times New Roman', serif">s24 I/Q</text>
+
+  <path class="line" d="M910,114 H968"/>
+  <rect class="box" x="970" y="75" width="180" height="78"/>
+  <text class="title" x="1060" y="107" font-family="SimSun, Songti SC, serif">PDI结果冻结</text>
+  <text class="fmt" x="1060" y="136" font-family="'Times New Roman', serif">≈ 1 ms</text>
+
+  <path class="line" d="M1150,114 H1208"/>
+  <rect class="box" x="1210" y="75" width="160" height="78"/>
+  <text class="title" x="1290" y="107" font-family="SimSun, Songti SC, serif">结果FIFO</text>
+  <text class="fmt" x="1290" y="136" font-family="'Times New Roman', serif">PDI</text>
+
+  <path class="line" d="M1370,114 H1428"/>
+  <rect class="box" x="1430" y="75" width="105" height="78"/>
+  <text class="title" x="1482" y="107" font-family="SimSun, Songti SC, serif">处理器</text>
+  <text class="fmt" x="1482" y="136" font-family="'Times New Roman', serif">Bus</text>
+
+  <rect class="box" x="240" y="245" width="180" height="78"/>
+  <text class="title" x="330" y="277" font-family="SimSun, Songti SC, serif">载波NCO</text>
+  <text class="fmt" x="330" y="306" font-family="'Times New Roman', serif">phase / step</text>
+  <path class="line" d="M330,245 V155"/>
+
+  <rect class="box" x="480" y="245" width="180" height="78"/>
+  <text class="title" x="570" y="277" font-family="SimSun, Songti SC, serif">码NCO</text>
+  <text class="fmt" x="570" y="306" font-family="'Times New Roman', serif">code phase / step</text>
+
+  <path class="line" d="M660,284 H718"/>
+  <rect class="box" x="720" y="245" width="210" height="78"/>
+  <text class="title" x="825" y="277" font-family="SimSun, Songti SC, serif">抽头地址与本地码</text>
+  <text class="fmt" x="825" y="306" font-family="'Times New Roman', serif">component / replica</text>
+  <path class="line" d="M825,245 V190 H580 V155"/>
+
+  <text x="1020" y="285" class="caption" font-family="SimSun, Songti SC, serif">上方：输入数据通路</text>
+  <text x="1020" y="316" class="caption" font-family="SimSun, Songti SC, serif">下方：本地信号生成通路</text>
+</svg>
