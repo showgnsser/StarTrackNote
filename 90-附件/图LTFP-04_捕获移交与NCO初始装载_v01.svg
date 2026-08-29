@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="390" viewBox="0 0 1400 390">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#222222"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #222222; stroke-width: 1.5; }
+      .line { fill: none; stroke: #222222; stroke-width: 1.8;
+              marker-end: url(#arrow); }
+      .title { font-size: 23px; fill: #111111; text-anchor: middle; }
+      .fmt { font-size: 18px; fill: #333333; text-anchor: middle; }
+      .caption { font-size: 18px; fill: #222222; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1400" height="390" fill="#ffffff"/>
+  <text x="22" y="32" class="caption"
+        font-family="SimSun, Songti SC, serif">捕获移交与NCO初始装载</text>
+
+  <rect class="box" x="25" y="75" width="250" height="105"/>
+  <text class="title" x="150" y="108"
+        font-family="SimSun, Songti SC, serif">移交描述符</text>
+  <text class="fmt" x="150" y="140"
+        font-family="'Times New Roman', serif">start_count / code Q16</text>
+  <text class="fmt" x="150" y="167"
+        font-family="'Times New Roman', serif">doppler s14</text>
+
+  <path class="line" d="M275,110 H348"/>
+  <rect class="box" x="350" y="65" width="250" height="90"/>
+  <text class="title" x="475" y="101"
+        font-family="SimSun, Songti SC, serif">码相位精度扩展</text>
+  <text class="fmt" x="475" y="133"
+        font-family="'Times New Roman', serif">uQ14.16 → uQ14.36</text>
+
+  <path class="line" d="M600,110 H688"/>
+  <rect class="box" x="690" y="65" width="240" height="90"/>
+  <text class="title" x="810" y="101"
+        font-family="SimSun, Songti SC, serif">码NCO初值</text>
+  <text class="fmt" x="810" y="133"
+        font-family="'Times New Roman', serif">phase uQ14.36</text>
+
+  <path class="line" d="M930,110 H1088"/>
+  <rect class="box" x="1090" y="65" width="280" height="310"/>
+  <text class="title" x="1230" y="133"
+        font-family="SimSun, Songti SC, serif">启动边界原子装载</text>
+  <text class="fmt" x="1230" y="173"
+        font-family="'Times New Roman', serif">carrier phase / step</text>
+  <text class="fmt" x="1230" y="207"
+        font-family="'Times New Roman', serif">code phase / step</text>
+  <text class="fmt" x="1230" y="241"
+        font-family="'Times New Roman', serif">clear PDI accumulators</text>
+  <text class="fmt" x="1230" y="275"
+        font-family="'Times New Roman', serif">start_count</text>
+
+  <path class="line" d="M150,180 V255 H418"/>
+  <rect class="box" x="420" y="210" width="235" height="90"/>
+  <text class="title" x="537" y="246"
+        font-family="SimSun, Songti SC, serif">载波步进换算</text>
+  <text class="fmt" x="537" y="278"
+        font-family="'Times New Roman', serif">doppler → u32 step</text>
+
+  <path class="line" d="M655,255 H1088"/>
+
+  <path class="line" d="M150,180 V345 H688"/>
+  <rect class="box" x="690" y="305" width="260" height="80"/>
+  <text class="title" x="820" y="338"
+        font-family="SimSun, Songti SC, serif">载波辅助码步进</text>
+  <text class="fmt" x="820" y="368"
+        font-family="'Times New Roman', serif">doppler → uQ0.36 step</text>
+
+  <path class="line" d="M950,345 H1088"/>
+</svg>

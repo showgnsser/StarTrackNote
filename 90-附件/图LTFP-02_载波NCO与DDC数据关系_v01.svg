@@ -30,8 +30,8 @@
 
   <path class="line" d="M850,115 H928"/>
   <rect class="box" x="930" y="70" width="190" height="90"/>
-  <text class="title" x="1025" y="106" font-family="SimSun, Songti SC, serif">s5饱和</text>
-  <text class="fmt" x="1025" y="139" font-family="'Times New Roman', serif">-16 ~ +15</text>
+  <text class="title" x="1025" y="106" font-family="SimSun, Songti SC, serif">s5输出</text>
+  <text class="fmt" x="1025" y="139" font-family="'Times New Roman', serif">-10 ~ +10</text>
 
   <path class="line" d="M1120,115 H1198"/>
   <rect class="box" x="1200" y="70" width="190" height="90"/>

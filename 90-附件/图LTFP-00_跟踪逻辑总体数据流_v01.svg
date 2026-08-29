@@ -36,7 +36,7 @@
   <path class="line" d="M910,114 H968"/>
   <rect class="box" x="970" y="75" width="180" height="78"/>
   <text class="title" x="1060" y="107" font-family="SimSun, Songti SC, serif">PDI结果冻结</text>
-  <text class="fmt" x="1060" y="136" font-family="'Times New Roman', serif">≈ 1 ms</text>
+  <text class="fmt" x="1060" y="136" font-family="'Times New Roman', serif">1 / 4 / 10 ms</text>
 
   <path class="line" d="M1150,114 H1208"/>
   <rect class="box" x="1210" y="75" width="160" height="78"/>
