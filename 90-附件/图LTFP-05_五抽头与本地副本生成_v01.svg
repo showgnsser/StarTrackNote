@@ -57,14 +57,14 @@
   <text class="title" x="142" y="306"
         font-family="SimSun, Songti SC, serif">抽头间距命令</text>
   <text class="fmt" x="142" y="338"
-        font-family="'Times New Roman', serif">sQ2.16</text>
+        font-family="'Times New Roman', serif">uQ1.10</text>
 
   <path class="line" d="M260,317 H358"/>
   <rect class="box" x="360" y="270" width="270" height="95"/>
   <text class="title" x="495" y="306"
         font-family="SimSun, Songti SC, serif">小数位对齐</text>
   <text class="fmt" x="495" y="338"
-        font-family="'Times New Roman', serif">Q16 &lt;&lt; 20 → Q36</text>
+        font-family="'Times New Roman', serif">Q10 &lt;&lt; 26 → Q36</text>
   <path class="line" d="M495,270 V177"/>
 
   <rect class="box" x="720" y="270" width="270" height="95"/>
