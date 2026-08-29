@@ -72,7 +72,7 @@
   <path class="line" d="M1190,195 V230"/>
   <rect class="box" x="1035" y="230" width="310" height="90"/>
   <text class="title" x="1190" y="266"
-        font-family="SimSun, Songti SC, serif">主码周期边界比较</text>
+        font-family="SimSun, Songti SC, serif">1 ms片段边界比较</text>
   <text class="fmt" x="1190" y="298"
         font-family="'Times New Roman', serif">phase_next ≥ boundary</text>
 </svg>

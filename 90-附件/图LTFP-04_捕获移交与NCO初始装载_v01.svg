@@ -21,16 +21,16 @@
   <text class="title" x="150" y="108"
         font-family="SimSun, Songti SC, serif">移交描述符</text>
   <text class="fmt" x="150" y="140"
-        font-family="'Times New Roman', serif">start_count / code Q16</text>
+        font-family="'Times New Roman', serif">start_count / code Q8 dump</text>
   <text class="fmt" x="150" y="167"
         font-family="'Times New Roman', serif">doppler s14</text>
 
   <path class="line" d="M275,110 H348"/>
   <rect class="box" x="350" y="65" width="250" height="90"/>
   <text class="title" x="475" y="101"
-        font-family="SimSun, Songti SC, serif">码相位精度扩展</text>
+        font-family="SimSun, Songti SC, serif">码相位坐标转换</text>
   <text class="fmt" x="475" y="133"
-        font-family="'Times New Roman', serif">uQ14.16 → uQ14.36</text>
+        font-family="'Times New Roman', serif">uQ15.8 dump → uQ14.36 chip</text>
 
   <path class="line" d="M600,110 H688"/>
   <rect class="box" x="690" y="65" width="240" height="90"/>
