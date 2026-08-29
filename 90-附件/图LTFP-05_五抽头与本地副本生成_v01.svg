@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="410" viewBox="0 0 1580 410">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#222222"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #222222; stroke-width: 1.5; }
+      .line { fill: none; stroke: #222222; stroke-width: 1.8;
+              marker-end: url(#arrow); }
+      .title { font-size: 22px; fill: #111111; text-anchor: middle; }
+      .fmt { font-size: 17px; fill: #333333; text-anchor: middle; }
+      .caption { font-size: 18px; fill: #222222; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1580" height="410" fill="#ffffff"/>
+  <text x="22" y="32" class="caption"
+        font-family="SimSun, Songti SC, serif">五抽头与本地副本生成</text>
+
+  <rect class="box" x="25" y="75" width="235" height="95"/>
+  <text class="title" x="142" y="111"
+        font-family="SimSun, Songti SC, serif">连续码相位</text>
+  <text class="fmt" x="142" y="143"
+        font-family="'Times New Roman', serif">uQ14.36</text>
+
+  <path class="line" d="M260,122 H358"/>
+  <rect class="box" x="360" y="70" width="270" height="105"/>
+  <text class="title" x="495" y="107"
+        font-family="SimSun, Songti SC, serif">五抽头相位生成</text>
+  <text class="fmt" x="495" y="139"
+        font-family="'Times New Roman', serif">VE / E / P / L / VL</text>
+
+  <path class="line" d="M630,122 H718"/>
+  <rect class="box" x="720" y="70" width="270" height="105"/>
+  <text class="title" x="855" y="107"
+        font-family="SimSun, Songti SC, serif">地址与小数相位</text>
+  <text class="fmt" x="855" y="139"
+        font-family="'Times New Roman', serif">u14 address / u36 fraction</text>
+
+  <path class="line" d="M990,122 H1078"/>
+  <rect class="box" x="1080" y="65" width="270" height="115"/>
+  <text class="title" x="1215" y="103"
+        font-family="SimSun, Songti SC, serif">本地副本生成</text>
+  <text class="fmt" x="1215" y="135"
+        font-family="'Times New Roman', serif">full / PRN-only</text>
+  <text class="fmt" x="1215" y="161"
+        font-family="'Times New Roman', serif">component 0 / 1</text>
+
+  <path class="line" d="M1350,122 H1408"/>
+  <rect class="box" x="1410" y="70" width="145" height="105"/>
+  <text class="title" x="1482" y="107"
+        font-family="SimSun, Songti SC, serif">本地符号</text>
+  <text class="fmt" x="1482" y="139"
+        font-family="'Times New Roman', serif">+1 / -1</text>
+
+  <rect class="box" x="25" y="270" width="235" height="95"/>
+  <text class="title" x="142" y="306"
+        font-family="SimSun, Songti SC, serif">抽头间距命令</text>
+  <text class="fmt" x="142" y="338"
+        font-family="'Times New Roman', serif">sQ2.16</text>
+
+  <path class="line" d="M260,317 H358"/>
+  <rect class="box" x="360" y="270" width="270" height="95"/>
+  <text class="title" x="495" y="306"
+        font-family="SimSun, Songti SC, serif">小数位对齐</text>
+  <text class="fmt" x="495" y="338"
+        font-family="'Times New Roman', serif">Q16 &lt;&lt; 20 → Q36</text>
+  <path class="line" d="M495,270 V177"/>
+
+  <rect class="box" x="720" y="270" width="270" height="95"/>
+  <text class="title" x="855" y="306"
+        font-family="SimSun, Songti SC, serif">分量主码RAM</text>
+  <text class="fmt" x="855" y="338"
+        font-family="'Times New Roman', serif">1 bit PRN sign</text>
+  <path class="line" d="M855,270 V220 H1150 V182"/>
+
+  <rect class="box" x="1080" y="270" width="270" height="95"/>
+  <text class="title" x="1215" y="306"
+        font-family="SimSun, Songti SC, serif">BOC半码片符号</text>
+  <text class="fmt" x="1215" y="338"
+        font-family="'Times New Roman', serif">fraction[35]</text>
+  <path class="line" d="M1215,270 V182"/>
+</svg>
