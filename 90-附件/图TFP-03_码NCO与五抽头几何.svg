@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+  <defs><style>.t{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#eef4ff}.h{font-size:24px;font-weight:700}.m{font-size:18px}.s{font-size:14px;fill:#bac8da}.line{stroke:#dce8f7;stroke-width:4}.tick{stroke:#68a7ff;stroke-width:3}.p{fill:#62d296}.e{fill:#75aaff}.v{fill:#bc8cff}.box{fill:#17243a;stroke:#5f9eff;stroke-width:2}</style></defs>
+  <rect width="1100" height="520" rx="22" fill="#0f1522"/><text x="550" y="42" text-anchor="middle" class="t h">uQ14.36码相位上的五抽头位置</text>
+  <rect x="65" y="82" width="970" height="105" rx="12" class="box"/><text x="95" y="116" class="t m">码NCO状态</text><text x="95" y="149" class="t s">整数地址u14 | 小数相位u36；步进uQ0.36 chip/sample；普通换字保持相位连续</text><text x="95" y="174" class="t s">sQ2.16抽头控制字左移20 bit后，与uQ14.36处于同一标度</text>
+  <line x1="130" y1="312" x2="970" y2="312" class="line"/>
+  <line x1="250" y1="280" x2="250" y2="344" class="tick"/><line x1="400" y1="280" x2="400" y2="344" class="tick"/><line x1="550" y1="270" x2="550" y2="354" class="tick"/><line x1="700" y1="280" x2="700" y2="344" class="tick"/><line x1="850" y1="280" x2="850" y2="344" class="tick"/>
+  <circle cx="250" cy="312" r="11" class="v"/><circle cx="400" cy="312" r="11" class="e"/><circle cx="550" cy="312" r="13" class="p"/><circle cx="700" cy="312" r="11" class="e"/><circle cx="850" cy="312" r="11" class="v"/>
+  <text x="250" y="375" text-anchor="middle" class="t m">VE</text><text x="400" y="375" text-anchor="middle" class="t m">E</text><text x="550" y="375" text-anchor="middle" class="t m">P</text><text x="700" y="375" text-anchor="middle" class="t m">L</text><text x="850" y="375" text-anchor="middle" class="t m">VL</text>
+  <text x="250" y="405" text-anchor="middle" class="t s">P − outer</text><text x="400" y="405" text-anchor="middle" class="t s">P − inner</text><text x="550" y="405" text-anchor="middle" class="t s">当前码相位</text><text x="700" y="405" text-anchor="middle" class="t s">P + inner</text><text x="850" y="405" text-anchor="middle" class="t s">P + outer</text>
+  <text x="550" y="468" text-anchor="middle" class="t s">所有加减使用带符号扩展；小于0时加主码周期，大于等于码长时减主码周期，不使用除法器</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640">
+  <defs><style>.t{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#eef4ff}.h{font-size:24px;font-weight:700}.m{font-size:17px}.s{font-size:14px}</style></defs>
+  <rect width="1000" height="640" rx="22" fill="#0f1522"/><text x="500" y="42" text-anchor="middle" class="t h">跟踪硬件定点化验证金字塔</text>
+  <polygon points="500,86 625,190 375,190" fill="#4d3a74" stroke="#c198ff" stroke-width="2"/><text x="500" y="145" text-anchor="middle" class="t m">资格矩阵</text><text x="500" y="171" text-anchor="middle" class="t s">弱信号/动态/耐久</text>
+  <polygon points="375,208 625,208 750,318 250,318" fill="#234b3f" stroke="#65ce9a" stroke-width="2"/><text x="500" y="257" text-anchor="middle" class="t m">StarGen真实IQ闭环</text><text x="500" y="285" text-anchor="middle" class="t s">精度、裁剪率、命令连续性</text>
+  <polygon points="250,336 750,336 865,448 135,448" fill="#223b60" stroke="#71aaff" stroke-width="2"/><text x="500" y="385" text-anchor="middle" class="t m">RTL与C++整数模型逐PDI对拍</text><text x="500" y="414" text-anchor="middle" class="t s">全部槽位、全部时标、异常与边界</text>
+  <polygon points="135,466 865,466 950,578 50,578" fill="#263040" stroke="#72839d" stroke-width="2"/><text x="500" y="511" text-anchor="middle" class="t m">模块级穷举与形式断言</text><text x="500" y="540" text-anchor="middle" class="t s">IQ×LUT、NCO回绕、抽头跨周期、8拍调度、s24饱和</text>
+  <text x="500" y="612" text-anchor="middle" class="t s">下层不通过不得进入上层；场景通过也不能反向证明某一级定点运算逐bit正确。</text>
+</svg>
