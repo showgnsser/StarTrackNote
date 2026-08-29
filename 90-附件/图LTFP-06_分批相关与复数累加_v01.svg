@@ -68,7 +68,7 @@
   <text class="text" x="1074" y="194"
         font-family="'Times New Roman', serif">pool 1: s20 I / Q</text>
   <text class="text" x="1074" y="226"
-        font-family="SimSun, Songti SC, serif">PDI统一符号扩展到s20</text>
+        font-family="SimSun, Songti SC, serif">PDI保持池内s18 / s20位宽</text>
 
   <text x="595" y="330" class="caption"
         font-family="SimSun, Songti SC, serif">不同采样率分别确定积分位宽，只保存实际使用的相关支路</text>
