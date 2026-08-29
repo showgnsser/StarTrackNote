@@ -28,7 +28,7 @@
   <path class="line" d="M275,110 H348"/>
   <rect class="box" x="350" y="65" width="250" height="90"/>
   <text class="title" x="475" y="101"
-        font-family="SimSun, Songti SC, serif">码相位坐标转换</text>
+        font-family="SimSun, Songti SC, serif">启动码相位装载</text>
   <text class="fmt" x="475" y="133"
         font-family="'Times New Roman', serif">uQ15.8 dump → uQ14.36 chip</text>
 
@@ -57,7 +57,7 @@
   <text class="title" x="537" y="246"
         font-family="SimSun, Songti SC, serif">载波步进换算</text>
   <text class="fmt" x="537" y="278"
-        font-family="'Times New Roman', serif">doppler → u32 step</text>
+        font-family="'Times New Roman', serif">doppler × Hc → u32 step</text>
 
   <path class="line" d="M655,255 H1088"/>
 
@@ -66,7 +66,7 @@
   <text class="title" x="820" y="338"
         font-family="SimSun, Songti SC, serif">载波辅助码步进</text>
   <text class="fmt" x="820" y="368"
-        font-family="'Times New Roman', serif">doppler → uQ0.36 step</text>
+        font-family="'Times New Roman', serif">Kcode0 + doppler × Ha</text>
 
   <path class="line" d="M950,345 H1088"/>
 </svg>
