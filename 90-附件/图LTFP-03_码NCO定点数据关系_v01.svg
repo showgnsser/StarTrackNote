@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="360" viewBox="0 0 1380 360">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#222222"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #222222; stroke-width: 1.5; }
+      .line { fill: none; stroke: #222222; stroke-width: 1.8;
+              marker-end: url(#arrow); }
+      .title { font-size: 23px; fill: #111111; text-anchor: middle; }
+      .fmt { font-size: 18px; fill: #333333; text-anchor: middle; }
+      .caption { font-size: 18px; fill: #222222; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1380" height="360" fill="#ffffff"/>
+  <text x="22" y="32" class="caption"
+        font-family="SimSun, Songti SC, serif">码NCO定点数据关系</text>
+
+  <rect class="box" x="25" y="75" width="185" height="88"/>
+  <text class="title" x="117" y="111"
+        font-family="SimSun, Songti SC, serif">连续码率</text>
+  <text class="fmt" x="117" y="142"
+        font-family="'Times New Roman', serif">chip/s</text>
+
+  <path class="line" d="M210,119 H298"/>
+  <rect class="box" x="300" y="75" width="245" height="88"/>
+  <text class="title" x="422" y="108"
+        font-family="SimSun, Songti SC, serif">配置端码步进换算</text>
+  <text class="fmt" x="422" y="140"
+        font-family="'Times New Roman', serif">round(fcode / fs × 2³⁶)</text>
+
+  <path class="line" d="M545,119 H633"/>
+  <rect class="box" x="635" y="75" width="190" height="88"/>
+  <text class="title" x="730" y="108"
+        font-family="SimSun, Songti SC, serif">码步进</text>
+  <text class="fmt" x="730" y="140"
+        font-family="'Times New Roman', serif">uQ0.36</text>
+
+  <path class="line" d="M825,119 H913"/>
+  <rect class="box" x="915" y="75" width="210" height="88"/>
+  <text class="title" x="1020" y="108"
+        font-family="SimSun, Songti SC, serif">50 bit加法器</text>
+  <text class="fmt" x="1020" y="140"
+        font-family="'Times New Roman', serif">phase + step</text>
+
+  <path class="line" d="M1125,119 H1193"/>
+  <rect class="box" x="1195" y="75" width="160" height="88"/>
+  <text class="title" x="1275" y="108"
+        font-family="SimSun, Songti SC, serif">码相位</text>
+  <text class="fmt" x="1275" y="140"
+        font-family="'Times New Roman', serif">uQ14.36</text>
+
+  <path d="M1275,163 V195 H810" fill="none" stroke="#222222"
+        stroke-width="1.8"/>
+  <path class="line" d="M1020,195 V165"/>
+
+  <path class="line" d="M810,195 V230"/>
+  <rect class="box" x="675" y="230" width="270" height="90"/>
+  <text class="title" x="810" y="266"
+        font-family="SimSun, Songti SC, serif">主码地址与小数相位</text>
+  <text class="fmt" x="810" y="298"
+        font-family="'Times New Roman', serif">u14 address / u36 fraction</text>
+
+  <path class="line" d="M675,275 H580"/>
+  <rect class="box" x="300" y="230" width="280" height="90"/>
+  <text class="title" x="440" y="266"
+        font-family="SimSun, Songti SC, serif">本地码与五抽头</text>
+  <text class="fmt" x="440" y="298"
+        font-family="'Times New Roman', serif">VE / E / P / L / VL</text>
+
+  <path class="line" d="M1190,195 V230"/>
+  <rect class="box" x="1035" y="230" width="310" height="90"/>
+  <text class="title" x="1190" y="266"
+        font-family="SimSun, Songti SC, serif">1 ms片段边界比较</text>
+  <text class="fmt" x="1190" y="298"
+        font-family="'Times New Roman', serif">phase_next ≥ boundary</text>
+</svg>
