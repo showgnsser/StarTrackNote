@@ -15,7 +15,7 @@
   </defs>
   <rect x="0" y="0" width="1240" height="430" fill="#ffffff"/>
   <text x="22" y="30" class="caption"
-        font-family="SimSun, Songti SC, serif">分批相关与复数累加</text>
+        font-family="SimSun, Songti SC, serif">相关支路与1 ms相干积分</text>
 
   <rect class="box" x="25" y="75" width="190" height="85"/>
   <text class="title" x="120" y="109"
@@ -25,9 +25,9 @@
 
   <rect class="box" x="25" y="265" width="190" height="95"/>
   <text class="title" x="120" y="301"
-        font-family="SimSun, Songti SC, serif">本地码符号</text>
+        font-family="SimSun, Songti SC, serif">资源池有效支路</text>
   <text class="text" x="120" y="332"
-        font-family="'Times New Roman', serif">4 lanes, +1 / -1</text>
+        font-family="'Times New Roman', serif">3 / 4 / 3 / 11 results</text>
 
   <path class="line" d="M215,117 H300"/>
   <path class="line" d="M215,312 H260 V195 H300"/>
@@ -41,35 +41,35 @@
 
   <rect class="box" x="302" y="275" width="210" height="90"/>
   <text class="title" x="407" y="310"
-        font-family="SimSun, Songti SC, serif">抽头批次</text>
+        font-family="SimSun, Songti SC, serif">池内支路调度</text>
   <text class="text" x="407" y="341"
-        font-family="'Times New Roman', serif">VE → E → P → L → VL</text>
+        font-family="SimSun, Songti SC, serif">数据P / 导频码抽头</text>
 
   <path class="line" d="M512,157 H595"/>
   <path class="line" d="M512,320 H555 V235 H595"/>
   <rect class="box" x="597" y="80" width="270" height="190"/>
   <text class="title" x="732" y="116"
-        font-family="SimSun, Songti SC, serif">4条复数相关lane</text>
+        font-family="SimSun, Songti SC, serif">最多3条复数相关lane</text>
   <text class="text" x="732" y="148"
-        font-family="SimSun, Songti SC, serif">数据 / 调制副本</text>
+        font-family="SimSun, Songti SC, serif">资源池0：1条</text>
   <text class="text" x="732" y="178"
-        font-family="SimSun, Songti SC, serif">数据 / PRN-only</text>
+        font-family="SimSun, Songti SC, serif">资源池1：最多2条</text>
   <text class="text" x="732" y="208"
-        font-family="SimSun, Songti SC, serif">导频 / 调制副本</text>
+        font-family="SimSun, Songti SC, serif">资源池2：1条</text>
   <text class="text" x="732" y="238"
-        font-family="SimSun, Songti SC, serif">导频 / PRN-only</text>
+        font-family="SimSun, Songti SC, serif">资源池3：最多3条</text>
 
   <path class="line" d="M867,175 H935"/>
   <rect class="box" x="937" y="90" width="275" height="170"/>
   <text class="title" x="1074" y="128"
-        font-family="SimSun, Songti SC, serif">20组复累加状态</text>
+        font-family="SimSun, Songti SC, serif">四类相干积分RAM</text>
   <text class="text" x="1074" y="162"
-        font-family="'Times New Roman', serif">s24 I / Q</text>
+        font-family="'Times New Roman', serif">pool 0 / 2 / 3: s18 I / Q</text>
   <text class="text" x="1074" y="194"
-        font-family="SimSun, Songti SC, serif">2分量×2副本×5抽头</text>
+        font-family="'Times New Roman', serif">pool 1: s20 I / Q</text>
   <text class="text" x="1074" y="226"
-        font-family="SimSun, Songti SC, serif">PDI边界冻结输出</text>
+        font-family="SimSun, Songti SC, serif">PDI统一符号扩展到s20</text>
 
   <text x="595" y="330" class="caption"
-        font-family="SimSun, Songti SC, serif">同一样点完成全部有效批次后，两支NCO才推进</text>
+        font-family="SimSun, Songti SC, serif">不同采样率分别确定积分位宽，只保存实际使用的相关支路</text>
 </svg>

@@ -15,7 +15,7 @@
   </defs>
   <rect x="0" y="0" width="1580" height="410" fill="#ffffff"/>
   <text x="22" y="32" class="caption"
-        font-family="SimSun, Songti SC, serif">五抽头与本地副本生成</text>
+        font-family="SimSun, Songti SC, serif">本地码副本与码抽头</text>
 
   <rect class="box" x="25" y="75" width="235" height="95"/>
   <text class="title" x="142" y="111"
@@ -40,9 +40,9 @@
   <path class="line" d="M990,122 H1078"/>
   <rect class="box" x="1080" y="65" width="270" height="115"/>
   <text class="title" x="1215" y="103"
-        font-family="SimSun, Songti SC, serif">本地副本生成</text>
+        font-family="SimSun, Songti SC, serif">有效支路生成</text>
   <text class="fmt" x="1215" y="135"
-        font-family="'Times New Roman', serif">full / PRN-only</text>
+        font-family="'Times New Roman', serif">data P / pilot taps</text>
   <text class="fmt" x="1215" y="161"
         font-family="'Times New Roman', serif">component 0 / 1</text>
 
