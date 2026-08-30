@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="880" viewBox="0 0 1500 880">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5"
+            orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#202020"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #202020; stroke-width: 1.8; }
+      .region { fill: none; stroke: #606060; stroke-width: 1.4; stroke-dasharray: 8 6; }
+      .wire { fill: none; stroke: #202020; stroke-width: 1.8; }
+      .line { fill: none; stroke: #202020; stroke-width: 1.8; marker-end: url(#arrow); }
+      .title { font-size: 21px; fill: #111111; text-anchor: middle; }
+      .text { font-size: 18px; fill: #202020; text-anchor: middle; }
+      .label { font-size: 18px; fill: #202020; }
+      .small { font-size: 16px; fill: #303030; text-anchor: middle; }
+      .symbol { font-size: 25px; fill: #111111; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1500" height="880" fill="#ffffff"/>
+
+  <rect class="region" x="15" y="20" width="930" height="745"/>
+  <rect class="region" x="975" y="20" width="510" height="745"/>
+  <text class="label" x="34" y="52" font-family="SimSun, Songti SC, serif">硬件相关通道</text>
+  <text class="label" x="994" y="52" font-family="SimSun, Songti SC, serif">软件跟踪环</text>
+
+  <rect class="box" x="32" y="220" width="118" height="80"/>
+  <text class="title" x="91" y="253" font-family="SimSun, Songti SC, serif">ADC</text>
+  <text class="text" x="91" y="282" font-family="'Times New Roman', serif">I / Q</text>
+  <path class="line" d="M150,260 H165"/>
+
+  <circle class="box" cx="190" cy="260" r="25"/>
+  <text class="symbol" x="190" y="260" font-family="'Times New Roman', serif">×</text>
+  <text class="small" x="190" y="315" font-family="SimSun, Songti SC, serif">复数混频</text>
+  <path class="line" d="M215,260 H390"/>
+  <text class="small" x="300" y="246" font-family="SimSun, Songti SC, serif">基带I/Q</text>
+
+  <rect class="box" x="60" y="620" width="220" height="90"/>
+  <text class="title" x="170" y="657" font-family="SimSun, Songti SC, serif">载波NCO</text>
+  <text class="text" x="170" y="691" font-family="'Times New Roman', serif">cos / sin</text>
+  <path class="line" d="M170,620 V520 H190 V285"/>
+
+  <rect class="box" x="340" y="60" width="580" height="485"/>
+  <text class="title" x="630" y="96" font-family="SimSun, Songti SC, serif">单分量五抽头相关阵列</text>
+  <path class="wire" d="M390,118 V495"/>
+  <text class="small" x="390" y="115" font-family="SimSun, Songti SC, serif">基带总线</text>
+
+  <path class="line" d="M390,145 H485"/>
+  <circle class="box" cx="505" cy="145" r="18"/>
+  <text class="symbol" x="505" y="145" font-family="'Times New Roman', serif">×</text>
+  <text class="small" x="505" y="176" font-family="'Times New Roman', serif">cVE</text>
+  <path class="line" d="M523,145 H555"/>
+  <rect class="box" x="557" y="115" width="170" height="60"/>
+  <text class="text" x="642" y="152" font-family="SimSun, Songti SC, serif">∫ 1 ms</text>
+  <path class="line" d="M727,145 H850"/>
+  <text class="text" x="790" y="133" font-family="'Times New Roman', serif">ZVE</text>
+
+  <path class="line" d="M390,225 H485"/>
+  <circle class="box" cx="505" cy="225" r="18"/>
+  <text class="symbol" x="505" y="225" font-family="'Times New Roman', serif">×</text>
+  <text class="small" x="505" y="256" font-family="'Times New Roman', serif">cE</text>
+  <path class="line" d="M523,225 H555"/>
+  <rect class="box" x="557" y="195" width="170" height="60"/>
+  <text class="text" x="642" y="232" font-family="SimSun, Songti SC, serif">∫ 1 ms</text>
+  <path class="line" d="M727,225 H850"/>
+  <text class="text" x="790" y="213" font-family="'Times New Roman', serif">ZE</text>
+
+  <path class="line" d="M390,305 H485"/>
+  <circle class="box" cx="505" cy="305" r="18"/>
+  <text class="symbol" x="505" y="305" font-family="'Times New Roman', serif">×</text>
+  <text class="small" x="505" y="336" font-family="'Times New Roman', serif">cP</text>
+  <path class="line" d="M523,305 H555"/>
+  <rect class="box" x="557" y="275" width="170" height="60"/>
+  <text class="text" x="642" y="312" font-family="SimSun, Songti SC, serif">∫ 1 ms</text>
+  <path class="line" d="M727,305 H850"/>
+  <text class="text" x="790" y="293" font-family="'Times New Roman', serif">ZP</text>
+
+  <path class="line" d="M390,385 H485"/>
+  <circle class="box" cx="505" cy="385" r="18"/>
+  <text class="symbol" x="505" y="385" font-family="'Times New Roman', serif">×</text>
+  <text class="small" x="505" y="416" font-family="'Times New Roman', serif">cL</text>
+  <path class="line" d="M523,385 H555"/>
+  <rect class="box" x="557" y="355" width="170" height="60"/>
+  <text class="text" x="642" y="392" font-family="SimSun, Songti SC, serif">∫ 1 ms</text>
+  <path class="line" d="M727,385 H850"/>
+  <text class="text" x="790" y="373" font-family="'Times New Roman', serif">ZL</text>
+
+  <path class="line" d="M390,465 H485"/>
+  <circle class="box" cx="505" cy="465" r="18"/>
+  <text class="symbol" x="505" y="465" font-family="'Times New Roman', serif">×</text>
+  <text class="small" x="505" y="496" font-family="'Times New Roman', serif">cVL</text>
+  <path class="line" d="M523,465 H555"/>
+  <rect class="box" x="557" y="435" width="170" height="60"/>
+  <text class="text" x="642" y="472" font-family="SimSun, Songti SC, serif">∫ 1 ms</text>
+  <path class="line" d="M727,465 H850"/>
+  <text class="text" x="790" y="453" font-family="'Times New Roman', serif">ZVL</text>
+
+  <path class="line" d="M850,305 H950 V190 H1000"/>
+  <path class="line" d="M850,465 H960 V420 H1000"/>
+
+  <rect class="box" x="350" y="600" width="180" height="85"/>
+  <text class="title" x="440" y="635" font-family="SimSun, Songti SC, serif">码NCO</text>
+  <text class="text" x="440" y="668" font-family="SimSun, Songti SC, serif">Prompt码相位</text>
+  <path class="line" d="M530,642 H565"/>
+  <rect class="box" x="567" y="588" width="250" height="108"/>
+  <text class="title" x="692" y="625" font-family="SimSun, Songti SC, serif">五抽头PRN发生器</text>
+  <text class="text" x="692" y="660" font-family="'Times New Roman', serif">VE / E / P / L / VL</text>
+  <path class="line" d="M692,588 V545"/>
+
+  <text class="title" x="1025" y="92" font-family="SimSun, Songti SC, serif">载波环</text>
+  <rect class="box" x="1000" y="145" width="190" height="90"/>
+  <text class="title" x="1095" y="180" font-family="SimSun, Songti SC, serif">载波鉴频/鉴相器</text>
+  <text class="text" x="1095" y="213" font-family="SimSun, Songti SC, serif">频率或相位误差</text>
+  <path class="line" d="M1190,190 H1238"/>
+  <rect class="box" x="1240" y="145" width="210" height="90"/>
+  <text class="title" x="1345" y="180" font-family="SimSun, Songti SC, serif">载波环路滤波器</text>
+  <text class="text" x="1345" y="213" font-family="SimSun, Songti SC, serif">载波频率控制量</text>
+
+  <text class="title" x="1020" y="338" font-family="SimSun, Songti SC, serif">码环</text>
+  <rect class="box" x="1000" y="375" width="190" height="90"/>
+  <text class="title" x="1095" y="410" font-family="SimSun, Songti SC, serif">码环鉴别器</text>
+  <text class="text" x="1095" y="443" font-family="SimSun, Songti SC, serif">码相位误差</text>
+  <path class="line" d="M1190,420 H1238"/>
+  <rect class="box" x="1240" y="375" width="210" height="90"/>
+  <text class="title" x="1345" y="410" font-family="SimSun, Songti SC, serif">码环环路滤波器</text>
+  <text class="text" x="1345" y="443" font-family="SimSun, Songti SC, serif">剩余码率控制量</text>
+
+  <path class="wire" d="M1450,190 H1470 V760 H170"/>
+  <path class="line" d="M170,760 V710"/>
+  <text class="small" x="780" y="750" font-family="SimSun, Songti SC, serif">载波NCO反馈</text>
+
+  <path class="line" d="M1450,190 H1460 V569 H1445"/>
+  <rect class="box" x="1245" y="530" width="200" height="78"/>
+  <text class="title" x="1345" y="563" font-family="SimSun, Songti SC, serif">载波辅助比例</text>
+  <text class="text" x="1345" y="591" font-family="SimSun, Songti SC, serif">载波多普勒→码率</text>
+
+  <path class="line" d="M1450,420 H1462"/>
+  <circle class="box" cx="1476" cy="420" r="16"/>
+  <text class="symbol" x="1476" y="420" font-family="'Times New Roman', serif">+</text>
+  <path class="line" d="M1445,569 H1476 V436"/>
+  <path class="wire" d="M1492,420 V720 H440"/>
+  <path class="line" d="M440,720 V685"/>
+  <text class="small" x="900" y="710" font-family="SimSun, Songti SC, serif">码NCO反馈＝载波辅助＋码环改正</text>
+</svg>
