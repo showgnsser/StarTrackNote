@@ -31,7 +31,7 @@
   <path class="line" d="M680,114 H738"/>
   <rect class="box" x="740" y="75" width="170" height="78"/>
   <text class="title" x="825" y="107" font-family="SimSun, Songti SC, serif">复数累加器</text>
-  <text class="fmt" x="825" y="136" font-family="'Times New Roman', serif">s24 I/Q</text>
+  <text class="fmt" x="825" y="136" font-family="'Times New Roman', serif">s18 / s20 I/Q</text>
 
   <path class="line" d="M910,114 H968"/>
   <rect class="box" x="970" y="75" width="180" height="78"/>

@@ -26,8 +26,8 @@
     <text x="315" y="151" font-size="18">R0</text>
     <text x="520" y="141" font-size="18">R1</text><text x="520" y="164" font-size="17">完整1 ms</text>
     <text x="840" y="141" font-size="18">R2</text><text x="840" y="164" font-size="17">完整1 ms</text>
-    <text x="180" y="218" font-size="17">R0：4.70～5.00 ms</text><text x="180" y="242" font-size="17">2304 sample</text>
-    <text x="520" y="218" font-size="17">R1：5.00～6.00 ms</text><text x="520" y="242" font-size="17">7680 sample</text>
-    <text x="860" y="218" font-size="17">R2：6.00～7.00 ms</text><text x="860" y="242" font-size="17">7680 sample</text>
+    <text x="180" y="218" font-size="17">R0：4.70～5.00 ms</text><text x="180" y="242" font-size="17">2304个ADC样点</text>
+    <text x="520" y="218" font-size="17">R1：5.00～6.00 ms</text><text x="520" y="242" font-size="17">7680个ADC样点</text>
+    <text x="860" y="218" font-size="17">R2：6.00～7.00 ms</text><text x="860" y="242" font-size="17">7680个ADC样点</text>
   </g>
 </svg>
