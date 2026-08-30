@@ -15,7 +15,7 @@
   </defs>
   <rect x="0" y="0" width="1580" height="410" fill="#ffffff"/>
   <text x="22" y="32" class="caption"
-        font-family="SimSun, Songti SC, serif">本地码副本与码抽头</text>
+        font-family="SimSun, Songti SC, serif">本地伪码与相关抽头生成</text>
 
   <rect class="box" x="25" y="75" width="235" height="95"/>
   <text class="title" x="142" y="111"

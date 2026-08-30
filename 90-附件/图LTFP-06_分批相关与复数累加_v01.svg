@@ -15,7 +15,7 @@
   </defs>
   <rect x="0" y="0" width="1240" height="430" fill="#ffffff"/>
   <text x="22" y="30" class="caption"
-        font-family="SimSun, Songti SC, serif">相关支路与1 ms相干积分</text>
+        font-family="SimSun, Songti SC, serif">多支路相关与预检测积分</text>
 
   <rect class="box" x="25" y="75" width="190" height="85"/>
   <text class="title" x="120" y="109"

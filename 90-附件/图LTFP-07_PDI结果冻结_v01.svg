@@ -22,7 +22,7 @@
     <text x="715" y="133">1 ms边界</text>
     <text x="970" y="64">否：S写回</text>
     <text x="970" y="94">当前累加状态</text>
-    <text x="970" y="194">是：S冻结为</text>
+    <text x="970" y="194">是：S作为</text>
     <text x="970" y="224">本条PDI结果</text>
     <text x="715" y="319">累加状态清零</text>
     <text x="715" y="349">下一样点开始新PDI</text>
