@@ -12,14 +12,13 @@
     <line x1="360" y1="66" x2="360" y2="90"/>
     <line x1="680" y1="66" x2="680" y2="90"/>
     <line x1="1000" y1="66" x2="1000" y2="90"/>
-    <line x1="270" y1="38" x2="270" y2="58" marker-end="url(#arrow)"/>
+    <line x1="270" y1="36" x2="270" y2="58" marker-end="url(#arrow)"/>
     <rect x="270" y="116" width="90" height="58"/>
     <rect x="360" y="116" width="320" height="58"/>
     <rect x="680" y="116" width="320" height="58"/>
   </g>
   <g fill="#000000" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" text-anchor="middle">
-    <text x="270" y="20" font-size="18">P_load = 4808.100780 chip</text>
-    <text x="270" y="41" font-size="16">约4.700001 ms</text>
+    <text x="270" y="24" font-size="18">P_load ≈ 4808.10 chip（4.70 ms）</text>
     <text x="60" y="108" font-size="17">4092 chip</text>
     <text x="360" y="108" font-size="17">5115 chip</text>
     <text x="680" y="108" font-size="17">6138 chip</text>
@@ -27,8 +26,8 @@
     <text x="315" y="151" font-size="18">R0</text>
     <text x="520" y="141" font-size="18">R1</text><text x="520" y="164" font-size="17">完整1 ms</text>
     <text x="840" y="141" font-size="18">R2</text><text x="840" y="164" font-size="17">完整1 ms</text>
-    <text x="180" y="218" font-size="17">R0：4.7～5.0 ms</text><text x="180" y="242" font-size="17">2304 sample</text>
-    <text x="520" y="218" font-size="17">R1：5.0～6.0 ms</text><text x="520" y="242" font-size="17">7680 sample</text>
-    <text x="860" y="218" font-size="17">R2：6.0～7.0 ms</text><text x="860" y="242" font-size="17">7680 sample</text>
+    <text x="180" y="218" font-size="17">R0：4.70～5.00 ms</text><text x="180" y="242" font-size="17">2304 sample</text>
+    <text x="520" y="218" font-size="17">R1：5.00～6.00 ms</text><text x="520" y="242" font-size="17">7680 sample</text>
+    <text x="860" y="218" font-size="17">R2：6.00～7.00 ms</text><text x="860" y="242" font-size="17">7680 sample</text>
   </g>
 </svg>
