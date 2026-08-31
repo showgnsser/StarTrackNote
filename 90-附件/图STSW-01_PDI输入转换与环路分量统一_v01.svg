@@ -1,69 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
+<svg xmlns="http://www.w3.org/2000/svg" width="1740" height="250" viewBox="0 0 1740 250">
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L10,5 L0,10 Z" fill="#222222"/>
     </marker>
     <style>
       .box { fill: #ffffff; stroke: #222222; stroke-width: 1.6; }
-      .output { fill: #f6f6f6; stroke: #222222; stroke-width: 1.6; }
       .line { fill: none; stroke: #222222; stroke-width: 1.8; marker-end: url(#arrow); }
-      .trunk { fill: none; stroke: #222222; stroke-width: 1.8; }
       .text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 21px; fill: #111111; text-anchor: middle; }
-      .sub { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 16px; fill: #333333; text-anchor: middle; }
-      .lane { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 17px; fill: #333333; }
     </style>
   </defs>
-  <rect x="0" y="0" width="1600" height="600" fill="#ffffff"/>
+  <rect x="0" y="0" width="1740" height="250" fill="#ffffff"/>
 
-  <rect class="box" x="25" y="215" width="190" height="170"/>
-  <text class="text" x="120" y="252"><tspan x="120">1 ms PDI输入</tspan></text>
-  <text class="sub" x="120" y="288"><tspan x="120">时间 / 命令 / NCO</tspan><tspan x="120" dy="27">分量 / 副本 / 抽头</tspan><tspan x="120" dy="27">完整性标志</tspan></text>
+  <rect class="box" x="25" y="80" width="160" height="90"/>
+  <text class="text" x="105" y="115"><tspan x="105">1 ms</tspan><tspan x="105" dy="29">PDI输入</tspan></text>
 
-  <path class="trunk" d="M215,300 H265 M265,105 V495"/>
+  <path class="line" d="M185,125 H220"/>
+  <rect class="box" x="220" y="80" width="175" height="90"/>
+  <text class="text" x="307.5" y="115"><tspan x="307.5">历元与命令</tspan><tspan x="307.5" dy="29">一致性检查</tspan></text>
 
-  <text class="lane" x="285" y="70">时间与NCO参考</text>
-  <path class="line" d="M265,115 H318"/>
-  <rect class="box" x="320" y="80" width="190" height="70"/>
-  <text class="text" x="415" y="108"><tspan x="415">时间字段</tspan><tspan x="415" dy="27">原样传递</tspan></text>
-  <path class="line" d="M510,115 H563"/>
-  <rect class="box" x="565" y="80" width="190" height="70"/>
-  <text class="text" x="660" y="108"><tspan x="660">NCO步进</tspan><tspan x="660" dy="27">换算为Hz</tspan></text>
-  <path class="line" d="M755,115 H808"/>
-  <rect class="box" x="810" y="80" width="190" height="70"/>
-  <text class="text" x="905" y="108"><tspan x="905">首样点相位</tspan><tspan x="905" dy="27">推进到PDI中心</tspan></text>
-  <path class="line" d="M1000,115 H1268 V225 H1308"/>
+  <path class="line" d="M395,125 H435"/>
+  <rect class="box" x="435" y="80" width="175" height="90"/>
+  <text class="text" x="522.5" y="115"><tspan x="522.5">NCO频率</tspan><tspan x="522.5" dy="29">中心相位换算</tspan></text>
 
-  <text class="lane" x="285" y="230">复相关与默认环路分量</text>
-  <path class="line" d="M265,285 H318"/>
-  <rect class="box" x="320" y="250" width="190" height="70"/>
-  <text class="text" x="415" y="278"><tspan x="415">相关整数</tspan><tspan x="415" dy="27">无损转为浮点</tspan></text>
-  <path class="line" d="M510,285 H563"/>
-  <rect class="box" x="565" y="250" width="190" height="70"/>
-  <text class="text" x="660" y="278"><tspan x="660">选择默认</tspan><tspan x="660" dy="27">闭环分量</tspan></text>
-  <path class="line" d="M755,285 H808"/>
-  <rect class="box" x="810" y="250" width="190" height="70"/>
-  <text class="text" x="905" y="278"><tspan x="905">固定载波相位</tspan><tspan x="905" dy="27">五抽头统一旋转</tspan></text>
-  <path class="line" d="M1000,285 H1053"/>
-  <rect class="box" x="1055" y="250" width="190" height="70"/>
-  <text class="text" x="1150" y="278"><tspan x="1150">保留完整矩阵</tspan><tspan x="1150" dy="27">建立五抽头镜像</tspan></text>
-  <path class="line" d="M1245,285 H1308"/>
+  <path class="line" d="M610,125 H650"/>
+  <rect class="box" x="650" y="80" width="175" height="90"/>
+  <text class="text" x="737.5" y="115"><tspan x="737.5">相关整数</tspan><tspan x="737.5" dy="29">无损转为浮点</tspan></text>
 
-  <text class="lane" x="285" y="400">PDI完整性</text>
-  <path class="line" d="M265,455 H318"/>
-  <rect class="box" x="320" y="420" width="190" height="70"/>
-  <text class="text" x="415" y="448"><tspan x="415">硬件错误</tspan><tspan x="415" dy="27">标志汇总</tspan></text>
-  <path class="line" d="M510,455 H563"/>
-  <rect class="box" x="565" y="420" width="190" height="70"/>
-  <text class="text" x="660" y="448"><tspan x="660">PDI历元</tspan><tspan x="660" dy="27">连续检查</tspan></text>
-  <path class="line" d="M755,455 H808"/>
-  <rect class="box" x="810" y="420" width="190" height="70"/>
-  <text class="text" x="905" y="448"><tspan x="905">实际命令号</tspan><tspan x="905" dy="27">一致性检查</tspan></text>
-  <path class="line" d="M1000,455 H1053"/>
-  <rect class="box" x="1055" y="420" width="190" height="70"/>
-  <text class="text" x="1150" y="448"><tspan x="1150">形成PDI</tspan><tspan x="1150" dy="27">完整性</tspan></text>
-  <path class="line" d="M1245,455 H1268 V375 H1308"/>
+  <path class="line" d="M825,125 H865"/>
+  <rect class="box" x="865" y="80" width="175" height="90"/>
+  <text class="text" x="952.5" y="115"><tspan x="952.5">选择默认</tspan><tspan x="952.5" dy="29">闭环分量</tspan></text>
 
-  <rect class="output" x="1310" y="170" width="260" height="250"/>
-  <text class="text" x="1440" y="212"><tspan x="1440">统一软件PDI</tspan></text>
-  <text class="sub" x="1440" y="255"><tspan x="1440">时间与NCO参考</tspan><tspan x="1440" dy="34">完整相关矩阵</tspan><tspan x="1440" dy="34">默认环路五抽头</tspan><tspan x="1440" dy="34">PDI完整性</tspan></text>
+  <path class="line" d="M1040,125 H1080"/>
+  <rect class="box" x="1080" y="80" width="175" height="90"/>
+  <text class="text" x="1167.5" y="115"><tspan x="1167.5">固定载波相位</tspan><tspan x="1167.5" dy="29">五抽头统一旋转</tspan></text>
+
+  <path class="line" d="M1255,125 H1295"/>
+  <rect class="box" x="1295" y="80" width="175" height="90"/>
+  <text class="text" x="1382.5" y="115"><tspan x="1382.5">合并错误标志</tspan><tspan x="1382.5" dy="29">形成完整性</tspan></text>
+
+  <path class="line" d="M1470,125 H1510"/>
+  <rect class="box" x="1510" y="80" width="200" height="90"/>
+  <text class="text" x="1610" y="115"><tspan x="1610">统一软件PDI</tspan><tspan x="1610" dy="29">送入同步与积分</tspan></text>
 </svg>

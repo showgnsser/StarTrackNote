@@ -1,65 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="470" viewBox="0 0 1760 470">
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="250" viewBox="0 0 1760 250">
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L10,5 L0,10 Z" fill="#222222"/>
     </marker>
     <style>
       .box { fill: #ffffff; stroke: #222222; stroke-width: 1.6; }
-      .result { fill: #f6f6f6; stroke: #222222; stroke-width: 1.6; }
       .line { fill: none; stroke: #222222; stroke-width: 1.8; marker-end: url(#arrow); }
-      .bus { fill: none; stroke: #555555; stroke-width: 1.5; }
       .text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 21px; fill: #111111; text-anchor: middle; }
-      .sub { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 16px; fill: #333333; text-anchor: middle; }
-      .label { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 17px; fill: #333333; }
     </style>
   </defs>
-  <rect x="0" y="0" width="1760" height="470" fill="#ffffff"/>
+  <rect x="0" y="0" width="1760" height="250" fill="#ffffff"/>
 
   <rect class="box" x="25" y="80" width="140" height="90"/>
   <text class="text" x="95" y="115"><tspan x="95">1 ms</tspan><tspan x="95" dy="29">PDI输入</tspan></text>
 
-  <path class="line" d="M165,125 H193"/>
+  <path class="line" d="M165,125 H195"/>
   <rect class="box" x="195" y="80" width="160" height="90"/>
-  <text class="text" x="275" y="115"><tspan x="275">时间轴检查</tspan><tspan x="275" dy="29">数值转换</tspan></text>
+  <text class="text" x="275" y="115"><tspan x="275">输入检查</tspan><tspan x="275" dy="29">数值转换</tspan></text>
 
-  <path class="line" d="M355,125 H383"/>
+  <path class="line" d="M355,125 H385"/>
   <rect class="box" x="385" y="80" width="155" height="90"/>
   <text class="text" x="462.5" y="115"><tspan x="462.5">同步</tspan><tspan x="462.5" dy="29">符号擦除</tspan></text>
 
-  <path class="line" d="M540,125 H568"/>
+  <path class="line" d="M540,125 H570"/>
   <rect class="box" x="570" y="80" width="155" height="90"/>
   <text class="text" x="647.5" y="115"><tspan x="647.5">相干积分</tspan><tspan x="647.5" dy="29">非相干积累</tspan></text>
 
-  <path class="line" d="M725,125 H753"/>
+  <path class="line" d="M725,125 H755"/>
   <rect class="box" x="755" y="80" width="185" height="90"/>
   <text class="text" x="847.5" y="115"><tspan x="847.5">频率 / 相位 / 码</tspan><tspan x="847.5" dy="29">C/N0观察</tspan></text>
 
-  <path class="line" d="M940,125 H968"/>
+  <path class="line" d="M940,125 H970"/>
   <rect class="box" x="970" y="80" width="160" height="90"/>
   <text class="text" x="1050" y="115"><tspan x="1050">载波环</tspan><tspan x="1050" dy="29">载波辅助码环</tspan></text>
 
-  <path class="line" d="M1130,125 H1158"/>
+  <path class="line" d="M1130,125 H1160"/>
   <rect class="box" x="1160" y="80" width="155" height="90"/>
   <text class="text" x="1237.5" y="115"><tspan x="1237.5">环路监测</tspan><tspan x="1237.5" dy="29">稳定性证据</tspan></text>
 
-  <path class="line" d="M1315,125 H1343"/>
+  <path class="line" d="M1315,125 H1345"/>
   <rect class="box" x="1345" y="80" width="155" height="90"/>
   <text class="text" x="1422.5" y="115"><tspan x="1422.5">状态策略</tspan><tspan x="1422.5" dy="29">迟滞与确认</tspan></text>
 
-  <path class="line" d="M1500,125 H1528"/>
+  <path class="line" d="M1500,125 H1530"/>
   <rect class="box" x="1530" y="80" width="200" height="90"/>
-  <text class="text" x="1630" y="115"><tspan x="1630">下一历元</tspan><tspan x="1630" dy="29">硬件控制字</tspan></text>
-
-  <path class="bus" d="M462.5,170 V315 H1490"/>
-  <path class="bus" d="M847.5,170 V315"/>
-  <path class="bus" d="M1050,170 V315"/>
-  <path class="bus" d="M1237.5,170 V315"/>
-  <path class="bus" d="M1422.5,170 V315"/>
-  <path class="line" d="M1490,315 H1528"/>
-  <rect class="result" x="1530" y="255" width="200" height="120"/>
-  <text class="text" x="1630" y="292"><tspan x="1630">本历元软件结果</tspan></text>
-  <text class="sub" x="1630" y="326"><tspan x="1630">观察 / 控制 / 同步</tspan><tspan x="1630" dy="25">监测 / 状态 / 诊断</tspan></text>
-
-  <text class="label" x="25" y="225">主控制数据链</text>
-  <text class="label" x="25" y="335">本历元结果汇总</text>
+  <text class="text" x="1630" y="115"><tspan x="1630">本历元结果</tspan><tspan x="1630" dy="29">下一硬件控制字</tspan></text>
 </svg>
