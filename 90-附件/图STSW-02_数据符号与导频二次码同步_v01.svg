@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1960" height="560" viewBox="0 0 1960 560">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#222222"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #222222; stroke-width: 1.6; }
+      .line { fill: none; stroke: #222222; stroke-width: 1.8; marker-end: url(#arrow); }
+      .branch { fill: none; stroke: #222222; stroke-width: 1.8; }
+      .text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 21px; fill: #111111; text-anchor: middle; }
+      .label { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 18px; font-weight: 600; fill: #111111; }
+      .note { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 16px; fill: #333333; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1960" height="560" fill="#ffffff"/>
+
+  <rect class="box" x="25" y="235" width="180" height="90"/>
+  <text class="text" x="115" y="270"><tspan x="115">硬件1 ms</tspan><tspan x="115" dy="29">复相关</tspan></text>
+
+  <path class="branch" d="M205,280 H235 V125"/>
+  <path class="line" d="M235,125 H265"/>
+  <path class="branch" d="M235,280 V415"/>
+  <path class="line" d="M235,415 H265"/>
+
+  <text class="label" x="265" y="57">数据型信号</text>
+  <rect class="box" x="265" y="90" width="190" height="70"/>
+  <text class="text" x="360" y="118"><tspan x="360">数据Prompt</tspan><tspan x="360" dy="27">1 ms</tspan></text>
+
+  <path class="line" d="M455,125 H505"/>
+  <rect class="box" x="505" y="82" width="270" height="86"/>
+  <text class="text" x="640" y="115"><tspan x="640">20种边界 × 频率</tspan><tspan x="640" dy="29">最大似然搜索</tspan></text>
+
+  <path class="line" d="M775,125 H825"/>
+  <rect class="box" x="825" y="90" width="210" height="70"/>
+  <text class="text" x="930" y="118"><tspan x="930">独立新窗</tspan><tspan x="930" dy="27">边界确认</tspan></text>
+
+  <path class="line" d="M1035,125 H1085"/>
+  <rect class="box" x="1085" y="90" width="220" height="70"/>
+  <text class="text" x="1195" y="118"><tspan x="1195">已知覆盖码</tspan><tspan x="1195" dy="27">符号擦除</tspan></text>
+
+  <path class="line" d="M1305,125 H1355"/>
+  <rect class="box" x="1355" y="82" width="275" height="86"/>
+  <text class="text" x="1492.5" y="115"><tspan x="1492.5">符号对齐1 ms相关</tspan><tspan x="1492.5" dy="29">数据符号边界</tspan></text>
+
+  <text class="label" x="265" y="347">导频信号</text>
+  <rect class="box" x="265" y="380" width="190" height="70"/>
+  <text class="text" x="360" y="408"><tspan x="360">导频Prompt</tspan><tspan x="360" dy="27">1 ms</tspan></text>
+
+  <path class="line" d="M455,415 H505"/>
+  <rect class="box" x="505" y="372" width="270" height="86"/>
+  <text class="text" x="640" y="405"><tspan x="640">完整主码复相干</tspan><tspan x="640" dy="29">1 / 4 / 10 ms</tspan></text>
+
+  <path class="line" d="M775,415 H825"/>
+  <rect class="box" x="825" y="372" width="290" height="86"/>
+  <text class="text" x="970" y="405"><tspan x="970">二次码相位 × 频率</tspan><tspan x="970" dy="29">最大似然搜索</tspan></text>
+  <text class="note" x="970" y="488">E1 / B1C需先确认码峰居中</text>
+
+  <path class="line" d="M1115,415 H1165"/>
+  <rect class="box" x="1165" y="380" width="210" height="70"/>
+  <text class="text" x="1270" y="408"><tspan x="1270">独立新窗</tspan><tspan x="1270" dy="27">相位确认</tspan></text>
+
+  <path class="line" d="M1375,415 H1425"/>
+  <rect class="box" x="1425" y="380" width="210" height="70"/>
+  <text class="text" x="1530" y="408"><tspan x="1530">导频二次码</tspan><tspan x="1530" dy="27">符号擦除</tspan></text>
+
+  <path class="line" d="M1635,415 H1685"/>
+  <rect class="box" x="1685" y="372" width="250" height="86"/>
+  <text class="text" x="1810" y="405"><tspan x="1810">符号对齐1 ms相关</tspan><tspan x="1810" dy="29">二次码相位</tspan></text>
+</svg>
