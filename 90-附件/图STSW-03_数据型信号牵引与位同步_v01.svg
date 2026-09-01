@@ -97,10 +97,10 @@
   <text x="485" y="694" class="small">L1CA/G1：10 ms块×16</text>
   <text x="485" y="722" class="small">B1I：1 ms功率×160</text>
   <rect x="710" y="642" width="245" height="88" class="box"/>
-  <text x="833" y="674" class="text">码误差鉴别</text>
-  <text x="833" y="706" class="small">强入口20 ms平均</text>
+  <text x="833" y="674" class="text">Early–Late码鉴相</text>
+  <text x="833" y="706" class="small">强：逐1 ms鉴相后20 ms平均</text>
   <rect x="1025" y="642" width="260" height="88" class="box"/>
-  <text x="1155" y="674" class="text">载波辅助DLL</text>
+  <text x="1155" y="674" class="text">PI型载波辅助DLL</text>
   <text x="1155" y="706" class="small">强20 ms / 中弱160 ms更新</text>
   <path d="M640 686 H710" class="line"/>
   <path d="M955 686 H1025" class="line"/>
