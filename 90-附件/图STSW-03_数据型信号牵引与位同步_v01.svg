@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2300" height="850" viewBox="0 0 2300 850">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#222222"/>
+    </marker>
+    <style>
+      .box { fill:#ffffff; stroke:#222222; stroke-width:2; }
+      .group { fill:#fafafa; stroke:#9a9a9a; stroke-width:1.5; }
+      .line { fill:none; stroke:#222222; stroke-width:2; marker-end:url(#arrow); }
+      .title { font:700 25px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; }
+      .text { font:22px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; text-anchor:middle; }
+      .small { font:18px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#3a3a3a; text-anchor:middle; }
+      .label { font:700 20px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; }
+      .note { font:18px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#555555; }
+    </style>
+  </defs>
+
+  <rect x="20" y="20" width="2260" height="810" rx="8" class="box"/>
+
+  <text x="520" y="62" class="title">载波牵引</text>
+  <rect x="40" y="82" width="1530" height="420" rx="8" class="group"/>
+  <rect x="70" y="238" width="175" height="76" class="box"/>
+  <text x="158" y="268" class="text">连续1 ms</text>
+  <text x="158" y="297" class="text">五抽头PDI</text>
+  <rect x="295" y="213" width="190" height="126" class="box"/>
+  <text x="390" y="254" class="text">捕获等级</text>
+  <text x="390" y="287" class="small">强入口</text>
+  <text x="390" y="315" class="small">普通入口</text>
+  <path d="M245 276 H295" class="line"/>
+
+  <text x="520" y="126" class="label">强入口</text>
+  <rect x="520" y="140" width="250" height="88" class="box"/>
+  <text x="645" y="171" class="text">相邻1 ms Prompt</text>
+  <text x="645" y="202" class="small">L1CA/G1直接使用；B1I先平方</text>
+  <rect x="815" y="140" width="220" height="88" class="box"/>
+  <text x="925" y="171" class="text">20对鉴频平均</text>
+  <text x="925" y="202" class="small">每20 ms发布</text>
+  <rect x="1080" y="140" width="130" height="88" class="box"/>
+  <text x="1145" y="193" class="text">FLL</text>
+
+  <text x="520" y="337" class="label">普通入口</text>
+  <rect x="520" y="351" width="250" height="110" class="box"/>
+  <text x="645" y="380" class="small">L1CA：10 ms / 1280 ms</text>
+  <text x="645" y="408" class="small">B1I：平方，10 ms / 2560 ms</text>
+  <text x="645" y="436" class="small">G1：5 ms / 1280 ms</text>
+  <rect x="815" y="362" width="220" height="88" class="box"/>
+  <text x="925" y="393" class="text">5点功率DFT</text>
+  <text x="925" y="424" class="small">每160 ms发布</text>
+  <rect x="1080" y="362" width="130" height="88" class="box"/>
+  <text x="1145" y="415" class="text">FLL</text>
+
+  <path d="M485 254 H505 V184 H520" class="line"/>
+  <path d="M485 301 H505 V406 H520" class="line"/>
+  <path d="M770 184 H815" class="line"/>
+  <path d="M1035 184 H1080" class="line"/>
+  <path d="M770 406 H815" class="line"/>
+  <path d="M1035 406 H1080" class="line"/>
+
+  <rect x="1260" y="190" width="280" height="210" class="box"/>
+  <text x="1400" y="228" class="text">位同步开放资格</text>
+  <text x="1400" y="271" class="small">最近3次绝对频率一致</text>
+  <text x="1400" y="303" class="small">当前残差 ≤ 15.625 Hz</text>
+  <text x="1400" y="335" class="small">三次极差 ≤ 15.625 Hz</text>
+  <text x="1400" y="368" class="small">只控制同步入口</text>
+  <path d="M1210 184 H1234 V244 H1260" class="line"/>
+  <path d="M1210 406 H1234 V347 H1260" class="line"/>
+
+  <text x="1925" y="62" class="title">公共数据位同步</text>
+  <rect x="1605" y="82" width="635" height="420" rx="8" class="group"/>
+  <rect x="1640" y="135" width="220" height="120" class="box"/>
+  <text x="1750" y="163" class="text">20 ms公开模板</text>
+  <text x="1750" y="193" class="small">L1CA：全+1</text>
+  <text x="1750" y="219" class="small">B1I：NH20</text>
+  <text x="1750" y="245" class="small">G1：meander</text>
+  <rect x="1900" y="135" width="190" height="120" class="box"/>
+  <text x="1995" y="168" class="text">20种边界ML</text>
+  <text x="1995" y="200" class="small">1 / 2 / 4 s搜索</text>
+  <text x="1995" y="229" class="small">频率候选固定为0 Hz</text>
+  <rect x="1875" y="315" width="205" height="110" class="box"/>
+  <text x="1978" y="350" class="text">独立数据确认</text>
+  <text x="1978" y="382" class="small">2/4 s，不复用搜索PDI</text>
+  <rect x="2110" y="315" width="110" height="110" class="box"/>
+  <text x="2165" y="350" class="text">边界锁定</text>
+  <text x="2165" y="382" class="small">20 ms积分</text>
+  <path d="M1540 295 H1585 V195 H1640" class="line"/>
+  <path d="M1860 195 H1900" class="line"/>
+  <path d="M1995 255 V315" class="line"/>
+  <path d="M2080 370 H2110" class="line"/>
+
+  <text x="510" y="554" class="title">并行码牵引</text>
+  <rect x="40" y="575" width="1530" height="220" rx="8" class="group"/>
+  <path d="M158 314 V686 H330" class="line"/>
+  <rect x="330" y="631" width="310" height="110" class="box"/>
+  <text x="485" y="662" class="text">VE/E/P/L/VL码观察</text>
+  <text x="485" y="694" class="small">L1CA/G1：10 ms块×16</text>
+  <text x="485" y="722" class="small">B1I：1 ms功率×160</text>
+  <rect x="710" y="642" width="245" height="88" class="box"/>
+  <text x="833" y="674" class="text">码误差鉴别</text>
+  <text x="833" y="706" class="small">强入口20 ms平均</text>
+  <rect x="1025" y="642" width="260" height="88" class="box"/>
+  <text x="1155" y="674" class="text">载波辅助DLL</text>
+  <text x="1155" y="706" class="small">连续更新本地码速率</text>
+  <path d="M640 686 H710" class="line"/>
+  <path d="M955 686 H1025" class="line"/>
+  <text x="1320" y="680" class="note">码牵引与载波牵引并行，</text>
+  <text x="1320" y="710" class="note">不等待位同步后才启动。</text>
+
+  <rect x="1605" y="575" width="635" height="220" rx="8" class="group"/>
+  <text x="1635" y="620" class="label">同步后的公开模板擦除</text>
+  <text x="1635" y="661" class="note">L1CA：无公开模板，保留未知导航bit符号。</text>
+  <text x="1635" y="697" class="note">B1I：擦除NH20；G1：擦除meander。</text>
+  <text x="1635" y="733" class="note">三种信号都不在本阶段判决导航bit内容。</text>
+</svg>
