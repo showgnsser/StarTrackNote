@@ -30,8 +30,8 @@
 
   <text x="520" y="126" class="label">强入口</text>
   <rect x="520" y="140" width="250" height="88" class="box"/>
-  <text x="645" y="171" class="text">三信号共用二象限atan</text>
-  <text x="645" y="202" class="small">20对点叉积累加</text>
+  <text x="645" y="171" class="small">L1CA/G1：单位复积求和</text>
+  <text x="645" y="202" class="small">B1I：二倍角单位复积求和</text>
   <rect x="815" y="140" width="220" height="88" class="box"/>
   <text x="925" y="171" class="text">atan2鉴频</text>
   <text x="925" y="202" class="small">每20 ms发布</text>
@@ -110,5 +110,5 @@
   <text x="1635" y="661" class="note">L1CA：无公开模板，保留未知导航bit符号。</text>
   <text x="1635" y="697" class="note">B1I：擦除NH20；G1：擦除meander。</text>
   <text x="1635" y="733" class="note">同步后载波：按状态使用功率DFT或FMS。</text>
-  <text x="1635" y="769" class="note">符号已知的atan2仅作为待测候选。</text>
+  <text x="1635" y="769" class="note">导航bit正负号仍由后级解调判决。</text>
 </svg>
