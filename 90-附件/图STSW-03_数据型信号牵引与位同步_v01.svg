@@ -45,8 +45,8 @@
   <text x="645" y="408" class="small">B1I：平方，10 ms / 2560 ms</text>
   <text x="645" y="436" class="small">G1：5 ms / 1280 ms</text>
   <rect x="815" y="362" width="220" height="88" class="box"/>
-  <text x="925" y="393" class="text">5点功率DFT</text>
-  <text x="925" y="424" class="small">每160 ms发布</text>
+  <text x="925" y="393" class="text">功率DFT</text>
+  <text x="925" y="424" class="small">L1/G1 5点；B1I 11点</text>
   <rect x="1080" y="362" width="130" height="88" class="box"/>
   <text x="1145" y="402" class="text">FLL</text>
   <text x="1145" y="432" class="small">160 ms更新</text>
