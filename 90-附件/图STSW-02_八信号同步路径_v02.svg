@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 Z" fill="#1f2937"/>
+    </marker>
+    <style>
+      .title { font: 700 25px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#111827; }
+      .head { font: 700 21px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#111827; }
+      .text { font: 18px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#111827; }
+      .small { font: 16px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#374151; }
+      .box { fill:#ffffff; stroke:#1f2937; stroke-width:1.8; }
+      .soft { fill:#f8fafc; stroke:#64748b; stroke-width:1.5; }
+      .data { fill:#eff6ff; stroke:#2563eb; stroke-width:1.8; }
+      .pilot { fill:#f0fdf4; stroke:#15803d; stroke-width:1.8; }
+      .warn { fill:#fff7ed; stroke:#c2410c; stroke-width:1.6; }
+      .line { fill:none; stroke:#1f2937; stroke-width:1.8; marker-end:url(#arrow); }
+      .split { fill:none; stroke:#94a3b8; stroke-width:1.4; stroke-dasharray:8 7; }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1598" height="918" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="50" y="45" class="title">数据型信号：L1 C/A、B1I D1、G1</text>
+
+  <rect x="50" y="85" width="170" height="74" rx="3" class="box"/>
+  <text x="135" y="116" text-anchor="middle" class="head">1 ms Prompt</text>
+  <text x="135" y="143" text-anchor="middle" class="small">连续复相关</text>
+
+  <path d="M220 122 H275" class="line"/>
+  <rect x="275" y="70" width="310" height="180" rx="3" class="data"/>
+  <text x="430" y="101" text-anchor="middle" class="head">候选边界下对齐公开模板</text>
+  <line x1="295" y1="116" x2="565" y2="116" stroke="#93c5fd"/>
+  <text x="305" y="145" class="text">L1 C/A</text>
+  <text x="430" y="145" class="text">20项全+1</text>
+  <text x="305" y="185" class="text">B1I D1</text>
+  <text x="430" y="185" class="text">NH20</text>
+  <text x="305" y="225" class="text">G1</text>
+  <text x="430" y="225" class="text">10项+1，10项-1</text>
+
+  <path d="M585 160 H640" class="line"/>
+  <rect x="640" y="85" width="230" height="150" rx="3" class="box"/>
+  <text x="755" y="121" text-anchor="middle" class="head">20边界 × 5频点</text>
+  <text x="755" y="155" text-anchor="middle" class="text">1 ms候选频率旋转</text>
+  <text x="755" y="187" text-anchor="middle" class="text">覆盖码候选擦除</text>
+  <text x="755" y="217" text-anchor="middle" class="small">{-50,-25,0,+25,+50} Hz</text>
+
+  <path d="M870 160 H925" class="line"/>
+  <rect x="925" y="85" width="225" height="150" rx="3" class="box"/>
+  <text x="1037" y="124" text-anchor="middle" class="head">候选20 ms相干</text>
+  <text x="1037" y="160" text-anchor="middle" class="text">每个bit内复数相加</text>
+  <text x="1037" y="195" text-anchor="middle" class="text">bit之间只加功率</text>
+
+  <path d="M1150 160 H1205" class="line"/>
+  <rect x="1205" y="85" width="160" height="150" rx="3" class="box"/>
+  <text x="1285" y="123" text-anchor="middle" class="head">搜索</text>
+  <text x="1285" y="157" text-anchor="middle" class="text">1 s</text>
+  <text x="1285" y="189" text-anchor="middle" class="small">失败后2/4 s</text>
+
+  <path d="M1365 160 H1415" class="line"/>
+  <rect x="1415" y="85" width="140" height="150" rx="3" class="data"/>
+  <text x="1485" y="123" text-anchor="middle" class="head">独立确认</text>
+  <text x="1485" y="157" text-anchor="middle" class="text">最少2 s</text>
+  <text x="1485" y="187" text-anchor="middle" class="small">锁定后擦除</text>
+  <text x="1485" y="213" text-anchor="middle" class="small">公开覆盖码</text>
+
+  <rect x="275" y="272" width="1090" height="76" rx="3" class="warn"/>
+  <text x="820" y="302" text-anchor="middle" class="head">同步前载波牵引与本路径并行</text>
+  <text x="820" y="331" text-anchor="middle" class="small">L1 C/A可用1 ms相邻鉴频；B1I/G1未擦覆盖码的原始10 ms相干已确认为待整改问题</text>
+
+  <path d="M50 390 H1550" class="split"/>
+  <text x="50" y="435" class="title">导频信号：L5Q、B2a-P、E5a-Q、E1C、B1C-P</text>
+
+  <rect x="50" y="485" width="170" height="74" rx="3" class="box"/>
+  <text x="135" y="516" text-anchor="middle" class="head">1 ms Prompt</text>
+  <text x="135" y="543" text-anchor="middle" class="small">连续复相关</text>
+
+  <path d="M220 522 H275" class="line"/>
+  <rect x="275" y="455" width="275" height="205" rx="3" class="pilot"/>
+  <text x="412" y="490" text-anchor="middle" class="head">先形成完整主码</text>
+  <line x1="295" y1="507" x2="530" y2="507" stroke="#86efac"/>
+  <text x="300" y="539" class="text">L5Q/B2a-P/E5a-Q</text>
+  <text x="500" y="539" text-anchor="end" class="text">1×1 ms</text>
+  <text x="300" y="579" class="text">E1C</text>
+  <text x="500" y="579" text-anchor="end" class="text">4×1 ms</text>
+  <text x="300" y="619" class="text">B1C-P</text>
+  <text x="500" y="619" text-anchor="end" class="text">10×1 ms</text>
+  <text x="412" y="648" text-anchor="middle" class="small">当前主码内直接复数相加</text>
+
+  <path d="M550 557 H605" class="line"/>
+  <rect x="605" y="455" width="250" height="205" rx="3" class="box"/>
+  <text x="730" y="490" text-anchor="middle" class="head">枚举二次码相位</text>
+  <text x="730" y="530" text-anchor="middle" class="text">L5Q：20种</text>
+  <text x="730" y="566" text-anchor="middle" class="text">B2a-P/E5a-Q：100种</text>
+  <text x="730" y="602" text-anchor="middle" class="text">E1C：25种</text>
+  <text x="730" y="638" text-anchor="middle" class="text">B1C-P：1800种</text>
+
+  <path d="M855 557 H910" class="line"/>
+  <rect x="910" y="455" width="235" height="205" rx="3" class="box"/>
+  <text x="1027" y="490" text-anchor="middle" class="head">20 ms条件相干</text>
+  <text x="1027" y="530" text-anchor="middle" class="text">先擦候选二次码</text>
+  <text x="1027" y="566" text-anchor="middle" class="text">再形成短相干段</text>
+  <text x="1027" y="606" text-anchor="middle" class="small">L5/B2a/E5a：可选5频点</text>
+  <text x="1027" y="636" text-anchor="middle" class="small">E1/B1C：当前关闭频率补偿</text>
+
+  <path d="M1145 557 H1200" class="line"/>
+  <rect x="1200" y="455" width="170" height="205" rx="3" class="box"/>
+  <text x="1285" y="493" text-anchor="middle" class="head">段间功率累加</text>
+  <text x="1285" y="535" text-anchor="middle" class="text">L5/B2a/E5a</text>
+  <text x="1285" y="565" text-anchor="middle" class="small">25段=500 ms</text>
+  <text x="1285" y="607" text-anchor="middle" class="text">E1C</text>
+  <text x="1285" y="637" text-anchor="middle" class="small">25段=500 ms</text>
+
+  <path d="M1370 557 H1415" class="line"/>
+  <rect x="1415" y="455" width="140" height="205" rx="3" class="pilot"/>
+  <text x="1485" y="493" text-anchor="middle" class="head">独立确认</text>
+  <text x="1485" y="535" text-anchor="middle" class="text">500 ms</text>
+  <text x="1485" y="576" text-anchor="middle" class="text">B1C：18 s</text>
+  <text x="1485" y="618" text-anchor="middle" class="small">锁定后擦导频</text>
+  <text x="1485" y="642" text-anchor="middle" class="small">二次码</text>
+
+  <rect x="605" y="705" width="765" height="100" rx="3" class="soft"/>
+  <text x="987" y="739" text-anchor="middle" class="head">B1C专用时间结构</text>
+  <text x="987" y="773" text-anchor="middle" class="text">2个10 ms主码 → 1个20 ms候选相干段</text>
+  <text x="987" y="799" text-anchor="middle" class="small">900段功率=18 s搜索；随后独立18 s确认；同步结果不改载波NCO</text>
+
+  <rect x="50" y="845" width="1505" height="50" rx="3" class="warn"/>
+  <text x="802" y="877" text-anchor="middle" class="text">图中频率旋转是同步度量的相干保护；同步前载波牵引另有独立路径，两者不应同时拥有未仲裁的NCO控制权。</text>
+</svg>
