@@ -45,11 +45,11 @@
   <text x="885" y="74" class="title">Early–Late鉴别只比较相关峰左右两侧</text>
   <rect x="900" y="100" width="370" height="220" class="box"/>
   <text x="1085" y="136" class="text">归一化码误差</text>
-  <text x="955" y="205" class="math">e<tspan baseline-shift="sub" font-size="14">code</tspan> = (1-d) ×</text>
-  <text x="1162" y="180" class="math">A<tspan baseline-shift="sub" font-size="14">L</tspan> − A<tspan baseline-shift="sub" font-size="14">E</tspan></text>
-  <path d="M1080 195 H1240" class="plain"/>
-  <text x="1162" y="225" class="math">A<tspan baseline-shift="sub" font-size="14">E</tspan> + A<tspan baseline-shift="sub" font-size="14">L</tspan></text>
-  <text x="1085" y="275" class="small">差值给方向，和值消除幅度变化</text>
+  <text x="1085" y="180" class="math">e<tspan baseline-shift="sub" font-size="14">code</tspan> = (1-d) ×</text>
+  <text x="1085" y="220" class="math">A<tspan baseline-shift="sub" font-size="14">L</tspan> − A<tspan baseline-shift="sub" font-size="14">E</tspan></text>
+  <path d="M1005 232 H1165" class="plain"/>
+  <text x="1085" y="263" class="math">A<tspan baseline-shift="sub" font-size="14">E</tspan> + A<tspan baseline-shift="sub" font-size="14">L</tspan></text>
+  <text x="1085" y="302" class="small">差值给方向，和值消除幅度变化</text>
   <rect x="1305" y="100" width="410" height="62" class="box"/>
   <text x="1510" y="139" class="text">A<tspan baseline-shift="sub" font-size="14">E</tspan> = A<tspan baseline-shift="sub" font-size="14">L</tspan>：Prompt居中</text>
   <rect x="1305" y="179" width="410" height="62" class="box"/>
