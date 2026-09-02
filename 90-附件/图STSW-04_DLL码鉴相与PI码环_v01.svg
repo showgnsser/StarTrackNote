@@ -9,118 +9,97 @@
       .box { fill:#ffffff; stroke:#222222; stroke-width:2; }
       .line { fill:none; stroke:#222222; stroke-width:2; marker-end:url(#arrow); }
       .plain { fill:none; stroke:#222222; stroke-width:2; }
-      .guide { fill:none; stroke:#9a9a9a; stroke-width:1.5; stroke-dasharray:7 6; }
+      .guide { fill:none; stroke:#9a9a9a; stroke-width:1.4; stroke-dasharray:7 6; }
       .curve { fill:none; stroke:#2b6cb0; stroke-width:4; }
       .point { fill:#2b6cb0; }
-      .title { font:700 25px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; }
-      .text { font:21px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; text-anchor:middle; }
-      .small { font:18px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#333333; text-anchor:middle; }
-      .left { font:19px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#252525; }
-      .math { font:20px 'Noto Serif','Times New Roman',serif; fill:#1f1f1f; }
-      .tap { font:700 19px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; text-anchor:middle; }
+      .title { font:700 24px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; }
+      .text { font:20px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; text-anchor:middle; }
+      .small { font:17px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#333333; text-anchor:middle; }
+      .math { font:21px 'Noto Serif','Times New Roman',serif; fill:#1f1f1f; text-anchor:middle; }
+      .tap { font:700 18px 'Noto Sans CJK SC','Microsoft YaHei',sans-serif; fill:#1f1f1f; text-anchor:middle; }
     </style>
   </defs>
 
   <rect x="10" y="10" width="1780" height="800" rx="8" class="frame"/>
+  <rect x="35" y="35" width="790" height="350" rx="8" class="panel"/>
+  <text x="65" y="74" class="title">相关峰与五个码抽头</text>
+  <path d="M105 315 H755" class="plain"/>
+  <path d="M105 310 C180 296,240 260,305 210 C360 168,395 118,430 102 C468 119,510 162,560 207 C625 264,692 299,755 310" class="curve"/>
+  <path d="M145 125 V315" class="guide"/>
+  <path d="M285 125 V315" class="guide"/>
+  <path d="M425 92 V315" class="guide"/>
+  <path d="M565 125 V315" class="guide"/>
+  <path d="M705 125 V315" class="guide"/>
+  <circle cx="285" cy="226" r="6" class="point"/>
+  <circle cx="425" cy="105" r="6" class="point"/>
+  <circle cx="565" cy="211" r="6" class="point"/>
+  <text x="145" y="346" class="tap">VE</text>
+  <text x="285" y="346" class="tap">E</text>
+  <text x="425" y="346" class="tap">P</text>
+  <text x="565" y="346" class="tap">L</text>
+  <text x="705" y="346" class="tap">VL</text>
+  <text x="255" y="216" class="tap">A<tspan baseline-shift="sub" font-size="13">E</tspan></text>
+  <text x="595" y="201" class="tap">A<tspan baseline-shift="sub" font-size="13">L</tspan></text>
 
-  <rect x="35" y="35" width="800" height="355" rx="8" class="panel"/>
-  <text x="65" y="75" class="title">五抽头如何判断码相位方向</text>
-  <path d="M105 320 H765" class="plain"/>
-  <path d="M105 315 C185 300,245 260,315 205 C365 166,402 118,438 102 C476 119,510 157,565 205 C632 264,700 300,765 315" class="curve"/>
+  <rect x="855" y="35" width="910" height="350" rx="8" class="panel"/>
+  <text x="885" y="74" class="title">Early–Late鉴别只比较相关峰左右两侧</text>
+  <rect x="900" y="100" width="370" height="220" class="box"/>
+  <text x="1085" y="136" class="text">归一化码误差</text>
+  <text x="955" y="205" class="math">e<tspan baseline-shift="sub" font-size="14">code</tspan> = (1-d) ×</text>
+  <text x="1162" y="180" class="math">A<tspan baseline-shift="sub" font-size="14">L</tspan> − A<tspan baseline-shift="sub" font-size="14">E</tspan></text>
+  <path d="M1080 195 H1240" class="plain"/>
+  <text x="1162" y="225" class="math">A<tspan baseline-shift="sub" font-size="14">E</tspan> + A<tspan baseline-shift="sub" font-size="14">L</tspan></text>
+  <text x="1085" y="275" class="small">差值给方向，和值消除幅度变化</text>
+  <rect x="1305" y="100" width="410" height="62" class="box"/>
+  <text x="1510" y="139" class="text">A<tspan baseline-shift="sub" font-size="14">E</tspan> = A<tspan baseline-shift="sub" font-size="14">L</tspan>：Prompt居中</text>
+  <rect x="1305" y="179" width="410" height="62" class="box"/>
+  <text x="1510" y="218" class="text">A<tspan baseline-shift="sub" font-size="14">L</tspan> &gt; A<tspan baseline-shift="sub" font-size="14">E</tspan>：提高本地码率</text>
+  <rect x="1305" y="258" width="410" height="62" class="box"/>
+  <text x="1510" y="297" class="text">A<tspan baseline-shift="sub" font-size="14">E</tspan> &gt; A<tspan baseline-shift="sub" font-size="14">L</tspan>：降低本地码率</text>
 
-  <path d="M145 118 V320" class="guide"/>
-  <path d="M285 118 V320" class="guide"/>
-  <path d="M425 92 V320" class="guide"/>
-  <path d="M565 118 V320" class="guide"/>
-  <path d="M705 118 V320" class="guide"/>
+  <text x="35" y="438" class="title">二阶DLL闭环</text>
+  <rect x="40" y="485" width="210" height="82" class="box"/>
+  <text x="145" y="517" class="text">五抽头观测量</text>
+  <text x="145" y="548" class="small">VE / E / P / L / VL</text>
+  <rect x="300" y="485" width="190" height="82" class="box"/>
+  <text x="395" y="517" class="text">峰值选择</text>
+  <text x="395" y="548" class="small">确定局部中心</text>
+  <rect x="540" y="485" width="220" height="82" class="box"/>
+  <text x="650" y="517" class="text">Early–Late鉴别</text>
+  <text x="650" y="548" class="small">码误差，单位chip</text>
+  <rect x="810" y="485" width="210" height="82" class="box"/>
+  <text x="915" y="517" class="text">PI环路滤波器</text>
+  <text x="915" y="548" class="small">DLL残余码率</text>
+  <circle cx="1250" cy="526" r="27" class="box"/>
+  <text x="1250" y="534" class="text">+</text>
+  <rect x="1360" y="485" width="190" height="82" class="box"/>
+  <text x="1455" y="517" class="text">码NCO</text>
+  <text x="1455" y="548" class="small">积分为Prompt相位</text>
+  <path d="M250 526 H300" class="line"/>
+  <path d="M490 526 H540" class="line"/>
+  <path d="M760 526 H810" class="line"/>
+  <path d="M1020 526 H1223" class="line"/>
+  <path d="M1277 526 H1360" class="line"/>
 
-  <circle cx="285" cy="229" r="6" class="point"/>
-  <circle cx="425" cy="106" r="6" class="point"/>
-  <circle cx="565" cy="205" r="6" class="point"/>
-  <path d="M285 229 V320" class="plain"/>
-  <path d="M565 205 V320" class="plain"/>
+  <rect x="730" y="625" width="220" height="70" class="box"/>
+  <text x="840" y="655" class="text">载波多普勒</text>
+  <text x="840" y="683" class="small">来自载波环</text>
+  <polygon points="1000,625 1120,660 1000,695" class="box"/>
+  <text x="1045" y="668" class="text">K<tspan baseline-shift="sub" font-size="14">ca</tspan></text>
+  <path d="M950 660 H1000" class="line"/>
 
-  <text x="145" y="349" class="tap">VE</text>
-  <text x="285" y="349" class="tap">E</text>
-  <text x="425" y="349" class="tap">P</text>
-  <text x="565" y="349" class="tap">L</text>
-  <text x="705" y="349" class="tap">VL</text>
-  <text x="260" y="217" class="tap">A<tspan baseline-shift="sub" font-size="14">E</tspan></text>
-  <text x="590" y="193" class="tap">A<tspan baseline-shift="sub" font-size="14">L</tspan></text>
-  <text x="355" y="376" class="small">d</text>
-  <text x="495" y="376" class="small">d</text>
-  <path d="M410 369 H300" class="line"/>
-  <path d="M440 369 H550" class="line"/>
+  <rect x="1170" y="620" width="260" height="80" class="box"/>
+  <text x="1300" y="653" class="text">基础码率</text>
+  <text x="1300" y="682" class="small">标称码率 + K<tspan baseline-shift="sub" font-size="13">ca</tspan> × 多普勒</text>
+  <path d="M1120 660 H1170" class="line"/>
+  <rect x="1170" y="735" width="260" height="58" class="box"/>
+  <text x="1300" y="771" class="text">标称码率</text>
+  <path d="M1300 735 V700" class="line"/>
+  <path d="M1300 620 V590 H1250 V553" class="line"/>
 
-  <rect x="865" y="35" width="900" height="355" rx="8" class="panel"/>
-  <text x="895" y="75" class="title">Early–Late码鉴相</text>
-  <text x="905" y="120" class="math">Prompt固定：</text>
-  <text x="1085" y="120" class="math">e_code = (1-d)(A_L-A_E)/(A_E+A_L)</text>
-  <text x="905" y="172" class="math">宽峰牵引：</text>
-  <text x="1085" y="172" class="math">e_code = (p-2)d + (1-d)(A_(p+1)-A_(p-1))/(A_(p-1)+A_(p+1))</text>
-
-  <rect x="915" y="218" width="245" height="105" class="box"/>
-  <text x="1038" y="250" class="text">A<tspan baseline-shift="sub" font-size="15">E</tspan> = A<tspan baseline-shift="sub" font-size="15">L</tspan></text>
-  <text x="1038" y="285" class="small">e<tspan baseline-shift="sub" font-size="13">code</tspan> = 0</text>
-  <text x="1038" y="311" class="small">Prompt已经居中</text>
-
-  <rect x="1190" y="218" width="245" height="105" class="box"/>
-  <text x="1313" y="250" class="text">A<tspan baseline-shift="sub" font-size="15">L</tspan> &gt; A<tspan baseline-shift="sub" font-size="15">E</tspan></text>
-  <text x="1313" y="285" class="small">e<tspan baseline-shift="sub" font-size="13">code</tspan> &gt; 0</text>
-  <text x="1313" y="311" class="small">提高本地码率</text>
-
-  <rect x="1465" y="218" width="245" height="105" class="box"/>
-  <text x="1588" y="250" class="text">A<tspan baseline-shift="sub" font-size="15">E</tspan> &gt; A<tspan baseline-shift="sub" font-size="15">L</tspan></text>
-  <text x="1588" y="285" class="small">e<tspan baseline-shift="sub" font-size="13">code</tspan> &lt; 0</text>
-  <text x="1588" y="311" class="small">降低本地码率</text>
-
-  <text x="35" y="440" class="title">载波辅助二阶DLL闭环</text>
-
-  <rect x="40" y="485" width="225" height="84" class="box"/>
-  <text x="153" y="518" class="text">五抽头观测量</text>
-  <text x="153" y="550" class="small">A<tspan baseline-shift="sub" font-size="13">VE</tspan> / A<tspan baseline-shift="sub" font-size="13">E</tspan> / A<tspan baseline-shift="sub" font-size="13">P</tspan> / A<tspan baseline-shift="sub" font-size="13">L</tspan> / A<tspan baseline-shift="sub" font-size="13">VL</tspan></text>
-
-  <rect x="315" y="485" width="210" height="84" class="box"/>
-  <text x="420" y="518" class="text">峰值选择</text>
-  <text x="420" y="550" class="small">确定局部中心p</text>
-
-  <rect x="575" y="485" width="230" height="84" class="box"/>
-  <text x="690" y="518" class="text">Early–Late鉴别</text>
-  <text x="690" y="550" class="small">输出e<tspan baseline-shift="sub" font-size="13">code</tspan>，单位chip</text>
-
-  <rect x="855" y="485" width="225" height="84" class="box"/>
-  <text x="968" y="518" class="text">PI环路滤波器</text>
-  <text x="968" y="550" class="small">K<tspan baseline-shift="sub" font-size="13">P</tspan>e + ∑K<tspan baseline-shift="sub" font-size="13">I</tspan>e</text>
-
-  <rect x="1260" y="477" width="170" height="100" class="box"/>
-  <text x="1345" y="519" class="text">码率求和</text>
-  <text x="1345" y="550" class="small">标称 + 辅助 + DLL</text>
-
-  <rect x="1475" y="485" width="250" height="84" class="box"/>
-  <text x="1600" y="518" class="text">码NCO</text>
-  <text x="1600" y="550" class="small">码率积分为Prompt相位</text>
-
-  <path d="M265 527 H315" class="line"/>
-  <path d="M525 527 H575" class="line"/>
-  <path d="M805 527 H855" class="line"/>
-  <path d="M1080 527 H1260" class="line"/>
-  <text x="1170" y="510" class="small">Δf<tspan baseline-shift="sub" font-size="13">DLL</tspan></text>
-  <path d="M1430 527 H1475" class="line"/>
-
-  <rect x="745" y="650" width="225" height="72" class="box"/>
-  <text x="858" y="681" class="text">载波多普勒估计</text>
-  <text x="858" y="708" class="small">f̂<tspan baseline-shift="sub" font-size="13">D</tspan></text>
-  <polygon points="1035,650 1175,686 1035,722" class="box"/>
-  <text x="1083" y="682" class="text">K<tspan baseline-shift="sub" font-size="14">ca</tspan></text>
-  <text x="1092" y="708" class="small">载波辅助</text>
-  <rect x="1280" y="650" width="205" height="72" class="box"/>
-  <text x="1383" y="681" class="text">标称码率</text>
-  <text x="1383" y="708" class="small">f<tspan baseline-shift="sub" font-size="13">code,0</tspan></text>
-
-  <path d="M970 686 H1035" class="line"/>
-  <path d="M1175 686 H1215 V558 H1260" class="line"/>
-  <path d="M1383 650 V577" class="line"/>
-
-  <path d="M1600 569 V765 H153 V569" class="line"/>
-  <text x="875" y="788" class="small">码NCO输出新的Prompt相位，下一批五抽头再次测量剩余码误差</text>
+  <rect x="1585" y="485" width="170" height="82" class="box"/>
+  <text x="1670" y="517" class="text">五抽头本地码</text>
+  <text x="1670" y="548" class="small">下一批相关</text>
+  <path d="M1550 526 H1585" class="line"/>
+  <path d="M1670 567 V720 H145 V567" class="line"/>
 </svg>
