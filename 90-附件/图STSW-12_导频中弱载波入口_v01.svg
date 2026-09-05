@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="655" viewBox="0 0 1000 655">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:24px}.small{font-size:18px}.head{font-size:21px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.wire{fill:none;stroke:#263442;stroke-width:1.8}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style>
+<rect width="1000" height="655" fill="white"/>
+<rect x="55" y="25" width="360" height="75" rx="7" class="end"/>
+<text x="235" y="57" class="">捕获中弱档 → LongFast</text>
+<text x="235" y="90" class="small">温启动移交残差 ±12.5 Hz</text>
+<rect x="610" y="25" width="320" height="75" rx="7" class="end"/>
+<text x="770" y="57" class="">原始导频Prompt</text>
+<text x="770" y="90" class="small">每1 ms一条PDI</text>
+<path d="M235 100V155" class="arrow"/>
+<rect x="55" y="155" width="360" height="75" rx="4" class="node"/>
+<text x="235" y="187" class="">保持移交载波频率</text>
+<text x="235" y="220" class="small">不发布频差，不注入相位误差</text>
+<path d="M770 100V155" class="arrow"/>
+<rect x="610" y="155" width="320" height="75" rx="4" class="node"/>
+<text x="770" y="187" class="">二次码相位同步</text>
+<text x="770" y="220" class="small">1 s搜索 + 独立1 s确认</text>
+<path d="M235 230V274H500V310" class="arrow"/>
+<path d="M770 230V274H500" class="wire"/>
+<rect x="330" y="310" width="340" height="65" rx="4" class="node"/>
+<text x="500" y="350.5" class="">锁定后擦除二次码</text>
+<path d="M500 375V420" class="arrow"/>
+<rect x="330" y="420" width="340" height="75" rx="4" class="node"/>
+<text x="500" y="452" class="">形成LongFast频率观察</text>
+<text x="500" y="485" class="small">160 ms长相干；FLL-only</text>
+<path d="M500 495V545" class="arrow"/>
+<rect x="330" y="545" width="340" height="75" rx="7" class="end"/>
+<text x="500" y="577" class="">载波环 → 载波NCO</text>
+<text x="500" y="610" class="small">不注入PLL相位误差</text>
+</svg>

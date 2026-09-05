@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="840" viewBox="0 0 1080 840">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:24px}.small{font-size:18px}.head{font-size:21px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.wire{fill:none;stroke:#263442;stroke-width:1.8}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style>
+<rect width="1080" height="840" fill="white"/>
+<rect x="300" y="20" width="480" height="65" rx="7" class="end"/>
+<text x="540" y="52" class="">五抽头PDI</text>
+<text x="540" y="75" class="small">VE / E / P / L / VL；d = 1/3 chip</text>
+<path d="M540 85V110H180V160" class="arrow"/>
+<path d="M540 110V160" class="arrow"/>
+<path d="M540 110H900V160" class="arrow"/>
+<text x="164" y="144" class="head" style="text-anchor:end">强入口：三信号</text>
+<text x="524" y="144" class="head" style="text-anchor:end">中弱：L1 C/A、G1</text>
+<text x="884" y="144" class="head" style="text-anchor:end">中弱：B1I</text>
+<rect x="55" y="160" width="250" height="65" rx="4" class="node"/>
+<text x="180" y="200.5" class="">逐1 ms取功率</text>
+<rect x="415" y="160" width="250" height="65" rx="4" class="node"/>
+<text x="540" y="200.5" class="">按信号短块相干</text>
+<rect x="775" y="160" width="250" height="65" rx="4" class="node"/>
+<text x="900" y="200.5" class="">逐1 ms取功率</text>
+<path d="M180 225V270" class="arrow"/>
+<path d="M540 225V270" class="arrow"/>
+<path d="M900 225V270" class="arrow"/>
+<rect x="55" y="270" width="250" height="70" rx="4" class="node"/>
+<text x="180" y="302" class="">选局部峰并鉴别</text>
+<text x="180" y="330" class="small">每1 ms一次码误差</text>
+<rect x="375" y="270" width="330" height="70" rx="4" class="node"/>
+<text x="540" y="302" class="">JPL幅度累加</text>
+<text x="540" y="330" class="small">L1：10 ms × 16；G1：5 ms × 32</text>
+<rect x="775" y="270" width="250" height="70" rx="4" class="node"/>
+<text x="900" y="313" class="">160次功率累加</text>
+<path d="M180 340V390" class="arrow"/>
+<rect x="55" y="390" width="250" height="70" rx="4" class="node"/>
+<text x="180" y="422" class="">码误差平均</text>
+<text x="180" y="450" class="small">20 ms发布</text>
+<path d="M540 340V366H720V390" class="arrow"/>
+<path d="M900 340V366H720" class="wire"/>
+<rect x="555" y="390" width="330" height="70" rx="4" class="node"/>
+<text x="720" y="422" class="">固定Prompt鉴别</text>
+<text x="720" y="450" class="small">160 ms发布；限幅 ±0.25 chip</text>
+<path d="M180 460V505H480V545" class="arrow"/>
+<path d="M720 460V505H480" class="wire"/>
+<rect x="315" y="545" width="330" height="65" rx="4" class="node"/>
+<text x="480" y="577" class="">PI码环</text>
+<text x="480" y="600" class="small">有效误差才更新积分状态</text>
+<path d="M480 610V655" class="arrow"/>
+<circle cx="480" cy="680" r="25" class="node"/>
+<text x="480" y="688" class="">+</text>
+<rect x="740" y="648" width="265" height="64" rx="4" class="node"/>
+<text x="872.5" y="680" class="">载波多普勒辅助</text>
+<text x="872.5" y="702" class="small">按标称码率 / 载频换算</text>
+<path d="M740 680H505" class="arrow"/>
+<rect x="60" y="648" width="255" height="64" rx="4" class="node"/>
+<text x="187.5" y="688" class="">标称码率 R₀</text>
+<path d="M315 680H455" class="arrow"/>
+<path d="M480 705V750" class="arrow"/>
+<rect x="315" y="750" width="330" height="60" rx="7" class="end"/>
+<text x="480" y="782" class="">码NCO</text>
+<text x="480" y="800" class="small">保持连续码相位</text>
+</svg>

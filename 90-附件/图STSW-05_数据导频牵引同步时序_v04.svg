@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="770" viewBox="0 0 1000 770">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:23px}.label{font-size:18px}.head{font-size:20px;font-weight:600}.node{fill:#fff;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.path{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#arrow)}.wire{fill:none;stroke:#263442;stroke-width:1.8}</style>
+<rect width="1000" height="770" fill="#fff"/>
+<rect x="410" y="35" width="180" height="54" rx="6" class="end"/><text x="500" y="70">硬件相关</text>
+<path d="M500 89V143H830V200" class="path"/>
+<text x="557" y="122" class="label">导频PDI</text>
+<text x="170" y="179" class="head">同步前</text>
+<rect x="60" y="200" width="220" height="56" rx="20" class="end"/><text x="170" y="236">捕获频率</text>
+<path d="M170 256V320" class="path"/>
+<rect x="60" y="320" width="220" height="56" rx="4" class="node"/><text x="170" y="356">保持频率</text>
+<path d="M170 376V440" class="path"/>
+<rect x="60" y="440" width="220" height="56" rx="4" class="end"/><text x="170" y="476">载波NCO</text>
+<path d="M60 468H25V62H410" class="path"/>
+<rect x="375" y="171" width="250" height="322" rx="8" fill="#f6f8fa" stroke="#c0cbd3" stroke-width="1.2"/>
+<path d="M500 143V171" class="path"/>
+<text x="407" y="192" class="head" style="text-anchor:start">相位搜索</text>
+<rect x="405" y="207" width="190" height="48" rx="4" class="node"/><text x="500" y="239">候选擦码</text>
+<path d="M500 255V279" class="path"/>
+<rect x="405" y="279" width="190" height="48" rx="4" class="node"/><text x="500" y="311">段内相干</text>
+<path d="M500 327V351" class="path"/>
+<rect x="405" y="351" width="190" height="48" rx="4" class="node"/><text x="500" y="383">段间功率累加</text>
+<path d="M500 399V423" class="path"/>
+<rect x="405" y="423" width="190" height="48" rx="4" class="node"/><text x="500" y="455">选峰与检验</text>
+<path d="M500 471V550" class="path"/><text x="560" y="523" class="label">候选通过</text>
+<rect x="405" y="550" width="190" height="56" rx="4" class="node"/>
+<text x="500" y="586">新数据独立确认</text>
+<path d="M500 606V686" class="path"/><text x="536" y="652" class="label">通过</text>
+<rect x="405" y="686" width="190" height="56" rx="6" class="end"/><text x="500" y="722">擦码后跟踪</text>
+<path d="M405 714H326V468H280" class="path"/>
+<rect x="720" y="200" width="220" height="56" rx="4" class="node"/><text x="830" y="236">码鉴别</text>
+<path d="M830 256V320" class="path"/>
+<rect x="720" y="320" width="220" height="56" rx="4" class="node"/><text x="830" y="356">DLL滤波</text>
+<path d="M830 376V440" class="path"/>
+<rect x="720" y="440" width="220" height="56" rx="4" class="end"/><text x="830" y="476">码NCO</text>
+<path d="M940 468H975V62H590" class="path"/>
+</svg>

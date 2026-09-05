@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="850" viewBox="0 0 1050 850">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:24px}.small{font-size:18px}.head{font-size:21px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.wire{fill:none;stroke:#263442;stroke-width:1.8}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style>
+<rect width="1050" height="850" fill="white"/>
+<rect x="80" y="20" width="360" height="65" rx="7" class="end"/>
+<text x="260" y="60.5" class="">居中资格通过后的新Prompt</text>
+<path d="M260 85V128" class="arrow"/>
+<rect x="80" y="128" width="360" height="72" rx="4" class="node"/>
+<text x="260" y="160" class="">候选频率旋转</text>
+<text x="260" y="190" class="small">11点 × 12.5 Hz；±62.5 Hz</text>
+<path d="M260 200V240" class="arrow"/>
+<rect x="80" y="240" width="360" height="75" rx="4" class="node"/>
+<text x="260" y="272" class="">候选边界与公开模板</text>
+<text x="260" y="305" class="small">20边界；L1直通 / G1翻转 / B1I NH20</text>
+<path d="M260 315V355" class="arrow"/>
+<rect x="80" y="355" width="360" height="65" rx="4" class="node"/>
+<text x="260" y="387" class="">位内相干</text>
+<text x="260" y="410" class="small">每bit 20 ms</text>
+<path d="M260 420V460" class="arrow"/>
+<rect x="80" y="460" width="360" height="65" rx="4" class="node"/>
+<text x="260" y="492" class="">位间功率累加</text>
+<text x="260" y="515" class="small">搜索窗 1 / 2 / 4 s</text>
+<path d="M260 525V565" class="arrow"/>
+<rect x="80" y="565" width="360" height="75" rx="4" class="node"/>
+<text x="260" y="597" class="">选峰与质量检验</text>
+<text x="260" y="630" class="small">峰谷比 ≥1.18；质量积 Q ≥370</text>
+<path d="M440 602H526V52H625" class="arrow"/>
+<text x="483" y="590" class="small">通过</text>
+<rect x="625" y="20" width="350" height="65" rx="4" class="node"/>
+<text x="800" y="60.5" class="">三点插值 → 单次校频</text>
+<path d="M800 85V145" class="arrow"/>
+<rect x="625" y="145" width="350" height="65" rx="4" class="node"/>
+<text x="800" y="185.5" class="">清除搜索数据</text>
+<path d="M800 210V270" class="arrow"/>
+<rect x="625" y="270" width="350" height="75" rx="4" class="node"/>
+<text x="800" y="302" class="">独立确认：重新比较边界</text>
+<text x="800" y="335" class="small">2 / 4 s；仅0 Hz；20边界</text>
+<path d="M800 345V405" class="arrow"/>
+<rect x="625" y="405" width="350" height="75" rx="4" class="node"/>
+<text x="800" y="437" class="">质量通过且边界一致</text>
+<text x="800" y="470" class="small">搜索 + 独立确认，共两次一致</text>
+<path d="M800 480V540" class="arrow"/>
+<rect x="625" y="540" width="350" height="65" rx="7" class="end"/>
+<text x="800" y="580.5" class="">锁定20 ms边界</text>
+<text x="525" y="744" class="small">L1 C/A、G1另检验局部峰形；B1I不使用该峰形门</text>
+<text x="525" y="782" class="small">搜索和确认各加19 ms边界余量；窗口间不复用数据</text>
+</svg>

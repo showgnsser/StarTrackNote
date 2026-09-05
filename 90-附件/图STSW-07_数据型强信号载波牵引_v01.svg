@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:24px}.small{font-size:18px}.head{font-size:21px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.wire{fill:none;stroke:#263442;stroke-width:1.8}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style>
+<rect width="960" height="660" fill="white"/>
+<rect x="355" y="25" width="250" height="60" rx="7" class="end"/>
+<text x="480" y="63" class="">1 ms Prompt</text>
+<path d="M480 85V112H250V150" class="arrow"/>
+<path d="M480 112H710V150" class="arrow"/>
+<text x="234" y="139" class="head" style="text-anchor:end">L1 C/A、G1</text>
+<text x="694" y="139" class="head" style="text-anchor:end">B1I</text>
+<rect x="130" y="150" width="240" height="60" rx="4" class="node"/>
+<text x="250" y="188" class="">原始Prompt</text>
+<rect x="590" y="150" width="240" height="60" rx="4" class="node"/>
+<text x="710" y="182" class="">复平方 P²</text>
+<text x="710" y="200" class="small">消除NH与bit反号</text>
+<path d="M250 210V250" class="arrow"/>
+<path d="M710 210V250" class="arrow"/>
+<rect x="130" y="250" width="240" height="70" rx="4" class="node"/>
+<text x="250" y="282" class="">逐对 asin</text>
+<text x="250" y="310" class="small">相邻1 ms相位差</text>
+<rect x="590" y="250" width="240" height="70" rx="4" class="node"/>
+<text x="710" y="282" class="">逐对 asin</text>
+<text x="710" y="310" class="small">相邻1 ms相位差</text>
+<path d="M250 320V360" class="arrow"/>
+<path d="M710 320V360" class="arrow"/>
+<rect x="130" y="360" width="240" height="70" rx="4" class="node"/>
+<text x="250" y="392" class="">相位差换算Hz</text>
+<text x="250" y="420" class="small">除以 2πT；T = 1 ms</text>
+<rect x="590" y="360" width="240" height="70" rx="4" class="node"/>
+<text x="710" y="392" class="">相位差换算Hz</text>
+<text x="710" y="420" class="small">除以 4πT；二倍角还原</text>
+<path d="M250 430V462H480V495" class="arrow"/>
+<path d="M710 430V462H480" class="wire"/>
+<rect x="355" y="495" width="250" height="65" rx="4" class="node"/>
+<text x="480" y="527" class="">20个间隔平均</text>
+<text x="480" y="550" class="small">每20 ms形成频率观察</text>
+<path d="M480 560V600" class="arrow"/>
+<rect x="285" y="600" width="390" height="48" rx="7" class="end"/>
+<text x="480" y="632" class="">FLL滤波 → 载波NCO</text>
+</svg>
