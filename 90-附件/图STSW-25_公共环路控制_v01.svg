@@ -8,10 +8,10 @@
 <rect x="745" y="30" width="290" height="60" rx="5" class="box"/><text x="890" y="68">有效细码误差</text>
 <path d="M180 90V137" class="line"/><path d="M520 90V137" class="line"/><path d="M890 90V247" class="line"/>
 <rect x="45" y="140" width="270" height="65" rx="5" class="box"/><text x="180" y="180">参考与控制时刻换算</text>
-<rect x="385" y="140" width="270" height="65" rx="5" class="box"/><text x="520" y="180">PLL许可与相位重定时</text>
+<rect x="385" y="140" width="270" height="65" rx="5" class="box"/><text x="520" y="180">PLL许可与相位回绕</text>
 <path d="M180 205V247" class="line"/><path d="M520 205V247" class="line"/>
-<rect x="45" y="250" width="270" height="70" rx="5" class="box"/><text x="180" y="282">FLL</text><text x="180" y="308" class="small">频率与趋势状态</text>
-<rect x="385" y="250" width="270" height="70" rx="5" class="box"/><text x="520" y="282">PLL</text><text x="520" y="308" class="small">独立相位控制状态</text>
+<rect x="45" y="250" width="270" height="70" rx="5" class="box"/><text x="180" y="282">FLL</text><text x="180" y="308" class="small">基频预测／PLL不可用时校频</text>
+<rect x="385" y="250" width="270" height="70" rx="5" class="box"/><text x="520" y="282">PLL</text><text x="520" y="308" class="small">有效相位优先校正</text>
 <rect x="745" y="250" width="290" height="70" rx="5" class="box"/><text x="890" y="282">DLL的PI滤波</text><text x="890" y="308" class="small">剩余码率修正</text>
 <path d="M180 320V365H350V417" class="line"/><path d="M520 320V365H350" fill="none" stroke="#263442" stroke-width="1.7"/>
 <rect x="140" y="420" width="420" height="65" rx="5" class="shade"/><text x="350" y="460">合成载波多普勒</text>
