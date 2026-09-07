@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="600" viewBox="0 0 1020 600">
+<title>相干、功率与幅度积累</title>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.line{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}</style>
+<rect width="1020" height="600" fill="white"/>
+<rect x="300" y="25" width="420" height="60" rx="5" class="shade"/><text x="510" y="63">连续1 ms复相关</text>
+<path d="M510 85V122" class="line"/>
+<rect x="300" y="125" width="420" height="65" rx="5" class="box"/><text x="510" y="165">符号处理与必要的频率补偿</text>
+<path d="M510 190V225H175V267" class="line"/><path d="M510 225V267" class="line"/><path d="M510 225H845V267" class="line"/>
+<rect x="40" y="270" width="270" height="65" rx="5" class="box"/><text x="175" y="310">整窗复数相加</text>
+<rect x="375" y="270" width="270" height="65" rx="5" class="box"/><text x="510" y="310">每个短块复数相加</text>
+<rect x="710" y="270" width="270" height="65" rx="5" class="box"/><text x="845" y="310">每个短块复数相加</text>
+<path d="M175 335V382" class="line"/><path d="M510 335V382" class="line"/><path d="M845 335V382" class="line"/>
+<rect x="40" y="385" width="270" height="65" rx="5" class="box"/><text x="175" y="425">整窗结束取功率</text>
+<rect x="375" y="385" width="270" height="65" rx="5" class="box"/><text x="510" y="425">每块取功率，再相加</text>
+<rect x="710" y="385" width="270" height="65" rx="5" class="box"/><text x="845" y="425">每块取幅度，再相加</text>
+<path d="M175 450V502" class="line"/><path d="M510 450V502" class="line"/><path d="M845 450V502" class="line"/>
+<rect x="40" y="505" width="270" height="60" rx="5" class="shade"/><text x="175" y="543">例：导频160 ms载波</text>
+<rect x="375" y="505" width="270" height="60" rx="5" class="shade"/><text x="510" y="543">例：数据载波20 ms×8</text>
+<rect x="710" y="505" width="270" height="60" rx="5" class="shade"/><text x="845" y="543">例：普通码环20 ms×8</text>
+</svg>

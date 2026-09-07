@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="800" viewBox="0 0 1050 800"><title>BOC牵引与二次码同步总流程</title><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs><style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:23px}.small{font-size:18px}.head{font-size:25px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style><rect width="1050" height="800" fill="white"/>
+<rect x="345" y="35" width="360" height="70" rx="7" class="end"/>
+<text x="525" y="78" class="">1 ms导频双副本PDI</text>
+<path d="M525 105V135H240V175" class="arrow"/>
+<path d="M525 135H800V175" class="arrow"/>
+<rect x="60" y="175" width="360" height="75" rx="4" class="node"/>
+<text x="240" y="220.5" class="">主码平方鉴频</text>
+<rect x="620" y="175" width="360" height="75" rx="4" class="node"/>
+<text x="800" y="220.5" class="">粗码牵引</text>
+<path d="M420 215H620" class="dash"/>
+<text x="520" y="196" class="small">有效鉴频后开放</text>
+<path d="M240 250V320" class="arrow"/>
+<rect x="60" y="320" width="360" height="75" rx="4" class="node"/>
+<text x="240" y="365.5" class="">FLL逐步纠偏</text>
+<path d="M240 395V470" class="arrow"/>
+<rect x="60" y="470" width="360" height="75" rx="7" class="end"/>
+<text x="240" y="515.5" class="">连续载波NCO</text>
+<path d="M800 250V320" class="arrow"/>
+<rect x="620" y="320" width="360" height="75" rx="4" class="node"/>
+<text x="800" y="365.5" class="">细码居中检查</text>
+<path d="M980 355H1015V210H980" class="arrow"/>
+<text x="885" y="286" class="small">未居中则重新牵引</text>
+<path d="M800 395V470" class="arrow"/>
+<rect x="620" y="470" width="360" height="95" rx="4" class="node"/>
+<text x="800" y="525.5" class="">二次码搜索与独立确认</text>
+<path d="M800 565V620H525V670" class="arrow"/>
+<rect x="345" y="670" width="360" height="75" rx="7" class="end"/>
+<text x="525" y="715.5" class="">擦码后的跟踪</text>
+<path d="M240 545V707H345" class="dash"/>
+<text x="190" y="636" class="small">锁定后切换观察</text>
+</svg>

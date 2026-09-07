@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="830" viewBox="0 0 1050 830"><title>BOC强信号载波牵引</title><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs><style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:23px}.small{font-size:18px}.head{font-size:25px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style><rect width="1050" height="830" fill="white"/>
+<rect x="230" y="35" width="590" height="82" rx="4" class="node"/>
+<text x="525" y="71" class="">完整主码五抽头</text>
+<text x="525" y="101" class="small">E1：4 ms；B1C：10 ms</text>
+<path d="M525 117V162" class="arrow"/>
+<rect x="230" y="162" width="590" height="82" rx="4" class="node"/>
+<text x="525" y="198" class="">各抽头形成平方相邻复积</text>
+<text x="525" y="228" class="small">消除未知二次码正负号</text>
+<path d="M525 244V289" class="arrow"/>
+<rect x="230" y="289" width="590" height="82" rx="4" class="node"/>
+<text x="525" y="325" class="">统一NCO参考后复数累加</text>
+<text x="525" y="355" class="small">20 ms一组；E1 4对，B1C 1对</text>
+<path d="M525 371V416" class="arrow"/>
+<rect x="230" y="416" width="590" height="82" rx="4" class="node"/>
+<text x="525" y="452" class="">atan2恢复频差</text>
+<text x="525" y="482" class="small">按4πT换算；T为主码间隔</text>
+<path d="M525 498V543" class="arrow"/>
+<rect x="230" y="543" width="590" height="82" rx="4" class="node"/>
+<text x="525" y="579" class="">检查本次观察有效性</text>
+<text x="525" y="609" class="small">集中度≥0.65；相干比≥0.14</text>
+<path d="M525 625V670" class="arrow"/>
+<rect x="230" y="670" width="590" height="82" rx="7" class="end"/>
+<text x="525" y="706" class="">20 ms节拍更新FLL</text>
+<text x="525" y="736" class="small">随后从新主码重新积累</text>
+<text x="125" y="126" class="small">E1调码时</text>
+<text x="125" y="152" class="small">清窗等待</text>
+<path d="M230 203H65V76H230" class="dash"/>
+</svg>

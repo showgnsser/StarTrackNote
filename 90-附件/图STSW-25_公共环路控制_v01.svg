@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="655" viewBox="0 0 1080 655">
+<title>公共载波与码环控制</title>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.line{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}</style>
+<rect width="1080" height="655" fill="white"/>
+<rect x="45" y="30" width="270" height="60" rx="5" class="box"/><text x="180" y="68">有效频差</text>
+<rect x="385" y="30" width="270" height="60" rx="5" class="box"/><text x="520" y="68">有效相差</text>
+<rect x="745" y="30" width="290" height="60" rx="5" class="box"/><text x="890" y="68">有效细码误差</text>
+<path d="M180 90V137" class="line"/><path d="M520 90V137" class="line"/><path d="M890 90V247" class="line"/>
+<rect x="45" y="140" width="270" height="65" rx="5" class="box"/><text x="180" y="180">参考与控制时刻换算</text>
+<rect x="385" y="140" width="270" height="65" rx="5" class="box"/><text x="520" y="180">PLL许可与相位重定时</text>
+<path d="M180 205V247" class="line"/><path d="M520 205V247" class="line"/>
+<rect x="45" y="250" width="270" height="70" rx="5" class="box"/><text x="180" y="282">FLL</text><text x="180" y="308" class="small">频率与趋势状态</text>
+<rect x="385" y="250" width="270" height="70" rx="5" class="box"/><text x="520" y="282">PLL</text><text x="520" y="308" class="small">独立相位控制状态</text>
+<rect x="745" y="250" width="290" height="70" rx="5" class="box"/><text x="890" y="282">DLL的PI滤波</text><text x="890" y="308" class="small">剩余码率修正</text>
+<path d="M180 320V365H350V417" class="line"/><path d="M520 320V365H350" fill="none" stroke="#263442" stroke-width="1.7"/>
+<rect x="140" y="420" width="420" height="65" rx="5" class="shade"/><text x="350" y="460">合成载波多普勒</text>
+<path d="M560 452H742" class="line"/><path d="M890 320V417" class="line"/><text x="650" y="405" class="small">多普勒换算</text><text x="650" y="432" class="small">载波辅助码率</text>
+<rect x="745" y="420" width="290" height="65" rx="5" class="shade"/><text x="890" y="460">标称码率＋辅助＋残差</text>
+<path d="M350 485V537" class="line"/><path d="M890 485V537" class="line"/>
+<rect x="140" y="540" width="420" height="60" rx="5" class="shade"/><text x="350" y="578">连续载波NCO</text>
+<rect x="745" y="540" width="290" height="60" rx="5" class="shade"/><text x="890" y="578">连续码NCO</text>
+<text x="540" y="637" class="small">没有新有效观察：不注入零误差；按已有控制与获准预测继续运行</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="865" viewBox="0 0 1100 865"><title>BOC同步后载波与码环的独立积分</title><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs><style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:23px}.small{font-size:18px}.head{font-size:25px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style><rect width="1100" height="865" fill="white"/>
+<rect x="335" y="30" width="430" height="75" rx="7" class="end"/>
+<text x="550" y="75.5" class="">导频PDI与已锁定二次码位置</text>
+<path d="M550 105V150H270V185" class="arrow"/>
+<path d="M550 150H830V185" class="arrow"/>
+<rect x="50" y="185" width="440" height="80" rx="4" class="node"/>
+<text x="270" y="220" class="">逐PDI擦除二次码</text>
+<text x="270" y="250" class="small">载波支路</text>
+<rect x="610" y="185" width="440" height="80" rx="4" class="node"/>
+<text x="830" y="220" class="">保留原始双副本PDI</text>
+<text x="830" y="250" class="small">码支路</text>
+<path d="M270 265V320" class="arrow"/>
+<path d="M830 265V320" class="arrow"/>
+<rect x="50" y="320" width="440" height="90" rx="4" class="node"/>
+<text x="270" y="360" class="">按状态连续相干</text>
+<text x="270" y="390" class="small">20 / 160 / 320 ms</text>
+<rect x="610" y="320" width="440" height="90" rx="4" class="node"/>
+<text x="830" y="360" class="">每个主码内分别相干</text>
+<text x="830" y="390" class="small">E1 4 ms；B1C 10 ms</text>
+<path d="M270 410V475" class="arrow"/>
+<path d="M830 410V475" class="arrow"/>
+<rect x="50" y="475" width="440" height="90" rx="4" class="node"/>
+<text x="270" y="515" class="">相邻块鉴频或DFT寻峰插值</text>
+<text x="270" y="545" class="small">相邻块FLL：ShortNormal/ShortSlow</text>
+<rect x="610" y="475" width="440" height="90" rx="4" class="node"/>
+<text x="830" y="515" class="">跨主码累计鉴别量与功率</text>
+<text x="830" y="545" class="small">按20 / 160 / 320 ms发布细码误差</text>
+<path d="M270 565V630" class="arrow"/>
+<path d="M830 565V630" class="arrow"/>
+<rect x="50" y="630" width="440" height="85" rx="7" class="end"/>
+<text x="270" y="667.5" class="">FLL更新载波NCO</text>
+<text x="270" y="697.5" class="small">PLL仅在ShortSlow条件满足时开放</text>
+<rect x="610" y="630" width="440" height="85" rx="7" class="end"/>
+<text x="830" y="667.5" class="">ASPeCT DLL + 载波辅助</text>
+<text x="830" y="697.5" class="small">更新码NCO</text>
+<text x="550" y="790" class="small">载波长相干不改变ASPeCT的4/10 ms主码分块</text>
+</svg>

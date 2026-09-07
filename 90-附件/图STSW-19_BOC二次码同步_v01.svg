@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="990" viewBox="0 0 1100 990"><title>BOC二次码搜索与独立确认</title><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs><style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#263442;text-anchor:middle;font-size:23px}.small{font-size:18px}.head{font-size:25px;font-weight:600}.node{fill:white;stroke:#263442;stroke-width:1.7}.end{fill:#eef3f6;stroke:#263442;stroke-width:1.7}.arrow{fill:none;stroke:#263442;stroke-width:1.8;marker-end:url(#a)}.dash{fill:none;stroke:#263442;stroke-width:1.8;stroke-dasharray:6 5;marker-end:url(#a)}</style><rect width="1100" height="990" fill="white"/>
+<rect x="320" y="25" width="460" height="75" rx="7" class="end"/>
+<text x="550" y="70.5" class="">细码居中后的新主码Prompt</text>
+<path d="M550 100V135H275V170" class="arrow"/>
+<path d="M550 135H825V170" class="arrow"/>
+<rect x="65" y="170" width="420" height="85" rx="4" class="node"/>
+<text x="275" y="207.5" class="">E1：25个二次码位置</text>
+<text x="275" y="237.5" class="small">5个主码擦码后形成20 ms段</text>
+<rect x="615" y="170" width="420" height="85" rx="4" class="node"/>
+<text x="825" y="207.5" class="">B1C：1800个二次码位置</text>
+<text x="825" y="237.5" class="small">两个主码按码表选同／异号功率</text>
+<path d="M275 255V300" class="arrow"/>
+<path d="M825 255V300" class="arrow"/>
+<rect x="65" y="300" width="420" height="85" rx="4" class="node"/>
+<text x="275" y="337.5" class="">累加50段功率</text>
+<text x="275" y="367.5" class="small">搜索窗1 s</text>
+<rect x="615" y="300" width="420" height="85" rx="4" class="node"/>
+<text x="825" y="337.5" class="">累加900段功率</text>
+<text x="825" y="367.5" class="small">搜索窗18 s</text>
+<path d="M275 385V435H550V470" class="arrow"/>
+<path d="M825 385V435H550V470" class="arrow"/>
+<rect x="320" y="470" width="460" height="80" rx="4" class="node"/>
+<text x="550" y="505" class="">比较最大峰与次峰</text>
+<text x="550" y="535" class="small">两者为正；峰值比≥1.18</text>
+<path d="M550 550V600" class="arrow"/>
+<rect x="320" y="600" width="460" height="75" rx="4" class="node"/>
+<text x="550" y="645.5" class="">保存位置候选并清空数据</text>
+<path d="M550 675V725" class="arrow"/>
+<rect x="320" y="725" width="460" height="80" rx="4" class="node"/>
+<text x="550" y="760" class="">新数据独立确认</text>
+<text x="550" y="790" class="small">E1再1 s；B1C再18 s</text>
+<path d="M550 805V865" class="arrow"/>
+<rect x="320" y="865" width="460" height="75" rx="7" class="end"/>
+<text x="550" y="910.5" class="">位置相同且再次过门：锁定</text>
+<path d="M780 764H1045V637H780" class="dash"/>
+<text x="938" y="708" class="small">新有效位置：</text>
+<text x="938" y="733" class="small">重新确认</text>
+<path d="M320 510H35V65H320" class="dash"/>
+<text x="166" y="460" class="small">搜索未通过：</text>
+<text x="164" y="485" class="small">推进窗口重试</text>
+</svg>

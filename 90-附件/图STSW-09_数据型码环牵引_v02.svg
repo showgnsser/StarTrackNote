@@ -24,7 +24,7 @@
 <text x="180" y="302" class="">选局部峰并鉴别</text>
 <text x="180" y="330" class="small">每1 ms一次码误差</text>
 <rect x="375" y="270" width="330" height="70" rx="4" class="node"/>
-<text x="540" y="302" class="">JPL幅度累加</text>
+<text x="540" y="302" class="">浮点幅度累加</text>
 <text x="540" y="330" class="small">L1：10 ms × 16；G1：5 ms × 32</text>
 <rect x="775" y="270" width="250" height="70" rx="4" class="node"/>
 <text x="900" y="313" class="">160次功率累加</text>

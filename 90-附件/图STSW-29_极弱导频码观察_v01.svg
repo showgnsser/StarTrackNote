@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="770" viewBox="0 0 1080 770">
+<title>L5类Sensitivity的独立载波与5秒码观察</title><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:white;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.arrow{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}</style><rect width="1080" height="770" fill="white"/>
+<rect x="290" y="25" width="500" height="65" rx="5" class="shade"/><text x="540" y="65">已锁定、已擦码的L5／B2a／E5a PDI</text>
+<path d="M540 90V123H245V167" class="arrow"/><path d="M540 123H815V167" class="arrow"/>
+<rect x="45" y="170" width="400" height="75" rx="5" class="box"/><text x="245" y="202">载波320 ms连续相干</text><text x="245" y="232" class="small">0与±1.5625 Hz三频点</text>
+<rect x="595" y="170" width="440" height="75" rx="5" class="box"/><text x="815" y="202">码环保存最近5 s数据</text><text x="815" y="232" class="small">包含实际NCO相位参考</text>
+<path d="M245 245V302" class="arrow"/><path d="M815 245V302" class="arrow"/>
+<rect x="45" y="305" width="400" height="75" rx="5" class="box"/><text x="245" y="350">解析FMS → FLL</text>
+<rect x="595" y="305" width="440" height="75" rx="5" class="box"/><text x="815" y="337">Prompt选择连续相位模型</text><text x="815" y="367" class="small">21×13粗网格，11×11局部细化</text>
+<path d="M245 380V577" class="arrow"/><path d="M815 380V437" class="arrow"/>
+<rect x="595" y="440" width="440" height="75" rx="5" class="box"/><text x="815" y="472">固定模型，五抽头同相补偿</text><text x="815" y="502" class="small">长相干幅度 → 局部码误差</text>
+<path d="M815 515V577" class="arrow"/>
+<rect x="45" y="580" width="400" height="75" rx="5" class="shade"/><text x="245" y="625">连续载波NCO</text>
+<rect x="595" y="580" width="440" height="75" rx="5" class="shade"/><text x="815" y="612">DLL＋载波辅助 → 码NCO</text><text x="815" y="642" class="small">每320 ms更新；不将模型校频送入FLL</text>
+<path d="M445 617H592" class="arrow"/><text x="519" y="587" class="small">码率辅助</text>
+<text x="540" y="731" class="small">E1／B1C保持ASPeCT码观察，不进入这条5 s码路径</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650">
+<title>载噪比估计与用途</title><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:white;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.arrow{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}</style><rect width="1100" height="650" fill="white"/>
+<rect x="320" y="25" width="460" height="64" rx="5" class="shade"/><text x="550" y="65">Prompt、可用边界与时间参考</text>
+<path d="M550 89V120H190V157" class="arrow"/><path d="M550 120V157" class="arrow"/><path d="M550 120H910V157" class="arrow"/>
+<rect x="40" y="160" width="300" height="85" rx="5" class="box"/><text x="190" y="195">物理诊断</text><text x="190" y="225" class="small">M2M4／浮点NWPR</text>
+<rect x="400" y="160" width="300" height="85" rx="5" class="box"/><text x="550" y="195">环路质量</text><text x="550" y="225" class="small">每20 ms先求功率比</text>
+<rect x="760" y="160" width="300" height="85" rx="5" class="box"/><text x="910" y="195">独立显示统计</text><text x="910" y="225" class="small">10 s数据，不反馈控制</text>
+<path d="M190 245V312" class="arrow"/><path d="M550 245V312" class="arrow"/><path d="M910 245V312" class="arrow"/>
+<rect x="40" y="315" width="300" height="85" rx="5" class="box"/><text x="190" y="350">分离信号与噪声</text><text x="190" y="380" class="small">无物理解则无效</text>
+<rect x="400" y="315" width="300" height="85" rx="5" class="box"/><text x="550" y="350">浮点平均与迟滞选择</text><text x="550" y="380" class="small">200 ms首报，之后1 s更新</text>
+<rect x="760" y="315" width="300" height="85" rx="5" class="box"/><text x="910" y="350">物理显示结果</text><text x="910" y="380" class="small">B1C独立；其余可作中值</text>
+<path d="M190 400V437H365V502" class="arrow"/><path d="M550 400V437H365" fill="none" stroke="#263442" stroke-width="1.7"/>
+<rect x="135" y="505" width="460" height="75" rx="5" class="shade"/><text x="365" y="537">按使用者选择结果并检查时效</text><text x="365" y="565" class="small">FSM、PLL与对外C/N0分别定义</text>
+<path d="M910 400V502" class="arrow"/><rect x="760" y="505" width="300" height="75" rx="5" class="shade"/><text x="910" y="550">只读显示输出</text>
+<text x="550" y="627" class="small">物理诊断、控制质量和显示值不能互相冒名</text>
+</svg>

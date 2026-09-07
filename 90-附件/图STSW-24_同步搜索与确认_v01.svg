@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="710" viewBox="0 0 1060 710">
+<title>同步候选与独立确认</title>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.line{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}</style>
+<rect width="1060" height="710" fill="white"/>
+<text x="280" y="40">搜索：形成候选</text><text x="790" y="40">确认：判断是否可锁定</text>
+<rect x="100" y="75" width="360" height="60" rx="5" class="box"/><text x="280" y="113">满足开放条件，收数</text>
+<path d="M280 135V177" class="line"/>
+<rect x="100" y="180" width="360" height="60" rx="5" class="box"/><text x="280" y="218">枚举候选，擦码与积分评分</text>
+<path d="M280 240V282" class="line"/>
+<rect x="100" y="285" width="360" height="60" rx="5" class="box"/><text x="280" y="323">选峰，检查区分度</text>
+<path d="M100 315H45V105H97" class="line"/><text x="28" y="211" class="small" transform="rotate(-90 28 211)">未通过：增加新数据</text>
+<path d="M280 345V387" class="line"/><text x="325" y="375" class="small">通过</text>
+<rect x="100" y="390" width="360" height="60" rx="5" class="shade"/><text x="280" y="428">保存候选，清空搜索数据</text>
+<path d="M460 420H530V105H607" class="line"/>
+<rect x="610" y="75" width="360" height="60" rx="5" class="box"/><text x="790" y="113">收取独立的新数据</text>
+<path d="M790 135V177" class="line"/>
+<rect x="610" y="180" width="360" height="60" rx="5" class="box"/><text x="790" y="218">重新比较全部边界／位置</text>
+<path d="M790 240V282" class="line"/>
+<rect x="610" y="285" width="360" height="60" rx="5" class="box"/><text x="790" y="323">质量通过，且候选一致？</text>
+<path d="M790 345V387" class="line"/><text x="825" y="375" class="small">是</text>
+<rect x="610" y="390" width="360" height="60" rx="5" class="shade"/><text x="790" y="428">锁定边界／二次码位置</text>
+<path d="M970 315H1015V590H575V105H607" class="line"/>
+<text x="802" y="525" class="small">有效但位置改变：保存新候选</text><text x="802" y="552" class="small">清窗后重新独立确认</text>
+<text x="530" y="630" class="small">确认无效：数据型按规定延长或重启；导频清窗返回搜索</text>
+<text x="530" y="669" class="small">频率是否参与搜索、候选是否校频，由各信号方案规定</text>
+</svg>

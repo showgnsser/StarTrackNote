@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="760" viewBox="0 0 1040 760">
+<title>状态交接与首次新观察</title><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:white;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.arrow{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}</style><rect width="1040" height="760" fill="white"/>
+<rect x="220" y="25" width="460" height="65" rx="5" class="box"/><text x="450" y="65">旧状态完成当前观察与控制</text>
+<path d="M450 90V132" class="arrow"/>
+<rect x="220" y="135" width="460" height="65" rx="5" class="box"/><text x="450" y="175">FSM选择待提交状态</text>
+<text x="125" y="174" class="small">历元K</text>
+<path d="M450 200V242" class="arrow"/>
+<rect x="220" y="245" width="460" height="65" rx="5" class="box"/><text x="450" y="285">发出下一边界命令</text>
+<path d="M450 310V352" class="arrow"/>
+<rect x="220" y="355" width="460" height="65" rx="5" class="box"/><text x="450" y="395">健康PDI确认命令编号</text>
+<text x="125" y="395" class="small">历元K+1</text>
+<path d="M680 388H742" class="arrow"/><rect x="745" y="335" width="270" height="140" rx="5" class="shade"/><text x="880" y="376" class="small">未确认：不提交</text><text x="880" y="408" class="small">普通候选取消</text><text x="880" y="440" class="small">安全候选重发</text>
+<path d="M450 420V462" class="arrow"/>
+<rect x="220" y="465" width="460" height="80" rx="5" class="box"/><text x="450" y="499">提交目标策略，重建窗口</text><text x="450" y="528" class="small">连续NCO；趋势和积分按状态边处理</text>
+<path d="M450 545V587" class="arrow"/>
+<rect x="220" y="590" width="460" height="65" rx="5" class="box"/><text x="450" y="630">从合法边界收满目标窗口</text>
+<path d="M450 655V692" class="arrow"/>
+<rect x="220" y="695" width="460" height="50" rx="5" class="shade"/><text x="450" y="729">首个新观察 → 新环路校正</text>
+</svg>

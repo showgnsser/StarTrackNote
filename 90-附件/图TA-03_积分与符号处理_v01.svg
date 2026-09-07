@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="770" viewBox="0 0 1100 770" role="img" aria-labelledby="title desc">
+<title id="title">符号处理、块内相干与块间合并流程</title>
+<desc id="desc">复相关按边界与符号条件处理，并按观察方法执行必要的频率补偿。块内复相干完成后，选择直接保留复数、跨块累加功率或跨块累加幅度，完整统计形成后发布。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.flow{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#arrow)}</style>
+<rect width="1100" height="770" fill="#fff"/>
+<rect x="300" y="25" width="500" height="64" rx="5" class="shade"/><text x="550" y="64">复相关、时间与符号信息</text>
+<path d="M550 89V127" class="flow"/>
+<rect x="300" y="130" width="500" height="80" rx="5" class="box"/><text x="550" y="163">边界选择与符号处理</text><text x="550" y="191" class="small">仅擦除具有可信时间映射的已知符号</text>
+<path d="M550 210V247" class="flow"/>
+<rect x="300" y="250" width="500" height="64" rx="5" class="box"/><text x="550" y="289">频率补偿（按观察方法选用）</text>
+<path d="M550 314V352" class="flow"/>
+<rect x="300" y="355" width="500" height="80" rx="5" class="box"/><text x="550" y="388">块内复相干积分</text><text x="550" y="416" class="small">各抽头、副本及候选分别保存复数和</text>
+<path d="M550 435V480H190V527" class="flow"/><path d="M550 480V527" class="flow"/><path d="M550 480H910V527" class="flow"/>
+<rect x="50" y="530" width="280" height="80" rx="5" class="box"/><text x="190" y="563">保留复数结果</text><text x="190" y="591" class="small">保留相位</text>
+<rect x="410" y="530" width="280" height="80" rx="5" class="box"/><text x="550" y="563">取功率并跨块累加</text><text x="550" y="591" class="small">不保留块间相位</text>
+<rect x="770" y="530" width="280" height="80" rx="5" class="box"/><text x="910" y="563">取幅度并跨块累加</text><text x="910" y="591" class="small">不保留块间相位</text>
+<path d="M190 610V645H450V677" class="flow"/><path d="M550 610V677" class="flow"/><path d="M910 610V645H650V677" class="flow"/>
+<rect x="300" y="680" width="500" height="64" rx="5" class="shade"/><text x="550" y="719">完整统计发布结果与时间参考</text>
+</svg>

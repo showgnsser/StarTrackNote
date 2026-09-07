@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700" role="img" aria-labelledby="title desc">
+<title id="title">跟踪算法闭环处理结构</title>
+<desc id="desc">PDI分为载波、同步和码处理三条支路。同步结果配置积分和符号处理，载波环和码环更新硬件NCO，硬件继续形成PDI。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.flow,.config{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#arrow)}.config{stroke-dasharray:6 5}</style>
+<rect width="1100" height="700" fill="#fff"/>
+<rect x="350" y="30" width="400" height="64" rx="5" class="shade"/><text x="550" y="69">硬件相关结果与时间参考</text>
+<path d="M550 94V142" class="flow"/>
+<rect x="400" y="145" width="300" height="64" rx="5" class="box"/><text x="550" y="184">输入检查与支路选择</text>
+<path d="M550 209V242H190V287" class="flow"/><path d="M550 242V287" class="flow"/><path d="M550 242H910V287" class="flow"/>
+<rect x="50" y="290" width="280" height="80" rx="5" class="box"/><text x="190" y="323">载波积分与误差鉴别</text><text x="190" y="351" class="small">频差／相差</text>
+<rect x="410" y="290" width="280" height="80" rx="5" class="box"/><text x="550" y="323">同步搜索与独立确认</text><text x="550" y="351" class="small">数据位／二次码位置</text>
+<rect x="770" y="290" width="280" height="80" rx="5" class="box"/><text x="910" y="323">码积分与误差鉴别</text><text x="910" y="351" class="small">码差</text>
+<path d="M190 370V417" class="flow"/><path d="M550 370V417" class="flow"/><path d="M910 370V417" class="flow"/>
+<rect x="50" y="420" width="280" height="64" rx="5" class="box"/><text x="190" y="459">载波环滤波</text>
+<rect x="410" y="420" width="280" height="64" rx="5" class="box"/><text x="550" y="459">同步边界与符号位置</text>
+<rect x="770" y="420" width="280" height="64" rx="5" class="box"/><text x="910" y="459">码环滤波</text>
+<path d="M410 452H368V340H333" class="config"/><path d="M690 452H733V340H767" class="config"/>
+<path d="M190 484V535H450V572" class="flow"/><path d="M910 484V535H650V572" class="flow"/>
+<rect x="350" y="575" width="400" height="64" rx="5" class="shade"/><text x="550" y="614">硬件载波／码NCO更新</text>
+<path d="M350 607H22V62H347" class="flow"/>
+<text x="140" y="591" class="small">后续混频与相关</text>
+<path d="M350 677H410" class="flow"/><text x="468" y="683" class="small">数据与控制</text>
+<path d="M610 677H670" class="config"/><text x="740" y="683" class="small">同步配置</text>
+</svg>

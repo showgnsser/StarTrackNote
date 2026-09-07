@@ -23,7 +23,7 @@
 <path d="M500 375V420" class="arrow"/>
 <rect x="330" y="420" width="340" height="75" rx="4" class="node"/>
 <text x="500" y="452" class="">形成LongFast频率观察</text>
-<text x="500" y="485" class="small">160 ms长相干；FLL-only</text>
+<text x="500" y="485" class="small">候选补偿 → 160 ms连续相干</text>
 <path d="M500 495V545" class="arrow"/>
 <rect x="330" y="545" width="340" height="75" rx="7" class="end"/>
 <text x="500" y="577" class="">载波环 → 载波NCO</text>

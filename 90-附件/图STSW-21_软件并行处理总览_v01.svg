@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="720" viewBox="0 0 1080 720">
+<title>软件并行处理总览</title>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.line,.gate{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}.gate{stroke-dasharray:6 5}</style>
+<rect width="1080" height="720" fill="white"/>
+<rect x="320" y="25" width="440" height="64" rx="5" class="shade"/><text x="540" y="65">1 ms PDI与时间参考</text>
+<path d="M540 89V120H190V157" class="line"/><path d="M540 120V157" class="line"/><path d="M540 120H890V157" class="line"/>
+<rect x="50" y="160" width="280" height="70" rx="5" class="box"/><text x="190" y="191">载波观察</text><text x="190" y="218" class="small">按符号条件选择积分与鉴频</text>
+<rect x="400" y="160" width="280" height="70" rx="5" class="box"/><text x="540" y="191">同步搜索与确认</text><text x="540" y="218" class="small">边界或二次码位置</text>
+<rect x="750" y="160" width="280" height="70" rx="5" class="box"/><text x="890" y="191">码观察</text><text x="890" y="218" class="small">五抽头／BOC双副本</text>
+<path d="M190 230V320" class="line"/><path d="M540 230V320" class="line"/><path d="M890 230V320" class="line"/>
+<rect x="50" y="320" width="280" height="64" rx="5" class="box"/><text x="190" y="360">FLL／PLL</text>
+<rect x="400" y="320" width="280" height="64" rx="5" class="box"/><text x="540" y="360">候选与锁定边界</text>
+<rect x="750" y="320" width="280" height="64" rx="5" class="box"/><text x="890" y="360">载波辅助DLL</text>
+<path d="M400 350H363V195H332" class="gate"/><path d="M680 350H716V195H748" class="gate"/>
+<text x="347" y="272" class="small" transform="rotate(-90 347 272)">切换符号处理</text>
+<text x="696" y="272" class="small" transform="rotate(90 696 272)">切换观察方式</text>
+<path d="M190 384V463" class="line"/><path d="M890 384V463" class="line"/>
+<rect x="50" y="465" width="280" height="64" rx="5" class="shade"/><text x="190" y="505">连续载波NCO</text>
+<rect x="750" y="465" width="280" height="64" rx="5" class="shade"/><text x="890" y="505">连续码NCO</text>
+<path d="M190 529V570H540V603M890 529V570H540M540 384V603" class="line"/>
+<rect x="320" y="605" width="440" height="64" rx="5" class="shade"/><text x="540" y="645">质量监测与策略选择</text>
+<path d="M320 637H25V130H188" class="gate"/><path d="M760 637H1055V130H892" class="gate"/>
+<text x="540" y="703" class="small">并行运行；同步未完成不等于所有环路等待</text>
+</svg>

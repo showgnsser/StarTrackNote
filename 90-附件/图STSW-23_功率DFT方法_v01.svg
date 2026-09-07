@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="730" viewBox="0 0 940 730">
+<title>功率DFT与三点插值</title>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC",sans-serif;font-size:23px;fill:#263442;text-anchor:middle}.small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.6}.shade{fill:#eef3f6;stroke:#263442;stroke-width:1.6}.line{fill:none;stroke:#263442;stroke-width:1.7;marker-end:url(#a)}</style>
+<rect width="940" height="730" fill="white"/>
+<rect x="250" y="25" width="440" height="60" rx="5" class="shade"/><text x="470" y="63">收齐Prompt，统一NCO参考</text>
+<path d="M470 85V132" class="line"/>
+<rect x="250" y="135" width="440" height="60" rx="5" class="box"/><text x="470" y="173">选一个候选频率</text>
+<path d="M470 195V242" class="line"/>
+<rect x="250" y="245" width="440" height="60" rx="5" class="box"/><text x="470" y="283">逐条旋转 → 块内相干</text>
+<path d="M470 305V352" class="line"/>
+<rect x="250" y="355" width="440" height="60" rx="5" class="box"/><text x="470" y="393">块末取功率 → 块间累加</text>
+<path d="M690 385H835V165H693" class="line"/><text x="867" y="280" class="small" transform="rotate(90 867 280)">下一个频率</text>
+<path d="M470 415V462" class="line"/><text x="572" y="443" class="small">全部频率完成</text>
+<rect x="250" y="465" width="440" height="60" rx="5" class="box"/><text x="470" y="503">选择功率最大的频点</text>
+<path d="M470 525V572" class="line"/>
+<rect x="250" y="575" width="440" height="60" rx="5" class="box"/><text x="470" y="613">三点插值与边缘处理</text>
+<path d="M470 635V672" class="line"/>
+<text x="470" y="701">频差＋参考时刻＋有效性 → FLL</text>
+<text x="118" y="281" class="small">每个候选</text><text x="118" y="310" class="small">使用同一批数据</text>
+</svg>
