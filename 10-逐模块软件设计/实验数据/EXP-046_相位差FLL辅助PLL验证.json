@@ -1,0 +1,3076 @@
+{
+  "qualification_complete": false,
+  "production_changed": false,
+  "matrix_complete": true,
+  "full_results_local": "/home/showskills/SN770/Project/StarTrack/outputs/fll-phase-PPLFjq/summary.json",
+  "full_results_sha256": "dd58cac80c1a449967677308adf9dbec94c6cf52a5ca2156b4a07e51a435e711",
+  "aggregate": {
+    "screen": {
+      "count": 170,
+      "arms": {
+        "baseline": {
+          "passed": 155,
+          "phase_rms_deg": 6.4658704331340005,
+          "freq_p95_hz": 0.43577425009299997,
+          "code_p95_chips": 0.0073899292176749995,
+          "failures": [
+            "pdi_147",
+            "pdi_145",
+            "pdi_146",
+            "pdi_149",
+            "pdi_148",
+            "pdi_151",
+            "pdi_150",
+            "pdi_155",
+            "pdi_152",
+            "pdi_153",
+            "pdi_154",
+            "pdi_159",
+            "pdi_158",
+            "pdi_157",
+            "pdi_156"
+          ]
+        },
+        "dft025": {
+          "passed": 155,
+          "phase_rms_deg": 10.550940465258,
+          "freq_p95_hz": 0.436929893467,
+          "code_p95_chips": 0.00775377434401,
+          "failures": [
+            "pdi_147",
+            "pdi_145",
+            "pdi_146",
+            "pdi_149",
+            "pdi_148",
+            "pdi_151",
+            "pdi_150",
+            "pdi_155",
+            "pdi_152",
+            "pdi_153",
+            "pdi_154",
+            "pdi_159",
+            "pdi_158",
+            "pdi_157",
+            "pdi_156"
+          ]
+        },
+        "phase025": {
+          "passed": 155,
+          "phase_rms_deg": 6.470145035118,
+          "freq_p95_hz": 0.4500798416665,
+          "code_p95_chips": 0.00738558442209,
+          "failures": [
+            "pdi_147",
+            "pdi_145",
+            "pdi_146",
+            "pdi_149",
+            "pdi_148",
+            "pdi_151",
+            "pdi_150",
+            "pdi_155",
+            "pdi_152",
+            "pdi_153",
+            "pdi_154",
+            "pdi_159",
+            "pdi_158",
+            "pdi_157",
+            "pdi_156"
+          ]
+        },
+        "phase100": {
+          "passed": 155,
+          "phase_rms_deg": 6.518081813724001,
+          "freq_p95_hz": 0.49551010155249997,
+          "code_p95_chips": 0.00738714513505,
+          "failures": [
+            "pdi_147",
+            "pdi_145",
+            "pdi_146",
+            "pdi_149",
+            "pdi_148",
+            "pdi_151",
+            "pdi_150",
+            "pdi_155",
+            "pdi_152",
+            "pdi_153",
+            "pdi_154",
+            "pdi_159",
+            "pdi_158",
+            "pdi_157",
+            "pdi_156"
+          ]
+        },
+        "matched025": {
+          "passed": 155,
+          "phase_rms_deg": 6.465882664746,
+          "freq_p95_hz": 0.4361697197055,
+          "code_p95_chips": 0.007370113335854999,
+          "failures": [
+            "pdi_147",
+            "pdi_145",
+            "pdi_146",
+            "pdi_149",
+            "pdi_148",
+            "pdi_151",
+            "pdi_150",
+            "pdi_155",
+            "pdi_152",
+            "pdi_153",
+            "pdi_154",
+            "pdi_159",
+            "pdi_158",
+            "pdi_157",
+            "pdi_156"
+          ]
+        },
+        "trap0": {
+          "passed": 155,
+          "phase_rms_deg": 6.456265221185999,
+          "freq_p95_hz": 0.412199402328,
+          "code_p95_chips": 0.0073818063728899996,
+          "failures": [
+            "pdi_147",
+            "pdi_145",
+            "pdi_146",
+            "pdi_149",
+            "pdi_148",
+            "pdi_151",
+            "pdi_150",
+            "pdi_155",
+            "pdi_152",
+            "pdi_153",
+            "pdi_154",
+            "pdi_159",
+            "pdi_158",
+            "pdi_157",
+            "pdi_156"
+          ]
+        },
+        "trap025": {
+          "passed": 155,
+          "phase_rms_deg": 6.467577438006,
+          "freq_p95_hz": 0.418941306445,
+          "code_p95_chips": 0.007385287136745,
+          "failures": [
+            "pdi_147",
+            "pdi_145",
+            "pdi_146",
+            "pdi_149",
+            "pdi_148",
+            "pdi_151",
+            "pdi_150",
+            "pdi_155",
+            "pdi_152",
+            "pdi_153",
+            "pdi_154",
+            "pdi_159",
+            "pdi_158",
+            "pdi_157",
+            "pdi_156"
+          ]
+        }
+      }
+    },
+    "holdout": {
+      "count": 170,
+      "arms": {
+        "baseline": {
+          "passed": 155,
+          "phase_rms_deg": 6.451018559946,
+          "freq_p95_hz": 0.445256637604,
+          "code_p95_chips": 0.00828564753114,
+          "failures": [
+            "new_pdi_146",
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_150",
+            "new_pdi_154",
+            "new_pdi_153",
+            "new_pdi_152",
+            "new_pdi_156",
+            "new_pdi_151",
+            "new_pdi_155",
+            "new_pdi_159",
+            "new_pdi_158",
+            "new_pdi_157"
+          ]
+        },
+        "dft025": {
+          "passed": 155,
+          "phase_rms_deg": 10.083241799658001,
+          "freq_p95_hz": 0.4531026957005,
+          "code_p95_chips": 0.008164277244270001,
+          "failures": [
+            "new_pdi_146",
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_150",
+            "new_pdi_154",
+            "new_pdi_153",
+            "new_pdi_152",
+            "new_pdi_156",
+            "new_pdi_151",
+            "new_pdi_155",
+            "new_pdi_159",
+            "new_pdi_158",
+            "new_pdi_157"
+          ]
+        },
+        "phase025": {
+          "passed": 155,
+          "phase_rms_deg": 6.461227219482,
+          "freq_p95_hz": 0.4624445648255,
+          "code_p95_chips": 0.00825249547134,
+          "failures": [
+            "new_pdi_146",
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_150",
+            "new_pdi_154",
+            "new_pdi_153",
+            "new_pdi_152",
+            "new_pdi_156",
+            "new_pdi_151",
+            "new_pdi_155",
+            "new_pdi_159",
+            "new_pdi_158",
+            "new_pdi_157"
+          ]
+        },
+        "phase100": {
+          "passed": 155,
+          "phase_rms_deg": 6.508336080456001,
+          "freq_p95_hz": 0.5078410147595,
+          "code_p95_chips": 0.0082021254249,
+          "failures": [
+            "new_pdi_146",
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_150",
+            "new_pdi_154",
+            "new_pdi_153",
+            "new_pdi_152",
+            "new_pdi_156",
+            "new_pdi_151",
+            "new_pdi_155",
+            "new_pdi_159",
+            "new_pdi_158",
+            "new_pdi_157"
+          ]
+        },
+        "matched025": {
+          "passed": 155,
+          "phase_rms_deg": 6.451018559946,
+          "freq_p95_hz": 0.445256637604,
+          "code_p95_chips": 0.00827979793681,
+          "failures": [
+            "new_pdi_146",
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_150",
+            "new_pdi_154",
+            "new_pdi_153",
+            "new_pdi_152",
+            "new_pdi_156",
+            "new_pdi_151",
+            "new_pdi_155",
+            "new_pdi_159",
+            "new_pdi_158",
+            "new_pdi_157"
+          ]
+        },
+        "trap0": {
+          "passed": 155,
+          "phase_rms_deg": 6.44865646509,
+          "freq_p95_hz": 0.41882139181949996,
+          "code_p95_chips": 0.00829348502796,
+          "failures": [
+            "new_pdi_146",
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_150",
+            "new_pdi_154",
+            "new_pdi_153",
+            "new_pdi_152",
+            "new_pdi_156",
+            "new_pdi_151",
+            "new_pdi_155",
+            "new_pdi_159",
+            "new_pdi_158",
+            "new_pdi_157"
+          ]
+        },
+        "trap025": {
+          "passed": 155,
+          "phase_rms_deg": 6.458187310992001,
+          "freq_p95_hz": 0.42846860894600003,
+          "code_p95_chips": 0.008257290353225,
+          "failures": [
+            "new_pdi_146",
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_150",
+            "new_pdi_154",
+            "new_pdi_153",
+            "new_pdi_152",
+            "new_pdi_156",
+            "new_pdi_151",
+            "new_pdi_155",
+            "new_pdi_159",
+            "new_pdi_158",
+            "new_pdi_157"
+          ]
+        }
+      }
+    },
+    "iq": {
+      "count": 12,
+      "arms": {
+        "baseline": {
+          "passed": 11,
+          "phase_rms_deg": 2.7138401592320838,
+          "freq_p95_hz": 0.35697334838022243,
+          "code_p95_chips": 0.007289189845323563,
+          "failures": [
+            "e1_gate_0"
+          ]
+        },
+        "dft025": {
+          "passed": 11,
+          "phase_rms_deg": 9.348076531684782,
+          "freq_p95_hz": 0.38768611146875287,
+          "code_p95_chips": 0.0070229992270469666,
+          "failures": [
+            "e1_gate_0"
+          ]
+        },
+        "phase025": {
+          "passed": 11,
+          "phase_rms_deg": 2.7894958387850144,
+          "freq_p95_hz": 0.3904981126458438,
+          "code_p95_chips": 0.007398717105388641,
+          "failures": [
+            "e1_gate_0"
+          ]
+        },
+        "matched025": {
+          "passed": 11,
+          "phase_rms_deg": 2.7138401592320838,
+          "freq_p95_hz": 0.35697334838022243,
+          "code_p95_chips": 0.0075210090726614,
+          "failures": [
+            "e1_gate_0"
+          ]
+        }
+      }
+    },
+    "iq_wide": {
+      "count": 4,
+      "arms": {
+        "baseline": {
+          "passed": 4,
+          "phase_rms_deg": 27.266627217843094,
+          "freq_p95_hz": 1.0269284249999941,
+          "code_p95_chips": 0.007010769098997116,
+          "failures": []
+        },
+        "phase025": {
+          "passed": 4,
+          "phase_rms_deg": 25.382707868972734,
+          "freq_p95_hz": 0.912845134500003,
+          "code_p95_chips": 0.006948444992303848,
+          "failures": []
+        },
+        "phase100": {
+          "passed": 4,
+          "phase_rms_deg": 19.390009944329805,
+          "freq_p95_hz": 0.8714199070000177,
+          "code_p95_chips": 0.005546171218156815,
+          "failures": []
+        }
+      }
+    },
+    "e1_check": {
+      "count": 4,
+      "arms": {
+        "baseline": {
+          "passed": 4,
+          "phase_rms_deg": 2.8924039558354826,
+          "freq_p95_hz": 0.3536014157667182,
+          "code_p95_chips": 0.0044425129890441895,
+          "failures": []
+        },
+        "phase100": {
+          "passed": 4,
+          "phase_rms_deg": 3.229105779413689,
+          "freq_p95_hz": 0.4850751810509166,
+          "code_p95_chips": 0.004319779574871063,
+          "failures": []
+        }
+      }
+    }
+  },
+  "groups": {
+    "screen": {
+      "22": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 25,
+            "phase_rms_deg": 51.79040052984
+          },
+          "dft025": {
+            "passed": 25,
+            "phase_rms_deg": 51.79040052984
+          },
+          "phase025": {
+            "passed": 25,
+            "phase_rms_deg": 51.79040052984
+          },
+          "phase100": {
+            "passed": 25,
+            "phase_rms_deg": 51.79040052984
+          },
+          "matched025": {
+            "passed": 25,
+            "phase_rms_deg": 51.79040052984
+          },
+          "trap0": {
+            "passed": 25,
+            "phase_rms_deg": 51.79040052984
+          },
+          "trap025": {
+            "passed": 25,
+            "phase_rms_deg": 51.79040052984
+          }
+        }
+      },
+      "32": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 29.40157343403
+          },
+          "dft025": {
+            "passed": 40,
+            "phase_rms_deg": 27.239856168563996
+          },
+          "phase025": {
+            "passed": 40,
+            "phase_rms_deg": 27.10698951069
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 20.143639566090002
+          },
+          "matched025": {
+            "passed": 40,
+            "phase_rms_deg": 28.624576908204
+          },
+          "trap0": {
+            "passed": 40,
+            "phase_rms_deg": 29.619253843758
+          },
+          "trap025": {
+            "passed": 40,
+            "phase_rms_deg": 25.856025364674
+          }
+        }
+      },
+      "35": {
+        "count": 50,
+        "arms": {
+          "baseline": {
+            "passed": 50,
+            "phase_rms_deg": 1.7641493758008
+          },
+          "dft025": {
+            "passed": 50,
+            "phase_rms_deg": 8.361191640186
+          },
+          "phase025": {
+            "passed": 50,
+            "phase_rms_deg": 1.8073550972844
+          },
+          "phase100": {
+            "passed": 50,
+            "phase_rms_deg": 1.9791810249840003
+          },
+          "matched025": {
+            "passed": 50,
+            "phase_rms_deg": 1.7641493758008
+          },
+          "trap0": {
+            "passed": 50,
+            "phase_rms_deg": 1.7503909808328002
+          },
+          "trap025": {
+            "passed": 50,
+            "phase_rms_deg": 1.7933690518722
+          }
+        }
+      },
+      "40": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 1.9017631011366
+          },
+          "dft025": {
+            "passed": 40,
+            "phase_rms_deg": 2.0906039951694
+          },
+          "phase025": {
+            "passed": 40,
+            "phase_rms_deg": 1.9221697819152
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 1.9943527063194
+          },
+          "matched025": {
+            "passed": 40,
+            "phase_rms_deg": 1.9017631011366
+          },
+          "trap0": {
+            "passed": 40,
+            "phase_rms_deg": 1.8567330279029999
+          },
+          "trap025": {
+            "passed": 40,
+            "phase_rms_deg": 1.8749252945484
+          }
+        }
+      }
+    },
+    "holdout": {
+      "22": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438521611
+          },
+          "dft025": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438521611
+          },
+          "phase025": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438521611
+          },
+          "phase100": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438521611
+          },
+          "matched025": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438521611
+          },
+          "trap0": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438521611
+          },
+          "trap025": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438521611
+          }
+        }
+      },
+      "32": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 26.231407342487998
+          },
+          "dft025": {
+            "passed": 40,
+            "phase_rms_deg": 26.904919471488
+          },
+          "phase025": {
+            "passed": 40,
+            "phase_rms_deg": 24.124151005452
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 22.56341655951
+          },
+          "matched025": {
+            "passed": 40,
+            "phase_rms_deg": 27.981588457278
+          },
+          "trap0": {
+            "passed": 40,
+            "phase_rms_deg": 26.984127151008
+          },
+          "trap025": {
+            "passed": 40,
+            "phase_rms_deg": 25.957608851448
+          }
+        }
+      },
+      "35": {
+        "count": 50,
+        "arms": {
+          "baseline": {
+            "passed": 50,
+            "phase_rms_deg": 1.7287867834974002
+          },
+          "dft025": {
+            "passed": 50,
+            "phase_rms_deg": 7.658799174954
+          },
+          "phase025": {
+            "passed": 50,
+            "phase_rms_deg": 1.7707825286694001
+          },
+          "phase100": {
+            "passed": 50,
+            "phase_rms_deg": 1.9586994193692
+          },
+          "matched025": {
+            "passed": 50,
+            "phase_rms_deg": 1.7287867834974002
+          },
+          "trap0": {
+            "passed": 50,
+            "phase_rms_deg": 1.7232560729711999
+          },
+          "trap025": {
+            "passed": 50,
+            "phase_rms_deg": 1.7572590780858
+          }
+        }
+      },
+      "40": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 1.8563030358624002
+          },
+          "dft025": {
+            "passed": 40,
+            "phase_rms_deg": 2.020039414218
+          },
+          "phase025": {
+            "passed": 40,
+            "phase_rms_deg": 1.8775588408272
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 1.9532692180458
+          },
+          "matched025": {
+            "passed": 40,
+            "phase_rms_deg": 1.8563030358624002
+          },
+          "trap0": {
+            "passed": 40,
+            "phase_rms_deg": 1.793761691769
+          },
+          "trap025": {
+            "passed": 40,
+            "phase_rms_deg": 1.8153750566178
+          }
+        }
+      }
+    }
+  },
+  "noise": {
+    "dft": {
+      "samples_hz": {
+        "count": 999,
+        "mean": -0.0705909696593732,
+        "std": 2.6184091577647384,
+        "rms": 2.6193605331194285
+      },
+      "lag1": 0.006526243622708126,
+      "one_second_hz": {
+        "count": 19,
+        "mean": -0.07863195553351876,
+        "std": 0.462390628106668,
+        "rms": 0.46902886626720985
+      }
+    },
+    "phase_difference": {
+      "samples_hz": {
+        "count": 999,
+        "mean": 0.0010939478201966175,
+        "std": 1.1268812736072815,
+        "rms": 1.126881804595585
+      },
+      "lag1": -0.47387669105101443,
+      "one_second_hz": {
+        "count": 19,
+        "mean": 0.0007129589974568223,
+        "std": 0.013304048382578825,
+        "rms": 0.013323138290134684
+      }
+    }
+  },
+  "states": {
+    "b1i_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.1963175107355055,
+            "std": 1.8997247646206004,
+            "rms": 1.9098415500596329,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.1999458661008248,
+            "std": 8.141973751787619,
+            "rms": 8.144428459024573,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.18883984138445523,
+            "std": 1.9441688448290715,
+            "rms": 1.9533184540412536,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.1963175107355055,
+            "std": 1.8997247646206004,
+            "rms": 1.9098415500596329,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "l1ca_gate_0": {
+      "baseline": {
+        "tail_pll_updates": 740,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -4.935279830953899,
+            "std": 25.61398426442853,
+            "rms": 26.08511408654777,
+            "pll_updates": 740
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 760,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 2.037242857688485,
+            "std": 26.37010748204084,
+            "rms": 26.448684789145734,
+            "pll_updates": 760
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 720,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 6.396136120675815,
+            "std": 27.670616663638306,
+            "rms": 28.400239150757724,
+            "pll_updates": 720
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 740,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -2.7579656728933695,
+            "std": 24.95907218384127,
+            "rms": 25.110986817149524,
+            "pll_updates": 740
+          }
+        }
+      }
+    },
+    "l1ca_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.09917425721320615,
+            "std": 1.6480908392455789,
+            "rms": 1.651072060116998,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.036833159737558165,
+            "std": 10.55166031694933,
+            "rms": 10.551724604344994,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.10045017013293546,
+            "std": 1.6965819412163141,
+            "rms": 1.6995530353422492,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.09917425721320615,
+            "std": 1.6480908392455789,
+            "rms": 1.651072060116998,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "b1i_gate_0": {
+      "baseline": {
+        "tail_pll_updates": 820,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -5.988733282302681,
+            "std": 21.32700361176207,
+            "rms": 22.151885007436096,
+            "pll_updates": 820
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 790,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 4.2815929343337045,
+            "std": 25.121378494419712,
+            "rms": 25.483635837831883,
+            "pll_updates": 790
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 870,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 1.8797553845230577,
+            "std": 16.332011063815955,
+            "rms": 16.439831680836946,
+            "pll_updates": 870
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 820,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -5.988733282302681,
+            "std": 21.32700361176207,
+            "rms": 22.151885007436096,
+            "pll_updates": 820
+          }
+        }
+      }
+    },
+    "g1_gate_0": {
+      "baseline": {
+        "tail_pll_updates": 800,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 4.147544273746396,
+            "std": 28.144174633866797,
+            "rms": 28.448140349138427,
+            "pll_updates": 800
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 820,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 1.4907671429402034,
+            "std": 21.638282868693228,
+            "rms": 21.689575195933482,
+            "pll_updates": 820
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 800,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -1.0454909363885672,
+            "std": 22.340726767006043,
+            "rms": 22.365176587187744,
+            "pll_updates": 800
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 760,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -3.4931507335527496,
+            "std": 23.830804939220332,
+            "rms": 24.08545964058997,
+            "pll_updates": 760
+          }
+        }
+      }
+    },
+    "g1_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.17675448625436546,
+            "std": 1.648246452461309,
+            "rms": 1.6576967504529696,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.19490458393552398,
+            "std": 8.004263551790624,
+            "rms": 8.006636172785855,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.18881716733762005,
+            "std": 1.7011757441653161,
+            "rms": 1.711622281701725,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.17675448625436546,
+            "std": 1.648246452461309,
+            "rms": 1.6576967504529696,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "l5_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.6831998269546384,
+            "std": 2.304571304945958,
+            "rms": 2.4037077407894585,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.7062857574277986,
+            "std": 2.372653985145604,
+            "rms": 2.47554569830021,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.6914678503774885,
+            "std": 2.3846721513701516,
+            "rms": 2.4828993249074784,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.6831998269546384,
+            "std": 2.304571304945958,
+            "rms": 2.4037077407894585,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "b2a_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.43902356221532685,
+            "std": 2.795509444922475,
+            "rms": 2.8297729140040544,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.4664427158376457,
+            "std": 2.864480441711383,
+            "rms": 2.90220898766871,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.4502938223325582,
+            "std": 2.868088965814755,
+            "rms": 2.903222148279256,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.43902356221532685,
+            "std": 2.795509444922475,
+            "rms": 2.8297729140040544,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "e5a_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.30799036345489733,
+            "std": 2.579586171882538,
+            "rms": 2.5979074044601136,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.29848164791859016,
+            "std": 2.648873184965204,
+            "rms": 2.6656369678131155,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.3175784417281102,
+            "std": 2.6568565085887705,
+            "rms": 2.6757695292907733,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.30799036345489733,
+            "std": 2.579586171882538,
+            "rms": 2.5979074044601136,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "e1_gate_0": {
+      "baseline": {
+        "tail_pll_updates": 0,
+        "states": {
+          "ShortFast": {
+            "count": 20000,
+            "mean": 0.2783323632583633,
+            "std": 103.85156052852338,
+            "rms": 103.85193350686346,
+            "pll_updates": 0
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 0,
+        "states": {
+          "ShortFast": {
+            "count": 20000,
+            "mean": 0.2783323632583633,
+            "std": 103.85156052852338,
+            "rms": 103.85193350686346,
+            "pll_updates": 0
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 0,
+        "states": {
+          "ShortFast": {
+            "count": 20000,
+            "mean": 0.2783323632583633,
+            "std": 103.85156052852338,
+            "rms": 103.85193350686346,
+            "pll_updates": 0
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 0,
+        "states": {
+          "ShortFast": {
+            "count": 20000,
+            "mean": 0.2783323632583633,
+            "std": 103.85156052852338,
+            "rms": 103.85193350686346,
+            "pll_updates": 0
+          }
+        }
+      }
+    },
+    "e1_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 557,
+        "states": {
+          "ShortSlow": {
+            "count": 11122,
+            "mean": 0.16616086770229374,
+            "std": 2.9659000620457103,
+            "rms": 2.9705508936893046,
+            "pll_updates": 557
+          },
+          "LongSlow": {
+            "count": 7360,
+            "mean": -2.499163620246631,
+            "std": 101.97590282962189,
+            "rms": 102.00652222636182,
+            "pll_updates": 0
+          },
+          "HighDynamic": {
+            "count": 1518,
+            "mean": -24.30757588425305,
+            "std": 97.68241296446342,
+            "rms": 100.66137316731125,
+            "pll_updates": 0
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 557,
+        "states": {
+          "ShortSlow": {
+            "count": 11122,
+            "mean": 0.1620792844775357,
+            "std": 2.997637948982292,
+            "rms": 3.0020164835715866,
+            "pll_updates": 557
+          },
+          "LongSlow": {
+            "count": 7360,
+            "mean": -2.458915707191982,
+            "std": 101.90075051850482,
+            "rms": 101.93041362954256,
+            "pll_updates": 0
+          },
+          "HighDynamic": {
+            "count": 1518,
+            "mean": -21.99120558346456,
+            "std": 96.43422969023884,
+            "rms": 98.9099276056956,
+            "pll_updates": 0
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 557,
+        "states": {
+          "ShortSlow": {
+            "count": 11122,
+            "mean": 0.16743712174491313,
+            "std": 2.994491657106996,
+            "rms": 2.9991691306462904,
+            "pll_updates": 557
+          },
+          "LongSlow": {
+            "count": 7360,
+            "mean": -2.61754579386847,
+            "std": 101.91930984630359,
+            "rms": 101.95291690545119,
+            "pll_updates": 0
+          },
+          "HighDynamic": {
+            "count": 1518,
+            "mean": -23.82075880524397,
+            "std": 97.30790317479611,
+            "rms": 100.18111883150988,
+            "pll_updates": 0
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 557,
+        "states": {
+          "ShortSlow": {
+            "count": 11122,
+            "mean": 0.16616086770229374,
+            "std": 2.9659000620457103,
+            "rms": 2.9705508936893046,
+            "pll_updates": 557
+          },
+          "LongSlow": {
+            "count": 7360,
+            "mean": -2.499163620246631,
+            "std": 101.97590282962189,
+            "rms": 102.00652222636182,
+            "pll_updates": 0
+          },
+          "HighDynamic": {
+            "count": 1518,
+            "mean": -24.30757588425305,
+            "std": 97.68241296446342,
+            "rms": 100.66137316731125,
+            "pll_updates": 0
+          }
+        }
+      }
+    },
+    "b1c_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.24798278909376678,
+            "std": 2.2882374385465316,
+            "rms": 2.3016355139015205,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "dft025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.2600199867817792,
+            "std": 2.320754766866498,
+            "rms": 2.3352758041523853,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.24641231383458218,
+            "std": 2.3201332664850725,
+            "rms": 2.3331818194602847,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "matched025": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.24798278909376678,
+            "std": 2.2882374385465316,
+            "rms": 2.3016355139015205,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "wide_l1ca_gate_0": {
+      "baseline": {
+        "tail_pll_updates": 740,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -4.935279830953899,
+            "std": 25.61398426442853,
+            "rms": 26.08511408654777,
+            "pll_updates": 740
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 720,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 6.396136120675815,
+            "std": 27.670616663638306,
+            "rms": 28.400239150757724,
+            "pll_updates": 720
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 740,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 4.967348411996558,
+            "std": 24.444588165671494,
+            "rms": 24.944186513804205,
+            "pll_updates": 740
+          }
+        }
+      }
+    },
+    "wide_b1i_gate_0": {
+      "baseline": {
+        "tail_pll_updates": 820,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -5.988733282302681,
+            "std": 21.32700361176207,
+            "rms": 22.151885007436096,
+            "pll_updates": 820
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 870,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 1.8797553845230577,
+            "std": 16.332011063815955,
+            "rms": 16.439831680836946,
+            "pll_updates": 870
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 790,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 1.137295759022025,
+            "std": 21.052955125175487,
+            "rms": 21.083651513581376,
+            "pll_updates": 790
+          }
+        }
+      }
+    },
+    "wide_g1_gate_0": {
+      "baseline": {
+        "tail_pll_updates": 800,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 4.147544273746396,
+            "std": 28.144174633866797,
+            "rms": 28.448140349138427,
+            "pll_updates": 800
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 800,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -1.0454909363885672,
+            "std": 22.340726767006043,
+            "rms": 22.365176587187744,
+            "pll_updates": 800
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 820,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.07923312883181644,
+            "std": 17.696190996306647,
+            "rms": 17.696368375078233,
+            "pll_updates": 820
+          }
+        }
+      }
+    },
+    "wide_e1_gate_2": {
+      "baseline": {
+        "tail_pll_updates": 557,
+        "states": {
+          "ShortSlow": {
+            "count": 11122,
+            "mean": 0.16616086770229374,
+            "std": 2.9659000620457103,
+            "rms": 2.9705508936893046,
+            "pll_updates": 557
+          },
+          "LongSlow": {
+            "count": 7360,
+            "mean": -2.499163620246631,
+            "std": 101.97590282962189,
+            "rms": 102.00652222636182,
+            "pll_updates": 0
+          },
+          "HighDynamic": {
+            "count": 1518,
+            "mean": -24.30757588425305,
+            "std": 97.68241296446342,
+            "rms": 100.66137316731125,
+            "pll_updates": 0
+          }
+        }
+      },
+      "phase025": {
+        "tail_pll_updates": 557,
+        "states": {
+          "ShortSlow": {
+            "count": 11122,
+            "mean": 0.16743712174491313,
+            "std": 2.994491657106996,
+            "rms": 2.9991691306462904,
+            "pll_updates": 557
+          },
+          "LongSlow": {
+            "count": 7360,
+            "mean": -2.61754579386847,
+            "std": 101.91930984630359,
+            "rms": 101.95291690545119,
+            "pll_updates": 0
+          },
+          "HighDynamic": {
+            "count": 1518,
+            "mean": -23.82075880524397,
+            "std": 97.30790317479611,
+            "rms": 100.18111883150988,
+            "pll_updates": 0
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.14403605969657657,
+            "std": 3.128157756988901,
+            "rms": 3.1314720722214258,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "e1_new_3": {
+      "baseline": {
+        "tail_pll_updates": 0,
+        "states": {
+          "LongSlow": {
+            "count": 20000,
+            "mean": -40.71553031061933,
+            "std": 17.17475887290677,
+            "rms": 44.18966791929366,
+            "pll_updates": 0
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 0,
+        "states": {
+          "LongSlow": {
+            "count": 20000,
+            "mean": -53.953255271023,
+            "std": 13.056922789089601,
+            "rms": 55.5106925471158,
+            "pll_updates": 0
+          }
+        }
+      }
+    },
+    "e1_new_2": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.02191476518142008,
+            "std": 2.9610402994942295,
+            "rms": 2.961121394364276,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": 0.02822662921140727,
+            "std": 3.2639819386946956,
+            "rms": 3.2641039871183364,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "e1_new_0": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.2885359881739205,
+            "std": 2.8089059314167284,
+            "rms": 2.823686517306689,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.28609106329973294,
+            "std": 3.1812694137952318,
+            "rms": 3.1941075717090417,
+            "pll_updates": 1000
+          }
+        }
+      }
+    },
+    "e1_new_1": {
+      "baseline": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.25363584063368033,
+            "std": 2.3475279540613005,
+            "rms": 2.3611900886530055,
+            "pll_updates": 1000
+          }
+        }
+      },
+      "phase100": {
+        "tail_pll_updates": 1000,
+        "states": {
+          "ShortSlow": {
+            "count": 20000,
+            "mean": -0.22724986456651822,
+            "std": 2.734254532320985,
+            "rms": 2.7436818963690652,
+            "pll_updates": 1000
+          }
+        }
+      }
+    }
+  },
+  "sha256": {
+    "baseline": "c9de6bc7416e8c93f53ad9ae39b8fd2173fded22c4c232c990cf7fdbd35510ed",
+    "pdi_baseline": "a0b7a9f48abe8fd6f63832442c5d70a45ca7203ce76537be8ac35a3a02c6ca0b",
+    "separated/baseline": "c31f6ab12ce093b2201f4dd5a4817c86b7d9d7ca2df92ecdb34debcdf5cd5168",
+    "separated/check_baseline": "b664eb92832168d693e333e2d911946004b1d5a00ddb4bf495fbb5332f59d3c6",
+    "dft025": "d8b05c21c9ef162080fbb14cf24fa6992a34613f5aa3f306b5abfaeb8cbe2de5",
+    "pdi_dft025": "6e4fe1401de15c5dc6d975f1a9bf8f08d69ff538a763c6fb3b3ed38cbbffd62a",
+    "separated/dft025": "fc7df0601307018e0cd3dc4c6a8aaeb00dd60c4f40d2457d4f77fce12e3e82b9",
+    "separated/check_dft025": "38bb197625fe8fabeb3b3cac651f4fb1b02611e8315d300ca063064840c77282",
+    "phase025": "16531bec6639289c08c53911bb3042c05c33ccacc30710a27d8e4caa7eda0ce8",
+    "pdi_phase025": "7d95a48bba9158f392558c31039fdfd3a0858351d19c847d0ba1882f997d396a",
+    "separated/phase025": "157d12c0208c1042d5ef56289f5731af0fc6a1ee52405efa10158a39d8b56cc6",
+    "separated/check_phase025": "4c51652dd860aaf72808faf6a3dec775e0d9ef80b6f9d53a3197a5c51d51414a",
+    "phase100": "c6753c705143de4e905dc31cbc358b1d54b8270d2a1ae65726646b77ffcb11fd",
+    "pdi_phase100": "badf699aad7a4e1e1ba2d27792927ceb3f0869343e6f490604738c01ce0c96f5",
+    "separated/phase100": "2870660b4aec3ee103cdb7ea8c1ad261b52e72a37692dd3f505798883a7e7ba2",
+    "separated/check_phase100": "7c905962c8838309e08b9deed388c56e0a4f1bf3d79de212df6874e87c701909",
+    "matched025": "40963a7dd41b8fca3158519774049029803aefcde170741a6d018edb284c3c3d",
+    "pdi_matched025": "ad28452fefebff65cf5a56da471fe6cefc2f1911685e9aafc2e2344854ff893e",
+    "separated/matched025": "dd488f04a916bbb713effbc656bab2d72a0c7520644cde2207cc7bdd39f0ca2a",
+    "separated/check_matched025": "9149fa5f98194542dbc8a0434ec69c958604279cdbd3227a650bc3ec62b6bd61",
+    "trap0": "e89ccff45f599b83d3ccc6252ce757ed2a893c22ac8ee2f53034147f62001da4",
+    "pdi_trap0": "93b2e5fc009aa4252ec83a5b0737da6afcfa0e560362d17a7407d44a84662c90",
+    "separated/trap0": "3f949fef35eac7cc31662860ff123e00cc8e8fe178b80f1d6394949bcf485370",
+    "separated/check_trap0": "58f5b2113f48201dbc6728d4773197ded4a3e0916f25b6eff306cf06baa9a01d",
+    "trap025": "b2f4ce68fd355e0588c9c28cd07224e2ef7e18e7f8903b7beb583e3c5aab8037",
+    "pdi_trap025": "598c62655b3c6d1cab9526560539f9765b44f8fbf78474477f6201aeaeb4f63c",
+    "separated/trap025": "ccf2b280d43c30beb55c0dc9d2a1a98bb61c3174dcb3bdf34cb6806237aca34f",
+    "separated/check_trap025": "131c8437d2343fb111708602c99e45b8069037c051736996694f68ba7bcbfa26",
+    "verify_separation.py": "edc9f305f665b1d952d28f979ef5a27d6e97a892c9a295800944df2ae95436bb",
+    "build.py": "87c1980b99a8047673d72eaf8dd25f889332e0c23066a7d49b3981b01bdb1be7",
+    "run.py": "d2e9795a4a7055ecb182456f0110d537a099b97937ab29efee7c0b983b8f970a",
+    "summarize.py": "4495eb3e55744c5ca525c8e7cff2e405792ee573ca7a241b22f2477393c9d53c",
+    "publish.cjs": "e46fff77ddbdf6b4500683c312779dffbc0347dd5aa1e8e13237fd38695a4a1c",
+    "separate.cjs": "a60f2d44849d58d965aa18048aaf6b2eea25ebbaf201a171e90d937a0436fba3",
+    "prepare.cjs": "8dbed4a609d5f224352b9a315b766c28259bc48ad8bd2a3f37f73ce5f2c0e45d",
+    "check_separated.cjs": "cf4758d5a54c2b5d10a446c6e518be022a3943c751d593814715b982081206c2",
+    "separated/src/gate_probe.cpp": "01191d6dd8c8b5c1a038bba0645765f5f3cbfeda4697b6758293013c2b359dce",
+    "separated/src/check_pair.cpp": "d99fd7c6dae7089e288e6c93230ea69e39a492a5728c5b3da735de2376a5b2f6",
+    "separated/src/phase_diff_observer.cpp": "644d3ba37b64659d788e81bb1e15d3b81456416c37bf5c6f11ce7b0543f7dcdd",
+    "separated/src/pdi_probe.cpp": "2832eb454e00655b21b8b508ad0c7b9fbfb23979f2a44e7900e2b6068bc18be3",
+    "separated/src/track_engine.cpp": "2c9859fa71244bd00e02d13ef810b4844e157291b2220db48d43aef534fe6567",
+    "separated/src/trap025/carrier_loop.cpp": "f6cd45a19cd625688d503f6028cb8a4a2a0d7898d0671d718d33ddf05b361311",
+    "separated/src/baseline/carrier_loop.cpp": "02c25f97375af50ddabd08869702832b630f0b73cbf97228a9ff7f6536d4c300",
+    "separated/src/phase025/carrier_loop.cpp": "df9f70c92c05cc61fb0e566148acae5679254b1e7c7c2e37578f491a2587c7a9",
+    "separated/src/trap0/carrier_loop.cpp": "77f1f507d652e865b1b78efe528652a4e94c5d8c948592fb1508f25adc25180c",
+    "separated/src/dft025/carrier_loop.cpp": "6e069c872da5322220b58b3518dd9eacc4f32618c12d9dc16c57bb2d2f15cae6",
+    "separated/src/matched025/carrier_loop.cpp": "ba9812336ea15ca588c7f64ec40321819199cea14d45eedb1d4feb80935f9c6c",
+    "separated/src/phase100/carrier_loop.cpp": "4e61575978dce94a781cb97a6c935133f8c0072d0679fcb56c7bd69840f71e42",
+    "separated/include/tracking/track_engine.h": "2a4498ce80c19128efb489c7d831867d797137365036a44142b68b1858e4a31e",
+    "separated/include/carrier_observer/phase_diff_observer.h": "a4be1482e6d8d7088754496b6b5d81391c8c98a6b6c4b1998f8b73d414242cc4",
+    "separated/include/carrier_loop/carrier_loop.h": "c6f5a4610ae4cf7b2676d16a7d8dbd9a53e17076beffd0ec61241aa34fe819b0",
+    "release.xml": "97ae09115fa147e4a4a05a3148b80c947b4e026b834dfc62db0b6aaeb2fa7832",
+    "separation-check.json": "0e159236087527bb8b38fdfece331d14d4ddc5c9abac73ff0ee148ae20cbb63c"
+  },
+  "release": {
+    "name": "(empty)",
+    "tests": "112",
+    "failures": "0",
+    "disabled": "0",
+    "skipped": "1",
+    "hostname": "",
+    "time": "161",
+    "timestamp": "2026-09-07T15:43:25"
+  },
+  "iq": {
+    "iq": [
+      {
+        "case": {
+          "id": "b1i_gate_2",
+          "signal": "B1I",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 203237444,
+          "duration_s": 60
+        },
+        "iq_sha256": "41636c84b12ddf5176887b8633f86a61142157821bd607996c8245cfe3f917a6",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.9098415500596329,
+            "freq_p95_hz": 0.22888967404171012,
+            "code_p95_chips": 0.003230765461921692,
+            "pll_used": 2771,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.03474114785785787,
+              "net_phase_cycles": 0.004340694773418363,
+              "near_lock_fraction": 1,
+              "coherence": 0.9978038301593886
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 8.144428459024573,
+            "freq_p95_hz": 0.2740576785000144,
+            "code_p95_chips": 0.0036296099424362183,
+            "pll_used": 2771,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.11232495996227954,
+              "net_phase_cycles": 0.04734174839541083,
+              "near_lock_fraction": 1,
+              "coherence": 0.9603248912867964
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 1.9533184540412534,
+            "freq_p95_hz": 0.2514866615832716,
+            "code_p95_chips": 0.0032030045986175537,
+            "pll_used": 2771,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.03495036295498721,
+              "net_phase_cycles": 0.0047081472803256474,
+              "near_lock_fraction": 1,
+              "coherence": 0.9976999005009437
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 1.9098415500596329,
+            "freq_p95_hz": 0.22888967404171012,
+            "code_p95_chips": 0.003230765461921692,
+            "pll_used": 2771,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.03474114785785787,
+              "net_phase_cycles": 0.004340694773418363,
+              "near_lock_fraction": 1,
+              "coherence": 0.9978038301593886
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "l1ca_gate_0",
+          "signal": "L1CA",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 202609070,
+          "duration_s": 60
+        },
+        "iq_sha256": "30d0b1f50e6dc1f54b923fc8ebe5166d5331d625f9e2f11b9b5fc8b14bff318e",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 26.08511408654777,
+            "freq_p95_hz": 0.8233785630000057,
+            "code_p95_chips": 0.006583914160728455,
+            "pll_used": 1911,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 2,
+              "phase_span_cycles": 1.1296470335364575,
+              "net_phase_cycles": -0.9867503705281706,
+              "near_lock_fraction": 0.61215,
+              "coherence": 0.68438305644273
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 26.448684789145734,
+            "freq_p95_hz": 1.0254383090000374,
+            "code_p95_chips": 0.005931846797466278,
+            "pll_used": 1971,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 4,
+              "phase_span_cycles": 1.3019610460069089,
+              "net_phase_cycles": -0.9636304043779091,
+              "near_lock_fraction": 0.7258,
+              "coherence": 0.6959325158667904
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 28.400239150757724,
+            "freq_p95_hz": 1.0451078410000036,
+            "code_p95_chips": 0.006331883370876312,
+            "pll_used": 1891,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 1.4990417069166142,
+              "net_phase_cycles": -0.8961287758393155,
+              "near_lock_fraction": 0.67875,
+              "coherence": 0.6647987553228603
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 25.110986817149524,
+            "freq_p95_hz": 0.8680820470000299,
+            "code_p95_chips": 0.006120897829532623,
+            "pll_used": 1891,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 3,
+              "phase_span_cycles": 1.5682207730351365,
+              "net_phase_cycles": -1.4896463332079293,
+              "near_lock_fraction": 0.72325,
+              "coherence": 0.7242012187469049
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "l1ca_gate_2",
+          "signal": "L1CA",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 202818528,
+          "duration_s": 60
+        },
+        "iq_sha256": "a29dbfa3de1610feb980252bd1234e7c54fe6a5c821ba6226bb9703304a2fb33",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.651072060116998,
+            "freq_p95_hz": 0.2316606365000098,
+            "code_p95_chips": 0.004754751920700073,
+            "pll_used": 2774,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.027714089668734232,
+              "net_phase_cycles": -0.008388901158468798,
+              "near_lock_fraction": 1,
+              "coherence": 0.9983464028751984
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 10.551724604344994,
+            "freq_p95_hz": 0.2859828082084164,
+            "code_p95_chips": 0.005157463252544403,
+            "pll_used": 2774,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.16043190717027755,
+              "net_phase_cycles": -0.01752094438415952,
+              "near_lock_fraction": 0.9424,
+              "coherence": 0.9346937557273614
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 1.6995530353422492,
+            "freq_p95_hz": 0.2531797639999809,
+            "code_p95_chips": 0.004786834120750427,
+            "pll_used": 2774,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.028275564258365193,
+              "net_phase_cycles": -0.00916852176305838,
+              "near_lock_fraction": 1,
+              "coherence": 0.9982477465678791
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 1.651072060116998,
+            "freq_p95_hz": 0.2316606365000098,
+            "code_p95_chips": 0.004754751920700073,
+            "pll_used": 2774,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.027714089668734232,
+              "net_phase_cycles": -0.008388901158468798,
+              "near_lock_fraction": 1,
+              "coherence": 0.9983464028751984
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "b1i_gate_0",
+          "signal": "B1I",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 203027986,
+          "duration_s": 60
+        },
+        "iq_sha256": "0e3ca0c97fae68e43582109a7a5e17c022778f3985246d15480bc3e974253a14",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 22.151885007436096,
+            "freq_p95_hz": 0.8341073990000041,
+            "code_p95_chips": 0.0046652257442474365,
+            "pll_used": 2150,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 2,
+              "phase_span_cycles": 1.3788024302084523,
+              "net_phase_cycles": 0.9228634682403936,
+              "near_lock_fraction": 0.7914,
+              "coherence": 0.786935775487619
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 25.483635837831883,
+            "freq_p95_hz": 0.7644891740000048,
+            "code_p95_chips": 0.005176529288291931,
+            "pll_used": 2100,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 2,
+              "phase_span_cycles": 0.8752962400503748,
+              "net_phase_cycles": 0.08988227759618894,
+              "near_lock_fraction": 0.6524,
+              "coherence": 0.7162771109086067
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 16.43983168083695,
+            "freq_p95_hz": 0.6124973299999965,
+            "code_p95_chips": 0.004966050386428833,
+            "pll_used": 2200,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 0.7317325055300898,
+              "net_phase_cycles": -0.4145160117732303,
+              "near_lock_fraction": 0.88115,
+              "coherence": 0.8748895032186847
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 22.151885007436096,
+            "freq_p95_hz": 0.8341073990000041,
+            "code_p95_chips": 0.0046652257442474365,
+            "pll_used": 2150,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 2,
+              "phase_span_cycles": 1.3788024302084523,
+              "net_phase_cycles": 0.9228634682403936,
+              "near_lock_fraction": 0.7914,
+              "coherence": 0.786935775487619
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "g1_gate_0",
+          "signal": "G1",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 203446902,
+          "duration_s": 60
+        },
+        "iq_sha256": "d7c3bc1211d7400abdbf96798de1a032dd9c18a6d14c26d6b39a4814558746fe",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 28.448140349138423,
+            "freq_p95_hz": 1.2197494509999842,
+            "code_p95_chips": 0.007437624037265778,
+            "pll_used": 2180,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 5,
+              "phase_span_cycles": 1.5511504918104038,
+              "net_phase_cycles": -0.17123273531615268,
+              "near_lock_fraction": 0.71725,
+              "coherence": 0.6647569969507594
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 21.689575195933482,
+            "freq_p95_hz": 0.6475448610000285,
+            "code_p95_chips": 0.0067381709814071655,
+            "pll_used": 2260,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.5142941183657967,
+              "net_phase_cycles": 0.3454847791726934,
+              "near_lock_fraction": 0.7436,
+              "coherence": 0.7649093030889327
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 22.365176587187744,
+            "freq_p95_hz": 0.7805824280000024,
+            "code_p95_chips": 0.007565006613731384,
+            "pll_used": 2180,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 0.805782793511753,
+              "net_phase_cycles": -0.11153866599488538,
+              "near_lock_fraction": 0.7428,
+              "coherence": 0.7532122173423791
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 24.08545964058997,
+            "freq_p95_hz": 0.804901123000036,
+            "code_p95_chips": 0.007901262491941452,
+            "pll_used": 2160,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 0.7349346068949671,
+              "net_phase_cycles": -0.10592988067946862,
+              "near_lock_fraction": 0.7371,
+              "coherence": 0.7298370343353586
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "g1_gate_2",
+          "signal": "G1",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 203656360,
+          "duration_s": 60
+        },
+        "iq_sha256": "9dc3f66fa6ac606b1ba02db28e4d9653aa6d2a9c71b6fd2c9989207107134749",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.6576967504529696,
+            "freq_p95_hz": 0.227142456156173,
+            "code_p95_chips": 0.008459482342004776,
+            "pll_used": 2762,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.029268669357406907,
+              "net_phase_cycles": 0.008057420309341978,
+              "near_lock_fraction": 1,
+              "coherence": 0.998346178352097
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 8.006636172785855,
+            "freq_p95_hz": 0.26849871843751316,
+            "code_p95_chips": 0.007967662066221237,
+            "pll_used": 2762,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.10295768513242365,
+              "net_phase_cycles": -0.0022993193197180517,
+              "near_lock_fraction": 1,
+              "coherence": 0.9615972016429296
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 1.711622281701725,
+            "freq_p95_hz": 0.2482705686562099,
+            "code_p95_chips": 0.008568208664655685,
+            "pll_used": 2762,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.029908829645137303,
+              "net_phase_cycles": 0.007586503219499718,
+              "near_lock_fraction": 1,
+              "coherence": 0.9982383364390213
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 1.6576967504529696,
+            "freq_p95_hz": 0.227142456156173,
+            "code_p95_chips": 0.008459482342004776,
+            "pll_used": 2762,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.029268669357406907,
+              "net_phase_cycles": 0.008057420309341978,
+              "near_lock_fraction": 1,
+              "coherence": 0.998346178352097
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "l5_gate_2",
+          "signal": "L5",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 204075276,
+          "duration_s": 60
+        },
+        "iq_sha256": "1aa41cb05358d3c79ded3e542d9d32e76267bfe484d56af6db3067db9185edfa",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.403707740789459,
+            "freq_p95_hz": 0.3642978723021315,
+            "code_p95_chips": 0.012048304080963135,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.038647345809295075,
+              "net_phase_cycles": 0.024239491227490362,
+              "near_lock_fraction": 1,
+              "coherence": 0.9991913869584866
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 2.47554569830021,
+            "freq_p95_hz": 0.39637455222919016,
+            "code_p95_chips": 0.012069106101989746,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.0402107591235108,
+              "net_phase_cycles": 0.024554208175686654,
+              "near_lock_fraction": 1,
+              "coherence": 0.9991429287003457
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 2.482899324907479,
+            "freq_p95_hz": 0.40206943722915867,
+            "code_p95_chips": 0.012124836444854736,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04033950515622564,
+              "net_phase_cycles": 0.024468376555887517,
+              "near_lock_fraction": 1,
+              "coherence": 0.9991342266991818
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 2.403707740789459,
+            "freq_p95_hz": 0.3642978723021315,
+            "code_p95_chips": 0.012048304080963135,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.038647345809295075,
+              "net_phase_cycles": 0.024239491227490362,
+              "near_lock_fraction": 1,
+              "coherence": 0.9991913869584866
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "b2a_gate_2",
+          "signal": "B2A",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 204494192,
+          "duration_s": 60
+        },
+        "iq_sha256": "8e77042471a63e7226d88585e338301f903937118806fa558dfcfe448d5f925f",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.829772914004054,
+            "freq_p95_hz": 0.34964882445831336,
+            "code_p95_chips": 0.007140755653381348,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04590585438563721,
+              "net_phase_cycles": -0.00912724689260358,
+              "near_lock_fraction": 1,
+              "coherence": 0.9988103425554312
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 2.90220898766871,
+            "freq_p95_hz": 0.3789976707083156,
+            "code_p95_chips": 0.007307827472686768,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.047812010343477596,
+              "net_phase_cycles": -0.00858365392923588,
+              "near_lock_fraction": 1,
+              "coherence": 0.9987509420495749
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 2.903222148279256,
+            "freq_p95_hz": 0.3789267880625289,
+            "code_p95_chips": 0.0072324275970458984,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04771187454025494,
+              "net_phase_cycles": -0.008644451248983387,
+              "near_lock_fraction": 1,
+              "coherence": 0.9987477938320856
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 2.829772914004054,
+            "freq_p95_hz": 0.34964882445831336,
+            "code_p95_chips": 0.007140755653381348,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04590585438563721,
+              "net_phase_cycles": -0.00912724689260358,
+              "near_lock_fraction": 1,
+              "coherence": 0.9988103425554312
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "e5a_gate_2",
+          "signal": "E5A",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 204913108,
+          "duration_s": 60
+        },
+        "iq_sha256": "04bdd3290c1187d6db69829295aed777ec973c3141d87812cc5e9739f525a44d",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.597907404460114,
+            "freq_p95_hz": 0.3383473811874751,
+            "code_p95_chips": 0.009403228759765625,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04752782541982015,
+              "net_phase_cycles": 0.024486196831276175,
+              "near_lock_fraction": 1,
+              "coherence": 0.9989871080916904
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 2.665636967813116,
+            "freq_p95_hz": 0.36763721763546187,
+            "code_p95_chips": 0.009375452995300293,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04955914682432194,
+              "net_phase_cycles": 0.02587020934879547,
+              "near_lock_fraction": 1,
+              "coherence": 0.9989319925354603
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 2.6757695292907733,
+            "freq_p95_hz": 0.3687563480312974,
+            "code_p95_chips": 0.009369194507598877,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04967001204568078,
+              "net_phase_cycles": 0.025770075641048606,
+              "near_lock_fraction": 1,
+              "coherence": 0.9989255457197289
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 2.597907404460114,
+            "freq_p95_hz": 0.3383473811874751,
+            "code_p95_chips": 0.009403228759765625,
+            "pll_used": 2809,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04752782541982015,
+              "net_phase_cycles": 0.024486196831276175,
+              "near_lock_fraction": 1,
+              "coherence": 0.9989871080916904
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "e1_gate_0",
+          "signal": "E1",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 4,
+          "seed": 205122566,
+          "duration_s": 120
+        },
+        "iq_sha256": "0842a5bb681788e7295a4c80208e1aa580cbea1a3c21920b97cdec55df2a5904",
+        "arms": {
+          "baseline": {
+            "passed": false,
+            "phase_rms_deg": 103.85193350686346,
+            "freq_p95_hz": 7903.85746956,
+            "code_p95_chips": 413.52928936481476,
+            "pll_used": 0,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 3914.71336010877,
+              "net_phase_cycles": 1788.1202685140452,
+              "near_lock_fraction": 0.24875,
+              "coherence": 0.0000742465016553465
+            }
+          },
+          "dft025": {
+            "passed": false,
+            "phase_rms_deg": 103.85193350686346,
+            "freq_p95_hz": 7903.85746956,
+            "code_p95_chips": 413.52928936481476,
+            "pll_used": 0,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 3914.71336010877,
+              "net_phase_cycles": 1788.1202685140452,
+              "near_lock_fraction": 0.24875,
+              "coherence": 0.0000742465016553465
+            }
+          },
+          "phase025": {
+            "passed": false,
+            "phase_rms_deg": 103.85193350686346,
+            "freq_p95_hz": 7903.85746956,
+            "code_p95_chips": 413.52928936481476,
+            "pll_used": 0,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 3914.71336010877,
+              "net_phase_cycles": 1788.1202685140452,
+              "near_lock_fraction": 0.24875,
+              "coherence": 0.0000742465016553465
+            }
+          },
+          "matched025": {
+            "passed": false,
+            "phase_rms_deg": 103.85193350686346,
+            "freq_p95_hz": 7903.85746956,
+            "code_p95_chips": 413.52928936481476,
+            "pll_used": 0,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 3914.71336010877,
+              "net_phase_cycles": 1788.1202685140452,
+              "near_lock_fraction": 0.24875,
+              "coherence": 0.0000742465016553465
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "e1_gate_2",
+          "signal": "E1",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 48,
+          "seed": 205332024,
+          "duration_s": 120
+        },
+        "iq_sha256": "3553c46046f3218202925b179edd3402205a23f7e916a226e5232f1ac8bf9ac2",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 67.84645620118465,
+            "freq_p95_hz": 5.637311614950022,
+            "code_p95_chips": 0.00825299322605133,
+            "pll_used": 5060,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 37.34320768582984,
+              "net_phase_cycles": -37.307569197266275,
+              "near_lock_fraction": 0.67405,
+              "coherence": 0.5689801673319187
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 67.60920288121618,
+            "freq_p95_hz": 5.63873533635001,
+            "code_p95_chips": 0.008006930351257324,
+            "pll_used": 5060,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 37.32148458765005,
+              "net_phase_cycles": -37.28389864438577,
+              "near_lock_fraction": 0.6751,
+              "coherence": 0.5715456054187608
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 67.76350194247989,
+            "freq_p95_hz": 5.637765218108257,
+            "code_p95_chips": 0.008359387516975403,
+            "pll_used": 5060,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 37.33824588315474,
+              "net_phase_cycles": -37.301761260609055,
+              "near_lock_fraction": 0.6746,
+              "coherence": 0.5698437828236073
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 67.84645620118465,
+            "freq_p95_hz": 5.637311614950022,
+            "code_p95_chips": 0.00825299322605133,
+            "pll_used": 5060,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 37.34320768582984,
+              "net_phase_cycles": -37.307569197266275,
+              "near_lock_fraction": 0.67405,
+              "coherence": 0.5689801673319187
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "b1c_gate_2",
+          "signal": "B1C",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 9000,
+          "seed": 205750940,
+          "duration_s": 120
+        },
+        "iq_sha256": "a3e744506c96cb87c63082ab801e685613a48ad9028a97272f9408a82c8c6861",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.3016355139015205,
+            "freq_p95_hz": 0.28595383706669963,
+            "code_p95_chips": 0.004792302846908569,
+            "pll_used": 4028,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04130346882084268,
+              "net_phase_cycles": 0.0011490943470562343,
+              "near_lock_fraction": 1,
+              "coherence": 0.9992028169504221
+            }
+          },
+          "dft025": {
+            "passed": true,
+            "phase_rms_deg": 2.3352758041523853,
+            "freq_p95_hz": 0.3090666122750463,
+            "code_p95_chips": 0.004798397421836853,
+            "pll_used": 4028,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.0422449280267756,
+              "net_phase_cycles": 0.00011197702042409219,
+              "near_lock_fraction": 1,
+              "coherence": 0.9991800070823379
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 2.333181819460285,
+            "freq_p95_hz": 0.3100166982032988,
+            "code_p95_chips": 0.004836574196815491,
+            "pll_used": 4028,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04204197432773071,
+              "net_phase_cycles": 0.00014773887596675195,
+              "near_lock_fraction": 1,
+              "coherence": 0.9991804444124937
+            }
+          },
+          "matched025": {
+            "passed": true,
+            "phase_rms_deg": 2.3016355139015205,
+            "freq_p95_hz": 0.28595383706669963,
+            "code_p95_chips": 0.004792302846908569,
+            "pll_used": 4028,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04130346882084268,
+              "net_phase_cycles": 0.0011490943470562343,
+              "near_lock_fraction": 1,
+              "coherence": 0.9992028169504221
+            }
+          }
+        }
+      }
+    ],
+    "iq_wide": [
+      {
+        "case": {
+          "id": "wide_l1ca_gate_0",
+          "signal": "L1CA",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 202609070,
+          "duration_s": 60
+        },
+        "iq_sha256": "30d0b1f50e6dc1f54b923fc8ebe5166d5331d625f9e2f11b9b5fc8b14bff318e",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 26.08511408654777,
+            "freq_p95_hz": 0.8233785630000057,
+            "code_p95_chips": 0.006583914160728455,
+            "pll_used": 1911,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 2,
+              "phase_span_cycles": 1.1296470335364575,
+              "net_phase_cycles": -0.9867503705281706,
+              "near_lock_fraction": 0.61215,
+              "coherence": 0.68438305644273
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 28.400239150757724,
+            "freq_p95_hz": 1.0451078410000036,
+            "code_p95_chips": 0.006331883370876312,
+            "pll_used": 1891,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 1.4990417069166142,
+              "net_phase_cycles": -0.8961287758393155,
+              "near_lock_fraction": 0.67875,
+              "coherence": 0.6647987553228603
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 24.944186513804205,
+            "freq_p95_hz": 0.9843111039999712,
+            "code_p95_chips": 0.006268687546253204,
+            "pll_used": 1911,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 3,
+              "phase_span_cycles": 1.6008646579357446,
+              "net_phase_cycles": -1.4762255999339686,
+              "near_lock_fraction": 0.74655,
+              "coherence": 0.7288354725376304
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "wide_b1i_gate_0",
+          "signal": "B1I",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 203027986,
+          "duration_s": 60
+        },
+        "iq_sha256": "0e3ca0c97fae68e43582109a7a5e17c022778f3985246d15480bc3e974253a14",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 22.151885007436096,
+            "freq_p95_hz": 0.8341073990000041,
+            "code_p95_chips": 0.0046652257442474365,
+            "pll_used": 2150,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 2,
+              "phase_span_cycles": 1.3788024302084523,
+              "net_phase_cycles": 0.9228634682403936,
+              "near_lock_fraction": 0.7914,
+              "coherence": 0.786935775487619
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 16.43983168083695,
+            "freq_p95_hz": 0.6124973299999965,
+            "code_p95_chips": 0.004966050386428833,
+            "pll_used": 2200,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 0.7317325055300898,
+              "net_phase_cycles": -0.4145160117732303,
+              "near_lock_fraction": 0.88115,
+              "coherence": 0.8748895032186847
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 21.08365151358138,
+            "freq_p95_hz": 0.8521080020000227,
+            "code_p95_chips": 0.004823654890060425,
+            "pll_used": 2140,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 0.6764445688058913,
+              "net_phase_cycles": 0.5901765138296469,
+              "near_lock_fraction": 0.82205,
+              "coherence": 0.7993975772038506
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "wide_g1_gate_0",
+          "signal": "G1",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 203446902,
+          "duration_s": 60
+        },
+        "iq_sha256": "d7c3bc1211d7400abdbf96798de1a032dd9c18a6d14c26d6b39a4814558746fe",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 28.448140349138423,
+            "freq_p95_hz": 1.2197494509999842,
+            "code_p95_chips": 0.007437624037265778,
+            "pll_used": 2180,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 5,
+              "phase_span_cycles": 1.5511504918104038,
+              "net_phase_cycles": -0.17123273531615268,
+              "near_lock_fraction": 0.71725,
+              "coherence": 0.6647569969507594
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 22.365176587187744,
+            "freq_p95_hz": 0.7805824280000024,
+            "code_p95_chips": 0.007565006613731384,
+            "pll_used": 2180,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 1,
+              "phase_span_cycles": 0.805782793511753,
+              "net_phase_cycles": -0.11153866599488538,
+              "near_lock_fraction": 0.7428,
+              "coherence": 0.7532122173423791
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 17.696368375078233,
+            "freq_p95_hz": 0.8907318120000127,
+            "code_p95_chips": 0.007707599550485611,
+            "pll_used": 2200,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 2,
+              "phase_span_cycles": 1.1687078579088848,
+              "net_phase_cycles": -0.6931937082408695,
+              "near_lock_fraction": 0.8735,
+              "coherence": 0.8516129194321458
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "wide_e1_gate_2",
+          "signal": "E1",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 48,
+          "seed": 205332024,
+          "duration_s": 120
+        },
+        "iq_sha256": "3553c46046f3218202925b179edd3402205a23f7e916a226e5232f1ac8bf9ac2",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 67.84645620118465,
+            "freq_p95_hz": 5.637311614950022,
+            "code_p95_chips": 0.00825299322605133,
+            "pll_used": 5060,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 37.34320768582984,
+              "net_phase_cycles": -37.307569197266275,
+              "near_lock_fraction": 0.67405,
+              "coherence": 0.5689801673319187
+            }
+          },
+          "phase025": {
+            "passed": true,
+            "phase_rms_deg": 67.76350194247989,
+            "freq_p95_hz": 5.637765218108257,
+            "code_p95_chips": 0.008359387516975403,
+            "pll_used": 5060,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 37.33824588315474,
+              "net_phase_cycles": -37.301761260609055,
+              "near_lock_fraction": 0.6746,
+              "coherence": 0.5698437828236073
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 3.1314720722214253,
+            "freq_p95_hz": 0.5137050399780492,
+            "code_p95_chips": 0.004799202084541321,
+            "pll_used": 5503,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.05304696731036529,
+              "net_phase_cycles": 0.015488537839701166,
+              "near_lock_fraction": 1,
+              "coherence": 0.9985106534089168
+            }
+          }
+        }
+      }
+    ],
+    "e1_check": [
+      {
+        "case": {
+          "id": "e1_new_3",
+          "signal": "E1",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": 5,
+          "phase_ms": 84,
+          "seed": 81314200,
+          "duration_s": 120
+        },
+        "iq_sha256": "caf83fb41c2cfb3cf19c15fa11bef40688bab2d190b62c329ce84e5f86d54616",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 44.18966791929366,
+            "freq_p95_hz": 0.04427854854156976,
+            "code_p95_chips": 0.006959304213523865,
+            "pll_used": 1021,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.206971293213428,
+              "net_phase_cycles": 0.18071009704726748,
+              "near_lock_fraction": 0.566,
+              "coherence": 0.9564201313389014
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 55.5106925471158,
+            "freq_p95_hz": 0.04151586333341584,
+            "code_p95_chips": 0.007266506552696228,
+            "pll_used": 1021,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.1650855440966552,
+              "net_phase_cycles": 0.1402901190740522,
+              "near_lock_fraction": 0.14035,
+              "coherence": 0.9745781369808808
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "e1_new_2",
+          "signal": "E1",
+          "prn": 17,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 64,
+          "seed": 81209471,
+          "duration_s": 120
+        },
+        "iq_sha256": "891d0cf08dda2c2820f659d9686081b4af81b574e42aecfa71bcbff8b4655b20",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.961121394364276,
+            "freq_p95_hz": 0.3554820429917527,
+            "code_p95_chips": 0.0027230530977249146,
+            "pll_used": 5655,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.047639916632761015,
+              "net_phase_cycles": 0.027605586914432934,
+              "near_lock_fraction": 1,
+              "coherence": 0.9986653529229199
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 3.2641039871183364,
+            "freq_p95_hz": 0.500669952394901,
+            "code_p95_chips": 0.00267753005027771,
+            "pll_used": 5655,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.05331457485954161,
+              "net_phase_cycles": 0.030849267492158106,
+              "near_lock_fraction": 1,
+              "coherence": 0.9983785593352626
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "e1_new_0",
+          "signal": "E1",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 12,
+          "seed": 81000013,
+          "duration_s": 120
+        },
+        "iq_sha256": "4bb8a5bd96648ecdcdca3d6c0180aabb4d5de280ac42084972529a47e8283a10",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.823686517306689,
+            "freq_p95_hz": 0.35714921564999713,
+            "code_p95_chips": 0.004876315593719482,
+            "pll_used": 5504,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04473552165291039,
+              "net_phase_cycles": -0.008338743722561048,
+              "near_lock_fraction": 1,
+              "coherence": 0.9987989461731591
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 3.1941075717090412,
+            "freq_p95_hz": 0.48533670043508437,
+            "code_p95_chips": 0.004973292350769043,
+            "pll_used": 5504,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.05539195099117933,
+              "net_phase_cycles": -0.009384837601828622,
+              "near_lock_fraction": 1,
+              "coherence": 0.9984596815757388
+            }
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "e1_new_1",
+          "signal": "E1",
+          "prn": 13,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": 5,
+          "phase_ms": 28,
+          "seed": 81104742,
+          "duration_s": 120
+        },
+        "iq_sha256": "361bff903387205e442dc2382a419f56179592db6382e08d885b3ae256bf1a92",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.361190088653006,
+            "freq_p95_hz": 0.35172078854168376,
+            "code_p95_chips": 0.0040087103843688965,
+            "pll_used": 5648,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.03658345036092214,
+              "net_phase_cycles": 0.009759643900906667,
+              "near_lock_fraction": 1,
+              "coherence": 0.9991609421499857
+            }
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.7436818963690652,
+            "freq_p95_hz": 0.4848136616667489,
+            "code_p95_chips": 0.0036662667989730835,
+            "pll_used": 5648,
+            "phase_diagnostic": {
+              "persistent_branch_changes": 0,
+              "phase_span_cycles": 0.04213831599918194,
+              "net_phase_cycles": 0.009457271167775616,
+              "near_lock_fraction": 1,
+              "coherence": 0.9988618817587014
+            }
+          }
+        }
+      }
+    ]
+  }
+}
