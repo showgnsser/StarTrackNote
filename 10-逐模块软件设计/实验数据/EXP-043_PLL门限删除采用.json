@@ -1,0 +1,120 @@
+{
+  "date": "2026-09-07",
+  "adopted": true,
+  "qualification_complete": false,
+  "change": "Remove the single-observation 1 Hz residual-frequency veto for PLL; no replacement threshold.",
+  "source_sha256": "21f21340f29c18e0168265046827beb841b068fe40325b5b8e2c050526a6b015",
+  "production_binary_sha256": "8de33419e842b7e5a1d414edbf6bdab318893b3b1bbd88d6ecf86b49ac127da2",
+  "tested_candidate_sha256": "1eefadf5f61d37c361ca2a92641528eccf9e65ac90aebcc866d57edfc9aa8552",
+  "source_file_sha256": "a30c3b726499dc0ff6df613e59a0216bab176798a98b4eb0593ab106651c1e4c",
+  "regression": {
+    "name": "checkPllObservationUse",
+    "old_code_exit": 134,
+    "new_code_exit": 0,
+    "red_log_sha256": "94d401655bb388449e8c90595903b512d7f6037a6a47c3d56b7b80df8bf569cb",
+    "green_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "release": {
+    "status": "PASS_WITH_EXTERNAL_TCXO_SKIP",
+    "registered": 112,
+    "passed": 111,
+    "skipped": 1,
+    "failed": 0,
+    "wall_s": 82.24,
+    "junit_path": "/home/showskills/SN770/Project/StarTrack/outputs/pll-gate-PxjTby/adoption/release.xml",
+    "junit_sha256": "373e158f08a342b8366e9654577116da38a39a2de874c5634f59cff6b722c58b"
+  },
+  "same_iq_verification": [
+    {
+      "case": {
+        "id": "l1ca_gate_1",
+        "signal": "L1CA",
+        "prn": 19,
+        "entry": "strong",
+        "cn0_db_hz": 35,
+        "freq_hz": 15.625,
+        "handoff_hz": 500,
+        "code_chips": 0.25,
+        "rate_hz_s": 1,
+        "phase_ms": 13,
+        "seed": 202713799,
+        "duration_s": 20
+      },
+      "stream": {
+        "generator_rc": 0,
+        "receiver_rc": {
+          "production": 0,
+          "baseline": 0
+        },
+        "iq_sha256": "0f1b6545311e90d6efa1497ce32c027e74916652d527589bdcbe4bd746e0583d",
+        "sent_bytes": {
+          "production": 153699840,
+          "baseline": 153699840
+        },
+        "sent_sha256": {
+          "production": "0f1b6545311e90d6efa1497ce32c027e74916652d527589bdcbe4bd746e0583d",
+          "baseline": "0f1b6545311e90d6efa1497ce32c027e74916652d527589bdcbe4bd746e0583d"
+        },
+        "broken_pipe": []
+      },
+      "pdi_sha256": {
+        "production": "4d413873d21f46049c6ff7e7908f3dd89dc6543353c906fdba96d61a06415e08",
+        "baseline": "4d413873d21f46049c6ff7e7908f3dd89dc6543353c906fdba96d61a06415e08"
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "l5_gate_1",
+        "signal": "L5",
+        "prn": 19,
+        "entry": "strong",
+        "cn0_db_hz": 35,
+        "freq_hz": 6.25,
+        "handoff_hz": 500,
+        "code_chips": 0.25,
+        "rate_hz_s": 1,
+        "phase_ms": 13,
+        "seed": 203970547,
+        "duration_s": 20
+      },
+      "stream": {
+        "generator_rc": 0,
+        "receiver_rc": {
+          "production": 0,
+          "baseline": 0
+        },
+        "iq_sha256": "b25d52273a19b3e3f97d2ac131af870eb597d7a0359e2cafc28274719dd4ceef",
+        "sent_bytes": {
+          "production": 614799360,
+          "baseline": 614799360
+        },
+        "sent_sha256": {
+          "production": "b25d52273a19b3e3f97d2ac131af870eb597d7a0359e2cafc28274719dd4ceef",
+          "baseline": "b25d52273a19b3e3f97d2ac131af870eb597d7a0359e2cafc28274719dd4ceef"
+        },
+        "broken_pipe": []
+      },
+      "pdi_sha256": {
+        "production": "6b019cd0f7e8b114213b656c80cf7dff5799d8eb3dba800b46caf02929006845",
+        "baseline": "6b019cd0f7e8b114213b656c80cf7dff5799d8eb3dba800b46caf02929006845"
+      },
+      "passed": true
+    }
+  ],
+  "retained": [
+    "frequency observation validity",
+    "phase wrapping",
+    "sync and ShortSlow policy",
+    "CN0 confirmations",
+    "frequency monitor",
+    "phase quality",
+    "existing invalid-phase fallback"
+  ],
+  "not_adopted": [
+    "2 Hz or 4 Hz alternatives",
+    "gate_hold diagnostic",
+    "new PLL tuning"
+  ],
+  "deferred": "Data-signal phase accuracy and continuous PLL phase lock; no new extreme-sensitivity qualification."
+}
