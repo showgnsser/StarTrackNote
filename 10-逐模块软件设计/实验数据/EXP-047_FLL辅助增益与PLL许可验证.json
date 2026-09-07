@@ -1,0 +1,2934 @@
+{
+  "qualification_complete": false,
+  "production_changed": false,
+  "matrix_complete": true,
+  "full_results_local": "/home/showskills/SN770/Project/StarTrack/outputs/fll-validate-8OiamM/summary.json",
+  "full_results_sha256": "170aa4f9abe49c94ec927551364fa182e84e205a46abc2d0102d784cb8277e0f",
+  "aggregate": {
+    "screen": {
+      "count": 170,
+      "arms": {
+        "baseline": {
+          "passed": 155,
+          "phase_rms_deg": 6.46587043,
+          "freq_p95_hz": 0.43577425,
+          "code_p95_chips": 0.00738992922,
+          "failures": [
+            "pdi_145",
+            "pdi_147",
+            "pdi_148",
+            "pdi_146",
+            "pdi_149",
+            "pdi_150",
+            "pdi_151",
+            "pdi_152",
+            "pdi_155",
+            "pdi_153",
+            "pdi_156",
+            "pdi_154",
+            "pdi_157",
+            "pdi_158",
+            "pdi_159"
+          ]
+        },
+        "phase100": {
+          "passed": 155,
+          "phase_rms_deg": 6.51808181,
+          "freq_p95_hz": 0.495510102,
+          "code_p95_chips": 0.00738714514,
+          "failures": [
+            "pdi_145",
+            "pdi_147",
+            "pdi_148",
+            "pdi_146",
+            "pdi_149",
+            "pdi_150",
+            "pdi_151",
+            "pdi_152",
+            "pdi_155",
+            "pdi_153",
+            "pdi_156",
+            "pdi_154",
+            "pdi_157",
+            "pdi_158",
+            "pdi_159"
+          ]
+        },
+        "equiv100": {
+          "passed": 155,
+          "phase_rms_deg": 6.51808444,
+          "freq_p95_hz": 0.49718256,
+          "code_p95_chips": 0.00788589199,
+          "failures": [
+            "pdi_145",
+            "pdi_147",
+            "pdi_148",
+            "pdi_146",
+            "pdi_149",
+            "pdi_150",
+            "pdi_151",
+            "pdi_152",
+            "pdi_155",
+            "pdi_153",
+            "pdi_156",
+            "pdi_154",
+            "pdi_157",
+            "pdi_158",
+            "pdi_159"
+          ]
+        }
+      }
+    },
+    "holdout": {
+      "count": 170,
+      "arms": {
+        "baseline": {
+          "passed": 155,
+          "phase_rms_deg": 6.45101856,
+          "freq_p95_hz": 0.445256638,
+          "code_p95_chips": 0.00828564753,
+          "failures": [
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_146",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_152",
+            "new_pdi_151",
+            "new_pdi_153",
+            "new_pdi_154",
+            "new_pdi_156",
+            "new_pdi_150",
+            "new_pdi_155",
+            "new_pdi_157",
+            "new_pdi_158",
+            "new_pdi_159"
+          ]
+        },
+        "phase100": {
+          "passed": 155,
+          "phase_rms_deg": 6.50833608,
+          "freq_p95_hz": 0.507841015,
+          "code_p95_chips": 0.00820212542,
+          "failures": [
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_146",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_152",
+            "new_pdi_151",
+            "new_pdi_153",
+            "new_pdi_154",
+            "new_pdi_156",
+            "new_pdi_150",
+            "new_pdi_155",
+            "new_pdi_157",
+            "new_pdi_158",
+            "new_pdi_159"
+          ]
+        },
+        "equiv100": {
+          "passed": 155,
+          "phase_rms_deg": 6.50833155,
+          "freq_p95_hz": 0.507841015,
+          "code_p95_chips": 0.00819946279,
+          "failures": [
+            "new_pdi_145",
+            "new_pdi_147",
+            "new_pdi_146",
+            "new_pdi_149",
+            "new_pdi_148",
+            "new_pdi_152",
+            "new_pdi_151",
+            "new_pdi_153",
+            "new_pdi_154",
+            "new_pdi_156",
+            "new_pdi_150",
+            "new_pdi_155",
+            "new_pdi_157",
+            "new_pdi_158",
+            "new_pdi_159"
+          ]
+        }
+      }
+    },
+    "iq": {
+      "count": 32,
+      "arms": {
+        "baseline": {
+          "passed": 31,
+          "phase_rms_deg": 2.71703859,
+          "freq_p95_hz": 0.324537013,
+          "code_p95_chips": 0.00755435973,
+          "failures": [
+            "new_e1_gate_0"
+          ]
+        },
+        "phase100": {
+          "passed": 31,
+          "phase_rms_deg": 3.06306165,
+          "freq_p95_hz": 0.445020258,
+          "code_p95_chips": 0.00779379159,
+          "failures": [
+            "new_e1_gate_0"
+          ]
+        },
+        "equiv100": {
+          "passed": 31,
+          "phase_rms_deg": 3.05854462,
+          "freq_p95_hz": 0.447327988,
+          "code_p95_chips": 0.00777343661,
+          "failures": [
+            "new_e1_gate_0"
+          ]
+        }
+      }
+    },
+    "replay": {
+      "count": 2,
+      "arms": {
+        "baseline": {
+          "passed": 2,
+          "phase_rms_deg": 56.0180621,
+          "freq_p95_hz": 2.84079508,
+          "code_p95_chips": 0.00760614872,
+          "failures": []
+        },
+        "phase100": {
+          "passed": 2,
+          "phase_rms_deg": 29.3210823,
+          "freq_p95_hz": 0.277610452,
+          "code_p95_chips": 0.00603285432,
+          "failures": []
+        },
+        "equiv100": {
+          "passed": 2,
+          "phase_rms_deg": 25.4481506,
+          "freq_p95_hz": 0.278429008,
+          "code_p95_chips": 0.00571094453,
+          "failures": []
+        }
+      }
+    },
+    "diag": {
+      "count": 1,
+      "arms": {
+        "diag_baseline": {
+          "passed": 1,
+          "phase_rms_deg": 34.3453188,
+          "freq_p95_hz": 1.31523609,
+          "code_p95_chips": 0.00603761524,
+          "failures": []
+        },
+        "diag_phase100": {
+          "passed": 1,
+          "phase_rms_deg": 26.2910416,
+          "freq_p95_hz": 1.08993053,
+          "code_p95_chips": 0.00722887367,
+          "failures": []
+        },
+        "diag_equiv100": {
+          "passed": 1,
+          "phase_rms_deg": 25.5257212,
+          "freq_p95_hz": 1.17397308,
+          "code_p95_chips": 0.00661047548,
+          "failures": []
+        }
+      }
+    },
+    "gate_pdi": {
+      "count": 170,
+      "arms": {
+        "baseline": {
+          "passed": 155,
+          "phase_rms_deg": 6.46587043,
+          "freq_p95_hz": 0.43577425,
+          "code_p95_chips": 0.00738992922,
+          "failures": [
+            "pdi_150",
+            "pdi_148",
+            "pdi_149",
+            "pdi_145",
+            "pdi_147",
+            "pdi_153",
+            "pdi_152",
+            "pdi_146",
+            "pdi_151",
+            "pdi_154",
+            "pdi_155",
+            "pdi_159",
+            "pdi_156",
+            "pdi_157",
+            "pdi_158"
+          ]
+        },
+        "no_rms_gate": {
+          "passed": 155,
+          "phase_rms_deg": 2.18767921,
+          "freq_p95_hz": 0.405784023,
+          "code_p95_chips": 0.0074004666,
+          "failures": [
+            "pdi_150",
+            "pdi_148",
+            "pdi_149",
+            "pdi_145",
+            "pdi_147",
+            "pdi_153",
+            "pdi_152",
+            "pdi_146",
+            "pdi_151",
+            "pdi_154",
+            "pdi_155",
+            "pdi_159",
+            "pdi_156",
+            "pdi_157",
+            "pdi_158"
+          ]
+        }
+      }
+    },
+    "gate_iq": {
+      "count": 4,
+      "arms": {
+        "baseline": {
+          "passed": 4,
+          "phase_rms_deg": 30.327975,
+          "freq_p95_hz": 1.13517046,
+          "code_p95_chips": 0.00638134405,
+          "failures": []
+        },
+        "no_rms_gate": {
+          "passed": 4,
+          "phase_rms_deg": 2.76725142,
+          "freq_p95_hz": 0.328063965,
+          "code_p95_chips": 0.00726544484,
+          "failures": []
+        }
+      }
+    },
+    "narrow_pdi": {
+      "count": 170,
+      "arms": {
+        "baseline": {
+          "passed": 155,
+          "phase_rms_deg": 6.46587043,
+          "freq_p95_hz": 0.43577425,
+          "code_p95_chips": 0.00738992922,
+          "failures": [
+            "pdi_145",
+            "pdi_146",
+            "pdi_148",
+            "pdi_147",
+            "pdi_152",
+            "pdi_155",
+            "pdi_149",
+            "pdi_151",
+            "pdi_154",
+            "pdi_150",
+            "pdi_156",
+            "pdi_159",
+            "pdi_157",
+            "pdi_153",
+            "pdi_158"
+          ]
+        },
+        "no_rms_only": {
+          "passed": 155,
+          "phase_rms_deg": 2.20501518,
+          "freq_p95_hz": 0.337917052,
+          "code_p95_chips": 0.00738992922,
+          "failures": [
+            "pdi_145",
+            "pdi_146",
+            "pdi_148",
+            "pdi_147",
+            "pdi_152",
+            "pdi_155",
+            "pdi_149",
+            "pdi_151",
+            "pdi_154",
+            "pdi_150",
+            "pdi_156",
+            "pdi_159",
+            "pdi_157",
+            "pdi_153",
+            "pdi_158"
+          ]
+        }
+      }
+    },
+    "narrow_iq": {
+      "count": 4,
+      "arms": {
+        "baseline": {
+          "passed": 4,
+          "phase_rms_deg": 30.327975,
+          "freq_p95_hz": 1.13517046,
+          "code_p95_chips": 0.00638134405,
+          "failures": []
+        },
+        "no_rms_only": {
+          "passed": 4,
+          "phase_rms_deg": 2.74773685,
+          "freq_p95_hz": 0.328183174,
+          "code_p95_chips": 0.00715939701,
+          "failures": []
+        }
+      }
+    }
+  },
+  "groups": {
+    "screen": {
+      "22": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 25,
+            "phase_rms_deg": 51.7904005
+          },
+          "phase100": {
+            "passed": 25,
+            "phase_rms_deg": 51.7904005
+          },
+          "equiv100": {
+            "passed": 25,
+            "phase_rms_deg": 51.7904005
+          }
+        }
+      },
+      "32": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 29.4015734
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 20.1436396
+          },
+          "equiv100": {
+            "passed": 40,
+            "phase_rms_deg": 22.8318549
+          }
+        }
+      },
+      "35": {
+        "count": 50,
+        "arms": {
+          "baseline": {
+            "passed": 50,
+            "phase_rms_deg": 1.76414938
+          },
+          "phase100": {
+            "passed": 50,
+            "phase_rms_deg": 1.97918102
+          },
+          "equiv100": {
+            "passed": 50,
+            "phase_rms_deg": 1.97921439
+          }
+        }
+      },
+      "40": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 1.9017631
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 1.99435271
+          },
+          "equiv100": {
+            "passed": 40,
+            "phase_rms_deg": 1.9943546
+          }
+        }
+      }
+    },
+    "holdout": {
+      "22": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438522
+          },
+          "phase100": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438522
+          },
+          "equiv100": {
+            "passed": 25,
+            "phase_rms_deg": 51.8438522
+          }
+        }
+      },
+      "32": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 26.2314073
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 22.5634166
+          },
+          "equiv100": {
+            "passed": 40,
+            "phase_rms_deg": 24.5038755
+          }
+        }
+      },
+      "35": {
+        "count": 50,
+        "arms": {
+          "baseline": {
+            "passed": 50,
+            "phase_rms_deg": 1.72878678
+          },
+          "phase100": {
+            "passed": 50,
+            "phase_rms_deg": 1.95869942
+          },
+          "equiv100": {
+            "passed": 50,
+            "phase_rms_deg": 1.95867596
+          }
+        }
+      },
+      "40": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 1.85630304
+          },
+          "phase100": {
+            "passed": 40,
+            "phase_rms_deg": 1.95326922
+          },
+          "equiv100": {
+            "passed": 40,
+            "phase_rms_deg": 1.95329509
+          }
+        }
+      }
+    },
+    "gate_pdi": {
+      "22": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 25,
+            "phase_rms_deg": 51.7904005
+          },
+          "no_rms_gate": {
+            "passed": 25,
+            "phase_rms_deg": 51.7904005
+          }
+        }
+      },
+      "32": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 29.4015734
+          },
+          "no_rms_gate": {
+            "passed": 40,
+            "phase_rms_deg": 2.4573508
+          }
+        }
+      },
+      "35": {
+        "count": 50,
+        "arms": {
+          "baseline": {
+            "passed": 50,
+            "phase_rms_deg": 1.76414938
+          },
+          "no_rms_gate": {
+            "passed": 50,
+            "phase_rms_deg": 1.78634719
+          }
+        }
+      },
+      "40": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 1.9017631
+          },
+          "no_rms_gate": {
+            "passed": 40,
+            "phase_rms_deg": 1.90175387
+          }
+        }
+      }
+    },
+    "narrow_pdi": {
+      "22": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 25,
+            "phase_rms_deg": 51.7904005
+          },
+          "no_rms_only": {
+            "passed": 25,
+            "phase_rms_deg": 51.7904005
+          }
+        }
+      },
+      "32": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 29.4015734
+          },
+          "no_rms_only": {
+            "passed": 40,
+            "phase_rms_deg": 2.42905342
+          }
+        }
+      },
+      "35": {
+        "count": 50,
+        "arms": {
+          "baseline": {
+            "passed": 50,
+            "phase_rms_deg": 1.76414938
+          },
+          "no_rms_only": {
+            "passed": 50,
+            "phase_rms_deg": 1.76289392
+          }
+        }
+      },
+      "40": {
+        "count": 40,
+        "arms": {
+          "baseline": {
+            "passed": 40,
+            "phase_rms_deg": 1.9017631
+          },
+          "no_rms_only": {
+            "passed": 40,
+            "phase_rms_deg": 1.9017631
+          }
+        }
+      }
+    }
+  },
+  "validation": {
+    "weak_pdi_sha256": {
+      "new_l1ca_gate_3": "59f81e00acaded48d710716b6b52ef99f62ef4afa89d96fe0a4a271a0eca5907",
+      "new_b1i_gate_3": "0047911467bcbd529fc897e1c2d3afee9ae1adb1f03f4b9c46409b0bfe35fe07",
+      "new_g1_gate_3": "a83e6e55c1109870a5513a08366c085ead891aec0941df875e6ab2c3d5c38eba",
+      "new_l5_gate_3": "22b74445c4d49d621a2b220b2360d806bc807f407fa50b912223e73fe9454d11",
+      "new_b2a_gate_3": "d9a15c89eabbed1737a880c26742d0180ccbe31dafb66db84ff872377733f42c",
+      "new_e5a_gate_3": "96f0fa5c9f97b0379b916559a753312045895587ac7914329c6b689281218144",
+      "new_e1_gate_3": "be7e8f33233307115e156fe55c4ef1101886b56b629a4b654476a431db5d4f60",
+      "new_b1c_gate_3": "57ba65b46f2343255a43fba11a556e2263aaa27f812f2196383ac0eeb986f751"
+    },
+    "diagnostic_physical_identity": true
+  },
+  "bandwidth": {
+    "model": "continuous small-signal; not measured discrete bandwidth",
+    "rows": [
+      {
+        "configured_pll_hz": 2.4,
+        "a": 10.0101807,
+        "b": 13.855055,
+        "c": 28.6322107,
+        "continuous_bw_hz": 2.93858827,
+        "quadrature_bw_hz": 2.93858827
+      },
+      {
+        "configured_pll_hz": 4.8,
+        "a": 17.352437,
+        "b": 44.7402628,
+        "c": 229.057686,
+        "continuous_bw_hz": 5.25246597,
+        "quadrature_bw_hz": 5.25246597
+      },
+      {
+        "configured_pll_hz": 7.2,
+        "a": 24.6946932,
+        "b": 96.2156091,
+        "c": 773.069689,
+        "continuous_bw_hz": 7.61749107,
+        "quadrature_bw_hz": 7.61749107
+      },
+      {
+        "configured_pll_hz": 9.6,
+        "a": 32.0369494,
+        "b": 168.281094,
+        "c": 1832.46149,
+        "continuous_bw_hz": 9.99859565,
+        "quadrature_bw_hz": 9.99859565
+      }
+    ]
+  },
+  "pll_reasons": {
+    "baseline": {
+      "opportunities": 1000,
+      "allowed": 698,
+      "blocked": 302,
+      "phase_invalid": 0,
+      "last_freq_invalid": 0,
+      "sync_unlocked": 0,
+      "cn0_confirms_low": 0,
+      "phase_ratio_low": 0,
+      "freq_monitor_invalid": 302,
+      "freq_rms_over_4": 302,
+      "freq_ratio_low": 0
+    },
+    "phase100": {
+      "opportunities": 1000,
+      "allowed": 678,
+      "blocked": 322,
+      "phase_invalid": 0,
+      "last_freq_invalid": 0,
+      "sync_unlocked": 0,
+      "cn0_confirms_low": 0,
+      "phase_ratio_low": 0,
+      "freq_monitor_invalid": 322,
+      "freq_rms_over_4": 322,
+      "freq_ratio_low": 0
+    },
+    "equiv100": {
+      "opportunities": 1000,
+      "allowed": 718,
+      "blocked": 282,
+      "phase_invalid": 0,
+      "last_freq_invalid": 0,
+      "sync_unlocked": 0,
+      "cn0_confirms_low": 0,
+      "phase_ratio_low": 0,
+      "freq_monitor_invalid": 282,
+      "freq_rms_over_4": 282,
+      "freq_ratio_low": 0
+    }
+  },
+  "ablation_reasons": {
+    "gate_new_l1ca_gate_0": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    },
+    "gate_new_l1ca_gate_1": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    },
+    "gate_new_b1i_gate_0": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    },
+    "gate_new_g1_gate_0": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    },
+    "narrow_gate_new_l1ca_gate_1": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    },
+    "narrow_gate_new_l1ca_gate_0": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    },
+    "narrow_gate_new_b1i_gate_0": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    },
+    "narrow_gate_new_g1_gate_0": {
+      "opportunities": 1000,
+      "allowed": 1000,
+      "blocked": 0
+    }
+  },
+  "release": {
+    "name": "(empty)",
+    "tests": "112",
+    "failures": "0",
+    "disabled": "0",
+    "skipped": "1",
+    "hostname": "",
+    "time": "166",
+    "timestamp": "2026-09-07T16:11:14"
+  },
+  "sha256": {
+    "baseline": "6c7de10ac6b9b32876e89f8465062d4db5e841a98b86c0e813b7ab727a2b7a83",
+    "pdi_baseline": "192861a6e829a830dd7d974cd28253e14287342e097ffd030aa9f0f51bf109cb",
+    "diag_baseline": "5c6fc160969e7bb91263088680232a75403dd8d919fa530d8a4daeb8c3c1e9c0",
+    "check_baseline": "15814a3f5a5818ebb1bd86dc3e84ef2d1502b688bb23f633050bb5b5a0851304",
+    "phase100": "4efc7ec4a14ebb1949e6629409e5f876f57ac26f101844c34504da8f257a7f10",
+    "pdi_phase100": "710b0d7f8740b243e91bc11424403ef2508f0151b29b9e79724644ac898f6b0b",
+    "diag_phase100": "1a0f4e1d9d785f8d6e147b33c8c388a07b730616d0a3f2224d655d21ecc3f6cc",
+    "check_phase100": "34006b17975bf7663cd3d8021fbdac1f90ebb76dfd2c14a808b96aa959f727f4",
+    "equiv100": "3001303ea75c1642226783cd46bae21efa07a8a56dca3c43894d361a60df1cef",
+    "pdi_equiv100": "adf97671e91fc465f5d0959971f5a1cd2248d6d51034b26bcad279e4f4c30f66",
+    "diag_equiv100": "feaa3b1e14de17ab5a4e97d6519a4a3975832ad6de3f3aa53df0584ed86c2649",
+    "check_equiv100": "f8e1070256791583f7172477b32723dfade1e148cd2121918724d0bf7ea209e4",
+    "no_rms_gate": "1a16d688313bd2b7ee664f4aeb110e3a4ef03ee1b24a3f6a18f4f47132fd4233",
+    "pdi_no_rms_gate": "6888eced92a9ddbfb6d411837badddaa24648ae446441ee3399607f00d975ba0",
+    "no_rms_only": "38d7cb44a2f3567c94e172534cd54433a77ec3b9a5cba86265da94359b991ca9",
+    "pdi_no_rms_only": "91c6d89645c5256d37d3fc0e4f5e12f256c1db8986a71a2baa244e3867c8741d",
+    "bandwidth.py": "7fde4213037ad086d53ddd30be52b335084e5006cfc9338f9ca1829917a1098b",
+    "build.py": "ecaffe1cb2de853247410a030f89b846d3efcbd6e0c5c115cb048c1a42d1e4b9",
+    "audit.py": "2ae1014a3994b88ac01ae683a87f1fb92d13cbc7004e9fa80d57507cc42ed01d",
+    "run.py": "0031e2d6e1a253dd0a3499aaedcc285f3b896bb3c26f28f05dedd6f9995f911e",
+    "summarize.py": "8f31de9add3d5b86d50e689b04eecbca8778b3d6ab38e5e8324b67a731bc75e3",
+    "diag.cjs": "ec7e17de4950f224b8e5d65d1ceb52259d15e404c05f61102ecb298a6b3894a4",
+    "gate.cjs": "44ba4f5f703df315a78826391eab92fd831183bbdcf3b96b09a5bf657d7d8d6d",
+    "narrow.cjs": "85c5b2af70e5a4761557b6f93a2f584b85264540e6c1ed10df6033fffe1f1c63",
+    "prepare.cjs": "ac24d8d480c405c4a492048de82f6d74c6088335f4d12279553c6e6b5e1a82bc",
+    "check.cjs": "04fdc0cef5da9fbf021486848d2dd1333b0f97f1f56753f600b8a466b4e6169c",
+    "src/gate_probe.cpp": "01191d6dd8c8b5c1a038bba0645765f5f3cbfeda4697b6758293013c2b359dce",
+    "src/check_pair.cpp": "d0b621c470d5cc0005936fae93361d2d101a6603d782e30222260574145b45e0",
+    "src/track_fsm.cpp": "d0016af3f8a002e4c6982c6ff6ee9d45e0f356de01de282576eca00b21cf6632",
+    "src/phase_diff_observer.cpp": "644d3ba37b64659d788e81bb1e15d3b81456416c37bf5c6f11ce7b0543f7dcdd",
+    "src/pdi_probe.cpp": "2832eb454e00655b21b8b508ad0c7b9fbfb23979f2a44e7900e2b6068bc18be3",
+    "src/track_engine.cpp": "21e017b083cce69f45f7f1d584d5d7ccec92f8b177b9c9b32d2954f86127ef6f",
+    "src/baseline/carrier_loop.cpp": "02c25f97375af50ddabd08869702832b630f0b73cbf97228a9ff7f6536d4c300",
+    "src/gate/track_engine.cpp": "e40b6931e51ce68df48178a20aa377884f57738af9fec62b48dd7b4b37be698f",
+    "src/equiv100/carrier_loop.cpp": "ec11ebd9efed3278b2b6977fa06c4cb9ae2d4d9b71ed51abd6d006dd873d17d3",
+    "src/narrow/track_engine.cpp": "96230e0af0a1c6c3b87a8b0533d8df01c8e6188307a3a1210e4ef46b8734dc2e",
+    "src/diag/track_engine.cpp": "e790f967574b71ad9b9e36143308d3e1af0f45b51eaabfc9297eade24135a637",
+    "src/phase100/carrier_loop.cpp": "4e61575978dce94a781cb97a6c935133f8c0072d0679fcb56c7bd69840f71e42",
+    "include/tracking/track_engine.h": "2a4498ce80c19128efb489c7d831867d797137365036a44142b68b1858e4a31e",
+    "include/carrier_observer/phase_diff_observer.h": "a4be1482e6d8d7088754496b6b5d81391c8c98a6b6c4b1998f8b73d414242cc4",
+    "include/carrier_loop/carrier_loop.h": "c6f5a4610ae4cf7b2676d16a7d8dbd9a53e17076beffd0ec61241aa34fe819b0",
+    "release.xml": "ff99923ca6cae656aa9ae323bb9efc258beee077d06e055f26f6cc6d9f291ad4"
+  },
+  "replay_audit": {
+    "e1_new_3": {
+      "baseline": {
+        "down": [
+          {
+            "epoch": 27381,
+            "last_four": [
+              {
+                "snr": 0.481410701,
+                "count": 1,
+                "cn0_db_hz": 31.0423427
+              },
+              {
+                "snr": 0.551469867,
+                "count": 2,
+                "cn0_db_hz": 31.0423427
+              },
+              {
+                "snr": 0.359259264,
+                "count": 3,
+                "cn0_db_hz": 31.0423427
+              },
+              {
+                "snr": 0.583917891,
+                "count": 4,
+                "cn0_db_hz": 31.0423427
+              }
+            ]
+          }
+        ],
+        "before_baseline_events": [
+          {
+            "epoch": 27381,
+            "phase_rms_deg": 3.35913355,
+            "freq_p95_hz": 0.569380885,
+            "code_p95_chips": 0.00315279514
+          }
+        ]
+      },
+      "phase100": {
+        "down": [
+          {
+            "epoch": 27381,
+            "last_four": [
+              {
+                "snr": 0.503972001,
+                "count": 1,
+                "cn0_db_hz": 31.0402034
+              },
+              {
+                "snr": 0.528341856,
+                "count": 2,
+                "cn0_db_hz": 31.0402034
+              },
+              {
+                "snr": 0.398667759,
+                "count": 3,
+                "cn0_db_hz": 31.0402034
+              },
+              {
+                "snr": 0.591576,
+                "count": 4,
+                "cn0_db_hz": 31.0402034
+              }
+            ]
+          }
+        ],
+        "before_baseline_events": [
+          {
+            "epoch": 27381,
+            "phase_rms_deg": 4.29227516,
+            "freq_p95_hz": 0.756042262,
+            "code_p95_chips": 0.00314706564
+          }
+        ]
+      },
+      "equiv100": {
+        "down": [
+          {
+            "epoch": 27381,
+            "last_four": [
+              {
+                "snr": 0.501396464,
+                "count": 1,
+                "cn0_db_hz": 31.0428351
+              },
+              {
+                "snr": 0.526448676,
+                "count": 2,
+                "cn0_db_hz": 31.0428351
+              },
+              {
+                "snr": 0.39769576,
+                "count": 3,
+                "cn0_db_hz": 31.0428351
+              },
+              {
+                "snr": 0.592254963,
+                "count": 4,
+                "cn0_db_hz": 31.0428351
+              }
+            ]
+          }
+        ],
+        "before_baseline_events": [
+          {
+            "epoch": 27381,
+            "phase_rms_deg": 4.29441692,
+            "freq_p95_hz": 0.751771098,
+            "code_p95_chips": 0.0031315349
+          }
+        ]
+      }
+    },
+    "e1_gate_2": {
+      "baseline": {
+        "down": [
+          {
+            "epoch": 111121,
+            "last_four": [
+              {
+                "snr": 0.479632644,
+                "count": 1,
+                "cn0_db_hz": 30.8264776
+              },
+              {
+                "snr": 0.610831371,
+                "count": 2,
+                "cn0_db_hz": 30.8264776
+              },
+              {
+                "snr": 0.616014922,
+                "count": 3,
+                "cn0_db_hz": 30.8264776
+              },
+              {
+                "snr": 0.437363053,
+                "count": 4,
+                "cn0_db_hz": 30.34726
+              }
+            ]
+          }
+        ],
+        "before_baseline_events": [
+          {
+            "epoch": 111121,
+            "phase_rms_deg": 0.858851212,
+            "freq_p95_hz": 0.398913442,
+            "code_p95_chips": 0.00263258815
+          }
+        ]
+      },
+      "phase100": {
+        "down": [],
+        "before_baseline_events": [
+          {
+            "epoch": 111121,
+            "phase_rms_deg": 1.75616912,
+            "freq_p95_hz": 0.558057844,
+            "code_p95_chips": 0.00240178406
+          }
+        ]
+      },
+      "equiv100": {
+        "down": [],
+        "before_baseline_events": [
+          {
+            "epoch": 111121,
+            "phase_rms_deg": 1.76349873,
+            "freq_p95_hz": 0.552693426,
+            "code_p95_chips": 0.00239183009
+          }
+        ]
+      }
+    }
+  },
+  "iq": {
+    "iq": [
+      {
+        "case": {
+          "id": "new_l1ca_gate_0",
+          "signal": "L1CA",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 332609077,
+          "duration_s": 60
+        },
+        "iq_sha256": "f4e3e22843f52f438f4bcedbd8326fbabae6c1d24bcb7d9c9d62260f3c983448",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 34.3453188,
+            "freq_p95_hz": 1.31523609,
+            "code_p95_chips": 0.00603761524,
+            "first_sync_ms": 3440,
+            "persistent_branch_changes_proxy": 7,
+            "tail_pll_updates": 698,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 34.3453188
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 26.2910416,
+            "freq_p95_hz": 1.08993053,
+            "code_p95_chips": 0.00722887367,
+            "first_sync_ms": 3440,
+            "persistent_branch_changes_proxy": 5,
+            "tail_pll_updates": 678,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 26.2910416
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 25.5257212,
+            "freq_p95_hz": 1.17397308,
+            "code_p95_chips": 0.00661047548,
+            "first_sync_ms": 3440,
+            "persistent_branch_changes_proxy": 5,
+            "tail_pll_updates": 718,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 25.5257212
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_l1ca_gate_2",
+          "signal": "L1CA",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 332818535,
+          "duration_s": 60
+        },
+        "iq_sha256": "54860eae02104e99d59ff6ad5206cddb16661cb526c687ee58dbc8d606fb7263",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.90848931,
+            "freq_p95_hz": 0.240152951,
+            "code_p95_chips": 0.00566899776,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.90848931
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.14546992,
+            "freq_p95_hz": 0.33117352,
+            "code_p95_chips": 0.00570396334,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.14546992
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.1457216,
+            "freq_p95_hz": 0.330877004,
+            "code_p95_chips": 0.00570248067,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.1457216
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_l1ca_gate_1",
+          "signal": "L1CA",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 15.625,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 13,
+          "seed": 332713806,
+          "duration_s": 60
+        },
+        "iq_sha256": "cb2543355036e71d5c002452109b0a9924a11d4f2958100ecf1b7d4fbba5f77a",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.79349125,
+            "freq_p95_hz": 0.234583745,
+            "code_p95_chips": 0.00428124517,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.79349125
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.08057002,
+            "freq_p95_hz": 0.330490333,
+            "code_p95_chips": 0.00418090075,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.08057002
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.08028928,
+            "freq_p95_hz": 0.330499768,
+            "code_p95_chips": 0.0041886121,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.08028928
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_l1ca_gate_3",
+          "signal": "L1CA",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 22,
+          "freq_hz": 31.25,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 61,
+          "seed": 332923264,
+          "duration_s": 60
+        },
+        "iq_sha256": "efbbcb1dfb27bcd71aa238390b0e2fb3774813e4c0e24571656d7ac2675bbade",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 50.9526705,
+            "freq_p95_hz": 2.4158059,
+            "code_p95_chips": 0.0290943831,
+            "first_sync_ms": 8498,
+            "persistent_branch_changes_proxy": 29,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 50.9526705,
+            "freq_p95_hz": 2.4158059,
+            "code_p95_chips": 0.0290943831,
+            "first_sync_ms": 8498,
+            "persistent_branch_changes_proxy": 29,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 50.9526705,
+            "freq_p95_hz": 2.4158059,
+            "code_p95_chips": 0.0290943831,
+            "first_sync_ms": 8498,
+            "persistent_branch_changes_proxy": 29,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1i_gate_2",
+          "signal": "B1I",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 333237451,
+          "duration_s": 60
+        },
+        "iq_sha256": "3e0a7c898aa667b79f1271b631b3af935d8e6846155f20d96d67bad3ee217af8",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.80090047,
+            "freq_p95_hz": 0.229708651,
+            "code_p95_chips": 0.00533039868,
+            "first_sync_ms": 3200,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.80090047
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.00320433,
+            "freq_p95_hz": 0.317672153,
+            "code_p95_chips": 0.0051638931,
+            "first_sync_ms": 3200,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.00320433
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.00256032,
+            "freq_p95_hz": 0.317855281,
+            "code_p95_chips": 0.00517101586,
+            "first_sync_ms": 3200,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.00256032
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1i_gate_1",
+          "signal": "B1I",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 15.625,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 13,
+          "seed": 333132722,
+          "duration_s": 60
+        },
+        "iq_sha256": "5d6bb3a2365fec5f411bd366a06e7ec8cf8dfd1f3eadb5894f798def02ad86cc",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.63973953,
+            "freq_p95_hz": 0.22678551,
+            "code_p95_chips": 0.0060569942,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.63973953
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 1.87308197,
+            "freq_p95_hz": 0.316105166,
+            "code_p95_chips": 0.00610761344,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.87308197
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 1.87287373,
+            "freq_p95_hz": 0.317281098,
+            "code_p95_chips": 0.00612126291,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.87287373
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1i_gate_0",
+          "signal": "B1I",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 333027993,
+          "duration_s": 60
+        },
+        "iq_sha256": "3fec8f07964438839b616f7105e183f84e9d2c1fb63f069ab9ca8b0ef0e2ca0f",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 30.8515281,
+            "freq_p95_hz": 1.61015987,
+            "code_p95_chips": 0.00674566627,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 7,
+            "tail_pll_updates": 755,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 30.8515281
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 29.3656202,
+            "freq_p95_hz": 1.62446499,
+            "code_p95_chips": 0.00809650123,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 7,
+            "tail_pll_updates": 735,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 29.3656202
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 28.9596629,
+            "freq_p95_hz": 1.73175335,
+            "code_p95_chips": 0.00834153593,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 6,
+            "tail_pll_updates": 755,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 28.9596629
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1i_gate_3",
+          "signal": "B1I",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 24,
+          "freq_hz": 31.25,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 61,
+          "seed": 333342180,
+          "duration_s": 60
+        },
+        "iq_sha256": "ed8ae9a75362c0a1f0fb5e100c1e7f7262c5b04b1f9b9c15c306c93455b146d4",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 52.848929,
+            "freq_p95_hz": 2.9625946,
+            "code_p95_chips": 0.0232764035,
+            "first_sync_ms": 7539,
+            "persistent_branch_changes_proxy": 24,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 52.848929,
+            "freq_p95_hz": 2.9625946,
+            "code_p95_chips": 0.0232764035,
+            "first_sync_ms": 7539,
+            "persistent_branch_changes_proxy": 24,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 52.848929,
+            "freq_p95_hz": 2.9625946,
+            "code_p95_chips": 0.0232764035,
+            "first_sync_ms": 7539,
+            "persistent_branch_changes_proxy": 24,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_g1_gate_1",
+          "signal": "G1",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 15.625,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 13,
+          "seed": 333551638,
+          "duration_s": 60
+        },
+        "iq_sha256": "6ab2c4a7c512ce9cebe0d421d667dc046119db3ab71564829f4cdddeecba487c",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.57830432,
+            "freq_p95_hz": 0.217427215,
+            "code_p95_chips": 0.00601327792,
+            "first_sync_ms": 3501,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.57830432
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 1.82519121,
+            "freq_p95_hz": 0.303416443,
+            "code_p95_chips": 0.00618924946,
+            "first_sync_ms": 3501,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.82519121
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 1.82447845,
+            "freq_p95_hz": 0.303416443,
+            "code_p95_chips": 0.00616910681,
+            "first_sync_ms": 3501,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.82447845
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_g1_gate_2",
+          "signal": "G1",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 333656367,
+          "duration_s": 60
+        },
+        "iq_sha256": "b98aac46320d60ad2ef8bc311cdea628f9c4c43457929c08223d08b572e35578",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.00490541,
+            "freq_p95_hz": 0.246237732,
+            "code_p95_chips": 0.00689748675,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.00490541
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.23815677,
+            "freq_p95_hz": 0.333703156,
+            "code_p95_chips": 0.00672166795,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.23815677
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.23758186,
+            "freq_p95_hz": 0.333513641,
+            "code_p95_chips": 0.00672138855,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.23758186
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_g1_gate_0",
+          "signal": "G1",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 333446909,
+          "duration_s": 60
+        },
+        "iq_sha256": "b5acf322088007934d8d211e1e42bd6f12920366503aa5b024716c53aabf37fc",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 29.8044219,
+            "freq_p95_hz": 0.955104828,
+            "code_p95_chips": 0.00672507286,
+            "first_sync_ms": 3180,
+            "persistent_branch_changes_proxy": 4,
+            "tail_pll_updates": 700,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 29.8044219
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 27.7295046,
+            "freq_p95_hz": 0.968933105,
+            "code_p95_chips": 0.00699931383,
+            "first_sync_ms": 3180,
+            "persistent_branch_changes_proxy": 3,
+            "tail_pll_updates": 740,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 27.7295046
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 20.9415908,
+            "freq_p95_hz": 0.897407532,
+            "code_p95_chips": 0.00680321828,
+            "first_sync_ms": 3180,
+            "persistent_branch_changes_proxy": 2,
+            "tail_pll_updates": 740,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 20.9415908
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_g1_gate_3",
+          "signal": "G1",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 22,
+          "freq_hz": 31.25,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 61,
+          "seed": 333761096,
+          "duration_s": 60
+        },
+        "iq_sha256": "f260052805a3d5f8afe565ca3ba792b063ba0b88e5d33404c096480534343d36",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 53.426018,
+            "freq_p95_hz": 2.38915363,
+            "code_p95_chips": 0.0429730713,
+            "first_sync_ms": 21475,
+            "persistent_branch_changes_proxy": 21,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 53.426018,
+            "freq_p95_hz": 2.38915363,
+            "code_p95_chips": 0.0429730713,
+            "first_sync_ms": 21475,
+            "persistent_branch_changes_proxy": 21,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 53.426018,
+            "freq_p95_hz": 2.38915363,
+            "code_p95_chips": 0.0429730713,
+            "first_sync_ms": 21475,
+            "persistent_branch_changes_proxy": 21,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_l5_gate_2",
+          "signal": "L5",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 334075283,
+          "duration_s": 60
+        },
+        "iq_sha256": "fd7c591ae09daa6b71a9accddfa84e5216072187307a55057418ba98726f9fb0",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.87786018,
+            "freq_p95_hz": 0.329402395,
+            "code_p95_chips": 0.00950455666,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.87786018
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 3.12433617,
+            "freq_p95_hz": 0.448775411,
+            "code_p95_chips": 0.00988298655,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.12433617
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 3.12137341,
+            "freq_p95_hz": 0.449003968,
+            "code_p95_chips": 0.0101256967,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.12137341
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_l5_gate_0",
+          "signal": "L5",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -12.5,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 333865825,
+          "duration_s": 60
+        },
+        "iq_sha256": "70573ffb7acae0f3194cb9962a3ddfbf03d9254d41e995beda5bfee7761d9a2d",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.79320131,
+            "freq_p95_hz": 0.341129303,
+            "code_p95_chips": 0.017583847,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.79320131
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 3.13412661,
+            "freq_p95_hz": 0.477027893,
+            "code_p95_chips": 0.0175863504,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.13412661
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 3.1378466,
+            "freq_p95_hz": 0.477027893,
+            "code_p95_chips": 0.0176174045,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.1378466
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_l5_gate_1",
+          "signal": "L5",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 6.25,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 13,
+          "seed": 333970554,
+          "duration_s": 60
+        },
+        "iq_sha256": "775e0b57a2243ba52b9dec02367151b96ae8dfa925af1b3f51f97f769928fbf7",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.58333994,
+            "freq_p95_hz": 0.315268107,
+            "code_p95_chips": 0.0106688142,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.58333994
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.8326206,
+            "freq_p95_hz": 0.436047912,
+            "code_p95_chips": 0.0107731819,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.8326206
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.83012271,
+            "freq_p95_hz": 0.435353027,
+            "code_p95_chips": 0.0107824206,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.83012271
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_l5_gate_3",
+          "signal": "L5",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 28,
+          "freq_hz": 12.5,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 61,
+          "seed": 334180012,
+          "duration_s": 60
+        },
+        "iq_sha256": "ffde4197fdf40f5414658224db36401ea92db88b93db9a45523f5bd21608b5d4",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 134.230398,
+            "freq_p95_hz": 0.123698065,
+            "code_p95_chips": 0.016190052,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 134.230398,
+            "freq_p95_hz": 0.123698065,
+            "code_p95_chips": 0.016190052,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 134.230398,
+            "freq_p95_hz": 0.123698065,
+            "code_p95_chips": 0.016190052,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b2a_gate_0",
+          "signal": "B2A",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -12.5,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 334284741,
+          "duration_s": 60
+        },
+        "iq_sha256": "3fd906ebf7b72d1d24eaf10b4c8eab20a73b486a854c0ed5df020f20be240f11",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.58387667,
+            "freq_p95_hz": 0.35982132,
+            "code_p95_chips": 0.0125885606,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.58387667
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.93162573,
+            "freq_p95_hz": 0.491333008,
+            "code_p95_chips": 0.0123605728,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.93162573
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.92856118,
+            "freq_p95_hz": 0.491333008,
+            "code_p95_chips": 0.0123576522,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.92856118
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b2a_gate_1",
+          "signal": "B2A",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 6.25,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 13,
+          "seed": 334389470,
+          "duration_s": 60
+        },
+        "iq_sha256": "5c021904743b22c6f8b93b7a3576fea30f6b71e852da9fa2a2037751ff65343c",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 3.71462861,
+            "freq_p95_hz": 0.365129822,
+            "code_p95_chips": 0.00846642256,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 894,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.71462861
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 4.8714836,
+            "freq_p95_hz": 0.489649638,
+            "code_p95_chips": 0.00850152969,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 894,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 4.8714836
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 4.81275489,
+            "freq_p95_hz": 0.494540629,
+            "code_p95_chips": 0.00881665945,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 894,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 4.81275489
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b2a_gate_3",
+          "signal": "B2A",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 32,
+          "freq_hz": 12.5,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 61,
+          "seed": 334598928,
+          "duration_s": 60
+        },
+        "iq_sha256": "4c91c8b054e21e35140795676d3b72b7c3469228dd676e5380e38e50ba564fe2",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 142.465815,
+            "freq_p95_hz": 0.0457417727,
+            "code_p95_chips": 0.00745904446,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 142.465815,
+            "freq_p95_hz": 0.0457417727,
+            "code_p95_chips": 0.00745904446,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 142.465815,
+            "freq_p95_hz": 0.0457417727,
+            "code_p95_chips": 0.00745904446,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b2a_gate_2",
+          "signal": "B2A",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 334494199,
+          "duration_s": 60
+        },
+        "iq_sha256": "2b2e6ac008fb3b22fc0b4345e71b907839af552ef23e6b62dd2e632217a6f2a4",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.64087588,
+            "freq_p95_hz": 0.379008626,
+            "code_p95_chips": 0.00802189112,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.64087588
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.94149265,
+            "freq_p95_hz": 0.517975616,
+            "code_p95_chips": 0.00795727968,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.94149265
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.93459153,
+            "freq_p95_hz": 0.516150127,
+            "code_p95_chips": 0.0078971982,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.93459153
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e5a_gate_0",
+          "signal": "E5A",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -12.5,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 334703657,
+          "duration_s": 60
+        },
+        "iq_sha256": "c1848ddba4377e061952d93f81e14c4ced0888e5b4731ccb9f4e4254a03a9687",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.62248675,
+            "freq_p95_hz": 0.319671631,
+            "code_p95_chips": 0.00968241692,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.62248675
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 3.00178714,
+            "freq_p95_hz": 0.441265106,
+            "code_p95_chips": 0.00938266516,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.00178714
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.99571583,
+            "freq_p95_hz": 0.445652008,
+            "code_p95_chips": 0.00922262669,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.99571583
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e5a_gate_1",
+          "signal": "E5A",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 6.25,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 13,
+          "seed": 334808386,
+          "duration_s": 60
+        },
+        "iq_sha256": "e26c47bf81343e7576f2d22f6a0c5a750ea8375f749445039419035625c193ed",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.54851125,
+            "freq_p95_hz": 0.334937723,
+            "code_p95_chips": 0.0115497112,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.54851125
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.8353891,
+            "freq_p95_hz": 0.460210836,
+            "code_p95_chips": 0.0115975738,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.8353891
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.83403483,
+            "freq_p95_hz": 0.460219676,
+            "code_p95_chips": 0.0114533305,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.83403483
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e5a_gate_3",
+          "signal": "E5A",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 28,
+          "freq_hz": 12.5,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 61,
+          "seed": 335017844,
+          "duration_s": 60
+        },
+        "iq_sha256": "9ddf05faf4d69648948ab811374c33dac380c567f613019083446535e4934cda",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 76.8520666,
+            "freq_p95_hz": 0.101854987,
+            "code_p95_chips": 0.0197430253,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 76.8520666,
+            "freq_p95_hz": 0.101854987,
+            "code_p95_chips": 0.0197430253,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 76.8520666,
+            "freq_p95_hz": 0.101854987,
+            "code_p95_chips": 0.0197430253,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e5a_gate_2",
+          "signal": "E5A",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 17,
+          "seed": 334913115,
+          "duration_s": 60
+        },
+        "iq_sha256": "a2bc0dbc4d7522acce3b9e51c5748ab78b961c45210b25bad00b86a7d3e7c91c",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.29468901,
+            "freq_p95_hz": 0.336995392,
+            "code_p95_chips": 0.0082616806,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.29468901
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.63050845,
+            "freq_p95_hz": 0.458535472,
+            "code_p95_chips": 0.00793790817,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.63050845
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.63462303,
+            "freq_p95_hz": 0.459419556,
+            "code_p95_chips": 0.00805258751,
+            "first_sync_ms": 2001,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.63462303
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e1_gate_0",
+          "signal": "E1",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 4,
+          "seed": 335122573,
+          "duration_s": 120
+        },
+        "iq_sha256": "251d49ccc6495543622fa9b8fc4b076aea898722c3f85005a1aa2696def3f583",
+        "arms": {
+          "baseline": {
+            "passed": false,
+            "phase_rms_deg": 103.939926,
+            "freq_p95_hz": 28569.4554,
+            "code_p95_chips": 740.220046,
+            "first_sync_ms": 0,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": false,
+            "phase_rms_deg": 103.939926,
+            "freq_p95_hz": 28569.4554,
+            "code_p95_chips": 740.220046,
+            "first_sync_ms": 0,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": false,
+            "phase_rms_deg": 103.939926,
+            "freq_p95_hz": 28569.4554,
+            "code_p95_chips": 740.220046,
+            "first_sync_ms": 0,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e1_gate_1",
+          "signal": "E1",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 15.625,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 12,
+          "seed": 335227302,
+          "duration_s": 120
+        },
+        "iq_sha256": "801184ef582182b2bfe964c75a97491fc533ac2ab4d885a6baa15a9e91414405",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.36374321,
+            "freq_p95_hz": 0.343998327,
+            "code_p95_chips": 0.00399236381,
+            "first_sync_ms": 10844,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.36374321
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.82221938,
+            "freq_p95_hz": 0.477317195,
+            "code_p95_chips": 0.00397187471,
+            "first_sync_ms": 10844,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.82221938
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.81863085,
+            "freq_p95_hz": 0.480334075,
+            "code_p95_chips": 0.00390425324,
+            "first_sync_ms": 10844,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.81863085
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e1_gate_2",
+          "signal": "E1",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 48,
+          "seed": 335332031,
+          "duration_s": 120
+        },
+        "iq_sha256": "6c16abd82aef06b3a095f574ccc753dae27ce8844756636f8040b35bb3094039",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.53720268,
+            "freq_p95_hz": 0.363789118,
+            "code_p95_chips": 0.00508376956,
+            "first_sync_ms": 8221,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.53720268
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.97350938,
+            "freq_p95_hz": 0.500665609,
+            "code_p95_chips": 0.00530149043,
+            "first_sync_ms": 8221,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.97350938
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.95894273,
+            "freq_p95_hz": 0.501277451,
+            "code_p95_chips": 0.00524137914,
+            "first_sync_ms": 8221,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.95894273
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_e1_gate_3",
+          "signal": "E1",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 27,
+          "freq_hz": 31.25,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 76,
+          "seed": 335436760,
+          "duration_s": 120
+        },
+        "iq_sha256": "dec2405d2b51177cf18f3936d923b2d5604244e37402aea8ae4a266d3fb3e9e5",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 95.7621984,
+            "freq_p95_hz": 0.177963522,
+            "code_p95_chips": 0.00764967501,
+            "first_sync_ms": 19764,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 95.7621984,
+            "freq_p95_hz": 0.177963522,
+            "code_p95_chips": 0.00764967501,
+            "first_sync_ms": 19764,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 95.7621984,
+            "freq_p95_hz": 0.177963522,
+            "code_p95_chips": 0.00764967501,
+            "first_sync_ms": 19764,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1c_gate_0",
+          "signal": "B1C",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -12.5,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 10,
+          "seed": 335541489,
+          "duration_s": 120
+        },
+        "iq_sha256": "92d473b365b5778fb5367be884ac36b799f02e7a0c50c32aafd8271949a1a5bd",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 94.6533381,
+            "freq_p95_hz": 0.054049492,
+            "code_p95_chips": 0.00713640451,
+            "first_sync_ms": 39701,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 94.6533381,
+            "freq_p95_hz": 0.054049492,
+            "code_p95_chips": 0.00713640451,
+            "first_sync_ms": 39701,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 94.6533381,
+            "freq_p95_hz": 0.054049492,
+            "code_p95_chips": 0.00713640451,
+            "first_sync_ms": 39701,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1c_gate_1",
+          "signal": "B1C",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 6.25,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 670,
+          "seed": 335646218,
+          "duration_s": 120
+        },
+        "iq_sha256": "ebee62f140a5c2bb3eddd53059a0c02285316ddb2f85e426dc70dac29463e793",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.27434139,
+            "freq_p95_hz": 0.302560352,
+            "code_p95_chips": 0.00398799777,
+            "first_sync_ms": 43710,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.27434139
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.5719163,
+            "freq_p95_hz": 0.422751384,
+            "code_p95_chips": 0.00413858891,
+            "first_sync_ms": 43710,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.5719163
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.57524495,
+            "freq_p95_hz": 0.424194248,
+            "code_p95_chips": 0.00414392352,
+            "first_sync_ms": 43710,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.57524495
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1c_gate_2",
+          "signal": "B1C",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -6.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 9000,
+          "seed": 335750947,
+          "duration_s": 120
+        },
+        "iq_sha256": "de3ba9addfa28042527cfa64e67330c07868f5900de7852d87744b95bc493a42",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 2.0840926,
+            "freq_p95_hz": 0.28142922,
+            "code_p95_chips": 0.00374943018,
+            "first_sync_ms": 37621,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.0840926
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 2.36794751,
+            "freq_p95_hz": 0.392358999,
+            "code_p95_chips": 0.00370290875,
+            "first_sync_ms": 37621,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.36794751
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 2.3697926,
+            "freq_p95_hz": 0.3908168,
+            "code_p95_chips": 0.00372007489,
+            "first_sync_ms": 37621,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.3697926
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "new_b1c_gate_3",
+          "signal": "B1C",
+          "prn": 11,
+          "entry": "normal",
+          "cn0_db_hz": 32,
+          "freq_hz": 12.5,
+          "handoff_hz": 500,
+          "code_chips": 0.3515625,
+          "rate_hz_s": 1,
+          "phase_ms": 12450,
+          "seed": 335855676,
+          "duration_s": 120
+        },
+        "iq_sha256": "468433ad7b99fdc3b4ca1443ebcee5563b6c0c34a3f7c4fb835fa22ac735dd48",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 82.1767875,
+            "freq_p95_hz": 0.064364437,
+            "code_p95_chips": 0.00588606298,
+            "first_sync_ms": 40330,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 82.1767875,
+            "freq_p95_hz": 0.064364437,
+            "code_p95_chips": 0.00588606298,
+            "first_sync_ms": 40330,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 82.1767875,
+            "freq_p95_hz": 0.064364437,
+            "code_p95_chips": 0.00588606298,
+            "first_sync_ms": 40330,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      }
+    ],
+    "replay": [
+      {
+        "case": {
+          "id": "e1_new_3",
+          "signal": "E1",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": 5,
+          "phase_ms": 84,
+          "seed": 81314200,
+          "duration_s": 120
+        },
+        "iq_sha256": "caf83fb41c2cfb3cf19c15fa11bef40688bab2d190b62c329ce84e5f86d54616",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 44.1896679,
+            "freq_p95_hz": 0.0442785485,
+            "code_p95_chips": 0.00695930421,
+            "first_sync_ms": 5161,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 55.5106925,
+            "freq_p95_hz": 0.0415158633,
+            "code_p95_chips": 0.00726650655,
+            "first_sync_ms": 5161,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 47.7576552,
+            "freq_p95_hz": 0.0435173944,
+            "code_p95_chips": 0.00672112405,
+            "first_sync_ms": 5161,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 0,
+            "short_slow_duration_s": 0,
+            "short_slow_phase_rms_deg": null
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "e1_gate_2",
+          "signal": "E1",
+          "prn": 23,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": -15.625,
+          "handoff_hz": 500,
+          "code_chips": -0.125,
+          "rate_hz_s": -5,
+          "phase_ms": 48,
+          "seed": 205332024,
+          "duration_s": 120
+        },
+        "iq_sha256": "3553c46046f3218202925b179edd3402205a23f7e916a226e5232f1ac8bf9ac2",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 67.8464562,
+            "freq_p95_hz": 5.63731161,
+            "code_p95_chips": 0.00825299323,
+            "first_sync_ms": 8121,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 557,
+            "short_slow_duration_s": 11.122,
+            "short_slow_phase_rms_deg": 2.97055089
+          },
+          "phase100": {
+            "passed": true,
+            "phase_rms_deg": 3.13147207,
+            "freq_p95_hz": 0.51370504,
+            "code_p95_chips": 0.00479920208,
+            "first_sync_ms": 8121,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.13147207
+          },
+          "equiv100": {
+            "passed": true,
+            "phase_rms_deg": 3.13864593,
+            "freq_p95_hz": 0.513340622,
+            "code_p95_chips": 0.00470076501,
+            "first_sync_ms": 8121,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 3.13864593
+          }
+        }
+      }
+    ],
+    "narrow_iq": [
+      {
+        "case": {
+          "id": "narrow_gate_new_l1ca_gate_1",
+          "signal": "L1CA",
+          "prn": 19,
+          "entry": "strong",
+          "cn0_db_hz": 35,
+          "freq_hz": 15.625,
+          "handoff_hz": 500,
+          "code_chips": 0.25,
+          "rate_hz_s": 5,
+          "phase_ms": 13,
+          "seed": 332713806,
+          "duration_s": 60
+        },
+        "iq_sha256": "cb2543355036e71d5c002452109b0a9924a11d4f2958100ecf1b7d4fbba5f77a",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 1.79349125,
+            "freq_p95_hz": 0.234583745,
+            "code_p95_chips": 0.00428124517,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.79349125
+          },
+          "no_rms_only": {
+            "passed": true,
+            "phase_rms_deg": 1.79349125,
+            "freq_p95_hz": 0.234583745,
+            "code_p95_chips": 0.00428124517,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 1.79349125
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "narrow_gate_new_l1ca_gate_0",
+          "signal": "L1CA",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 332609077,
+          "duration_s": 60
+        },
+        "iq_sha256": "f4e3e22843f52f438f4bcedbd8326fbabae6c1d24bcb7d9c9d62260f3c983448",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 34.3453188,
+            "freq_p95_hz": 1.31523609,
+            "code_p95_chips": 0.00603761524,
+            "first_sync_ms": 3440,
+            "persistent_branch_changes_proxy": 7,
+            "tail_pll_updates": 698,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 34.3453188
+          },
+          "no_rms_only": {
+            "passed": true,
+            "phase_rms_deg": 2.82433483,
+            "freq_p95_hz": 0.331759453,
+            "code_p95_chips": 0.00678288192,
+            "first_sync_ms": 3440,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.82433483
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "narrow_gate_new_b1i_gate_0",
+          "signal": "B1I",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 333027993,
+          "duration_s": 60
+        },
+        "iq_sha256": "3fec8f07964438839b616f7105e183f84e9d2c1fb63f069ab9ca8b0ef0e2ca0f",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 30.8515281,
+            "freq_p95_hz": 1.61015987,
+            "code_p95_chips": 0.00674566627,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 7,
+            "tail_pll_updates": 755,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 30.8515281
+          },
+          "no_rms_only": {
+            "passed": true,
+            "phase_rms_deg": 2.96532796,
+            "freq_p95_hz": 0.324606895,
+            "code_p95_chips": 0.00800850987,
+            "first_sync_ms": 3100,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.96532796
+          }
+        }
+      },
+      {
+        "case": {
+          "id": "narrow_gate_new_g1_gate_0",
+          "signal": "G1",
+          "prn": 7,
+          "entry": "strong",
+          "cn0_db_hz": 32,
+          "freq_hz": -31.25,
+          "handoff_hz": 500,
+          "code_chips": -0.25,
+          "rate_hz_s": 0,
+          "phase_ms": 7,
+          "seed": 333446909,
+          "duration_s": 60
+        },
+        "iq_sha256": "b5acf322088007934d8d211e1e42bd6f12920366503aa5b024716c53aabf37fc",
+        "arms": {
+          "baseline": {
+            "passed": true,
+            "phase_rms_deg": 29.8044219,
+            "freq_p95_hz": 0.955104828,
+            "code_p95_chips": 0.00672507286,
+            "first_sync_ms": 3180,
+            "persistent_branch_changes_proxy": 4,
+            "tail_pll_updates": 700,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 29.8044219
+          },
+          "no_rms_only": {
+            "passed": true,
+            "phase_rms_deg": 2.67113888,
+            "freq_p95_hz": 0.339508057,
+            "code_p95_chips": 0.0075359121,
+            "first_sync_ms": 3180,
+            "persistent_branch_changes_proxy": 0,
+            "tail_pll_updates": 1000,
+            "short_slow_duration_s": 20,
+            "short_slow_phase_rms_deg": 2.67113888
+          }
+        }
+      }
+    ]
+  }
+}
