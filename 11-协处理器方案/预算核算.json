@@ -123,6 +123,100 @@
     "six_channel_baseband_read_MB_s": 143.36,
     "six_channel_baseband_write_MB_s": 143.36
   },
+  "target_144": {
+    "channels": 144,
+    "counts_by_pool": [
+      48,
+      48,
+      12,
+      36
+    ],
+    "pools": [
+      {
+        "pool": 0,
+        "channels": 48,
+        "samples_per_ms": 368640,
+        "samples_M_s": 368.64,
+        "mixing_cycles": 2949120,
+        "correlation_cycles": 1843200,
+        "contributions_per_ms": 1843200,
+        "accumulator_bits": 8640,
+        "pdi_record_bytes_per_ms": 1920
+      },
+      {
+        "pool": 1,
+        "channels": 48,
+        "samples_per_ms": 1474560,
+        "samples_M_s": 1474.56,
+        "mixing_cycles": 11796480,
+        "correlation_cycles": 7372800,
+        "contributions_per_ms": 8847360,
+        "accumulator_bits": 11520,
+        "pdi_record_bytes_per_ms": 2304
+      },
+      {
+        "pool": 2,
+        "channels": 12,
+        "samples_per_ms": 122880,
+        "samples_M_s": 122.88,
+        "mixing_cycles": 983040,
+        "correlation_cycles": 614400,
+        "contributions_per_ms": 614400,
+        "accumulator_bits": 2160,
+        "pdi_record_bytes_per_ms": 480
+      },
+      {
+        "pool": 3,
+        "channels": 36,
+        "samples_per_ms": 276480,
+        "samples_M_s": 276.48,
+        "mixing_cycles": 2211840,
+        "correlation_cycles": 1382400,
+        "contributions_per_ms": 3041280,
+        "accumulator_bits": 14256,
+        "pdi_record_bytes_per_ms": 2448
+      }
+    ],
+    "samples_per_ms": 2242560,
+    "samples_G_s": 2.24256,
+    "mixing_cycles": 17940480,
+    "correlation_cycles": 11212800,
+    "minimum_parallel": {
+      "mixing": 23,
+      "correlation_groups": 15
+    },
+    "example_at_80_percent": {
+      "mixing": 29,
+      "correlation_groups": 18
+    },
+    "example_mixing_utilization": 0.7732965517241379,
+    "example_correlation_utilization": 0.7786666666666666,
+    "raw_read_GB_s": 2.24256,
+    "baseband_write_GB_s": 4.48512,
+    "baseband_read_GB_s": 4.48512,
+    "payload_traffic_GB_s": 11.2128,
+    "pdi_rate_per_s": 144000,
+    "pdi_output_MB_s": 7.152,
+    "complex_results_per_pdi_set": 984,
+    "total_accumulator_bits": 36576,
+    "source_code_bytes_min": 165952,
+    "source_code_bytes_max": 227392,
+    "storage_example": {
+      "raw_eight_streams": 399360,
+      "baseband_64_blocks": 32768,
+      "source_codes_worst": 227392,
+      "working_codes": 46080,
+      "channel_states": 18432,
+      "double_results": 14304,
+      "mixing_coefficients": 580,
+      "task_queues": 9216,
+      "baseband_descriptors": 1024
+    },
+    "total_storage_bytes": 749156,
+    "total_storage_kib": 731.59765625,
+    "nominal_256_point_blocks_per_ms": 8760,
+    "rtl_timing_verified": false
+  },
   "ddc": {
     "vectors": 4096,
     "minimum": -10,

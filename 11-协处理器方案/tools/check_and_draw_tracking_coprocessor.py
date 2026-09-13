@@ -24,6 +24,7 @@ SIGNALS = [
 POOL_SAMPLES = [7680, 30720, 10240, 7680]
 POOL_BRANCHES = [5, 6, 5, 11]
 POOL_BITS = [18, 20, 18, 18]
+TARGET_COUNTS = [48, 48, 12, 36]
 
 
 def budget():
@@ -60,6 +61,60 @@ def budget():
                 total_storage_kib=sum(storage.values()) / 1024,
                 six_channel_baseband_read_MB_s=total_samples * 2 / 1000,
                 six_channel_baseband_write_MB_s=total_samples * 2 / 1000)
+
+
+def target_budget():
+    """按用户确认的四池144通道计算；并行数是算术需求及示例，不是RTL实测。"""
+    pools = []
+    for i, (count, samples, branches, bits) in enumerate(
+            zip(TARGET_COUNTS, POOL_SAMPLES, POOL_BRANCHES, POOL_BITS)):
+        total = count * samples
+        record_bytes = 4 * ((branches * bits * 2 + 31) // 32) + 16
+        pools.append(dict(pool=i, channels=count, samples_per_ms=total,
+                          samples_M_s=total / 1000, mixing_cycles=total * 8,
+                          correlation_cycles=total * 5,
+                          contributions_per_ms=total * branches,
+                          accumulator_bits=count * branches * bits * 2,
+                          pdi_record_bytes_per_ms=count * record_bytes))
+    total = sum(p['samples_per_ms'] for p in pools)
+    assert sum(TARGET_COUNTS) == 144 and total == 2242560
+    mix_cycles, corr_cycles = total * 8, total * 5
+    def required(cycles, cycle_budget):
+        return (cycles + cycle_budget - 1) // cycle_budget
+    parallel_min = dict(mixing=required(mix_cycles, 800000),
+                        correlation_groups=required(corr_cycles, 800000))
+    parallel_example = dict(mixing=required(mix_cycles, 640000),
+                            correlation_groups=required(corr_cycles, 640000))
+    assert parallel_min == dict(mixing=23, correlation_groups=15)
+    assert parallel_example == dict(mixing=29, correlation_groups=18)
+    source_code_max = 48 * 256 + 48 * 2560 + 64 + 36 * 2560
+    source_code_min = 48 * 128 + 48 * 2560 + 64 + 36 * 1024
+    output_per_ms = sum(p['pdi_record_bytes_per_ms'] for p in pools)
+    accumulator_bits = sum(p['accumulator_bits'] for p in pools)
+    assert output_per_ms == 7152 and accumulator_bits == 36576
+    storage = dict(raw_eight_streams=399360, baseband_64_blocks=64 * 512,
+                   source_codes_worst=source_code_max, working_codes=18 * 2560,
+                   channel_states=144 * 128, double_results=2 * output_per_ms,
+                   mixing_coefficients=29 * 20, task_queues=2 * 144 * 32,
+                   baseband_descriptors=64 * 16)
+    assert sum(storage.values()) == 749156
+    return dict(channels=144, counts_by_pool=TARGET_COUNTS, pools=pools,
+                samples_per_ms=total, samples_G_s=total / 1e6,
+                mixing_cycles=mix_cycles, correlation_cycles=corr_cycles,
+                minimum_parallel=parallel_min, example_at_80_percent=parallel_example,
+                example_mixing_utilization=mix_cycles / (29 * 800000),
+                example_correlation_utilization=corr_cycles / (18 * 800000),
+                raw_read_GB_s=total / 1e6, baseband_write_GB_s=2 * total / 1e6,
+                baseband_read_GB_s=2 * total / 1e6,
+                payload_traffic_GB_s=5 * total / 1e6,
+                pdi_rate_per_s=144000, pdi_output_MB_s=output_per_ms / 1000,
+                complex_results_per_pdi_set=sum(n*b for n,b in zip(TARGET_COUNTS, POOL_BRANCHES)),
+                total_accumulator_bits=accumulator_bits,
+                source_code_bytes_min=source_code_min, source_code_bytes_max=source_code_max,
+                storage_example=storage, total_storage_bytes=sum(storage.values()),
+                total_storage_kib=sum(storage.values()) / 1024,
+                nominal_256_point_blocks_per_ms=total // 256,
+                rtl_timing_verified=False)
 
 
 def ddc(i, q, phase):
@@ -267,9 +322,9 @@ class Drawing:
 def draw_all():
     d = Drawing(1200, 520)
     d.box(40, 180, 200, 75, '原始I/Q SRAM\n按输入流共享')
-    d.box(320, 180, 200, 75, '混频协处理器\n载波NCO、DDC')
-    d.box(600, 180, 230, 75, '共享基带SRAM\nA / B，各256点', fill='#f2f2f2')
-    d.box(910, 180, 250, 75, '相关协处理器\n码NCO、相关、I&D')
+    d.box(320, 180, 200, 75, '混频协处理器\n多路NCO、DDC')
+    d.box(600, 180, 230, 75, '共享基带SRAM\n多块缓存，256点/块', fill='#f2f2f2')
+    d.box(910, 180, 250, 75, '相关协处理器\n多组码NCO、相关、I&D')
     for x1, x2 in [(240, 320), (520, 600), (830, 910)]:
         d.arrow([(x1, 217), (x2, 217)])
     d.box(320, 40, 200, 65, '通道载波状态')
@@ -281,7 +336,7 @@ def draw_all():
     d.box(600, 355, 230, 75, '软件跟踪环\n读取结果、配置任务')
     d.arrow([(910, 392), (830, 392)])
     d.text(340, 390, '实线：样点或结果\n虚线：当前通道状态', 15)
-    d.text(600, 480, '两个计算引擎共用；NCO相位与积分历史按通道保存', 16)
+    d.text(600, 480, '144通道共享两个协处理器；内部计算单元并行，通道状态独立', 16)
     d.save('TC-01_总体架构')
 
     d = Drawing(1200, 475)
@@ -355,6 +410,9 @@ def check_document():
     assert text.count('```') % 2 == 0
     for needed in ['179964', '175.7461', '71.68%', '44.80%', '573440', '358400', '83.2']:
         assert needed in text, needed
+    for needed in ['2242560', '17940480', '11212800', '749156', '731.5977',
+                   '4.48512', '36576', '227392', '8760']:
+        assert needed in text, needed
     images = re.findall(r'!\[[^\]]*\]\(([^)]+)\)', text)
     assert len(images) == 5
     for image in images:
@@ -369,7 +427,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--check-only', action='store_true')
     args = parser.parse_args()
-    results = dict(budget=budget(), ddc=check_ddc(), chunking=check_chunking(),
+    results = dict(budget=budget(), target_144=target_budget(),
+                   ddc=check_ddc(), chunking=check_chunking(),
                    ab_schedule=check_schedule(), rtl_timing_verified=False)
     if not args.check_only:
         draw_all()
