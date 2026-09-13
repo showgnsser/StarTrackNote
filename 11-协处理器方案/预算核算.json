@@ -1,0 +1,188 @@
+{
+  "budget": {
+    "clock_hz": 800000000,
+    "ddc_interval": 8,
+    "corr_interval": 5,
+    "block_samples": 256,
+    "pools": [
+      {
+        "pool": 0,
+        "samples": 7680,
+        "complex_contributions": 38400,
+        "ddc_cycles": 61440,
+        "corr_cycles": 38400,
+        "ddc_us": 76.8,
+        "corr_us": 48.0,
+        "ddc_channel_limit": 13,
+        "corr_channel_limit": 20,
+        "example_80_percent": 10,
+        "payload_bytes": 24,
+        "record_bytes": 40
+      },
+      {
+        "pool": 1,
+        "samples": 30720,
+        "complex_contributions": 184320,
+        "ddc_cycles": 245760,
+        "corr_cycles": 153600,
+        "ddc_us": 307.2,
+        "corr_us": 192.0,
+        "ddc_channel_limit": 3,
+        "corr_channel_limit": 5,
+        "example_80_percent": 2,
+        "payload_bytes": 32,
+        "record_bytes": 48
+      },
+      {
+        "pool": 2,
+        "samples": 10240,
+        "complex_contributions": 51200,
+        "ddc_cycles": 81920,
+        "corr_cycles": 51200,
+        "ddc_us": 102.4,
+        "corr_us": 64.0,
+        "ddc_channel_limit": 9,
+        "corr_channel_limit": 15,
+        "example_80_percent": 7,
+        "payload_bytes": 24,
+        "record_bytes": 40
+      },
+      {
+        "pool": 3,
+        "samples": 7680,
+        "complex_contributions": 84480,
+        "ddc_cycles": 61440,
+        "corr_cycles": 38400,
+        "ddc_us": 76.8,
+        "corr_us": 48.0,
+        "ddc_channel_limit": 13,
+        "corr_channel_limit": 20,
+        "example_80_percent": 10,
+        "payload_bytes": 52,
+        "record_bytes": 68
+      }
+    ],
+    "combinations": [
+      {
+        "channels": [
+          8,
+          0,
+          0,
+          2
+        ],
+        "samples": 76800,
+        "ddc_utilization": 0.768,
+        "corr_utilization": 0.48
+      },
+      {
+        "channels": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "samples": 71680,
+        "ddc_utilization": 0.7168,
+        "corr_utilization": 0.448
+      },
+      {
+        "channels": [
+          4,
+          1,
+          2,
+          2
+        ],
+        "samples": 97280,
+        "ddc_utilization": 0.9728,
+        "corr_utilization": 0.608
+      },
+      {
+        "channels": [
+          0,
+          4,
+          0,
+          0
+        ],
+        "samples": 122880,
+        "ddc_utilization": 1.2288,
+        "corr_utilization": 0.768
+      }
+    ],
+    "six_channel_storage": {
+      "raw_three_buffers": 168960,
+      "baseband_ab": 1024,
+      "source_codes": 5568,
+      "working_codes": 2560,
+      "channel_states": 768,
+      "result_buffers": 552,
+      "ddc_coefficients": 20,
+      "descriptor_slots": 512
+    },
+    "total_storage_bytes": 179964,
+    "total_storage_kib": 175.74609375,
+    "six_channel_baseband_read_MB_s": 143.36,
+    "six_channel_baseband_write_MB_s": 143.36
+  },
+  "ddc": {
+    "vectors": 4096,
+    "minimum": -10,
+    "maximum": 10
+  },
+  "chunking": [
+    {
+      "signal": "L1CA",
+      "published": 2,
+      "sha256": "b03629df50e58ae66f440e08623bee2c59d5e33b809df81e9a07198adba9f87d"
+    },
+    {
+      "signal": "B1I",
+      "published": 2,
+      "sha256": "a4032d3ed04d1c892e6c0d418fc018a217426fe0b705cbf99a78d0b98a57e2be"
+    },
+    {
+      "signal": "L5",
+      "published": 2,
+      "sha256": "99696ae5bdff91c6d661af10aa38485ddf20d008b70714bf10abe897aa91d669"
+    },
+    {
+      "signal": "B2a",
+      "published": 2,
+      "sha256": "99696ae5bdff91c6d661af10aa38485ddf20d008b70714bf10abe897aa91d669"
+    },
+    {
+      "signal": "E5a",
+      "published": 2,
+      "sha256": "99696ae5bdff91c6d661af10aa38485ddf20d008b70714bf10abe897aa91d669"
+    },
+    {
+      "signal": "G1",
+      "published": 2,
+      "sha256": "6fcb34dccd8a694bf552dc7f476822878860c011f520d5aa8804f8207ba01240"
+    },
+    {
+      "signal": "E1",
+      "published": 5,
+      "sha256": "f3a639ba00e888d203ace5308a03b8191a7a2aa845cfdae6f5a98cf1061605bb"
+    },
+    {
+      "signal": "B1C",
+      "published": 7,
+      "sha256": "b4a6a496984fd3b7693c534fed1ba04e6433ac0b4dd4ec36b3d53090ada406d8"
+    }
+  ],
+  "ab_schedule": {
+    "zero_overhead_first_result_us": [
+      78.4,
+      308.8,
+      104.0,
+      24.64
+    ],
+    "stalled_case_bank_ownership": "PASS"
+  },
+  "rtl_timing_verified": false,
+  "document": {
+    "images": 5,
+    "math_delimiters": "PASS",
+    "document_budget_tokens": "PASS"
+  }
+}
