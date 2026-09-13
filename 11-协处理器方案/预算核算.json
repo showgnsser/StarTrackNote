@@ -1,129 +1,6 @@
 {
   "budget": {
     "clock_hz": 800000000,
-    "ddc_interval": 8,
-    "corr_interval": 5,
-    "block_samples": 256,
-    "pools": [
-      {
-        "pool": 0,
-        "samples": 7680,
-        "complex_contributions": 38400,
-        "ddc_cycles": 61440,
-        "corr_cycles": 38400,
-        "ddc_us": 76.8,
-        "corr_us": 48.0,
-        "ddc_channel_limit": 13,
-        "corr_channel_limit": 20,
-        "example_80_percent": 10,
-        "payload_bytes": 24,
-        "record_bytes": 40
-      },
-      {
-        "pool": 1,
-        "samples": 30720,
-        "complex_contributions": 184320,
-        "ddc_cycles": 245760,
-        "corr_cycles": 153600,
-        "ddc_us": 307.2,
-        "corr_us": 192.0,
-        "ddc_channel_limit": 3,
-        "corr_channel_limit": 5,
-        "example_80_percent": 2,
-        "payload_bytes": 32,
-        "record_bytes": 48
-      },
-      {
-        "pool": 2,
-        "samples": 10240,
-        "complex_contributions": 51200,
-        "ddc_cycles": 81920,
-        "corr_cycles": 51200,
-        "ddc_us": 102.4,
-        "corr_us": 64.0,
-        "ddc_channel_limit": 9,
-        "corr_channel_limit": 15,
-        "example_80_percent": 7,
-        "payload_bytes": 24,
-        "record_bytes": 40
-      },
-      {
-        "pool": 3,
-        "samples": 7680,
-        "complex_contributions": 84480,
-        "ddc_cycles": 61440,
-        "corr_cycles": 38400,
-        "ddc_us": 76.8,
-        "corr_us": 48.0,
-        "ddc_channel_limit": 13,
-        "corr_channel_limit": 20,
-        "example_80_percent": 10,
-        "payload_bytes": 52,
-        "record_bytes": 68
-      }
-    ],
-    "combinations": [
-      {
-        "channels": [
-          8,
-          0,
-          0,
-          2
-        ],
-        "samples": 76800,
-        "ddc_utilization": 0.768,
-        "corr_utilization": 0.48
-      },
-      {
-        "channels": [
-          3,
-          1,
-          1,
-          1
-        ],
-        "samples": 71680,
-        "ddc_utilization": 0.7168,
-        "corr_utilization": 0.448
-      },
-      {
-        "channels": [
-          4,
-          1,
-          2,
-          2
-        ],
-        "samples": 97280,
-        "ddc_utilization": 0.9728,
-        "corr_utilization": 0.608
-      },
-      {
-        "channels": [
-          0,
-          4,
-          0,
-          0
-        ],
-        "samples": 122880,
-        "ddc_utilization": 1.2288,
-        "corr_utilization": 0.768
-      }
-    ],
-    "six_channel_storage": {
-      "raw_three_buffers": 168960,
-      "baseband_ab": 1024,
-      "source_codes": 5568,
-      "working_codes": 2560,
-      "channel_states": 768,
-      "result_buffers": 552,
-      "ddc_coefficients": 20,
-      "descriptor_slots": 512
-    },
-    "total_storage_bytes": 179964,
-    "total_storage_kib": 175.74609375,
-    "six_channel_baseband_read_MB_s": 143.36,
-    "six_channel_baseband_write_MB_s": 143.36
-  },
-  "target_144": {
     "channels": 144,
     "counts_by_pool": [
       48,
@@ -131,152 +8,130 @@
       12,
       36
     ],
+    "cycles_per_sample": {
+      "mixing": 8,
+      "correlation": 1
+    },
     "pools": [
       {
         "pool": 0,
         "channels": 48,
         "samples_per_ms": 368640,
-        "samples_M_s": 368.64,
+        "parallel_branches": 5,
         "mixing_cycles": 2949120,
-        "correlation_cycles": 1843200,
-        "contributions_per_ms": 1843200,
-        "accumulator_bits": 8640,
-        "pdi_record_bytes_per_ms": 1920
+        "correlation_cycles": 368640,
+        "complex_accumulations": 1843200,
+        "record_bytes": 40,
+        "accumulator_bits": 8640
       },
       {
         "pool": 1,
         "channels": 48,
         "samples_per_ms": 1474560,
-        "samples_M_s": 1474.56,
+        "parallel_branches": 6,
         "mixing_cycles": 11796480,
-        "correlation_cycles": 7372800,
-        "contributions_per_ms": 8847360,
-        "accumulator_bits": 11520,
-        "pdi_record_bytes_per_ms": 2304
+        "correlation_cycles": 1474560,
+        "complex_accumulations": 8847360,
+        "record_bytes": 48,
+        "accumulator_bits": 11520
       },
       {
         "pool": 2,
         "channels": 12,
         "samples_per_ms": 122880,
-        "samples_M_s": 122.88,
+        "parallel_branches": 5,
         "mixing_cycles": 983040,
-        "correlation_cycles": 614400,
-        "contributions_per_ms": 614400,
-        "accumulator_bits": 2160,
-        "pdi_record_bytes_per_ms": 480
+        "correlation_cycles": 122880,
+        "complex_accumulations": 614400,
+        "record_bytes": 40,
+        "accumulator_bits": 2160
       },
       {
         "pool": 3,
         "channels": 36,
         "samples_per_ms": 276480,
-        "samples_M_s": 276.48,
+        "parallel_branches": 11,
         "mixing_cycles": 2211840,
-        "correlation_cycles": 1382400,
-        "contributions_per_ms": 3041280,
-        "accumulator_bits": 14256,
-        "pdi_record_bytes_per_ms": 2448
+        "correlation_cycles": 276480,
+        "complex_accumulations": 3041280,
+        "record_bytes": 68,
+        "accumulator_bits": 14256
       }
     ],
     "samples_per_ms": 2242560,
-    "samples_G_s": 2.24256,
-    "mixing_cycles": 17940480,
-    "correlation_cycles": 11212800,
+    "samples_M_s": 2242.56,
     "minimum_parallel": {
       "mixing": 23,
-      "correlation_groups": 15
+      "correlation": 3
     },
-    "example_at_80_percent": {
+    "provisioned_at_80_percent": {
       "mixing": 29,
-      "correlation_groups": 18
+      "correlation": 4
     },
-    "example_mixing_utilization": 0.7732965517241379,
-    "example_correlation_utilization": 0.7786666666666666,
-    "raw_read_GB_s": 2.24256,
-    "baseband_write_GB_s": 4.48512,
-    "baseband_read_GB_s": 4.48512,
-    "payload_traffic_GB_s": 11.2128,
-    "pdi_rate_per_s": 144000,
-    "pdi_output_MB_s": 7.152,
-    "complex_results_per_pdi_set": 984,
-    "total_accumulator_bits": 36576,
-    "source_code_bytes_min": 165952,
-    "source_code_bytes_max": 227392,
-    "storage_example": {
+    "minimum_utilization": {
+      "mixing": 0.9750260869565217,
+      "correlation": 0.9344
+    },
+    "provisioned_utilization": {
+      "mixing": 0.7732965517241379,
+      "correlation": 0.7008
+    },
+    "single_unit_M_s": {
+      "mixing": 100.0,
+      "correlation": 800.0
+    },
+    "block_256_us": {
+      "mixing": 2.56,
+      "correlation": 0.32
+    },
+    "bandwidth_GB_s": {
+      "raw_read": 2.24256,
+      "baseband_write": 4.48512,
+      "baseband_read": 4.48512,
+      "three_payloads": 11.2128,
+      "four_group_peak_read": 6.4
+    },
+    "code_banks_per_group": 6,
+    "working_code_bytes_per_group": 7680,
+    "output_records_per_s": 144000,
+    "output_complex_per_ms": 984,
+    "result_write_MB_s": 7.152,
+    "storage": {
       "raw_eight_streams": 399360,
-      "baseband_64_blocks": 32768,
+      "baseband_blocks": 32768,
       "source_codes_worst": 227392,
-      "working_codes": 46080,
+      "working_codes": 30720,
       "channel_states": 18432,
-      "double_results": 14304,
-      "mixing_coefficients": 580,
-      "task_queues": 9216,
-      "baseband_descriptors": 1024
+      "double_result_buffers": 14304,
+      "coefficient_tables": 580,
+      "management_reserve": 10240
     },
-    "total_storage_bytes": 749156,
-    "total_storage_kib": 731.59765625,
-    "nominal_256_point_blocks_per_ms": 8760,
+    "total_storage_bytes": 733796,
+    "total_storage_kib": 716.59765625,
+    "compute_resources": {
+      "multipliers": 29,
+      "mixing_add_sub": 58,
+      "carrier_ncos": 29,
+      "code_ncos": 4,
+      "complex_correlators": 44,
+      "scalar_accumulators": 88,
+      "code_read_ports": 24,
+      "active_and_shadow_register_bits": 3520
+    },
     "rtl_timing_verified": false
   },
-  "ddc": {
-    "vectors": 4096,
-    "minimum": -10,
-    "maximum": 10
-  },
-  "chunking": [
-    {
-      "signal": "L1CA",
-      "published": 2,
-      "sha256": "b03629df50e58ae66f440e08623bee2c59d5e33b809df81e9a07198adba9f87d"
-    },
-    {
-      "signal": "B1I",
-      "published": 2,
-      "sha256": "a4032d3ed04d1c892e6c0d418fc018a217426fe0b705cbf99a78d0b98a57e2be"
-    },
-    {
-      "signal": "L5",
-      "published": 2,
-      "sha256": "99696ae5bdff91c6d661af10aa38485ddf20d008b70714bf10abe897aa91d669"
-    },
-    {
-      "signal": "B2a",
-      "published": 2,
-      "sha256": "99696ae5bdff91c6d661af10aa38485ddf20d008b70714bf10abe897aa91d669"
-    },
-    {
-      "signal": "E5a",
-      "published": 2,
-      "sha256": "99696ae5bdff91c6d661af10aa38485ddf20d008b70714bf10abe897aa91d669"
-    },
-    {
-      "signal": "G1",
-      "published": 2,
-      "sha256": "6fcb34dccd8a694bf552dc7f476822878860c011f520d5aa8804f8207ba01240"
-    },
-    {
-      "signal": "E1",
-      "published": 5,
-      "sha256": "f3a639ba00e888d203ace5308a03b8191a7a2aa845cfdae6f5a98cf1061605bb"
-    },
-    {
-      "signal": "B1C",
-      "published": 7,
-      "sha256": "b4a6a496984fd3b7693c534fed1ba04e6433ac0b4dd4ec36b3d53090ada406d8"
-    }
-  ],
-  "ab_schedule": {
-    "zero_overhead_first_result_us": [
-      78.4,
-      308.8,
-      104.0,
-      24.64
+  "arithmetic": {
+    "mixing_input_vectors": 4096,
+    "mixing_output_range": [
+      -10,
+      10
     ],
-    "stalled_case_bank_ownership": "PASS"
+    "signed_accumulation_checks": 126
   },
-  "rtl_timing_verified": false,
   "document": {
-    "images": 5,
-    "math_delimiters": "PASS",
-    "document_budget_tokens": "PASS"
+    "chapters": 4,
+    "images": 3,
+    "budget_tokens": "PASS",
+    "removed_sections": "PASS"
   }
 }
