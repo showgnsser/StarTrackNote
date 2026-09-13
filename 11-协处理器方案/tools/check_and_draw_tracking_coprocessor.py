@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""核算144通道混频／全支路并行相关的资源预算，绘制三个模块结构图。"""
+"""核算144通道实时混频／并行相关资源，不配置原始I/Q历史缓存。"""
 
 import argparse
 import json
@@ -49,23 +49,38 @@ def budget():
     nmix, ncorr = provisioned['mixing'], provisioned['correlation']
     record_bytes = sum(row['channels'] * row['record_bytes'] for row in pools)
     code_bank_bytes = 4 * ceil_div(10230, 32)
-    # 五个导频／单分量读口各复制一份码RAM，数据P另有一份。
+    # 码表常驻。每通道固定分到一组；五路读码复制单分量／导频码区。
     code_banks_per_group = 6
-    working_code_bytes = code_banks_per_group * code_bank_bytes
-    max_source = COUNTS[0] * 256 + COUNTS[1] * 2560 + 64 + COUNTS[3] * 2560
-    input_samples_per_ms = 4 * 7680 + 3 * 30720 + 10240
-    storage = dict(raw_eight_streams=input_samples_per_ms * 3,
-                   baseband_blocks=64 * 256 * 2, source_codes_worst=max_source,
-                   working_codes=ncorr * working_code_bytes,
+    pilot_one_copy = COUNTS[0] * 256 + COUNTS[1] * code_bank_bytes + 64
+    pilot_one_copy += COUNTS[3] * code_bank_bytes
+    data_codes = (COUNTS[1] + COUNTS[3]) * code_bank_bytes
+    storage = dict(raw_iq_sram=0, resident_pilot_codes=5 * pilot_one_copy,
+                   resident_data_codes=data_codes,
                    channel_states=sum(COUNTS) * 128,
                    double_result_buffers=2 * record_bytes,
-                   coefficient_tables=nmix * 20, management_reserve=10 * 1024)
+                   coefficient_tables=nmix * 20)
+    mixing_per_pool = [5, 18, 2, 4]
+    deadlines = []
+    for count, lanes, samples in zip(COUNTS, mixing_per_pool, SAMPLES_PER_MS):
+        max_channels = ceil_div(count, lanes)
+        cycles = max_channels * MIX_CYCLES
+        # 当前输入样点在该单元的通道处理量不得超过一个输入周期。
+        assert cycles * samples <= available
+        deadlines.append(dict(mixing_units=lanes, max_channels_per_unit=max_channels,
+                              service_cycles=cycles, service_ns=cycles * 1.25,
+                              input_period_ns=1e6 / samples))
+    corr_group_M_s = [48 * 7.68, 24 * 30.72, 24 * 30.72, 12 * 10.24 + 36 * 7.68]
+    resident_group_bytes = [5 * 48 * 256, 6 * 24 * code_bank_bytes,
+                            6 * 24 * code_bank_bytes,
+                            5 * (36 * code_bank_bytes + 64) + 36 * code_bank_bytes]
     assert sum(COUNTS) == 144 and total == 2242560
     assert mix == 17940480 and corr == 2242560
     assert minimum == dict(mixing=23, correlation=3)
     assert provisioned == dict(mixing=29, correlation=4)
-    assert record_bytes == 7152 and max_source == 227392
-    assert working_code_bytes == 7680 and sum(storage.values()) == 733796
+    assert record_bytes == 7152 and pilot_one_copy == 119872 and data_codes == 107520
+    assert sum(storage.values()) == 740196
+    assert sum(resident_group_bytes) == 5 * pilot_one_copy + data_codes == 706880
+    assert sum(mixing_per_pool) == nmix and max(corr_group_M_s) < 800
     assert sum(row['complex_accumulations'] for row in pools) == 14346240
     assert sum(row['accumulator_bits'] for row in pools) == 36576
     return dict(clock_hz=CLOCK_HZ, channels=sum(COUNTS), counts_by_pool=COUNTS,
@@ -78,20 +93,24 @@ def budget():
                                              correlation=corr / (ncorr * available)),
                 single_unit_M_s=dict(mixing=CLOCK_HZ / MIX_CYCLES / 1e6,
                                      correlation=CLOCK_HZ / CORR_CYCLES / 1e6),
-                block_256_us=dict(mixing=256 * MIX_CYCLES / 800,
-                                  correlation=256 * CORR_CYCLES / 800),
-                bandwidth_GB_s=dict(raw_read=total / 1e6,
+                input_deadline_budget=deadlines,
+                correlation_groups_M_s=corr_group_M_s,
+                bandwidth_GB_s=dict(raw_iq_sram_read=0, raw_iq_sram_write=0,
                                     baseband_write=total * 2 / 1e6,
                                     baseband_read=total * 2 / 1e6,
-                                    three_payloads=total * 5 / 1e6,
+                                    baseband_total=total * 4 / 1e6,
                                     four_group_peak_read=ncorr * 1.6),
                 code_banks_per_group=code_banks_per_group,
-                working_code_bytes_per_group=working_code_bytes,
+                pilot_one_copy_bytes=pilot_one_copy,
+                resident_code_bytes_by_group=resident_group_bytes,
                 output_records_per_s=sum(COUNTS) * 1000,
                 output_complex_per_ms=sum(n * b for n, b in zip(COUNTS, BRANCHES)),
                 result_write_MB_s=record_bytes / 1000,
-                storage=storage, total_storage_bytes=sum(storage.values()),
-                total_storage_kib=sum(storage.values()) / 1024,
+                storage=storage, known_storage_subtotal_bytes=sum(storage.values()),
+                known_storage_subtotal_kib=sum(storage.values()) / 1024,
+                baseband_queue=dict(total_slots=None, iq_bytes_per_slot=2,
+                                    control_bytes=None, depth_verified=False),
+                full_storage_total_bytes=None,
                 compute_resources=dict(multipliers=nmix, mixing_add_sub=nmix * 2,
                                        carrier_ncos=nmix, code_ncos=ncorr,
                                        complex_correlators=ncorr * 11,
@@ -126,7 +145,7 @@ class Drawing:
     def __init__(self, width, height):
         import matplotlib
         matplotlib.use('Agg')
-        matplotlib.rcParams['svg.hashsalt'] = 'tracking-coprocessor-v3'
+        matplotlib.rcParams['svg.hashsalt'] = 'tracking-coprocessor-v4'
         import matplotlib.pyplot as plt
         from matplotlib.font_manager import FontProperties
         self.plt = plt
@@ -173,23 +192,23 @@ class Drawing:
 
 def draw_all():
     d = Drawing(1200, 255)
-    for x, label in [(30, '原始I/Q SRAM\n1 Byte / 点'),
+    for x, label in [(30, '前端实时I/Q\n每点8 bit'),
                      (265, '混频协处理器\n8拍 / 点'),
-                     (500, '共享基带SRAM\n2 Byte / 点'),
+                     (500, '基带接口队列\nSRAM，逐点交接'),
                      (735, '相关协处理器\n1拍 / 点'),
                      (970, '积分结果SRAM\n5 / 6 / 11组I/Q')]:
         d.box(x, 65, 190, 85, label)
     for x in [220, 455, 690, 925]:
         d.arrow((x, 107.5), (x + 45, 107.5))
-    d.text(600, 207, '144通道共享两个协处理器；内部计算单元并行，通道状态独立')
+    d.text(600, 207, '144通道实时处理；不存原始I/Q，码表与积分状态按通道常驻')
     d.save('TC-01_总体架构')
 
     d = Drawing(1200, 350)
-    for x, width, label in [(30, 185, '原始样点读取\ns4 I/Q'),
-                            (255, 175, '输入拆分\n每点一对I/Q'),
+    for x, width, label in [(30, 185, '前端实时输入\ns4 I/Q'),
+                            (255, 175, '当前样点锁存\n分发至对应通道'),
                             (480, 200, '复数混频\n4次实乘、2次加减'),
                             (730, 180, '算术右移4 bit\ns5 I/Q'),
-                            (960, 210, '打包写入SRAM\n每点2 Byte')]:
+                            (960, 210, '基带接口输出\n每点2 Byte')]:
         d.box(x, 155, width, 80, label)
     for x1, x2 in [(215, 255), (430, 480), (680, 730), (910, 960)]:
         d.arrow((x1, 195), (x2, 195))
@@ -203,10 +222,10 @@ def draw_all():
     d = Drawing(1220, 455)
     d.box(40, 40, 180, 80, '码NCO\n码相位逐点累加')
     d.box(290, 40, 190, 80, '五抽头地址\nVE/E/P/L/VL')
-    d.box(550, 40, 290, 80, '并行读码与符号生成\n最多6个独立读口')
+    d.box(550, 40, 290, 80, '按通道读取常驻码表\n最多6个独立读口')
     d.arrow((220, 80), (290, 80))
     d.arrow((480, 80), (550, 80))
-    d.box(40, 260, 180, 85, '基带SRAM读取\n每点只读一次I/Q')
+    d.box(40, 260, 180, 85, '基带接口输入\n每点只读一次I/Q')
     d.box(290, 260, 190, 85, '样点广播\n同时送全部支路')
     d.box(550, 225, 290, 155, '最多11条复相关通路\n22条标量符号累加\n每拍同时更新', 17)
     d.box(930, 260, 245, 85, '积分结果保存\n5 / 6 / 11组I/Q')
@@ -214,7 +233,7 @@ def draw_all():
     d.arrow((220, 302.5), (290, 302.5))
     d.arrow((480, 302.5), (550, 302.5))
     d.arrow((840, 302.5), (930, 302.5))
-    d.text(610, 424, '每拍处理1个样点，全部有效支路并行；每1 ms保存积分结果')
+    d.text(610, 424, '全部通道积分常驻；每拍处理1个通道样点，每1 ms保存积分结果')
     d.save('TC-04_相关协处理器')
 
 
@@ -222,12 +241,14 @@ def check_document(result):
     text = DOC.read_text()
     assert len(re.findall(r'^## \d', text, flags=re.M)) == 4
     for removed in ['4.7', '4.70', '2304', '牵引', '鉴频', '位同步', '五批次',
-                    '5拍/点', '5拍/复样点', '软件跟踪环', '算法']:
+                    '5拍/点', '5拍/复样点', '软件跟踪环', '算法',
+                    '256点', '399360', '32768', '733796', '原始样点读取']:
         assert removed not in text, removed
     assert sum(line.strip() == '$$' for line in text.splitlines()) % 2 == 0
     for needed in ['100 M样点/s', '800 M样点/s', '93.44%', '70.08%', '77.33%',
-                   '7680', '30720', '227392', '2.24256', '4.48512', '11.21280',
-                   str(result['total_storage_bytes']), '716.6', '17940480', '2242560']:
+                   '119872', '599360', '107520', '4.48512', '8.97024',
+                   str(result['known_storage_subtotal_bytes']), '722.8', '17940480',
+                   '2242560', '100 ns', '30 ns', '60 ns', '90 ns', '$2D$']:
         assert needed in text, needed
     images = re.findall(r'!\[[^\]]*\]\(([^)]+)\)', text)
     assert len(images) == 3
@@ -254,7 +275,9 @@ def main():
     print(json.dumps(dict(checks='PASS', channels=144, correlation_cycles_per_sample=1,
                          minimum_parallel=result['budget']['minimum_parallel'],
                          provisioned_parallel=result['budget']['provisioned_at_80_percent'],
-                         storage_bytes=result['budget']['total_storage_bytes'],
+                         raw_iq_sram_bytes=0,
+                         known_storage_subtotal=result['budget']['known_storage_subtotal_bytes'],
+                         baseband_queue_depth=None,
                          document=result['document'], rtl_timing_verified=False),
                      ensure_ascii=False, indent=2))
 
