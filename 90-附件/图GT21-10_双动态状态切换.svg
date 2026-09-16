@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
+  <title id="title">高动态与中动态状态切换</title>
+  <desc id="desc">已同步的适用普通状态在持续同向频差确认后进入HighDynamic，动态减弱后先降MidDynamic，再按功率回到普通保持。MidDynamic中动态再次增大时可返回HighDynamic。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:22px; fill:#263442; text-anchor:middle; }
+    .small { font-size:18px; } .box { fill:#FFFFFF; stroke:#263442; stroke-width:1.5; }
+    .shade { fill:#EEF3F6; stroke:#263442; stroke-width:1.5; }
+    .flow { fill:none; stroke:#263442; stroke-width:1.5; marker-end:url(#arrow); }
+  </style>
+  <rect width="1200" height="490" fill="#FFFFFF"/>
+  <rect x="30" y="80" width="230" height="90" rx="4" class="shade"/>
+  <text x="145" y="117">已同步</text><text x="145" y="147">普通跟踪</text>
+  <path d="M260 125H394" class="flow"/>
+  <text x="327" y="108" class="small">动态确认</text>
+  <rect x="395" y="80" width="240" height="90" rx="4" class="box"/>
+  <text x="515" y="117">快速动态跟随</text><text x="515" y="149" class="small">HighDynamic</text>
+  <path d="M635 113H849" class="flow"/>
+  <text x="742" y="96" class="small">确认降档</text>
+  <rect x="850" y="80" width="300" height="90" rx="4" class="box"/>
+  <text x="1000" y="117">低噪声动态跟随</text><text x="1000" y="149" class="small">MidDynamic</text>
+  <path d="M850 144H795V265H515V171" class="flow"/>
+  <text x="655" y="246" class="small">动态再次增大</text>
+  <path d="M1000 170V349" class="flow"/>
+  <text x="1080" y="259" class="small">确认降档</text>
+  <rect x="850" y="350" width="300" height="112" rx="4" class="shade"/>
+  <text x="1000" y="384">普通保持</text>
+  <text x="1000" y="416" class="small">C≥30：ShortSlow</text>
+  <text x="1000" y="443" class="small">C＜30：LongSlow</text>
+</svg>

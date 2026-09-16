@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370" role="img" aria-labelledby="title desc">
+  <title id="title">强入口与中弱入口的牵引收敛路径</title>
+  <desc id="desc">捕获强档进入ShortFast，经ShortNormal到ShortSlow。中弱档进入LongFast，经LongNormal到LongSlow。数据型强入口允许同步前完成前级牵引，导频的ShortFast与所有LongFast在同步后计时，Normal均需同步后完成收敛。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:22px; fill:#263442; text-anchor:middle; }
+    .small { font-size:18px; } .box { fill:#FFFFFF; stroke:#263442; stroke-width:1.5; }
+    .shade { fill:#EEF3F6; stroke:#263442; stroke-width:1.5; }
+    .flow { fill:none; stroke:#263442; stroke-width:1.5; marker-end:url(#arrow); }
+  </style>
+  <rect width="1200" height="370" fill="#FFFFFF"/>
+  <rect x="25" y="58" width="135" height="84" rx="4" class="shade"/>
+  <text x="92" y="107">捕获强档</text>
+  <path d="M160 100H234" class="flow"/>
+  <rect x="235" y="58" width="210" height="84" rx="4" class="box"/>
+  <text x="340" y="92">快速牵引</text><text x="340" y="123" class="small">ShortFast</text>
+  <path d="M445 100H589" class="flow"/>
+  <text x="517" y="84" class="small">最短400 ms</text>
+  <rect x="590" y="58" width="225" height="84" rx="4" class="box"/>
+  <text x="702" y="92">短周期收敛</text><text x="702" y="123" class="small">ShortNormal</text>
+  <path d="M815 100H954" class="flow"/>
+  <text x="885" y="84" class="small">同步后3.2 s</text>
+  <rect x="955" y="58" width="220" height="84" rx="4" class="shade"/>
+  <text x="1065" y="92">短周期保持</text><text x="1065" y="123" class="small">ShortSlow</text>
+  <rect x="25" y="233" width="135" height="84" rx="4" class="shade"/>
+  <text x="92" y="267">捕获</text><text x="92" y="297">中、弱档</text>
+  <path d="M160 275H234" class="flow"/>
+  <rect x="235" y="233" width="210" height="84" rx="4" class="box"/>
+  <text x="340" y="267">中弱牵引</text><text x="340" y="298" class="small">LongFast</text>
+  <path d="M445 275H589" class="flow"/>
+  <text x="517" y="259" class="small">同步后800 ms</text>
+  <rect x="590" y="233" width="225" height="84" rx="4" class="box"/>
+  <text x="702" y="267">长周期收敛</text><text x="702" y="298" class="small">LongNormal</text>
+  <path d="M815 275H954" class="flow"/>
+  <text x="885" y="259" class="small">收敛3.2 s</text>
+  <rect x="955" y="233" width="220" height="84" rx="4" class="shade"/>
+  <text x="1065" y="267">长周期保持</text><text x="1065" y="298" class="small">LongSlow</text>
+</svg>
