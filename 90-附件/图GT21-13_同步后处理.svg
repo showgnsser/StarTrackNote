@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title">
+<title id="title">同步后载波与码环处理</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;font-size:22px;fill:#263442;text-anchor:middle} .small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.5}.flow{fill:none;stroke:#263442;stroke-width:1.5;marker-end:url(#arrow)}</style>
+<rect width="1200" height="330" fill="#fff"/>
+<rect x="25" y="120" width="250" height="80" rx="4" class="box"/>
+<text x="150.0" y="153">边界对齐与符号擦除</text>
+<text x="150.0" y="182" class="small">连续1 ms相关结果</text>
+<rect x="335" y="120" width="235" height="80" rx="4" class="box"/>
+<text x="452.5" y="153">按状态组织积分</text>
+<text x="452.5" y="182" class="small">载波与码环各自分块</text>
+<rect x="650" y="30" width="230" height="80" rx="4" class="box"/>
+<text x="765.0" y="63">载波误差鉴别</text>
+<text x="765.0" y="92" class="small">频差 · 相差</text>
+<rect x="650" y="220" width="230" height="80" rx="4" class="box"/>
+<text x="765.0" y="253">码误差鉴别</text>
+<text x="765.0" y="282" class="small">码相位误差</text>
+<rect x="945" y="30" width="230" height="80" rx="4" class="box"/>
+<text x="1060.0" y="63">载波环更新</text>
+<text x="1060.0" y="92" class="small">FLL／FLL辅助PLL</text>
+<rect x="945" y="220" width="230" height="80" rx="4" class="box"/>
+<text x="1060.0" y="253">码环更新</text>
+<text x="1060.0" y="282" class="small">DLL＋载波辅助</text>
+<path d="M275 160H334" class="flow"/>
+<path d="M570 160H610V70H649" class="flow"/>
+<path d="M610 160V260H649" class="flow"/>
+<path d="M880 70H944" class="flow"/>
+<path d="M880 260H944" class="flow"/>
+</svg>

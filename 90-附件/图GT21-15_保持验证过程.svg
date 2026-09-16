@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title">
+<title id="title">300秒目标保持及功率恢复验证</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;font-size:22px;fill:#263442;text-anchor:middle} .small{font-size:18px}.box{fill:#fff;stroke:#263442;stroke-width:1.5}.flow{fill:none;stroke:#263442;stroke-width:1.5;marker-end:url(#arrow)}</style>
+<rect width="1200" height="190" fill="#fff"/>
+<rect x="20" y="55" width="200" height="80" rx="4" class="box"/>
+<text x="120.0" y="88">实际牵引与同步</text>
+<text x="120.0" y="117" class="small">总35 dB-Hz · 60 s</text>
+<path d="M220 95H259" class="flow"/>
+<rect x="260" y="55" width="200" height="80" rx="4" class="box"/>
+<text x="360.0" y="88">逐渐降低功率</text>
+<text x="360.0" y="117" class="small">20 s</text>
+<path d="M460 95H499" class="flow"/>
+<rect x="500" y="55" width="200" height="80" rx="4" class="box"/>
+<text x="600.0" y="88">目标功率保持</text>
+<text x="600.0" y="117" class="small">300 s</text>
+<path d="M700 95H739" class="flow"/>
+<rect x="740" y="55" width="200" height="80" rx="4" class="box"/>
+<text x="840.0" y="88">逐渐恢复功率</text>
+<text x="840.0" y="117" class="small">20 s</text>
+<path d="M940 95H979" class="flow"/>
+<rect x="980" y="55" width="200" height="80" rx="4" class="box"/>
+<text x="1080.0" y="88">恢复后跟踪</text>
+<text x="1080.0" y="117" class="small">总35 dB-Hz · 40 s</text>
+</svg>

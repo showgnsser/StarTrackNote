@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="270" viewBox="0 0 1200 270" role="img" aria-labelledby="title desc">
   <title id="title">强弱保持的功率重叠区</title>
-  <desc id="desc">ShortSlow低于28 dB-Hz并确认后降LongSlow，LongSlow达到30 dB-Hz并确认后恢复。LongSlow低于等于13.5 dB-Hz且频差允许接管时进入Sensitivity，Sensitivity高于16 dB-Hz并确认后恢复LongSlow。</desc>
+  <desc id="desc">ShortSlow低于28 dB-Hz并确认后降LongSlow，LongSlow达到30 dB-Hz并确认后恢复。LongSlow低于等于13.5 dB-Hz并累计确认后进入Sensitivity，Sensitivity高于16 dB-Hz并确认后恢复LongSlow。</desc>
   <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
   <style>
     text { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:22px; fill:#263442; text-anchor:middle; }
@@ -20,7 +20,7 @@
   <text x="375" y="184" class="small">C≥30，确认</text>
   <path d="M720 112H929" class="flow"/>
   <text x="825" y="69" class="small">C≤13.5</text>
-  <text x="825" y="95" class="small">频差满足，确认</text>
+  <text x="825" y="95" class="small">累计确认</text>
   <path d="M930 157H721" class="flow"/>
   <text x="825" y="184" class="small">C＞16，确认</text>
   <text x="600" y="239" class="small">C为跟踪分量载噪比，单位dB-Hz</text>
