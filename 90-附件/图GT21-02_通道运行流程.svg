@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
-  <title id="title">牵引、同步与持续跟踪流程</title>
-  <desc id="desc">捕获强档和中弱档分别进入20毫秒与160毫秒牵引。载码环持续工作，满足条件后并行搜索和独立确认。确认后完成收敛，再按功率、动态和辅助条件选择状态。同步时限内允许重试，超时或确认失锁则退出。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="380" viewBox="0 0 1320 380" role="img" aria-labelledby="title desc">
+  <title id="title">捕获入口与常规跟踪阶段</title>
+  <desc id="desc">捕获强档与中弱档分别选择20毫秒和160毫秒入口，随后均进行载码牵引与同步。同步确认后进入收敛，完成收敛后持续跟踪。此图只表示常规阶段递进，重试、退出和动态提前接管由正文说明。</desc>
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker>
   </defs>
@@ -8,68 +8,37 @@
     text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #263442; text-anchor: middle; }
     .label { font-size: 22px; }
     .small { font-size: 18px; }
-    .tag { font-size: 18px; text-anchor: start; }
     .box { fill: #FFFFFF; stroke: #263442; stroke-width: 1.5; }
     .shade { fill: #EEF3F6; stroke: #263442; stroke-width: 1.5; }
-    .region { fill: none; stroke: #263442; stroke-width: 1.2; stroke-dasharray: 10 8; }
+    .line { fill: none; stroke: #263442; stroke-width: 1.5; }
     .flow { fill: none; stroke: #263442; stroke-width: 1.5; marker-end: url(#arrow); }
-    .config { fill: none; stroke: #263442; stroke-width: 1.5; stroke-dasharray: 6 5; marker-end: url(#arrow); }
   </style>
-  <rect width="1200" height="650" rx="4" fill="#FFFFFF"/>
-  <text x="163" y="52" class="small">捕获移交</text>
-  <text x="390" y="52" class="small">入口选择</text>
-  <text x="730" y="52" class="small">牵引与同步</text>
-  <text x="1040" y="52" class="small">收敛与保持</text>
+  <rect width="1320" height="380" fill="#FFFFFF"/>
+  <rect x="30" y="163" width="140" height="74" rx="4" class="shade"/>
+  <text x="100" y="207" class="label">捕获移交</text>
 
-  <rect x="65" y="216" width="170" height="78" rx="4" class="shade"/>
-  <text x="150" y="250" class="label">通道初始化</text>
-  <text x="150" y="278" class="small">频率 · 码相位</text>
-  <path d="M235 255H258V151H279" class="flow"/>
-  <path d="M235 255H258V341H279" class="flow"/>
-  <rect x="280" y="110" width="220" height="82" rx="4" class="box"/>
-  <text x="390" y="144" class="label">强信号入口</text>
-  <text x="390" y="174" class="small">强档 · 20 ms更新</text>
-  <rect x="280" y="300" width="220" height="82" rx="4" class="box"/>
-  <text x="390" y="334" class="label">中弱信号入口</text>
-  <text x="390" y="364" class="small">中／弱档 · 160 ms更新</text>
-  <path d="M500 151H530V241" fill="none" stroke="#263442" stroke-width="1.5"/>
-  <path d="M500 341H530V241" fill="none" stroke="#263442" stroke-width="1.5"/>
+  <path d="M170 200H194V105H219" class="flow"/>
+  <path d="M194 200V280H219" class="flow"/>
+  <rect x="220" y="70" width="190" height="70" rx="4" class="box"/>
+  <text x="315" y="100" class="label">强档入口</text>
+  <text x="315" y="126" class="small">20 ms更新</text>
+  <rect x="220" y="245" width="190" height="70" rx="4" class="box"/>
+  <text x="315" y="275" class="label">中弱档入口</text>
+  <text x="315" y="301" class="small">160 ms更新</text>
 
-  <rect x="560" y="80" width="340" height="350" class="region"/>
-  <text x="730" y="117" class="label">载码环与同步并行</text>
-  <path d="M530 241H575V180H589" class="flow"/>
-  <path d="M575 241V303H589" class="flow"/>
-  <circle cx="575" cy="241" r="3.5" fill="#263442"/>
-  <rect x="590" y="145" width="280" height="70" rx="4" class="box"/>
-  <text x="730" y="174" class="label">载波牵引与码跟踪</text>
-  <text x="730" y="200" class="small">按入口周期持续更新</text>
-  <path d="M870 180H885V232H730V216" class="flow"/>
-  <rect x="590" y="264" width="280" height="78" rx="4" class="box"/>
-  <text x="730" y="297" class="label">同步搜索与独立确认</text>
-  <text x="730" y="326" class="small">满足开放条件后开始</text>
-  <path d="M730 342V378H612V343" class="flow"/>
-  <text x="730" y="408" class="small">未通过：时限内重试</text>
+  <path d="M410 105H450V280H410" class="line"/>
+  <path d="M450 200H499" class="flow"/>
+  <rect x="500" y="150" width="230" height="100" rx="4" class="box"/>
+  <text x="615" y="190" class="label">牵引与同步</text>
+  <text x="615" y="222" class="small">载码环与同步并行</text>
 
-  <path d="M870 302H917V196H939" class="flow"/>
-  <text x="992" y="293" class="small">确认成功</text>
-  <rect x="940" y="145" width="225" height="102" rx="4" class="box"/>
-  <text x="1052" y="180" class="label">同步后收敛</text>
-  <text x="1052" y="210" class="small">对齐积分 · 擦除已知符号</text>
-  <text x="1052" y="235" class="small">继续更新载波环与码环</text>
-  <path d="M1052 247V459" class="flow"/>
-  <rect x="1006" y="345" width="94" height="30" rx="4" fill="#FFFFFF"/>
-  <text x="1052" y="367" class="small">常规递进</text>
-  <rect x="940" y="460" width="225" height="118" rx="4" class="shade"/>
-  <text x="1052" y="494" class="label">持续跟踪</text>
-  <text x="1052" y="524" class="small">普通 · 极弱 · 动态</text>
-  <text x="1052" y="550" class="small">导航位辅助</text>
+  <path d="M730 200H854" class="flow"/>
+  <text x="792" y="184" class="small">同步确认</text>
+  <rect x="855" y="150" width="170" height="100" rx="4" class="box"/>
+  <text x="940" y="207" class="label">同步后收敛</text>
 
-  <path d="M850 342V476H730V499" class="flow"/>
-  <text x="729" y="468" class="small">同步总时限到仍未确认</text>
-  <rect x="590" y="500" width="280" height="78" rx="4" class="shade"/>
-  <text x="730" y="533" class="label">退出跟踪</text>
-  <text x="730" y="561" class="small">通知上层重新捕获</text>
-  <path d="M940 540H871" class="flow"/>
-  <text x="905" y="507" class="small">失锁</text>
-  <text x="600" y="625" class="small">入口由捕获档位确定；同步确认与跟踪状态分别管理</text>
+  <path d="M1025 200H1119" class="flow"/>
+  <text x="1072" y="184" class="small">完成收敛</text>
+  <rect x="1120" y="150" width="170" height="100" rx="4" class="shade"/>
+  <text x="1205" y="207" class="label">持续跟踪</text>
 </svg>
