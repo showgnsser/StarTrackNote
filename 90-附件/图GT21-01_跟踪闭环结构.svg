@@ -2,81 +2,78 @@
   <title id="title">跟踪处理主数据流与软硬件边界</title>
   <desc id="desc">硬件NCO、混频和相关形成每毫秒PDI。软件并行进行载波、同步和码处理。同步边界配置两路积分，数据型同步搜索可校频。载波频率与码率经接口转换为控制字，反馈至硬件NCO。</desc>
   <defs>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#405872"/></marker>
-    <marker id="tealArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#16847B"/></marker>
-    <marker id="amberArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#AC7624"/></marker>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker>
   </defs>
   <style>
-    text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #243B53; text-anchor: middle; }
-    .label { font-size: 22px; font-weight: 600; }
-    .small { font-size: 17px; fill: #536B82; }
-    .tag { font-size: 18px; font-weight: 600; text-anchor: start; letter-spacing: 1px; }
-    .box { fill: #FFFFFF; stroke: #B8C8D8; stroke-width: 1.5; }
-    .loop { fill: #EDF4FC; stroke: #7FA1C8; stroke-width: 1.5; }
-    .sync { fill: #EAF6F2; stroke: #78B7AC; stroke-width: 1.5; }
-    .flow { fill: none; stroke: #405872; stroke-width: 2; stroke-linejoin: round; marker-end: url(#arrow); }
-    .config { fill: none; stroke: #16847B; stroke-width: 2; stroke-dasharray: 6 5; stroke-linejoin: round; marker-end: url(#tealArrow); }
-    .calibrate { fill: none; stroke: #AC7624; stroke-width: 2; stroke-dasharray: 6 5; marker-end: url(#amberArrow); }
+    text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #263442; text-anchor: middle; }
+    .label { font-size: 22px; }
+    .small { font-size: 18px; }
+    .tag { font-size: 18px; text-anchor: start; }
+    .box { fill: #FFFFFF; stroke: #263442; stroke-width: 1.5; }
+    .shade { fill: #EEF3F6; stroke: #263442; stroke-width: 1.5; }
+    .region { fill: none; stroke: #263442; stroke-width: 1.2; stroke-dasharray: 10 8; }
+    .flow { fill: none; stroke: #263442; stroke-width: 1.5; marker-end: url(#arrow); }
+    .config { fill: none; stroke: #263442; stroke-width: 1.5; stroke-dasharray: 6 5; marker-end: url(#arrow); }
   </style>
-  <rect width="1200" height="800" rx="18" fill="#FFFFFF"/>
-  <rect x="135" y="45" width="930" height="137" rx="14" fill="#F0F4F8" stroke="#D4DEE8"/>
-  <text x="160" y="73" class="tag">硬件 · 定点处理</text>
+  <rect width="1200" height="800" rx="4" fill="#FFFFFF"/>
+  <rect x="135" y="45" width="930" height="137" class="region"/>
+  <text x="135" y="35" class="tag">硬件部分（定点）</text>
   <text x="600" y="25" class="small">接收采样</text>
   <path d="M600 33V94" class="flow"/>
-  <rect x="175" y="95" width="230" height="64" rx="9" class="box"/>
+  <rect x="175" y="95" width="230" height="64" rx="4" class="box"/>
   <text x="290" y="122" class="label">本地载波与本地码</text>
   <text x="290" y="147" class="small">载波NCO · 码NCO</text>
   <path d="M405 127H484" class="flow"/>
-  <rect x="485" y="95" width="230" height="64" rx="9" class="box"/>
+  <rect x="485" y="95" width="230" height="64" rx="4" class="box"/>
   <text x="600" y="134" class="label">混频与相关</text>
   <path d="M715 127H794" class="flow"/>
-  <rect x="795" y="95" width="230" height="64" rx="9" class="box"/>
+  <rect x="795" y="95" width="230" height="64" rx="4" class="shade"/>
   <text x="910" y="122" class="label">1 ms相关结果</text>
   <text x="910" y="147" class="small">I/Q · 时间与载波参考</text>
 
-  <rect x="95" y="210" width="1010" height="390" rx="14" fill="#F8FAFD" stroke="#D4DEE8"/>
-  <text x="120" y="239" class="tag">软件 · 浮点处理</text>
+  <rect x="95" y="210" width="1010" height="390" class="region"/>
+  <text x="95" y="201" class="tag">软件部分（浮点）</text>
   <path d="M910 159V250H600V284" class="flow"/>
   <path d="M600 250H265V284" class="flow"/>
   <path d="M600 250H935V284" class="flow"/>
-  <circle cx="600" cy="250" r="3.5" fill="#405872"/>
-  <rect x="145" y="285" width="240" height="78" rx="10" class="box"/>
+  <circle cx="600" cy="250" r="3.5" fill="#263442"/>
+  <rect x="145" y="285" width="240" height="78" rx="4" class="box"/>
   <text x="265" y="318" class="label">载波积分与鉴别</text>
   <text x="265" y="346" class="small">频差 · 相差</text>
-  <rect x="480" y="285" width="240" height="78" rx="10" class="sync"/>
+  <rect x="480" y="285" width="240" height="78" rx="4" class="box"/>
   <text x="600" y="318" class="label">同步搜索与确认</text>
   <text x="600" y="346" class="small">数据位 · 二次码位置</text>
-  <rect x="815" y="285" width="240" height="78" rx="10" class="box"/>
+  <rect x="815" y="285" width="240" height="78" rx="4" class="box"/>
   <text x="935" y="318" class="label">码积分与鉴别</text>
   <text x="935" y="346" class="small">码相位误差</text>
   <path d="M265 363V459" class="flow"/>
   <path d="M600 363V459" class="flow"/>
   <path d="M935 363V459" class="flow"/>
 
-  <rect x="145" y="460" width="240" height="78" rx="10" class="loop"/>
+  <rect x="145" y="460" width="240" height="78" rx="4" class="box"/>
   <text x="265" y="493" class="label">载波环滤波</text>
   <text x="265" y="521" class="small">FLL / FLL辅助PLL</text>
-  <rect x="480" y="460" width="240" height="78" rx="10" class="sync"/>
+  <rect x="480" y="460" width="240" height="78" rx="4" class="box"/>
   <text x="600" y="493" class="label">同步处理结果</text>
   <text x="600" y="521" class="small">边界 · 符号位置 · 校频量</text>
-  <rect x="815" y="460" width="240" height="78" rx="10" class="loop"/>
+  <rect x="815" y="460" width="240" height="78" rx="4" class="box"/>
   <text x="935" y="493" class="label">码环滤波</text>
   <text x="935" y="521" class="small">DLL · 载波多普勒辅助</text>
   <path d="M480 486H430V326H386" class="config"/>
   <path d="M720 486H770V326H814" class="config"/>
-  <text x="422" y="409" class="small" style="fill:#16847B;text-anchor:end">确认边界与符号</text>
-  <text x="778" y="409" class="small" style="fill:#16847B;text-anchor:start">确认边界与符号</text>
-  <path d="M480 522H386" class="calibrate"/>
-  <text x="432" y="567" class="small" style="fill:#AC7624">数据型同步校频</text>
+  <text x="422" y="409" class="small" style="text-anchor:end">确认边界与符号</text>
+  <text x="778" y="409" class="small" style="text-anchor:start">确认边界与符号</text>
+  <path d="M480 522H386" class="config"/>
+  <text x="432" y="567" class="small">数据型同步校频</text>
 
   <path d="M265 538V665H479" class="flow"/>
   <path d="M935 538V665H721" class="flow"/>
-  <rect x="480" y="630" width="240" height="70" rx="10" class="box"/>
+  <rect x="480" y="630" width="240" height="70" rx="4" class="shade"/>
   <text x="600" y="659" class="label">控制字转换</text>
   <text x="600" y="684" class="small">载波FCW · 码步进字</text>
-  <rect x="176" y="607" width="178" height="28" rx="6" fill="#FFFFFF"/>
+  <rect x="176" y="607" width="178" height="28" rx="4" fill="#FFFFFF"/>
   <text x="265" y="627" class="small">载波频率 · Hz</text>
-  <rect x="846" y="607" width="178" height="28" rx="6" fill="#FFFFFF"/>
+  <rect x="846" y="607" width="178" height="28" rx="4" fill="#FFFFFF"/>
   <text x="935" y="627" class="small">码率 · chip/s</text>
   <path d="M600 700V745H45V127H174" class="flow"/>
   <text x="280" y="731" class="small">控制反馈 · 保持相位连续</text>

@@ -2,7 +2,7 @@
 title: GNSS信号跟踪设计方案
 aliases: [八信号跟踪设计方案]
 tags: [GNSS, 跟踪, 算法, 设计方案]
-version: V0.1
+version: V0.2
 date: 2026-09-16
 implementation: c7a1504
 cssclasses: [startrack-spec]
