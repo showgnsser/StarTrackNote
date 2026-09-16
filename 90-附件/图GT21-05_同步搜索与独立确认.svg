@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title desc">
+  <title id="title">同步搜索与独立确认</title>
+  <desc id="desc">搜索窗口比较候选并暂存通过质量判据的边界。独立确认窗口使用与搜索不重叠的新数据重新判决，质量通过且边界一致才宣布同步成立。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 22px; fill: #263442; text-anchor: middle; }
+    .small { font-size: 18px; }
+    .box { fill: #FFFFFF; stroke: #263442; stroke-width: 1.5; }
+    .shade { fill: #EEF3F6; stroke: #263442; stroke-width: 1.5; }
+    .flow { fill: none; stroke: #263442; stroke-width: 1.5; marker-end: url(#arrow); }
+  </style>
+  <rect width="1200" height="250" fill="#FFFFFF"/>
+  <rect x="40" y="70" width="320" height="100" rx="4" class="box"/>
+  <text x="200" y="111">搜索窗口</text>
+  <text x="200" y="143" class="small">比较候选，暂存边界</text>
+  <path d="M360 120H499" class="flow"/>
+  <text x="430" y="104" class="small">候选通过</text>
+  <rect x="500" y="70" width="320" height="100" rx="4" class="box"/>
+  <text x="660" y="111">独立确认窗口</text>
+  <text x="660" y="143" class="small">新数据重新判决</text>
+  <path d="M820 120H1039" class="flow"/>
+  <text x="930" y="104" class="small">质量通过且边界一致</text>
+  <rect x="1040" y="86" width="130" height="68" rx="4" class="shade"/>
+  <text x="1105" y="127">同步成立</text>
+</svg>

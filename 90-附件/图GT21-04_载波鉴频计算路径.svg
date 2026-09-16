@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="550" viewBox="0 0 1200 550" role="img" aria-labelledby="title desc">
+  <title id="title">载波鉴频计算路径</title>
+  <desc id="desc">相邻相关鉴频先共轭相乘再由相位增量换算频差。DFT对多个候选频率先旋转再积分，累计功率后寻峰插值。FMS计算两个偏置频点的相干功率，由功率差与和换算频差。输入按所选方法完成符号处理或复平方。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 22px; fill: #263442; text-anchor: middle; }
+    .small { font-size: 18px; }
+    .heading { font-size: 20px; text-anchor: start; }
+    .box { fill: #FFFFFF; stroke: #263442; stroke-width: 1.5; }
+    .shade { fill: #EEF3F6; stroke: #263442; stroke-width: 1.5; }
+    .flow { fill: none; stroke: #263442; stroke-width: 1.5; marker-end: url(#arrow); }
+  </style>
+  <rect width="1200" height="550" fill="#FFFFFF"/>
+  <text x="30" y="34" class="heading">相邻相关鉴频</text>
+  <rect x="30" y="60" width="180" height="76" rx="4" class="shade"/>
+  <text x="120" y="105">相邻两次相关</text>
+  <path d="M210 98H269" class="flow"/>
+  <rect x="270" y="60" width="220" height="76" rx="4" class="box"/>
+  <text x="380" y="105">前值共轭×后值</text>
+  <path d="M490 98H549" class="flow"/>
+  <rect x="550" y="60" width="230" height="76" rx="4" class="box"/>
+  <text x="665" y="105">asin 或 atan2</text>
+  <path d="M780 98H899" class="flow"/>
+  <rect x="900" y="60" width="270" height="76" rx="4" class="shade"/>
+  <text x="1035" y="92">换算频差</text>
+  <text x="1035" y="119" class="small">使用相关中心时间间隔</text>
+
+  <text x="30" y="204" class="heading">DFT鉴频</text>
+  <rect x="30" y="230" width="180" height="76" rx="4" class="shade"/>
+  <text x="120" y="275">相关序列</text>
+  <path d="M210 268H269" class="flow"/>
+  <rect x="270" y="230" width="220" height="76" rx="4" class="box"/>
+  <text x="380" y="275">候选频率旋转</text>
+  <path d="M490 268H549" class="flow"/>
+  <rect x="550" y="230" width="230" height="76" rx="4" class="box"/>
+  <text x="665" y="261">块内相干</text>
+  <text x="665" y="289" class="small">块间功率累加</text>
+  <path d="M780 268H899" class="flow"/>
+  <rect x="900" y="230" width="270" height="76" rx="4" class="shade"/>
+  <text x="1035" y="261">寻峰＋三点插值</text>
+  <text x="1035" y="289" class="small">输出频差</text>
+
+  <text x="30" y="374" class="heading">FMS鉴频</text>
+  <rect x="30" y="400" width="180" height="76" rx="4" class="shade"/>
+  <text x="120" y="445">相关序列</text>
+  <path d="M210 438H269" class="flow"/>
+  <rect x="270" y="400" width="220" height="76" rx="4" class="box"/>
+  <text x="380" y="445">两侧频率旋转</text>
+  <path d="M490 438H549" class="flow"/>
+  <rect x="550" y="400" width="230" height="76" rx="4" class="box"/>
+  <text x="665" y="431">块内相干</text>
+  <text x="665" y="459" class="small">块间功率累加</text>
+  <path d="M780 438H899" class="flow"/>
+  <rect x="900" y="400" width="270" height="76" rx="4" class="shade"/>
+  <text x="1035" y="431">功率差／和换算</text>
+  <text x="1035" y="459" class="small">输出频差</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">20 ms分块功率累加与160 ms连续相干</title>
+  <desc id="desc">上路将160毫秒数据分成八块，每块20毫秒相干后分别取功率，再将八块功率相加。下路将160毫秒I、Q连续累加，最后取一次功率。两种方法的相干时长不同。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; font-size: 22px; fill: #263442; text-anchor: middle; }
+    .small { font-size: 18px; }
+    .side { font-size: 20px; text-anchor: start; }
+    .box { fill: #FFFFFF; stroke: #263442; stroke-width: 1.5; }
+    .shade { fill: #EEF3F6; stroke: #263442; stroke-width: 1.5; }
+    .line { fill: none; stroke: #263442; stroke-width: 1.5; }
+    .flow { fill: none; stroke: #263442; stroke-width: 1.5; marker-end: url(#arrow); }
+  </style>
+  <rect width="1200" height="430" fill="#FFFFFF"/>
+  <text x="35" y="118" class="side">20 ms分块</text>
+  <text x="305" y="50" class="small">第1块</text>
+  <text x="515" y="50" class="small">第2块</text>
+  <text x="835" y="50" class="small">第8块</text>
+  <rect x="230" y="70" width="150" height="80" rx="4" class="box"/>
+  <text x="305" y="104">20 ms相干</text>
+  <text x="305" y="134" class="small">取功率</text>
+  <rect x="440" y="70" width="150" height="80" rx="4" class="box"/>
+  <text x="515" y="104">20 ms相干</text>
+  <text x="515" y="134" class="small">取功率</text>
+  <text x="675" y="116">…</text>
+  <rect x="760" y="70" width="150" height="80" rx="4" class="box"/>
+  <text x="835" y="104">20 ms相干</text>
+  <text x="835" y="134" class="small">取功率</text>
+  <path d="M305 150V210M515 150V210M835 150V210" class="line"/>
+  <path d="M305 210H979" class="flow"/>
+  <circle cx="515" cy="210" r="3" fill="#263442"/>
+  <circle cx="835" cy="210" r="3" fill="#263442"/>
+  <rect x="980" y="175" width="180" height="70" rx="4" class="shade"/>
+  <text x="1070" y="217">8块功率求和</text>
+
+  <text x="35" y="348" class="side">160 ms长相干</text>
+  <rect x="230" y="300" width="680" height="80" rx="4" class="box"/>
+  <text x="570" y="334">160 ms连续相干</text>
+  <text x="570" y="364" class="small">I、Q分别连续累加</text>
+  <path d="M910 340H979" class="flow"/>
+  <rect x="980" y="300" width="180" height="80" rx="4" class="shade"/>
+  <text x="1070" y="347">取一次功率</text>
+</svg>
