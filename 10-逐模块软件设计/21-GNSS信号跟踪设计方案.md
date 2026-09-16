@@ -2,7 +2,7 @@
 title: GNSS信号跟踪设计方案
 aliases: [八信号跟踪设计方案]
 tags: [GNSS, 跟踪, 算法, 设计方案]
-version: V0.4
+version: V0.5
 date: 2026-09-16
 implementation: c7a1504
 cssclasses: [startrack-spec]
@@ -80,5 +80,3 @@ L1CA、B1I、G1按数据型信号组织；L5、B2a、E5a共用数据与导频处
 | 可选辅助输入 | 与当前PDI对应的已知导航数据符号 |
 | 控制输出 | 载波频率，单位Hz；码率，单位chip/s；接口转换为硬件控制字 |
 | 状态输出 | 同步边界、载噪比、跟踪状态及退出请求 |
-
-捕获搜索、导航电文译码和定位解算不属于本方案范围。
