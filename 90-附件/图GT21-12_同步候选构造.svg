@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410" role="img" aria-labelledby="title desc">
+  <title id="title">数据位与二次码同步候选构造</title>
+  <desc id="desc">数据型按11个频率旋转1 ms Prompt，各位边界擦除覆盖码后位内相干，跨位累加功率。五种导频只枚举二次码起点，擦码后20 ms相干，再跨块累加功率。两类均比较候选功率并独立确认。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:22px; fill:#263442; text-anchor:middle; }
+    .small { font-size:18px; } .heading { font-size:20px; text-anchor:start; }
+    .box { fill:#FFFFFF; stroke:#263442; stroke-width:1.5; } .shade { fill:#EEF3F6; stroke:#263442; stroke-width:1.5; }
+    .flow { fill:none; stroke:#263442; stroke-width:1.5; marker-end:url(#arrow); }
+  </style>
+  <rect width="1200" height="410" fill="#FFFFFF"/>
+  <text x="30" y="35" class="heading">L1CA、B1I、G1：数据位同步</text>
+  <rect x="30" y="65" width="170" height="90" rx="4" class="shade"/>
+  <text x="115" y="117">1 ms Prompt</text>
+  <path d="M200 110H259" class="flow"/>
+  <rect x="260" y="65" width="210" height="90" rx="4" class="box"/>
+  <text x="365" y="103">11点频率旋转</text><text x="365" y="135" class="small">范围±62.5 Hz</text>
+  <path d="M470 110H534" class="flow"/>
+  <rect x="535" y="65" width="230" height="90" rx="4" class="box"/>
+  <text x="650" y="103">候选位边界</text><text x="650" y="135" class="small">擦覆盖码、位内相干</text>
+  <path d="M765 110H834" class="flow"/>
+  <rect x="835" y="65" width="335" height="90" rx="4" class="shade"/>
+  <text x="1002" y="103">跨位累加功率</text><text x="1002" y="135" class="small">比较频率与边界候选</text>
+  <text x="30" y="235" class="heading">L5、B2a、E5a、E1、B1C：二次码同步</text>
+  <rect x="30" y="265" width="170" height="90" rx="4" class="shade"/>
+  <text x="115" y="303">导频Prompt</text><text x="115" y="335" class="small">1／4／10 ms</text>
+  <path d="M200 310H259" class="flow"/>
+  <rect x="260" y="265" width="210" height="90" rx="4" class="box"/>
+  <text x="365" y="303">二次码起点</text><text x="365" y="335" class="small">不搜索频率</text>
+  <path d="M470 310H534" class="flow"/>
+  <rect x="535" y="265" width="230" height="90" rx="4" class="box"/>
+  <text x="650" y="303">按候选擦码</text><text x="650" y="335" class="small">20 ms相干</text>
+  <path d="M765 310H834" class="flow"/>
+  <rect x="835" y="265" width="335" height="90" rx="4" class="shade"/>
+  <text x="1002" y="303">跨块累加功率</text><text x="1002" y="335" class="small">比较全部二次码起点</text>
+</svg>

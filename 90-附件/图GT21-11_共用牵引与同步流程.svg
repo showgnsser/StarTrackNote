@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="265" viewBox="0 0 1200 265" role="img" aria-labelledby="title desc">
+  <title id="title">共用牵引与同步流程</title>
+  <desc id="desc">捕获移交选择强或中弱入口，启动20或160 ms载波与码环，按信号开放条件搜索同步，使用新数据独立确认后发布同步。整个搜索与确认期间环路持续更新。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:22px; fill:#263442; text-anchor:middle; }
+    .small { font-size:18px; } .box { fill:#FFFFFF; stroke:#263442; stroke-width:1.5; }
+    .shade { fill:#EEF3F6; stroke:#263442; stroke-width:1.5; }
+    .flow { fill:none; stroke:#263442; stroke-width:1.5; marker-end:url(#arrow); }
+  </style>
+  <rect width="1200" height="265" fill="#FFFFFF"/>
+  <rect x="25" y="70" width="170" height="96" rx="4" class="shade"/>
+  <text x="110" y="111">捕获移交</text><text x="110" y="144" class="small">选择强／中弱入口</text>
+  <path d="M195 118H244" class="flow"/>
+  <rect x="245" y="70" width="205" height="96" rx="4" class="box"/>
+  <text x="347" y="111">启动载波与码环</text><text x="347" y="144" class="small">20／160 ms更新</text>
+  <path d="M450 118H514" class="flow"/>
+  <rect x="515" y="70" width="205" height="96" rx="4" class="box"/>
+  <text x="617" y="111">同步搜索</text><text x="617" y="144" class="small">按本信号条件开放</text>
+  <path d="M720 118H774" class="flow"/>
+  <rect x="775" y="70" width="195" height="96" rx="4" class="box"/>
+  <text x="872" y="111">独立确认</text><text x="872" y="144" class="small">使用新数据</text>
+  <path d="M970 118H1019" class="flow"/>
+  <rect x="1020" y="70" width="155" height="96" rx="4" class="shade"/>
+  <text x="1097" y="126">同步成立</text>
+  <text x="600" y="224" class="small">搜索与确认期间，载波环和码环按入口周期持续更新</text>
+</svg>
