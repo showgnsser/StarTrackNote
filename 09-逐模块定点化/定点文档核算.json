@@ -89,6 +89,21 @@
   "symbols": "PASS",
   "new_diagrams": 8,
   "chapter_10_unchanged": true,
+  "diagram_fonts": {
+    "chinese": "SimSun",
+    "latin": "Times New Roman",
+    "svg_glyphs_embedded": true
+  },
+  "diagram_names": [
+    "图LTFP-00_跟踪逻辑总体数据流_v03",
+    "图LTFP-02_载波NCO与DDC数据关系_v03",
+    "图LTFP-03_码NCO定点数据关系_v03",
+    "图LTFP-04_捕获移交与NCO初始装载_v03",
+    "图LTFP-05_五抽头与本地副本生成_v03",
+    "图LTFP-06_分批相关与复数累加_v03",
+    "图LTFP-07_PDI结果冻结_v03",
+    "图LTFP-08_B1C_4_7ms移交积分区间_v03"
+  ],
   "chapter_10_sha256": "3a0bde8f3e9638a2f2ff7af8ff74ad936924a09b0d13490ff08904a1d8972fed",
   "protected_image_sha256": {
     "图LTFP-09_单分量五抽头跟踪流程_v04.png": "af9e7cbc4da3363a65077448323f4693bd76f90b59abe955277bae040c234b71",

@@ -13,14 +13,14 @@ import xml.etree.ElementTree as ET
 DOC_NAME = '18-跟踪逻辑定点化设计方案.md'
 ROOT = Path(__file__).resolve().parents[1]
 NAMES = {
-    'overview': '图LTFP-00_跟踪逻辑总体数据流_v02',
-    'ddc': '图LTFP-02_载波NCO与DDC数据关系_v02',
-    'code': '图LTFP-03_码NCO定点数据关系_v02',
-    'load': '图LTFP-04_捕获移交与NCO初始装载_v02',
-    'taps': '图LTFP-05_五抽头与本地副本生成_v02',
-    'corr': '图LTFP-06_分批相关与复数累加_v02',
-    'pdi': '图LTFP-07_PDI结果冻结_v02',
-    'example': '图LTFP-08_B1C_4_7ms移交积分区间_v02',
+    'overview': '图LTFP-00_跟踪逻辑总体数据流_v03',
+    'ddc': '图LTFP-02_载波NCO与DDC数据关系_v03',
+    'code': '图LTFP-03_码NCO定点数据关系_v03',
+    'load': '图LTFP-04_捕获移交与NCO初始装载_v03',
+    'taps': '图LTFP-05_五抽头与本地副本生成_v03',
+    'corr': '图LTFP-06_分批相关与复数累加_v03',
+    'pdi': '图LTFP-07_PDI结果冻结_v03',
+    'example': '图LTFP-08_B1C_4_7ms移交积分区间_v03',
 }
 PROTECTED = {
     '图LTFP-09_单分量五抽头跟踪流程_v04.png':
@@ -44,12 +44,16 @@ class Diagram:
     def __init__(self, width, height, folder):
         import matplotlib
         matplotlib.use('Agg')
-        matplotlib.rcParams.update({'svg.hashsalt': 'tracking-fixed-v040',
-                                   'mathtext.fontset': 'dejavusans'})
+        matplotlib.rcParams.update({'svg.hashsalt': 'tracking-fixed-v042',
+                                   'font.family': ['Times New Roman', 'SimSun'],
+                                   'mathtext.fontset': 'custom',
+                                   'mathtext.rm': 'Times New Roman',
+                                   'mathtext.it': 'Times New Roman:italic',
+                                   'mathtext.bf': 'Times New Roman:bold'})
         import matplotlib.pyplot as plt
         from matplotlib.font_manager import FontProperties
         self.plt = plt
-        self.font = FontProperties(fname='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
+        self.font = FontProperties(family=['Times New Roman', 'SimSun'])
         self.fig, self.ax = plt.subplots(figsize=(width / 100, height / 100))
         self.fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
         self.ax.set(xlim=(0, width), ylim=(height, 0))
@@ -59,34 +63,46 @@ class Diagram:
 
     def text(self, x, y, label, size=13, align='center'):
         artist = self.ax.text(x, y, label, ha=align, va='center', fontsize=size,
-                              fontproperties=self.font, linespacing=1.55, color='#202020')
+                              fontproperties=self.font, linespacing=1.25, color='black')
         self.labels.append(artist)
         return artist
 
     def box(self, x, y, width, height, label, size=14, shade=False):
         from matplotlib.patches import Rectangle
-        rect = Rectangle((x, y), width, height, linewidth=1.1,
-                         edgecolor='#303030', facecolor='#f4f4f4' if shade else 'white')
+        rect = Rectangle((x, y), width, height, linewidth=0.85,
+                         edgecolor='black', facecolor='white')
         self.ax.add_patch(rect)
         artist = self.text(x + width / 2, y + height / 2, label, size)
         self.boxes.append((rect, artist))
+
+    def circle(self, x, y, radius, label):
+        from matplotlib.patches import Circle
+        self.ax.add_patch(Circle((x, y), radius, facecolor='white',
+                                edgecolor='black', linewidth=0.85))
+        self.text(x, y, label, 15)
+
+    def diamond(self, x, y, width, height, label, size=14):
+        from matplotlib.patches import Polygon
+        vertices = [(x, y-height/2), (x+width/2, y), (x, y+height/2), (x-width/2, y)]
+        self.ax.add_patch(Polygon(vertices, facecolor='white', edgecolor='black', linewidth=.85))
+        self.text(x, y, label, size)
 
     def arrow(self, *points, dashed=False):
         from matplotlib.patches import FancyArrowPatch
         self.edges.extend(zip(points[:-1], points[1:]))
         if len(points) > 2:
             xs, ys = zip(*points[:-1])
-            self.ax.plot(xs, ys, color='#303030', linewidth=1.1,
+            self.ax.plot(xs, ys, color='black', linewidth=0.85,
                          linestyle='--' if dashed else '-')
         self.ax.add_patch(FancyArrowPatch(points[-2], points[-1], arrowstyle='-|>',
-                                          mutation_scale=11, linewidth=1.1,
-                                          color='#303030', shrinkA=0, shrinkB=0,
+                                          mutation_scale=10, linewidth=0.85,
+                                          color='black', shrinkA=0, shrinkB=0,
                                           linestyle='--' if dashed else '-'))
 
     def line(self, start, end, dashed=False):
         self.edges.append((start, end))
-        self.ax.plot([start[0], end[0]], [start[1], end[1]], color='#303030',
-                     linewidth=1.0, linestyle='--' if dashed else '-')
+        self.ax.plot([start[0], end[0]], [start[1], end[1]], color='black',
+                     linewidth=0.85, linestyle='--' if dashed else '-')
 
     def save(self, key):
         self.fig.canvas.draw()
@@ -116,169 +132,190 @@ class Diagram:
         path = self.folder / (NAMES[key] + '.svg')
         self.fig.savefig(path, facecolor='white', metadata={'Date': None})
         path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines()) + '\n')
-        self.fig.savefig(path.with_suffix('.png'), facecolor='white', dpi=160)
+        svg_text = path.read_text()
+        assert 'SimSun' in svg_text and 'TimesNewRoman' in svg_text, key + ': fonts'
+        self.fig.savefig(path.with_suffix('.png'), facecolor='white', dpi=180)
         self.plt.close(self.fig)
 
 
 def draw_overview(folder):
-    d = Diagram(1100, 355, folder)
-    for x, w, text in [(30, 175, 'ADC输入\ns4 I/Q'),
-                        (270, 210, '载波DDC\ns5 I/Q'),
-                        (550, 225, '多支路相关与积分\ns18 / s20 I/Q'),
-                        (845, 225, 'PDI结果输出\n保持积分原位宽')]:
-        d.box(x, 50, w, 85, text)
-    for a, b in [(205, 270), (480, 550), (775, 845)]:
-        d.arrow((a, 92.5), (b, 92.5))
-    d.box(270, 220, 210, 85, '载波NCO与系数表\nu32相位 → sin/cos')
-    d.arrow((375, 220), (375, 135))
-    d.box(550, 220, 225, 85, '本地码与五抽头\n输出 ±1 码符号')
-    d.arrow((662.5, 220), (662.5, 135))
-    d.box(845, 220, 225, 85, '码NCO\nuQ14.36连续相位')
-    d.arrow((845, 262.5), (775, 262.5))
-    d.arrow((957.5, 220), (957.5, 135))
-    d.text(1010, 177, '1 ms边界', 11)
+    d = Diagram(1100, 280, folder)
+    for x, w, label in [(30, 145, 'ADC 输入'), (285, 165, '载波 DDC'),
+                         (560, 200, '相关与积分'), (890, 175, 'PDI 输出')]:
+        d.box(x, 160, w, 52, label)
+    for a, b, label in [(175, 285, 's4 I/Q'), (450, 560, 's5 I/Q'),
+                         (760, 890, 's18 / s20 I/Q')]:
+        d.arrow((a, 186), (b, 186))
+        d.text((a+b)/2, 167, label, 12)
+    d.box(285, 25, 165, 62, '载波 NCO\n正余弦表')
+    d.arrow((367.5, 87), (367.5, 160))
+    d.text(387.5, 124, 'sQ1.4', 12, 'left')
+    d.box(560, 25, 200, 62, '本地码与五抽头')
+    d.arrow((660, 87), (660, 160))
+    d.text(680, 124, '±1', 12, 'left')
+    d.box(890, 25, 175, 62, '码 NCO')
+    d.arrow((890, 56), (760, 56))
+    d.text(825, 35, 'uQ14.36', 12)
+    d.arrow((977.5, 87), (977.5, 160))
+    d.text(996, 124, '1 ms 边界', 11, 'left')
+    d.text(812, 247, '各支路独立积分，输出保持原位宽', 12)
     d.save('overview')
 
 
 def draw_ddc(folder):
-    d = Diagram(1120, 340, folder)
-    for x, w, label in [(25, 155, 'ADC样点\ns4 I/Q'),
-                         (235, 175, '四次实数乘法\n单项s8'),
-                         (465, 175, '复数加减\n中间量s9'),
-                         (695, 190, '算术右移4 bit\n' + r'$\lfloor T/16\rfloor$'),
-                         (940, 155, '基带输出\ns5 I/Q')]:
-        d.box(x, 195, w, 85, label)
-    for a, b in [(180, 235), (410, 465), (640, 695), (885, 940)]:
-        d.arrow((a, 237.5), (b, 237.5))
-    d.box(25, 35, 155, 80, '载波NCO\nu32相位累加')
-    d.box(235, 35, 175, 80, '16相位系数表\nsQ1.4 sin/cos')
-    d.arrow((180, 75), (235, 75))
-    d.arrow((322.5, 115), (322.5, 195))
-    d.text(660, 76, '4次实乘、2次加减；I/Q按同一相位旋转', 14)
-    d.text(560, 315, '右移向负无穷取整；输出范围 −10～+10', 13)
+    d = Diagram(1060, 275, folder)
+    d.box(55, 25, 150, 46, '载波 NCO')
+    d.box(315, 25, 205, 46, '正余弦系数表')
+    d.arrow((205, 48), (315, 48))
+    d.text(260, 31, 'u32', 12)
+    d.arrow((417.5, 71), (417.5, 142))
+    d.text(433, 105, 'sQ1.4', 12, 'left')
+    d.box(55, 142, 150, 54, 'ADC 输入')
+    d.box(315, 142, 205, 54, '复数乘加')
+    d.box(640, 142, 205, 54, '算术右移 4 bit')
+    for a, b, label in [(205, 315, 's4 I/Q'), (520, 640, 's9 I/Q'),
+                         (845, 1005, 's5 I/Q')]:
+        d.arrow((a, 169), (b, 169))
+        d.text((a+b)/2, 150, label, 12)
+    d.text(925, 190, '基带输出', 12)
+    d.text(417.5, 226, '4 次实乘，2 次加减', 12)
+    d.text(742.5, 226, r'$R=\lfloor T/16\rfloor$', 13)
     d.save('ddc')
 
 
 def draw_code(folder):
-    d = Diagram(1050, 500, folder)
-    d.box(30, 35, 245, 85, '当前Prompt码相位\n' + r'$P_{code}$' + '：uQ14.36')
-    d.box(385, 35, 245, 85, '高14 bit：码片地址\n低36 bit：小数相位')
-    d.box(740, 35, 280, 85, '本地码与五抽头\n供当前样点使用')
-    d.arrow((275, 77.5), (385, 77.5))
-    d.arrow((630, 77.5), (740, 77.5))
-    d.box(30, 200, 245, 85, '加一次码步进\n' + r'$P_{next}=P_{code}+K_{code}$', 13)
-    d.box(385, 200, 245, 85, '完整主码回绕\n到末端才减一个码周期')
-    d.box(740, 200, 280, 85, '保存连续码相位\n供下一ADC样点使用')
-    d.arrow((152.5, 120), (152.5, 200))
-    d.text(255, 159, '当前样点完成后', 11)
-    d.arrow((275, 242.5), (385, 242.5))
-    d.arrow((630, 242.5), (740, 242.5))
-    d.box(30, 365, 245, 85, '比较下一1 ms边界\n' + r'$P_{next}\geq B_{next}$')
-    d.box(385, 365, 245, 85, 'PDI结束信号\n所有相关支路共用')
-    d.arrow((152.5, 285), (152.5, 365))
-    d.arrow((275, 407.5), (385, 407.5))
-    d.text(880, 407, '片段边界只结束积分\n不把连续码相位置零', 14)
+    d = Diagram(1060, 325, folder)
+    d.box(30, 150, 195, 56, '码相位寄存器')
+    d.circle(350, 178, 17, '+')
+    d.arrow((225, 178), (333, 178))
+    d.text(279, 159, r'$P_{code}$', 13)
+    d.box(260, 25, 180, 48, '码步进')
+    d.arrow((350, 73), (350, 161))
+    d.text(370, 113, 'uQ0.36', 12, 'left')
+    d.box(560, 150, 190, 56, '主码周期回绕')
+    d.arrow((367, 178), (560, 178))
+    d.text(453, 158, r'$P_{next}$', 13)
+    d.box(850, 150, 180, 56, '更新连续相位')
+    d.arrow((750, 178), (850, 178))
+    d.arrow((940, 206), (940, 266), (127.5, 266), (127.5, 206))
+    d.text(534, 291, '下一样点的码相位；uQ14.36', 12)
+    d.box(560, 25, 190, 48, '1 ms 边界比较')
+    d.arrow((495, 178), (495, 49), (560, 49))
+    d.arrow((750, 49), (1010, 49))
+    d.text(872, 29, 'PDI 结束信号', 12)
+    d.text(655, 105, r'$P_{next}\geq B_{next}$', 13)
     d.save('code')
 
 
 def draw_load(folder):
-    d = Diagram(1140, 495, folder)
+    d = Diagram(1140, 375, folder)
     rows = [
-        (30, '载波多普勒\n' + r'$f_d$' + '：s14 Hz',
-         r'$T_c=f_d\times H_c$' + '\n' + r'$\mathrm{round}(T_c/2^{16})\ \mathrm{mod}\ 2^{32}$',
-         '载波步进\n' + r'$K_c$' + '：u32'),
-        (175, '载波多普勒\n' + r'$f_d$' + '：s14 Hz',
-         r'$\Delta K_{code}=\mathrm{round}(f_d H_a/2^{18})$' + '\n' + r'$K_{code,0}+\Delta K_{code}$',
-         '初始码步进\n' + r'$K_{code,init}$' + '：uQ0.36'),
-        (320, '移交码相位\nuQ15.8，单位dump',
-         r'$P_{load}=(C_{dump,Q8}\times R_{code})\ll17$' + '\n整数乘法与左移',
-         '初始码相位\n' + r'$P_{load}$' + '：uQ14.36'),
+        (25, '载波多普勒', 's14 Hz', r'$\times H_c$', '舍入与模回绕',
+         r'$\mathrm{round}(T_c/2^{16})\ \mathrm{mod}\ 2^{32}$', '载波步进', 'u32'),
+        (135, '载波多普勒', 's14 Hz', r'$\times H_a$', '舍入后加标称步进',
+         r'$\mathrm{round}(T_a/2^{18})+K_{code,0}$', '初始码步进', 'uQ0.36'),
+        (245, '移交码相位', 'uQ15.8 dump', r'$\times R_{code}$', '左移 17 bit',
+         r'$P_{load}=(C_{dump,Q8} R_{code})\ll17$', '初始码相位', 'uQ14.36'),
     ]
-    for y, left, center, right in rows:
-        d.box(30, y, 210, 100, left)
-        d.box(330, y, 440, 100, center, 14)
-        d.box(860, y, 250, 100, right)
-        d.arrow((240, y + 50), (330, y + 50))
-        d.arrow((770, y + 50), (860, y + 50))
-    d.text(570, 466, '到启动计数时同时装载；载波相位初值为0', 14)
+    for y, left, infmt, multiply, process, formula, right, outfmt in rows:
+        d.box(30, y, 165, 48, left)
+        d.text(112.5, y+70, infmt, 12)
+        d.box(280, y, 160, 48, multiply)
+        d.box(530, y, 250, 48, process)
+        d.text(655, y+70, formula, 12)
+        d.box(925, y, 185, 48, right)
+        d.text(1017.5, y+70, outfmt, 12)
+        for a, b in [(195, 280), (440, 530), (780, 925)]:
+            d.arrow((a, y+24), (b, y+24))
+    d.text(570, 352, '到启动计数时同时装载；载波相位初值为 0', 12)
     d.save('load')
 
 
 def draw_taps(folder):
-    d = Diagram(1140, 420, folder)
-    d.box(25, 40, 195, 85, 'Prompt码相位\nuQ14.36')
-    d.box(295, 40, 245, 85, '加入五抽头偏移\n在完整主码内回绕')
-    d.box(615, 40, 220, 85, '每抽头地址与小数\n' + r'$A_t=P_t\gg36$')
-    d.box(910, 40, 205, 85, '读取主码RAM\n每码片1 bit')
-    for a, b in [(220, 295), (540, 615), (835, 910)]:
-        d.arrow((a, 82.5), (b, 82.5))
-    d.box(295, 210, 245, 85, '抽头间距uQ1.10\n左移26 bit对齐')
-    d.arrow((417.5, 210), (417.5, 125))
-    d.box(615, 210, 220, 85, '本地符号生成\nPRN与半码片符号组合')
-    d.arrow((725, 125), (725, 210))
-    d.arrow((1012.5, 125), (1012.5, 252.5), (835, 252.5))
-    d.box(615, 340, 500, 55, '按资源池输出5 / 6 / 11个 ±1 码符号', 14)
-    d.arrow((725, 295), (725, 340))
-    d.text(270, 354, 'VE、E为负偏移；P为0\nL、VL为正偏移', 13)
+    d = Diagram(1140, 320, folder)
+    d.box(25, 30, 180, 50, 'Prompt 码相位')
+    d.box(300, 30, 215, 50, '抽头偏移与回绕')
+    d.box(600, 30, 215, 50, '地址与小数分离')
+    d.box(910, 30, 200, 50, '主码 RAM')
+    for a, b in [(205, 300), (515, 600), (815, 910)]:
+        d.arrow((a, 55), (b, 55))
+    d.text(115, 108, 'uQ14.36', 12)
+    d.box(300, 190, 215, 50, '抽头间距对齐')
+    d.arrow((407.5, 190), (407.5, 80))
+    d.text(432, 133, '左移 26 bit', 12, 'left')
+    d.text(407.5, 265, 'uQ1.10 → uQ1.36', 12)
+    d.box(600, 190, 215, 50, '本地符号组合')
+    d.arrow((707.5, 80), (707.5, 190))
+    d.text(730, 134, r'$F_t[35]$', 13, 'left')
+    d.arrow((1010, 80), (1010, 215), (815, 215))
+    d.text(930, 194, 'PRN', 12)
+    d.arrow((707.5, 240), (707.5, 290), (1080, 290))
+    d.text(930, 268, '5 / 6 / 11 个码符号', 12)
+    d.text(112, 216, 'VE / E / P / L / VL', 12)
     d.save('taps')
 
 
 def draw_corr(folder):
-    d = Diagram(1150, 460, folder)
-    d.box(30, 35, 190, 80, 'DDC基带I/Q\ns5，当前样点保持')
-    d.box(285, 35, 310, 80, '按资源池选支路\nVE → E → P → L → VL')
-    d.box(30, 185, 190, 80, '当前支路本地码\n+1 / −1')
-    d.box(285, 185, 310, 80, '符号相关\n+1保留原值；−1取反')
-    d.box(665, 185, 210, 80, '加到该支路积分\n中间量s19 / s21')
-    d.box(935, 185, 185, 80, '写回积分状态\ns18 / s20')
-    d.arrow((220, 75), (285, 75))
-    d.arrow((440, 115), (440, 185))
-    d.arrow((220, 225), (285, 225))
-    d.arrow((595, 225), (665, 225))
-    d.arrow((875, 225), (935, 225))
-    d.box(665, 35, 210, 80, '读出该支路积分\nI、Q分别保存')
-    d.arrow((770, 115), (770, 185))
-    d.text(440, 340, '同批最多3条复数通路\n各支路积分历史独立', 14)
-    d.box(665, 345, 455, 65, '全部批次完成 → 处理下一ADC样点', 14)
-    d.arrow((1027.5, 265), (1027.5, 345))
+    d = Diagram(1120, 330, folder)
+    d.box(30, 130, 175, 52, '基带 I/Q')
+    d.circle(350, 156, 17, '×')
+    d.box(270, 25, 160, 48, '本地码符号')
+    d.arrow((350, 73), (350, 139))
+    d.text(370, 105, '±1', 12, 'left')
+    d.arrow((205, 156), (333, 156))
+    d.text(265, 137, 's5', 12)
+    d.circle(605, 156, 17, '+')
+    d.arrow((367, 156), (588, 156))
+    d.text(473, 137, 's5 I/Q', 12)
+    d.text(473, 183, '保持原值或取反', 12)
+    d.box(810, 130, 230, 52, '分支积分寄存器')
+    d.arrow((622, 156), (810, 156))
+    d.text(716, 137, 's19 / s21', 12)
+    d.text(945, 217, 's18 / s20', 12, 'left')
+    d.arrow((925, 182), (925, 255), (605, 255), (605, 173))
+    d.text(757, 236, r'$A$', 13)
+    d.text(560, 302, '同批最多 3 条复数通路；各分量、副本和抽头独立保存积分', 12)
     d.save('corr')
 
 
 def draw_pdi(folder):
-    d = Diagram(1120, 440, folder)
-    d.box(30, 40, 230, 90, '先加入当前样点\n' + r'$S=A+u$')
-    d.box(360, 40, 310, 90, 'Prompt码相位边界\n' + r'$P_{next}\geq B_{next}$' + '？')
-    d.arrow((260, 85), (360, 85))
-    d.box(800, 40, 290, 90, '继续当前PDI\n' + r'$A\leftarrow S$')
-    d.arrow((670, 85), (800, 85))
-    d.text(735, 61, '否', 13)
-    d.box(360, 230, 310, 90, '保存本条PDI结果\n' + r'$R\leftarrow S$')
-    d.arrow((515, 130), (515, 230))
-    d.text(540, 180, '是', 13)
-    d.box(800, 230, 290, 90, '清零该支路积分\n' + r'$A\leftarrow0$')
-    d.arrow((670, 275), (800, 275))
-    d.text(145, 267, '每个有效I/Q支路\n均执行相同操作', 14)
-    d.text(560, 393, '先保存包含当前样点的结果，再清零；下一样点进入下一条PDI', 14)
+    d = Diagram(1080, 345, folder)
+    d.box(30, 70, 210, 52, '加入当前样点')
+    d.text(135, 150, r'$S=A+u$', 13)
+    d.diamond(520, 96, 260, 110, r'$P_{next}\geq B_{next}$', 14)
+    d.arrow((240, 96), (390, 96))
+    d.box(850, 70, 200, 52, '继续积分')
+    d.arrow((650, 96), (850, 96))
+    d.text(750, 77, '否', 12)
+    d.text(950, 150, r'$A\leftarrow S$', 13)
+    d.box(415, 236, 210, 52, '保存 PDI 结果')
+    d.arrow((520, 151), (520, 236))
+    d.text(544, 193, '是', 12)
+    d.text(520, 315, r'$R\leftarrow S$', 13)
+    d.box(850, 236, 200, 52, '积分清零')
+    d.arrow((625, 262), (850, 262))
+    d.text(950, 315, r'$A\leftarrow0$', 13)
+    d.text(135, 262, '所有有效支路\n共用同一边界', 13)
     d.save('pdi')
 
 
 def draw_example(folder):
-    d = Diagram(1120, 320, folder)
+    d = Diagram(1120, 275, folder)
     at = lambda ms: 60 + (ms - 4) * 980 / 3
     x = [at(ms) for ms in [4, 4.7, 5, 6, 7]]
-    d.text(at(4.7), 40, '移交：约4.7 ms\nPrompt约4808.1 chip', 13)
-    d.arrow((at(4.7), 76), (at(4.7), 112))
-    d.line((60, 120), (1040, 120))
+    d.text(at(4.7), 35, '移交约 4.7 ms\nPrompt 约 4808.1 chip', 13)
+    d.arrow((at(4.7), 66), (at(4.7), 94))
+    d.line((60, 100), (1040, 100))
     for pos in x:
-        d.line((pos, 114), (pos, 127))
+        d.line((pos, 94), (pos, 106))
     for pos, label in [(at(4), '4 ms\n4092 chip'), (at(5), '5 ms\n5115 chip'),
                         (at(6), '6 ms\n6138 chip'), (at(7), '7 ms\n7161 chip')]:
-        d.text(pos, 157, label, 12)
+        d.text(pos, 133, label, 12)
     for left, right, label in [(at(4.7), at(5), 'R0\n约0.3 ms'),
                                (at(5), at(6), 'R1\n约5～6 ms'),
                                (at(6), at(7), 'R2\n约6～7 ms')]:
-        d.box(left, 202, right - left, 68, label, 12)
-    d.text(560, 302, '每段数据积成一个结果；图中数字为便于阅读的近似值', 12)
+        d.box(left, 175, right - left, 60, label, 12)
+    d.text(560, 259, '每段分别积成一个结果', 12)
     d.save('example')
 
 
@@ -317,6 +354,9 @@ def verify(doc, folder, reference_vault):
         assert name + '.svg' in images
         ET.parse(folder / (name + '.svg'))
         assert (folder / (name + '.png')).exists()
+        glyphs = (folder / (name + '.svg')).read_text()
+        assert 'SimSun' in glyphs and 'TimesNewRoman' in glyphs
+        assert 'NotoSans' not in glyphs and 'DejaVuSans' not in glyphs
     for name, digest in PROTECTED.items():
         assert name in images
         assert hashlib.sha256((reference_vault / '90-附件' / name).read_bytes()).hexdigest() == digest
@@ -325,6 +365,9 @@ def verify(doc, folder, reference_vault):
     assert chapter(text) == chapter(original), '第10章被修改'
     return dict(g1_channels=rows, rounding_examples='PASS', symbols='PASS',
                 new_diagrams=len(NAMES), chapter_10_unchanged=True,
+                diagram_fonts=dict(chinese='SimSun', latin='Times New Roman',
+                                   svg_glyphs_embedded=True),
+                diagram_names=list(NAMES.values()),
                 chapter_10_sha256=hashlib.sha256(chapter(text).encode()).hexdigest(),
                 protected_image_sha256=PROTECTED)
 
