@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580" role="img" aria-labelledby="title desc">
+  <title id="title">码环比例积分与载波多普勒辅助</title>
+  <desc id="desc">新码误差同时进入比例与积分支路，两路相加得到DLL修正。载波多普勒按码率与射频之比换算为辅助码率，与标称码率及DLL修正相加形成输出。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:22px; fill:#263442; text-anchor:middle; }
+    .small { font-size:18px; } .box { fill:#FFFFFF; stroke:#263442; stroke-width:1.5; }
+    .shade { fill:#EEF3F6; stroke:#263442; stroke-width:1.5; }
+    .flow { fill:none; stroke:#263442; stroke-width:1.5; marker-end:url(#arrow); }
+    .line { fill:none; stroke:#263442; stroke-width:1.5; }
+  </style>
+  <rect width="1200" height="580" fill="#FFFFFF"/>
+  <rect x="30" y="65" width="190" height="76" rx="4" class="shade"/>
+  <text x="125" y="110">载波多普勒 u</text>
+  <path d="M220 103H329" class="flow"/>
+  <rect x="330" y="65" width="240" height="76" rx="4" class="box"/>
+  <text x="450" y="97">码率比例换算</text><text x="450" y="125" class="small">R₀ / f<tspan baseline-shift="sub" font-size="14">c</tspan></text>
+  <path d="M570 103H920V304" class="flow"/>
+  <text x="738" y="88" class="small">载波辅助码率</text>
+  <rect x="30" y="285" width="190" height="76" rx="4" class="shade"/>
+  <text x="125" y="330">码误差 e<tspan baseline-shift="sub" font-size="16">c</tspan></text>
+  <path d="M220 323H270" class="line"/>
+  <circle cx="270" cy="323" r="3.5" fill="#263442"/>
+  <path d="M270 323V228H329" class="flow"/>
+  <path d="M270 323V418H329" class="flow"/>
+  <rect x="330" y="190" width="240" height="76" rx="4" class="box"/>
+  <text x="450" y="222">比例修正</text><text x="450" y="250" class="small">K<tspan baseline-shift="sub" font-size="14">p</tspan>e<tspan baseline-shift="sub" font-size="14">c</tspan></text>
+  <rect x="330" y="380" width="240" height="76" rx="4" class="box"/>
+  <text x="450" y="412">积分修正</text><text x="450" y="440" class="small">v′ ＝ v ＋ K<tspan baseline-shift="sub" font-size="14">i</tspan>e<tspan baseline-shift="sub" font-size="14">c</tspan></text>
+  <path d="M570 228H685V304" class="flow"/>
+  <path d="M570 418H685V342" class="flow"/>
+  <circle cx="685" cy="323" r="18" class="box"/><path d="M674 323H696M685 312V334" class="line"/>
+  <path d="M703 323H901" class="flow"/>
+  <text x="800" y="304" class="small">DLL修正 r′</text>
+  <circle cx="920" cy="323" r="18" class="box"/><path d="M909 323H931M920 312V334" class="line"/>
+  <path d="M938 323H999" class="flow"/>
+  <rect x="1000" y="285" width="170" height="76" rx="4" class="shade"/>
+  <text x="1085" y="330">本地码率 R</text>
+  <rect x="805" y="461" width="230" height="64" rx="4" class="shade"/>
+  <text x="920" y="502">标称码率 R₀</text>
+  <path d="M920 461V342" class="flow"/>
+</svg>

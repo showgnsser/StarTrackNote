@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">新测量更新环路与控制字生效</title>
+  <desc id="desc">观察完整时更新环路，尚未完整时保持输出。当前频率和码率经接口转换为控制字，在下一PDI边界生效，硬件保持NCO相位连续推进。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#263442"/></marker></defs>
+  <style>
+    text { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:22px; fill:#263442; text-anchor:middle; }
+    .small { font-size:18px; } .box { fill:#FFFFFF; stroke:#263442; stroke-width:1.5; }
+    .shade { fill:#EEF3F6; stroke:#263442; stroke-width:1.5; }
+    .flow { fill:none; stroke:#263442; stroke-width:1.5; marker-end:url(#arrow); }
+  </style>
+  <rect width="1200" height="500" fill="#FFFFFF"/>
+  <rect x="35" y="166" width="180" height="76" rx="4" class="shade"/>
+  <text x="125" y="211">处理当前PDI</text>
+  <path d="M215 204H269" class="flow"/>
+  <path d="M270 204L365 139L460 204L365 269Z" class="box"/>
+  <text x="365" y="199">形成新</text><text x="365" y="226">测量</text>
+  <path d="M365 139V85H534" class="flow"/>
+  <text x="462" y="68" class="small">已完成</text>
+  <rect x="535" y="47" width="220" height="76" rx="4" class="box"/>
+  <text x="645" y="92">更新环路</text>
+  <path d="M365 269V329H534" class="flow"/>
+  <text x="462" y="312" class="small">尚未完成</text>
+  <rect x="535" y="291" width="220" height="76" rx="4" class="box"/>
+  <text x="645" y="336">保持已有输出</text>
+  <path d="M755 85H805V187H859" class="flow"/>
+  <path d="M755 329H805V221H859" class="flow"/>
+  <rect x="860" y="159" width="295" height="90" rx="4" class="box"/>
+  <text x="1007" y="195">频率、码率 → 控制字</text>
+  <text x="1007" y="227" class="small">指定下一PDI边界生效</text>
+  <path d="M1007 249V379" class="flow"/>
+  <rect x="860" y="380" width="295" height="76" rx="4" class="shade"/>
+  <text x="1007" y="412">硬件更新步进</text><text x="1007" y="440" class="small">NCO相位连续推进</text>
+</svg>
