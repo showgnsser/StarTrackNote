@@ -11,29 +11,29 @@
   </style>
   <rect width="1200" height="510" fill="#FFFFFF"/>
   <rect x="30" y="65" width="170" height="76" rx="4" class="shade"/>
-  <text x="115" y="110">频差 e<tspan baseline-shift="sub" font-size="16">f</tspan></text>
+  <text x="115" y="110">频差</text>
   <path d="M200 103H289" class="flow"/>
   <rect x="290" y="65" width="240" height="76" rx="4" class="box"/>
-  <text x="410" y="97">频差加权</text><text x="410" y="124" class="small">h₁e<tspan baseline-shift="sub" font-size="14">f</tspan>、h₂g</text>
+  <text x="410" y="110">FLL频差修正</text>
   <path d="M530 103H575V175H619" class="flow"/>
   <rect x="30" y="300" width="170" height="76" rx="4" class="shade"/>
-  <text x="115" y="345">相差 e<tspan baseline-shift="sub" font-size="16">φ</tspan></text>
+  <text x="115" y="345">相差</text>
   <path d="M200 338H289" class="flow"/>
   <circle cx="245" cy="338" r="3.5" fill="#263442"/>
   <rect x="290" y="300" width="240" height="76" rx="4" class="box"/>
-  <text x="410" y="332">相差积分加权</text><text x="410" y="359" class="small">k₂e<tspan baseline-shift="sub" font-size="14">φ</tspan>、k₃e<tspan baseline-shift="sub" font-size="14">φ</tspan></text>
+  <text x="410" y="345">PLL相差修正</text>
   <path d="M530 338H575V285H619" class="flow"/>
   <rect x="620" y="115" width="255" height="245" rx="4" class="box"/>
   <text x="747" y="152">共享积分状态</text>
   <path d="M642 169H853" class="line"/>
-  <text x="747" y="209">变化率 a → a′</text>
+  <text x="747" y="209">变化率积分</text>
   <path d="M747 226V259" class="flow"/>
-  <text x="747" y="294">频率 b → b′</text>
+  <text x="747" y="294">频率积分</text>
   <text x="747" y="332" class="small">保留上次状态</text>
   <path d="M875 237H959" class="flow"/>
   <rect x="960" y="194" width="210" height="86" rx="4" class="shade"/>
-  <text x="1065" y="229">载波频率 u′</text>
-  <text x="1065" y="259" class="small">b′ ＋ k₁e<tspan baseline-shift="sub" font-size="14">φ</tspan></text>
+  <text x="1065" y="229">载波频率</text>
+  <text x="1065" y="259" class="small">合成控制输出</text>
   <path d="M245 338V437H1065V281" class="flow"/>
-  <text x="720" y="420" class="small">相差比例修正 k₁e<tspan baseline-shift="sub" font-size="14">φ</tspan></text>
+  <text x="720" y="420" class="small">相差比例修正</text>
 </svg>
