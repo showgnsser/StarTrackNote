@@ -1,0 +1,98 @@
+{
+  "g1_channels": [
+    {
+      "channel": -7,
+      "rf_hz": 1598062500,
+      "nominal_step": 3429262950,
+      "aiding_raw": 562532
+    },
+    {
+      "channel": -6,
+      "rf_hz": 1598625000,
+      "nominal_step": 3429262950,
+      "aiding_raw": 562334
+    },
+    {
+      "channel": -5,
+      "rf_hz": 1599187500,
+      "nominal_step": 3429262950,
+      "aiding_raw": 562136
+    },
+    {
+      "channel": -4,
+      "rf_hz": 1599750000,
+      "nominal_step": 3429262950,
+      "aiding_raw": 561938
+    },
+    {
+      "channel": -3,
+      "rf_hz": 1600312500,
+      "nominal_step": 3429262950,
+      "aiding_raw": 561741
+    },
+    {
+      "channel": -2,
+      "rf_hz": 1600875000,
+      "nominal_step": 3429262950,
+      "aiding_raw": 561543
+    },
+    {
+      "channel": -1,
+      "rf_hz": 1601437500,
+      "nominal_step": 3429262950,
+      "aiding_raw": 561346
+    },
+    {
+      "channel": 0,
+      "rf_hz": 1602000000,
+      "nominal_step": 3429262950,
+      "aiding_raw": 561149
+    },
+    {
+      "channel": 1,
+      "rf_hz": 1602562500,
+      "nominal_step": 3429262950,
+      "aiding_raw": 560952
+    },
+    {
+      "channel": 2,
+      "rf_hz": 1603125000,
+      "nominal_step": 3429262950,
+      "aiding_raw": 560755
+    },
+    {
+      "channel": 3,
+      "rf_hz": 1603687500,
+      "nominal_step": 3429262950,
+      "aiding_raw": 560559
+    },
+    {
+      "channel": 4,
+      "rf_hz": 1604250000,
+      "nominal_step": 3429262950,
+      "aiding_raw": 560362
+    },
+    {
+      "channel": 5,
+      "rf_hz": 1604812500,
+      "nominal_step": 3429262950,
+      "aiding_raw": 560166
+    },
+    {
+      "channel": 6,
+      "rf_hz": 1605375000,
+      "nominal_step": 3429262950,
+      "aiding_raw": 559969
+    }
+  ],
+  "rounding_examples": "PASS",
+  "symbols": "PASS",
+  "new_diagrams": 8,
+  "chapter_10_unchanged": true,
+  "chapter_10_sha256": "3a0bde8f3e9638a2f2ff7af8ff74ad936924a09b0d13490ff08904a1d8972fed",
+  "protected_image_sha256": {
+    "图LTFP-09_单分量五抽头跟踪流程_v04.png": "af9e7cbc4da3363a65077448323f4693bd76f90b59abe955277bae040c234b71",
+    "图LTFP-10_数据导频跟踪流程_v03.png": "5ef0b31e638106659877fd9c90784d2eac2de70023147f601f89e8452861ce2d",
+    "图LTFP-11_BOC双副本跟踪流程_v03.png": "c8697a5d55690be2a23cd8f5416b5b1ce69db8c1b24e31002a77de468782037a"
+  }
+}
