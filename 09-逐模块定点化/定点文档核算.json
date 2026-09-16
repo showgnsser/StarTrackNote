@@ -89,6 +89,16 @@
   "symbols": "PASS",
   "new_diagrams": 8,
   "chapter_10_unchanged": true,
+  "correlation_requests": {
+    "rows": 7,
+    "counts_by_pool": [
+      5,
+      6,
+      5,
+      11
+    ],
+    "scheduling_instructions": false
+  },
   "diagram_fonts": {
     "chinese": "SimSun",
     "latin": "Times New Roman",
@@ -100,7 +110,7 @@
     "图LTFP-03_码NCO定点数据关系_v03",
     "图LTFP-04_捕获移交与NCO初始装载_v03",
     "图LTFP-05_五抽头与本地副本生成_v03",
-    "图LTFP-06_分批相关与复数累加_v03",
+    "图LTFP-06_各信号相关支路与积分结果_v04",
     "图LTFP-07_PDI结果冻结_v03",
     "图LTFP-08_B1C_4_7ms移交积分区间_v03"
   ],

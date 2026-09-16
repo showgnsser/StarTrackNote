@@ -18,7 +18,7 @@ NAMES = {
     'code': '图LTFP-03_码NCO定点数据关系_v03',
     'load': '图LTFP-04_捕获移交与NCO初始装载_v03',
     'taps': '图LTFP-05_五抽头与本地副本生成_v03',
-    'corr': '图LTFP-06_分批相关与复数累加_v03',
+    'corr': '图LTFP-06_各信号相关支路与积分结果_v04',
     'pdi': '图LTFP-07_PDI结果冻结_v03',
     'example': '图LTFP-08_B1C_4_7ms移交积分区间_v03',
 }
@@ -256,25 +256,24 @@ def draw_taps(folder):
 
 
 def draw_corr(folder):
-    d = Diagram(1120, 330, folder)
-    d.box(30, 130, 175, 52, '基带 I/Q')
-    d.circle(350, 156, 17, '×')
-    d.box(270, 25, 160, 48, '本地码符号')
-    d.arrow((350, 73), (350, 139))
-    d.text(370, 105, '±1', 12, 'left')
-    d.arrow((205, 156), (333, 156))
-    d.text(265, 137, 's5', 12)
-    d.circle(605, 156, 17, '+')
-    d.arrow((367, 156), (588, 156))
-    d.text(473, 137, 's5 I/Q', 12)
-    d.text(473, 183, '保持原值或取反', 12)
-    d.box(810, 130, 230, 52, '分支积分寄存器')
-    d.arrow((622, 156), (810, 156))
-    d.text(716, 137, 's19 / s21', 12)
-    d.text(945, 217, 's18 / s20', 12, 'left')
-    d.arrow((925, 182), (925, 255), (605, 255), (605, 173))
-    d.text(757, 236, r'$A$', 13)
-    d.text(560, 302, '同批最多 3 条复数通路；各分量、副本和抽头独立保存积分', 12)
+    d = Diagram(1160, 415, folder)
+    rows = [
+        (25, 70, 'L1CA / B1I / G1\ns5 I/Q',
+         '单分量 PRN：VE / E / P / L / VL', '5 组 I/Q\ns18'),
+        (135, 85, 'L5 / B2a / E5a\ns5 I/Q',
+         '导频 PRN：VE / E / P / L / VL\n数据 PRN：P', '6 组 I/Q\ns20'),
+        (260, 110, 'E1 / B1C\ns5 I/Q',
+         '导频 BOC：VE / E / P / L / VL\n'
+         '导频 PRN-only：VE / E / P / L / VL\n数据 BOC：P', '11 组 I/Q\ns18'),
+    ]
+    for y, height, signal, branches, result in rows:
+        center = y + height/2
+        d.box(25, center-32, 220, 64, signal)
+        d.box(340, y, 515, height, branches)
+        d.box(950, center-32, 185, 64, result)
+        d.arrow((245, center), (340, center))
+        d.arrow((855, center), (950, center))
+    d.text(580, 397, '每个抽头分别形成一组 I/Q 相关积分结果', 12)
     d.save('corr')
 
 
@@ -337,6 +336,16 @@ def verify(doc, folder, reference_vault):
               '才允许装载', '无效移交描述符', '必须重新核定位宽']:
         assert s not in text, s
     assert text.index('## 计算符号约定') < text.index('## 1 设计范围')
+    ch8 = text.split('## 8 多支路相关与预检测积分')[1].split('## 9 ')[0]
+    for forbidden in ['分批', '批次', 'lane', '寄存器', '并行通路', '调度', '积分RAM']:
+        assert forbidden not in ch8, forbidden
+    requests = re.findall(r'^\| ([0-3]) \| (.+?) \| (.+?) \| (.+?) \| (VE、E、P、L、VL|P) \| ([15]) \|$', ch8, re.M)
+    assert len(requests) == 7
+    counts = [0, 0, 0, 0]
+    for pool, signal, component, replica, taps, count in requests:
+        assert int(count) == len(taps.split('、'))
+        counts[int(pool)] += int(count)
+    assert counts == [5, 6, 5, 11]
     assert sum(line.strip() == '$$' for line in text.splitlines()) % 2 == 0
     for value in [Fraction(7, 2), Fraction(-7, 2), Fraction(5, 2), Fraction(-5, 2)]:
         assert round_away(value) == (4 if value == Fraction(7, 2) else
@@ -352,9 +361,12 @@ def verify(doc, folder, reference_vault):
     assert len(images) == 11
     for name in NAMES.values():
         assert name + '.svg' in images
-        ET.parse(folder / (name + '.svg'))
-        assert (folder / (name + '.png')).exists()
-        glyphs = (folder / (name + '.svg')).read_text()
+        asset = folder / (name + '.svg')
+        if not asset.exists():
+            asset = reference_vault / '90-附件' / (name + '.svg')
+        ET.parse(asset)
+        assert asset.with_suffix('.png').exists()
+        glyphs = asset.read_text()
         assert 'SimSun' in glyphs and 'TimesNewRoman' in glyphs
         assert 'NotoSans' not in glyphs and 'DejaVuSans' not in glyphs
     for name, digest in PROTECTED.items():
@@ -365,6 +377,8 @@ def verify(doc, folder, reference_vault):
     assert chapter(text) == chapter(original), '第10章被修改'
     return dict(g1_channels=rows, rounding_examples='PASS', symbols='PASS',
                 new_diagrams=len(NAMES), chapter_10_unchanged=True,
+                correlation_requests=dict(rows=len(requests), counts_by_pool=counts,
+                                          scheduling_instructions=False),
                 diagram_fonts=dict(chinese='SimSun', latin='Times New Roman',
                                    svg_glyphs_embedded=True),
                 diagram_names=list(NAMES.values()),
@@ -377,11 +391,14 @@ def main():
     parser.add_argument('--asset-dir', type=Path, default=ROOT.parent / '90-附件')
     parser.add_argument('--reference-vault', type=Path, default=ROOT.parent)
     parser.add_argument('--check-only', action='store_true')
+    parser.add_argument('--only', choices=list(NAMES))
     args = parser.parse_args()
     if not args.check_only:
-        for drawing in [draw_overview, draw_ddc, draw_code, draw_load,
-                        draw_taps, draw_corr, draw_pdi, draw_example]:
-            drawing(args.asset_dir)
+        drawers = dict(zip(NAMES, [draw_overview, draw_ddc, draw_code, draw_load,
+                                  draw_taps, draw_corr, draw_pdi, draw_example]))
+        for key, drawing in drawers.items():
+            if args.only is None or args.only == key:
+                drawing(args.asset_dir)
     result = verify(ROOT / DOC_NAME, args.asset_dir, args.reference_vault)
     if not args.check_only:
         (ROOT / '定点文档核算.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
