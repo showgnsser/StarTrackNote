@@ -1,0 +1,5032 @@
+{
+  "title": "跟踪与定位仿真结果",
+  "compiled_date": "2026-11-10",
+  "new_simulations": 0,
+  "qualification_complete": false,
+  "tracking_source_commit": "1e10c19ff7a54fef510ea36f5b9a7e9227b99970",
+  "tracking_conditions": {
+    "signals": 8,
+    "cases_per_condition": 144,
+    "seeds_per_signal": 16,
+    "rates_hz_s": [
+      0,
+      0.1,
+      -0.1,
+      0.2,
+      -0.2,
+      0.5,
+      -0.5,
+      1,
+      -1
+    ],
+    "total_cases": 3456,
+    "initial_cn0_db_hz": 35,
+    "sync_s": 60,
+    "fade_s": 320,
+    "hold_s": 1200,
+    "total_s": 1640,
+    "noise_psd_dbm_hz": -170,
+    "frequency_rms_max_hz": 5,
+    "frequency_p95_max_hz": 10,
+    "code_precision_separate": true
+  },
+  "regular_pull": {
+    "L1CA": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    },
+    "B1I D1": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    },
+    "G1": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    },
+    "L5": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    },
+    "B2a": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    },
+    "E5a": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    },
+    "E1": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    },
+    "B1C": {
+      "count": 144,
+      "passed": 144,
+      "synced": 144
+    }
+  },
+  "tracking": [
+    {
+      "signal": "L1CA",
+      "unaided158": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 122,
+        "600": 118,
+        "1200": 117,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 137,
+        "600": 128,
+        "1200": 107,
+        "power_dbm": -167,
+        "total": 144
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "unaided158": {
+        "300": 141,
+        "600": 143,
+        "1200": 143,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 94,
+        "600": 87,
+        "1200": 71,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -162,
+        "total": 144
+      }
+    },
+    {
+      "signal": "G1",
+      "unaided158": {
+        "300": 143,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 116,
+        "600": 130,
+        "1200": 117,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 142,
+        "600": 142,
+        "1200": 138,
+        "power_dbm": -166,
+        "total": 144
+      }
+    },
+    {
+      "signal": "L5",
+      "unaided158": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 128,
+        "600": 109,
+        "1200": 86,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -162,
+        "total": 144
+      }
+    },
+    {
+      "signal": "B2a",
+      "unaided158": {
+        "300": 144,
+        "600": 144,
+        "1200": 141,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 132,
+        "600": 116,
+        "1200": 94,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -162,
+        "total": 144
+      }
+    },
+    {
+      "signal": "E5a",
+      "unaided158": {
+        "300": 143,
+        "600": 142,
+        "1200": 142,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 130,
+        "600": 111,
+        "1200": 96,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -162,
+        "total": 144
+      }
+    },
+    {
+      "signal": "E1",
+      "unaided158": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 125,
+        "600": 114,
+        "1200": 98,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -162,
+        "total": 144
+      }
+    },
+    {
+      "signal": "B1C",
+      "unaided158": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -158,
+        "total": 144
+      },
+      "unaided160": {
+        "300": 144,
+        "600": 144,
+        "1200": 143,
+        "power_dbm": -160,
+        "total": 144
+      },
+      "aided": {
+        "300": 144,
+        "600": 144,
+        "1200": 144,
+        "power_dbm": -162,
+        "total": 144
+      }
+    }
+  ],
+  "tracking_by_rate": [
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -167,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 15
+        },
+        "600": {
+          "kept": 15,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 11
+        },
+        "600": {
+          "kept": 14,
+          "passed": 10
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 14
+        },
+        "600": {
+          "kept": 15,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 15
+        },
+        "600": {
+          "kept": 16,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 13
+        },
+        "600": {
+          "kept": 13,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 13
+        },
+        "600": {
+          "kept": 15,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 14
+        },
+        "600": {
+          "kept": 15,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 13
+        },
+        "600": {
+          "kept": 15,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 14
+        },
+        "600": {
+          "kept": 15,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L1CA",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 9,
+          "passed": 5
+        },
+        "600": {
+          "kept": 7,
+          "passed": 7
+        },
+        "1200": {
+          "kept": 5,
+          "passed": 5
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 10
+        },
+        "600": {
+          "kept": 11,
+          "passed": 9
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 7
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 10
+        },
+        "600": {
+          "kept": 11,
+          "passed": 9
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 8
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 11
+        },
+        "600": {
+          "kept": 13,
+          "passed": 11
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 12
+        },
+        "600": {
+          "kept": 11,
+          "passed": 11
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 13
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 12
+        },
+        "600": {
+          "kept": 10,
+          "passed": 10
+        },
+        "1200": {
+          "kept": 7,
+          "passed": 6
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 12,
+          "passed": 9
+        },
+        "600": {
+          "kept": 11,
+          "passed": 8
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 8
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 12
+        },
+        "600": {
+          "kept": 11,
+          "passed": 10
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 15
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 15
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 15
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -166,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 14
+        },
+        "600": {
+          "kept": 16,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 11
+        },
+        "600": {
+          "kept": 16,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 13
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 12
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 13
+        },
+        "600": {
+          "kept": 15,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 13
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 13
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 13
+        },
+        "600": {
+          "kept": 16,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 14
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 15
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "G1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 13
+        },
+        "600": {
+          "kept": 11,
+          "passed": 11
+        },
+        "1200": {
+          "kept": 7,
+          "passed": 7
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 7,
+          "passed": 7
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 10,
+          "passed": 10
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 13
+        },
+        "600": {
+          "kept": 9,
+          "passed": 9
+        },
+        "1200": {
+          "kept": 6,
+          "passed": 6
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "L5",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 8,
+          "passed": 8
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 13
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 13
+        },
+        "600": {
+          "kept": 10,
+          "passed": 10
+        },
+        "1200": {
+          "kept": 7,
+          "passed": 7
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B2a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 11,
+          "passed": 11
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 12,
+          "passed": 12
+        },
+        "600": {
+          "kept": 9,
+          "passed": 9
+        },
+        "1200": {
+          "kept": 8,
+          "passed": 8
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E5a",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 15,
+          "passed": 15
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 11,
+          "passed": 11
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 13,
+          "passed": 13
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 12,
+          "passed": 12
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 13
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 15,
+          "passed": 15
+        },
+        "600": {
+          "kept": 14,
+          "passed": 14
+        },
+        "1200": {
+          "kept": 14,
+          "passed": 14
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 12,
+          "passed": 12
+        },
+        "600": {
+          "kept": 11,
+          "passed": 11
+        },
+        "1200": {
+          "kept": 9,
+          "passed": 9
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 13,
+          "passed": 13
+        },
+        "600": {
+          "kept": 12,
+          "passed": 12
+        },
+        "1200": {
+          "kept": 8,
+          "passed": 8
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 14,
+          "passed": 14
+        },
+        "600": {
+          "kept": 13,
+          "passed": 13
+        },
+        "1200": {
+          "kept": 10,
+          "passed": 10
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "E1",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -162,
+      "bit_mode": 1,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 15,
+          "passed": 15
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -160,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.2,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -0.5,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": 1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    },
+    {
+      "signal": "B1C",
+      "power_dbm": -158,
+      "bit_mode": 0,
+      "rate_hz_s": -1,
+      "count": 16,
+      "checkpoints": {
+        "300": {
+          "kept": 16,
+          "passed": 16
+        },
+        "600": {
+          "kept": 16,
+          "passed": 16
+        },
+        "1200": {
+          "kept": 16,
+          "passed": 16
+        }
+      }
+    }
+  ],
+  "navigation_conditions": {
+    "independent_scenes_per_signal_and_power": 1,
+    "seed": 2026093001,
+    "latitude_deg": 31.2304,
+    "longitude_deg": 121.4737,
+    "height_m": 20,
+    "clock_bias_s": 0.002,
+    "strong_dbm": -130,
+    "observation_interval_ms": 20,
+    "position_log_interval_ms": 1000,
+    "atmosphere": false,
+    "multipath": false,
+    "tcxo": false,
+    "known_visible_prns": true,
+    "warm_preparation_s": 60,
+    "warm_ttff_excludes_preparation": true
+  },
+  "navigation": [
+    {
+      "signal": "L1CA",
+      "weak_dbm": -148,
+      "warm": false,
+      "strong": {
+        "ttff_s": 42.08,
+        "p95_m": 1.9241162092912967,
+        "logged_fixes": 78,
+        "position_source": "L1CA-strong-2026093001.pos",
+        "log_source": "L1CA-strong-2026093001-receive.log",
+        "position_sha256": "820b046c1e8e9d0a157a4e29738fc0c179bf2bd3d70cb5758c690b5cb18491b5",
+        "log_sha256": "123a0aa70e99f9bb7f62dc4707ec0375af274f7c15d99932e1a9042572cc551e"
+      },
+      "weak": {
+        "ttff_s": 318.08,
+        "p95_m": 24.52405985793557,
+        "logged_fixes": 282,
+        "position_source": "L1CA-weak-2026093001.pos",
+        "log_source": "L1CA-weak-2026093001-receive.log",
+        "position_sha256": "4350a34831a1e2e49badee749ae54f8979a7122316bccd32d1e6ed17eb8fd37b",
+        "log_sha256": "c38f822e73503db6b499c908927e42fdca148fdd3336a068ecd433c7cd5f5296"
+      }
+    },
+    {
+      "signal": "B1I D1",
+      "weak_dbm": -146,
+      "warm": false,
+      "strong": {
+        "ttff_s": 48.1,
+        "p95_m": 1.0050354312594059,
+        "logged_fixes": 72,
+        "position_source": "B1I-strong-2026093001.pos",
+        "log_source": "B1I-strong-2026093001-receive.log",
+        "position_sha256": "7adc499c794085f2e389a5785be43ecf1c023f46fb1aac472c9c5a50a428e9eb",
+        "log_sha256": "c1186b350e477b380b78ab0927a3505367268fb29ec3e4fc696361d38a0c34bb"
+      },
+      "weak": {
+        "ttff_s": 138.14,
+        "p95_m": 13.377007186175822,
+        "logged_fixes": 462,
+        "position_source": "B1I-weak-2026093001.pos",
+        "log_source": "B1I-weak-2026093001-receive.log",
+        "position_sha256": "09076efde99ea6d209d03556242e292d3337540856ada7054e935028d8ebab5a",
+        "log_sha256": "22368d2393110698aaa8265b6a6703680f005e44c8e7c20ed684566aac4e0198"
+      }
+    },
+    {
+      "signal": "G1",
+      "weak_dbm": -148,
+      "warm": false,
+      "strong": {
+        "ttff_s": 65.08,
+        "p95_m": 5.691942196096815,
+        "logged_fixes": 56,
+        "position_source": "replay-glo-frame-strong.pos",
+        "log_source": "replay-glo-frame-strong.log",
+        "position_sha256": "e506d12b506d201447ae3d07c0069c1009347a16cfa7f13485365178d39241d7",
+        "log_sha256": "6b95e503a1d9a7da729dbbde85dba843437eaeba86962fa79919777a6af72806"
+      },
+      "weak": {
+        "ttff_s": 365.08,
+        "p95_m": 110.13483666112013,
+        "logged_fixes": 236,
+        "position_source": "replay-glo-frame-confirm.pos",
+        "log_source": "replay-glo-frame-confirm.log",
+        "position_sha256": "1ed4fd7055fdca20cf465af27072054d261186252a6f645493a152ee3f30a40c",
+        "log_sha256": "edf931d0643060b547b30c2abbd84260bc3ef8a516e022b5a784b7907d2a3762"
+      }
+    },
+    {
+      "signal": "L5",
+      "weak_dbm": -142,
+      "warm": true,
+      "strong": {
+        "ttff_s": 24.76,
+        "p95_m": 0.30973596512342993,
+        "logged_fixes": 96,
+        "position_source": "L5-strong-2026093001.pos",
+        "log_source": "L5-strong-2026093001-receive.log",
+        "position_sha256": "07eee6825a72dee243c73de86becdb37fc6c3daec2d8de41c9aef277bde9d0ee",
+        "log_sha256": "189e746797b90c4c325121e57a1e5d7afc107b7c80392af855e45e57303d81b7"
+      },
+      "weak": {
+        "ttff_s": 24.78,
+        "p95_m": 2.282590730552002,
+        "logged_fixes": 156,
+        "position_source": "L5-weak-2026093001.pos",
+        "log_source": "L5-weak-2026093001-receive.log",
+        "position_sha256": "5d5397ad314e310e55f9a1600919ca9fe5d2949cf5284de99a7afba949a20723",
+        "log_sha256": "e4dd77ac2f0bb02dde96ac2d4d77fabfa1c68899acc9e8a6e629db3ac8dbe204"
+      }
+    },
+    {
+      "signal": "B2a",
+      "weak_dbm": -138,
+      "warm": true,
+      "strong": {
+        "ttff_s": 17.1,
+        "p95_m": 0.2658322051047513,
+        "logged_fixes": 103,
+        "position_source": "B2a-strong-2026093001.pos",
+        "log_source": "B2a-strong-2026093001-receive.log",
+        "position_sha256": "9a28dc08450994c8d11554ff211745d68b8dfdac8ae2d692bd8f248f2acbac2f",
+        "log_sha256": "2c4a0bfd91a7b065469d7e75beb1bf00a45b9429cd0abf30bbf266b0d247e96c"
+      },
+      "weak": {
+        "ttff_s": 17.1,
+        "p95_m": 1.3156700652699693,
+        "logged_fixes": 163,
+        "position_source": "B2a-weak-2026093001.pos",
+        "log_source": "B2a-weak-2026093001-receive.log",
+        "position_sha256": "4be256477b066242133e5a5bc17c979d19673e62540fa72d1e30f34246cb362d",
+        "log_sha256": "60a0471c48503c6bdafd7f086346a07112ef36c221ef640a5e99c8cb1ac24a5d"
+      }
+    },
+    {
+      "signal": "E5a",
+      "weak_dbm": -142,
+      "warm": true,
+      "strong": {
+        "ttff_s": 60.1,
+        "p95_m": 0.28302983180741514,
+        "logged_fixes": 60,
+        "position_source": "E5a-strong-2026093001.pos",
+        "log_source": "E5a-strong-2026093001-receive.log",
+        "position_sha256": "7c36360f7a28591da804bb69c5a45de2ecd960b0b34bde88b2cb66eeef816f39",
+        "log_sha256": "45fc6e33de7381a9927bdd7c62fef914d666aa2928afbaf855cd933ac3cabba6"
+      },
+      "weak": {
+        "ttff_s": 60.1,
+        "p95_m": 1.5338756290692657,
+        "logged_fixes": 120,
+        "position_source": "E5a-weak-2026093001.pos",
+        "log_source": "E5a-weak-2026093001-receive.log",
+        "position_sha256": "464279cf4ab5a730c6eb481c728487e1d0f71f8b24d52e40ce92fbb5d9d47143",
+        "log_sha256": "7dfcf64226d4827d990eb333bcccddc6580eacbc4c746f816f445174cb1d96f0"
+      }
+    },
+    {
+      "signal": "E1",
+      "weak_dbm": -143,
+      "warm": false,
+      "strong": {
+        "ttff_s": 35.1,
+        "p95_m": 1.091023188136922,
+        "logged_fixes": 85,
+        "position_source": "E1-strong-2026093001.pos",
+        "log_source": "E1-strong-2026093001-receive.log",
+        "position_sha256": "06a72c4bb2e5d4b6ff4a5a035d86b74c68e80d5fdb5f8bdde7e1386b8c9633b8",
+        "log_sha256": "b2af13750417a5c5334b1feea73d1841d2f770482c738702910407d2da0f0d9b"
+      },
+      "weak": {
+        "ttff_s": 115.1,
+        "p95_m": 10.24008804602052,
+        "logged_fixes": 486,
+        "position_source": "replay-e1-full.pos",
+        "log_source": "replay-e1-full.log",
+        "position_sha256": "5d23bc300a3d911bd8899bbb4114d0f4f8a66c62bf841d0f01c7481db6a2c6c5",
+        "log_sha256": "d03179f2d13bfc0d4726577c3631555416bf7f9c98de5e606a79f708ee352d33"
+      }
+    },
+    {
+      "signal": "B1C",
+      "weak_dbm": -138,
+      "warm": false,
+      "strong": {
+        "ttff_s": 62.1,
+        "p95_m": 0.9603744818255475,
+        "logged_fixes": 58,
+        "position_source": "B1C-strong-2026093001.pos",
+        "log_source": "B1C-strong-2026093001-receive.log",
+        "position_sha256": "69bb9cafe42f49c6a2105b70c8aafa85dd1dfd3a151fc8c96c35e20a51fa9c97",
+        "log_sha256": "fffb2bd03a5bff143fa1b0ee078f4b3d08e74c5a180cff32b1f9249a8b6850f5"
+      },
+      "weak": {
+        "ttff_s": 62.1,
+        "p95_m": 4.085973784533495,
+        "logged_fixes": 538,
+        "position_source": "B1C-weak-2026093001.pos",
+        "log_source": "B1C-weak-2026093001-receive.log",
+        "position_sha256": "ee64e50b526e2a98c26a211cf6d5df5b7f2bd3ab74735e18e5e20c2a36f97499",
+        "log_sha256": "215face273c529feda9c64ee66509752dd2ac627ba831b696239730fd49f7d4d"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "file": "75-long-sensitivity.json",
+      "sha256": "11362b16aa9daae5809587510e280f0154bcec7694a4030de4a15f782cdfb7a4"
+    },
+    {
+      "file": "plot-data.json",
+      "sha256": "326789a2bac85c8d7ff62f2fb0678b1a6f06abbab5c9a321a6609ecffb48a031"
+    },
+    {
+      "file": "RESULTS.md",
+      "sha256": "c94cda93de05865f63c747947add49ff100af712d0f2860b5d24525bbe9550b7"
+    }
+  ],
+  "scope_notes": [
+    "历史PDI矩阵未针对后续G1同步整改整体复跑",
+    "G1强入口采用最终因果解码/PVT重放，弱入口完整IQ与最终重放一致",
+    "E1弱指标采用600 s因果重放；200 s完整IQ首解相同而P95为7.553 m",
+    "不得以同IQ重放增加独立样本数",
+    "16个种子在不同变化率之间复用",
+    "全部为软件仿真，未进行射频或外场实测"
+  ]
+}
